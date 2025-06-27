@@ -11,5 +11,15 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         document.body.insertBefore(navbar, document.body.firstChild);
       }
+      // Hamburger menu logic (after navbar is injected)
+      setTimeout(function() {
+        const nav = document.querySelector('.navbar');
+        const hamburger = document.querySelector('.nav-hamburger');
+        if (nav && hamburger) {
+          hamburger.addEventListener('click', function() {
+            nav.classList.toggle('open');
+          });
+        }
+      }, 100);
     });
 }); 
