@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RefEarn</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .category-section {
+            margin-bottom: 48px;
+            position: relative;
+            padding: 32px 0 48px 0;
+            border-radius: 28px;
+            box-shadow: 0 2px 16px rgba(26,35,126,0.06);
+            border: 2px solid;
+        }
+        .category-section.banking {
+            background: #e3edfa;
+            border-color: #1565c0;
+        }
+        .category-section.banking .category-title,
+        .category-section.banking .scroll-btn,
+        .category-section.banking .scroll-btn svg polygon,
+        .category-section.banking .view-all-link {
+            color: #1565c0;
+            border-color: #1565c0;
+            fill: #1565c0;
+        }
+        .category-section.businesstools {
+            background: #fae3e3;
+            border-color: #c62828;
+        }
+        .category-section.businesstools .category-title,
+        .category-section.businesstools .scroll-btn,
+        .category-section.businesstools .scroll-btn svg polygon,
+        .category-section.businesstools .view-all-link {
+            color: #c62828;
+            border-color: #c62828;
+            fill: #c62828;
+        }
+        .category-section.cashback {
+            background: #e3faed;
+            border-color: #1b7a4f;
+        }
+        .category-section.cashback .category-title,
+        .category-section.cashback .scroll-btn,
+        .category-section.cashback .scroll-btn svg polygon,
+        .category-section.cashback .view-all-link {
+            color: #1b7a4f;
+            border-color: #1b7a4f;
+            fill: #1b7a4f;
+        }
+        .category-section.networks {
+            background: #fffbe3;
+            border-color: #bfa100;
+        }
+        .category-section.networks .category-title,
+        .category-section.networks .scroll-btn,
+        .category-section.networks .scroll-btn svg polygon,
+        .category-section.networks .view-all-link {
+            color: #bfa100;
+            border-color: #bfa100;
+            fill: #bfa100;
+        }
+        .category-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 18px; margin-left: 24px; text-align: center; margin-left: 0; }
+        .offers-row {
+            display: flex;
+            gap: 24px;
+            position: relative;
+            min-height: 220px;
+            overflow: hidden;
+            width: 100%;
+            justify-content: center;
+            align-items: stretch;
+        }
+        .offer-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+            padding: 32px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-width: 320px;
+            max-width: 340px;
+            flex: 0 0 48%;
+            transition: opacity 0.3s, transform 0.3s;
+            height: 100%;
+        }
+        .offer-card.hidden { opacity: 0; pointer-events: none; position: absolute; }
+        .offer-card.visible { opacity: 1; pointer-events: auto; position: relative; }
+        .offer-card .offer-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+        .offer-card .offer-desc { color: #555; font-size: 1rem; margin-bottom: 18px; }
+        .offer-card .cta-button { margin: 0; }
+        .scroll-btn {
+            position: absolute;
+            top: 16px;
+            bottom: 16px;
+            margin: auto 0;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            width: 32px;
+            min-width: 32px;
+            height: calc(100% - 32px);
+            min-height: 120px;
+            max-height: 100%;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            box-shadow: none;
+            transition: background 0.2s;
+        }
+        .scroll-btn svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+        }
+        .scroll-btn:hover { background: rgba(0,0,0,0.04); }
+        .scroll-btn.left { left: 16px; }
+        .scroll-btn.right { right: 16px; }
+        .scroll-btn.hidden { display: none !important; }
+        .view-all-link {
+            position: absolute;
+            right: 32px;
+            bottom: -28px;
+            font-size: 1rem;
+            text-decoration: underline;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        @media (max-width: 900px) {
+            .offer-card { min-width: 80vw; max-width: 90vw; }
+            .scroll-btn.left { left: 0; }
+            .scroll-btn.right { right: 0; }
+            .scroll-btn { min-height: 80px; }
+        }
+    </style>
+</head>
+<body class="brand-home">
+    <script src="inject-banner.js"></script>
+    <script src="inject-navbar.js"></script>
+    <div class="container">
+        <div style="text-align:center; color:#555; font-size:1.25rem; margin-bottom: 36px; font-style: italic;">
+            Welcome to Refer 2 Earn – your hub for the UK's best dual-incentive referral and affiliate offers! Whether you're a content creator, blogger, social media influencer, or just someone with a network of friends, this site is designed to help you turn your audience and connections into real, passive side-income.<br><br>
+            We hand-pick and showcase referral programs and affiliate deals where <b>both you and your friends or followers get rewarded</b>. From banking and business tools to cashback and mobile networks, every offer here is vetted for genuine value and transparency. <br><br>
+            <b>How does it work?</b> Simply browse the categories, pick an offer, and share your unique referral link. When someone signs up or makes a purchase, you both benefit – it's a win-win! <br><br>
+            Whether you're looking to supplement your income, add value for your audience, or just discover great deals, Refer 2 Earn makes it easy to get started. Explore, share, and start earning today!
+        </div>
+        <div class="category-section banking">
+            <div class="category-title">Banking</div>
+            <button class="scroll-btn left" aria-label="Scroll left">
+                <svg viewBox="0 0 18 32" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="16,2 2,16 16,30"/></svg>
+            </button>
+            <button class="scroll-btn right" aria-label="Scroll right">
+                <svg viewBox="0 0 18 32" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="2,2 16,16 2,30"/></svg>
+            </button>
+            <div class="offers-row" id="banking-row">
+                <div class="offer-card brand-monzo">
+                    <div class="offer-title">Monzo</div>
+                    <div class="offer-desc">Get £10 (personal) or £50 (business) for you and your friend when you join Monzo and make a card payment.</div>
+                    <a href="monzo.html" class="cta-button cta-button-monzo">View Monzo Offer</a>
+                </div>
+                <div class="offer-card brand-raisin">
+                    <div class="offer-title">Raisin UK</div>
+                    <div class="offer-desc">Earn a £50 bonus when you open a Raisin UK savings account and deposit £5,000+.</div>
+                    <a href="raisin.html" class="cta-button cta-button-raisin">View Raisin Offer</a>
+                </div>
+                <div class="offer-card brand-wise">
+                    <div class="offer-title">Wise</div>
+                    <div class="offer-desc">Invite 3 friends to Wise and earn £75. Friends get a free card or transfer up to £500.</div>
+                    <a href="wise.html" class="cta-button cta-button-wise">View Wise Offer</a>
+                </div>
+            </div>
+        </div>
+        <div class="category-section businesstools">
+            <div class="category-title">Business Tools</div>
+            <button class="scroll-btn left" aria-label="Scroll left">
+                <svg viewBox="0 0 18 32" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="16,2 2,16 16,30"/></svg>
+            </button>
+            <button class="scroll-btn right" aria-label="Scroll right">
+                <svg viewBox="0 0 18 32" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="2,2 16,16 2,30"/></svg>
+            </button>
+            <div class="offers-row" id="businesstools-row">
+                <div class="offer-card brand-baremetrics">
+                    <div class="offer-title">Baremetrics</div>
+                    <div class="offer-desc">Earn 20% recurring commission for you and 50% off the first month for your referral when you recommend Baremetrics to SaaS businesses.</div>
+                    <a href="baremetrics.html" class="cta-button cta-button-baremetrics">View Baremetrics Offer</a>
+                </div>
+                <div class="offer-card brand-engagebay">
+                    <div class="offer-title">EngageBay</div>
+                    <div class="offer-desc">Earn 30% monthly recurring commission for each paid user you refer to EngageBay.</div>
+                    <a href="engagebay.html" class="cta-button cta-button-engagebay">View EngageBay Offer</a>
+                </div>
+                <div class="offer-card brand-mailblaze">
+                    <div class="offer-title">Mail Blaze</div>
+                    <div class="offer-desc">Earn affiliate commissions for every new paying customer you refer to Mail Blaze.</div>
+                    <a href="mailblaze.html" class="cta-button cta-button-mailblaze">View Mail Blaze Offer</a>
+                </div>
+                <div class="offer-card brand-neuraltext">
+                    <div class="offer-title">NeuralText</div>
+                    <div class="offer-desc">Earn affiliate commissions for every new paying customer you refer to NeuralText.</div>
+                    <a href="neuraltext.html" class="cta-button cta-button-neuraltext">View NeuralText Offer</a>
+                </div>
+                <div class="offer-card brand-fiverr">
+                    <div class="offer-title">Fiverr</div>
+                    <div class="offer-desc">Earn up to $100 per referral (max $500), plus 10% off for your friends on their first order.</div>
+                    <a href="fiverr.html" class="cta-button cta-button-fiverr">View Fiverr Offer</a>
+                </div>
+                <div class="offer-card brand-supermonitoring">
+                    <div class="offer-title">Super Monitoring</div>
+                    <div class="offer-desc">Earn 30% lifetime commission for every customer you refer to website uptime and performance monitoring.</div>
+                    <a href="supermonitoring.html" class="cta-button cta-button-supermonitoring">View Super Monitoring Offer</a>
+                </div>
+                <div class="offer-card brand-userback">
+                    <div class="offer-title">Userback</div>
+                    <div class="offer-desc">Earn 35% commission for 12 months for every customer you refer to the leading user feedback platform.</div>
+                    <a href="userback.html" class="cta-button cta-button-userback">View Userback Offer</a>
+                </div>
+            </div>
+        </div>
+        <div class="category-section cashback">
+            <div class="category-title">Cashback</div>
+            <button class="scroll-btn left" aria-label="Scroll left">
+                <svg viewBox="0 0 18 32" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="16,2 2,16 16,30"/></svg>
+            </button>
+            <button class="scroll-btn right" aria-label="Scroll right">
+                <svg viewBox="0 0 18 32" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="2,2 16,16 2,30"/></svg>
+            </button>
+            <div class="offers-row" id="cashback-row">
+                <div class="offer-card brand-quidco">
+                    <div class="offer-title">Quidco</div>
+                    <div class="offer-desc">Earn £25 cashback for you and a £20 sign-up bonus for your friend when they join and earn cashback.</div>
+                    <a href="quidco.html" class="cta-button cta-button-quidco">View Quidco Offer</a>
+                </div>
+                <div class="offer-card brand-rakuten">
+                    <div class="offer-title">Rakuten UK</div>
+                    <div class="offer-desc">Sign up and earn £25 cashback on your first qualifying purchase with Rakuten UK.</div>
+                    <a href="rakuten.html" class="cta-button cta-button-rakuten">View Rakuten Offer</a>
+                </div>
+                <div class="offer-card brand-topcashback">
+                    <div class="offer-title">TopCashback</div>
+                    <div class="offer-desc">Earn £35 cashback for you and a £10 sign-up bonus for your friend when they join and earn cashback.</div>
+                    <a href="topcashback.html" class="cta-button cta-button-topcashback">View TopCashback Offer</a>
+                </div>
+            </div>
+        </div>
+        <div class="category-section networks">
+            <div class="category-title">Networks</div>
+            <button class="scroll-btn left" aria-label="Scroll left">
+                <svg viewBox="0 0 18 32" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="16,2 2,16 16,30"/></svg>
+            </button>
+            <button class="scroll-btn right" aria-label="Scroll right">
+                <svg viewBox="0 0 18 32" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="2,2 16,16 2,30"/></svg>
+            </button>
+            <div class="offers-row" id="networks-row">
+                <div class="offer-card brand-giffgaff">
+                    <div class="offer-title">giffgaff</div>
+                    <div class="offer-desc">Order a free SIM and get £10 credit when you activate your giffgaff account.</div>
+                    <a href="giffgaff.html" class="cta-button cta-button-giffgaff">View giffgaff Offer</a>
+                </div>
+                <div class="offer-card brand-virgin">
+                    <div class="offer-title">Virgin Media</div>
+                    <div class="offer-desc">Get £50 cash back when you sign up for Virgin Media broadband as a new customer.</div>
+                    <a href="virgin.html" class="cta-button cta-button-virgin">View Virgin Offer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    // Carousel logic for each row
+    function setupCarousel(rowId) {
+        const row = document.getElementById(rowId);
+        if (!row) return;
+        const cards = Array.from(row.getElementsByClassName('offer-card'));
+        let start = 0;
+        const maxVisible = Math.min(2, cards.length);
+        function update() {
+            cards.forEach((card, i) => {
+                if (i >= start && i < start + maxVisible) {
+                    card.classList.add('visible');
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.remove('visible');
+                    card.classList.add('hidden');
+                }
+            });
+            // Show/hide scroll buttons
+            const leftBtn = row.parentElement.querySelector('.scroll-btn.left');
+            const rightBtn = row.parentElement.querySelector('.scroll-btn.right');
+            if (leftBtn) leftBtn.classList.toggle('hidden', start === 0);
+            if (rightBtn) rightBtn.classList.toggle('hidden', start >= cards.length - maxVisible);
+        }
+        row.parentElement.querySelector('.scroll-btn.left').onclick = function() {
+            if (start > 0) { start--; update(); }
+        };
+        row.parentElement.querySelector('.scroll-btn.right').onclick = function() {
+            if (start < cards.length - maxVisible) { start++; update(); }
+        };
+        update();
+    }
+    window.addEventListener('DOMContentLoaded', function() {
+        setupCarousel('banking-row');
+        setupCarousel('businesstools-row');
+        setupCarousel('cashback-row');
+        setupCarousel('networks-row');
+    });
+    </script>
+</body>
+</html> 
