@@ -1,8 +1,7 @@
-fetch('/banner.html')
-  .then(response => response.text())
-  .then(html => {
-    const body = document.body;
-    if (body) {
-      body.insertAdjacentHTML('afterbegin', html);
-    }
-  }); 
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('/banner.html')
+    .then(response => response.text())
+    .then(html => {
+      document.body.insertAdjacentHTML('afterbegin', html);
+    });
+}); 
