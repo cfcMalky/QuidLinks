@@ -1,5 +1,9 @@
 /* Shared site styles for UK Value Hub */
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #f7f7fa;

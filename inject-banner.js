@@ -1,4 +1,4 @@
-fetch('banner.html')
+fetch('/banner.html')
   .then(response => response.text())
   .then(html => {
     const body = document.body;
