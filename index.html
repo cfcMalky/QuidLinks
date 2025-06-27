@@ -278,8 +278,11 @@
         if (!row) return;
         const cards = Array.from(row.getElementsByClassName('offer-card'));
         let start = 0;
-        const maxVisible = Math.min(2, cards.length);
+        function getMaxVisible() {
+            return window.matchMedia('(max-width: 700px)').matches ? 1 : Math.min(2, cards.length);
+        }
         function update() {
+            const maxVisible = getMaxVisible();
             cards.forEach((card, i) => {
                 if (i >= start && i < start + maxVisible) {
                     card.classList.add('visible');
@@ -299,8 +302,11 @@
             if (start > 0) { start--; update(); }
         };
         row.parentElement.querySelector('.scroll-btn.right').onclick = function() {
+            const maxVisible = getMaxVisible();
             if (start < cards.length - maxVisible) { start++; update(); }
         };
+        // Update on resize
+        window.addEventListener('resize', update);
         update();
     }
     window.addEventListener('DOMContentLoaded', function() {
