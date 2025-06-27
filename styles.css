@@ -290,10 +290,6 @@ body::before {
     border: 2.5px solid #4158d0;
     box-shadow: 0 0 0 6px rgba(200,80,192,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
-
-/* --- BRAND-SPECIFIC NAV DROPDOWN STYLES (matches card borders/shadows) --- */
-
-/* BAREMETRICS */
 .brand-baremetrics .nav-dropdown {
     border: 2.5px solid #4158d0;
     box-shadow: 0 0 0 6px rgba(200,80,192,0.18), 0 8px 32px rgba(0,0,0,0.08);
@@ -314,11 +310,51 @@ body::before {
     text-decoration: underline;
     text-indent: 8px;
 }
-
-/* BAREMETRICS */
 .brand-baremetrics .nav-category-title {
     border: 2.5px solid #4158d0;
     box-shadow: 0 0 0 6px rgba(200,80,192,0.18), 0 8px 32px rgba(0,0,0,0.08);
+}
+
+/* -------------------- ENGAGEBAY -------------------- */
+.brand-engagebay .headline {
+    background: linear-gradient(90deg, #ff6600, #ffb347);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.cta-button-engagebay {
+    background: linear-gradient(90deg, #ff6600, #ffb347) !important;
+    color: #fff !important;
+}
+.brand-engagebay .mini-card .title { color: #ff6600; }
+.brand-engagebay .mini-card { box-shadow: 0 4px 16px rgba(255,102,0,0.07); }
+.brand-engagebay .card {
+    border: 2.5px solid #ff6600;
+    box-shadow: 0 0 0 6px rgba(255,179,71,0.18), 0 8px 32px rgba(0,0,0,0.08);
+}
+.brand-engagebay .nav-dropdown {
+    border: 2.5px solid #ff6600;
+    box-shadow: 0 0 0 6px rgba(255,179,71,0.18), 0 8px 32px rgba(0,0,0,0.08);
+    background: #fff;
+    border-radius: 18px;
+}
+.brand-engagebay .nav-dropdown .navbar-link {
+    color: #ff6600;
+    font-weight: 700;
+    border-radius: 12px;
+    margin: 2px 8px;
+    transition: background 0.2s, color 0.2s, text-indent 0.2s;
+}
+.brand-engagebay .nav-dropdown .navbar-link:hover,
+.brand-engagebay .nav-dropdown .navbar-link.active {
+    background: #fff6e3;
+    color: #ff6600;
+    text-decoration: underline;
+    text-indent: 8px;
+}
+.brand-engagebay .nav-category-title {
+    border: 2.5px solid #ff6600;
+    box-shadow: 0 0 0 6px rgba(255,179,71,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
 
 /* -------------------- FIVERR -------------------- */
@@ -338,8 +374,6 @@ body::before {
     border: 2.5px solid #1dbf73;
     box-shadow: 0 0 0 6px rgba(0,230,160,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
-
-/* FIVERR */
 .brand-fiverr .nav-dropdown {
     border: 2.5px solid #1dbf73;
     box-shadow: 0 0 0 6px rgba(0,230,160,0.18), 0 8px 32px rgba(0,0,0,0.08);
@@ -360,8 +394,6 @@ body::before {
     text-decoration: underline;
     text-indent: 8px;
 }
-
-/* FIVERR */
 .brand-fiverr .nav-category-title {
     border: 2.5px solid #1dbf73;
     box-shadow: 0 0 0 6px rgba(0,230,160,0.18), 0 8px 32px rgba(0,0,0,0.08);
@@ -384,8 +416,6 @@ body::before {
     border: 2.5px solid #ffe259;
     box-shadow: 0 0 0 6px rgba(255,167,81,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
-
-/* GIFFGAFF */
 .brand-giffgaff .nav-dropdown {
     border: 2.5px solid #ffe259;
     box-shadow: 0 0 0 6px rgba(255,167,81,0.18), 0 8px 32px rgba(0,0,0,0.08);
@@ -406,11 +436,51 @@ body::before {
     text-decoration: underline;
     text-indent: 8px;
 }
-
-/* GIFFGAFF */
 .brand-giffgaff .nav-category-title {
     border: 2.5px solid #ffe259;
     box-shadow: 0 0 0 6px rgba(255,167,81,0.18), 0 8px 32px rgba(0,0,0,0.08);
+}
+
+/* -------------------- MAIL BLAZE -------------------- */
+.brand-mailblaze .headline {
+    background: linear-gradient(90deg, #1e88e5, #42a5f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.cta-button-mailblaze {
+    background: linear-gradient(90deg, #1e88e5, #42a5f5) !important;
+    color: #fff !important;
+}
+.brand-mailblaze .mini-card .title { color: #1e88e5; }
+.brand-mailblaze .mini-card { box-shadow: 0 4px 16px rgba(30,136,229,0.07); }
+.brand-mailblaze .card {
+    border: 2.5px solid #1e88e5;
+    box-shadow: 0 0 0 6px rgba(66,165,245,0.18), 0 8px 32px rgba(0,0,0,0.08);
+}
+.brand-mailblaze .nav-dropdown {
+    border: 2.5px solid #1e88e5;
+    box-shadow: 0 0 0 6px rgba(66,165,245,0.18), 0 8px 32px rgba(0,0,0,0.08);
+    background: #fff;
+    border-radius: 18px;
+}
+.brand-mailblaze .nav-dropdown .navbar-link {
+    color: #1e88e5;
+    font-weight: 700;
+    border-radius: 12px;
+    margin: 2px 8px;
+    transition: background 0.2s, color 0.2s, text-indent 0.2s;
+}
+.brand-mailblaze .nav-dropdown .navbar-link:hover,
+.brand-mailblaze .nav-dropdown .navbar-link.active {
+    background: #e3f0fd;
+    color: #1e88e5;
+    text-decoration: underline;
+    text-indent: 8px;
+}
+.brand-mailblaze .nav-category-title {
+    border: 2.5px solid #1e88e5;
+    box-shadow: 0 0 0 6px rgba(66,165,245,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
 
 /* -------------------- MONZO -------------------- */
@@ -430,8 +500,6 @@ body::before {
     border: 2.5px solid #00b4d8;
     box-shadow: 0 0 0 6px rgba(255,111,97,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
-
-/* MONZO */
 .brand-monzo .nav-dropdown {
     border: 2.5px solid #00b4d8;
     box-shadow: 0 0 0 6px rgba(255,111,97,0.18), 0 8px 32px rgba(0,0,0,0.08);
@@ -452,11 +520,51 @@ body::before {
     text-decoration: underline;
     text-indent: 8px;
 }
-
-/* MONZO */
 .brand-monzo .nav-category-title {
     border: 2.5px solid #00b4d8;
     box-shadow: 0 0 0 6px rgba(255,111,97,0.18), 0 8px 32px rgba(0,0,0,0.08);
+}
+
+/* -------------------- NEURALTEXT -------------------- */
+.brand-neuraltext .headline {
+    background: linear-gradient(90deg, #6c47ff, #a084e8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.cta-button-neuraltext {
+    background: linear-gradient(90deg, #6c47ff, #a084e8) !important;
+    color: #fff !important;
+}
+.brand-neuraltext .mini-card .title { color: #6c47ff; }
+.brand-neuraltext .mini-card { box-shadow: 0 4px 16px rgba(108,71,255,0.07); }
+.brand-neuraltext .card {
+    border: 2.5px solid #6c47ff;
+    box-shadow: 0 0 0 6px rgba(160,132,232,0.18), 0 8px 32px rgba(0,0,0,0.08);
+}
+.brand-neuraltext .nav-dropdown {
+    border: 2.5px solid #6c47ff;
+    box-shadow: 0 0 0 6px rgba(160,132,232,0.18), 0 8px 32px rgba(0,0,0,0.08);
+    background: #fff;
+    border-radius: 18px;
+}
+.brand-neuraltext .nav-dropdown .navbar-link {
+    color: #6c47ff;
+    font-weight: 700;
+    border-radius: 12px;
+    margin: 2px 8px;
+    transition: background 0.2s, color 0.2s, text-indent 0.2s;
+}
+.brand-neuraltext .nav-dropdown .navbar-link:hover,
+.brand-neuraltext .nav-dropdown .navbar-link.active {
+    background: #ede3fd;
+    color: #6c47ff;
+    text-decoration: underline;
+    text-indent: 8px;
+}
+.brand-neuraltext .nav-category-title {
+    border: 2.5px solid #6c47ff;
+    box-shadow: 0 0 0 6px rgba(160,132,232,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
 
 /* -------------------- QUIDCO -------------------- */
@@ -476,8 +584,6 @@ body::before {
     border: 2.5px solid #2193b0;
     box-shadow: 0 0 0 6px rgba(109,213,237,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
-
-/* QUIDCO */
 .brand-quidco .nav-dropdown {
     border: 2.5px solid #2193b0;
     box-shadow: 0 0 0 6px rgba(109,213,237,0.18), 0 8px 32px rgba(0,0,0,0.08);
@@ -498,8 +604,6 @@ body::before {
     text-decoration: underline;
     text-indent: 8px;
 }
-
-/* QUIDCO */
 .brand-quidco .nav-category-title {
     border: 2.5px solid #2193b0;
     box-shadow: 0 0 0 6px rgba(109,213,237,0.18), 0 8px 32px rgba(0,0,0,0.08);
@@ -522,8 +626,6 @@ body::before {
     border: 2.5px solid #8B5CF6;
     box-shadow: 0 0 0 6px rgba(236,72,153,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
-
-/* RAKUTEN */
 .brand-rakuten .nav-dropdown {
     border: 2.5px solid #8B5CF6;
     box-shadow: 0 0 0 6px rgba(236,72,153,0.18), 0 8px 32px rgba(0,0,0,0.08);
@@ -544,8 +646,6 @@ body::before {
     text-decoration: underline;
     text-indent: 8px;
 }
-
-/* RAKUTEN */
 .brand-rakuten .nav-category-title {
     border: 2.5px solid #8B5CF6;
     box-shadow: 0 0 0 6px rgba(236,72,153,0.18), 0 8px 32px rgba(0,0,0,0.08);
@@ -568,8 +668,6 @@ body::before {
     border: 2.5px solid #f7971e;
     box-shadow: 0 0 0 6px rgba(255,210,0,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
-
-/* RAISIN */
 .brand-raisin .nav-dropdown {
     border: 2.5px solid #f7971e;
     box-shadow: 0 0 0 6px rgba(255,210,0,0.18), 0 8px 32px rgba(0,0,0,0.08);
@@ -590,11 +688,51 @@ body::before {
     text-decoration: underline;
     text-indent: 8px;
 }
-
-/* RAISIN */
 .brand-raisin .nav-category-title {
     border: 2.5px solid #f7971e;
     box-shadow: 0 0 0 6px rgba(255,210,0,0.18), 0 8px 32px rgba(0,0,0,0.08);
+}
+
+/* -------------------- SUPER MONITORING -------------------- */
+.brand-supermonitoring .headline {
+    background: linear-gradient(90deg, #3a7bd5, #6a3093);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.cta-button-supermonitoring {
+    background: linear-gradient(90deg, #3a7bd5, #6a3093) !important;
+    color: #fff !important;
+}
+.brand-supermonitoring .mini-card .title { color: #3a7bd5; }
+.brand-supermonitoring .mini-card { box-shadow: 0 4px 16px rgba(58,123,213,0.07); }
+.brand-supermonitoring .card {
+    border: 2.5px solid #3a7bd5;
+    box-shadow: 0 0 0 6px rgba(106,48,147,0.18), 0 8px 32px rgba(0,0,0,0.08);
+}
+.brand-supermonitoring .nav-dropdown {
+    border: 2.5px solid #3a7bd5;
+    box-shadow: 0 0 0 6px rgba(106,48,147,0.18), 0 8px 32px rgba(0,0,0,0.08);
+    background: #fff;
+    border-radius: 18px;
+}
+.brand-supermonitoring .nav-dropdown .navbar-link {
+    color: #3a7bd5;
+    font-weight: 700;
+    border-radius: 12px;
+    margin: 2px 8px;
+    transition: background 0.2s, color 0.2s, text-indent 0.2s;
+}
+.brand-supermonitoring .nav-dropdown .navbar-link:hover,
+.brand-supermonitoring .nav-dropdown .navbar-link.active {
+    background: #f3f6fd;
+    color: #6a3093;
+    text-decoration: underline;
+    text-indent: 8px;
+}
+.brand-supermonitoring .nav-category-title {
+    border: 2.5px solid #3a7bd5;
+    box-shadow: 0 0 0 6px rgba(106,48,147,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
 
 /* -------------------- TOPCASHBACK -------------------- */
@@ -614,8 +752,6 @@ body::before {
     border: 2.5px solid #43e97b;
     box-shadow: 0 0 0 6px rgba(56,249,215,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
-
-/* TOPCASHBACK */
 .brand-topcashback .nav-dropdown {
     border: 2.5px solid #43e97b;
     box-shadow: 0 0 0 6px rgba(56,249,215,0.18), 0 8px 32px rgba(0,0,0,0.08);
@@ -636,11 +772,51 @@ body::before {
     text-decoration: underline;
     text-indent: 8px;
 }
-
-/* TOPCASHBACK */
 .brand-topcashback .nav-category-title {
     border: 2.5px solid #43e97b;
     box-shadow: 0 0 0 6px rgba(56,249,215,0.18), 0 8px 32px rgba(0,0,0,0.08);
+}
+
+/* -------------------- USERBACK -------------------- */
+.brand-userback .headline {
+    background: linear-gradient(90deg, #3a7bd5, #6a3093);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.cta-button-userback {
+    background: linear-gradient(90deg, #3a7bd5, #6a3093) !important;
+    color: #fff !important;
+}
+.brand-userback .mini-card .title { color: #3a7bd5; }
+.brand-userback .mini-card { box-shadow: 0 4px 16px rgba(58,123,213,0.07); }
+.brand-userback .card {
+    border: 2.5px solid #3a7bd5;
+    box-shadow: 0 0 0 6px rgba(106,48,147,0.18), 0 8px 32px rgba(0,0,0,0.08);
+}
+.brand-userback .nav-dropdown {
+    border: 2.5px solid #3a7bd5;
+    box-shadow: 0 0 0 6px rgba(106,48,147,0.18), 0 8px 32px rgba(0,0,0,0.08);
+    background: #fff;
+    border-radius: 18px;
+}
+.brand-userback .nav-dropdown .navbar-link {
+    color: #3a7bd5;
+    font-weight: 700;
+    border-radius: 12px;
+    margin: 2px 8px;
+    transition: background 0.2s, color 0.2s, text-indent 0.2s;
+}
+.brand-userback .nav-dropdown .navbar-link:hover,
+.brand-userback .nav-dropdown .navbar-link.active {
+    background: #f3f6fd;
+    color: #6a3093;
+    text-decoration: underline;
+    text-indent: 8px;
+}
+.brand-userback .nav-category-title {
+    border: 2.5px solid #3a7bd5;
+    box-shadow: 0 0 0 6px rgba(106,48,147,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
 
 /* -------------------- VIRGIN -------------------- */
@@ -660,8 +836,6 @@ body::before {
     border: 2.5px solid #e52d27;
     box-shadow: 0 0 0 6px rgba(179,18,23,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
-
-/* VIRGIN */
 .brand-virgin .nav-dropdown {
     border: 2.5px solid #e52d27;
     box-shadow: 0 0 0 6px rgba(179,18,23,0.18), 0 8px 32px rgba(0,0,0,0.08);
@@ -682,149 +856,9 @@ body::before {
     text-decoration: underline;
     text-indent: 8px;
 }
-
-/* VIRGIN */
 .brand-virgin .nav-category-title {
     border: 2.5px solid #e52d27;
     box-shadow: 0 0 0 6px rgba(179,18,23,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-
-/* -------------------- ENGAGEBAY -------------------- */
-.brand-engagebay .headline {
-    background: linear-gradient(90deg, #ff6600, #ffb347);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-.cta-button-engagebay {
-    background: linear-gradient(90deg, #ff6600, #ffb347) !important;
-    color: #fff !important;
-}
-.brand-engagebay .mini-card .title { color: #ff6600; }
-.brand-engagebay .mini-card { box-shadow: 0 4px 16px rgba(255,102,0,0.07); }
-.brand-engagebay .card {
-    border: 2.5px solid #ff6600;
-    box-shadow: 0 0 0 6px rgba(255,179,71,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-
-/* ENGAGEBAY */
-.brand-engagebay .nav-dropdown {
-    border: 2.5px solid #ff6600;
-    box-shadow: 0 0 0 6px rgba(255,179,71,0.18), 0 8px 32px rgba(0,0,0,0.08);
-    background: #fff;
-    border-radius: 18px;
-}
-.brand-engagebay .nav-dropdown .navbar-link {
-    color: #ff6600;
-    font-weight: 700;
-    border-radius: 12px;
-    margin: 2px 8px;
-    transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-engagebay .nav-dropdown .navbar-link:hover,
-.brand-engagebay .nav-dropdown .navbar-link.active {
-    background: #fff6e3;
-    color: #ff6600;
-    text-decoration: underline;
-    text-indent: 8px;
-}
-
-/* ENGAGEBAY */
-.brand-engagebay .nav-category-title {
-    border: 2.5px solid #ff6600;
-    box-shadow: 0 0 0 6px rgba(255,179,71,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-
-/* -------------------- MAIL BLAZE -------------------- */
-.brand-mailblaze .headline {
-    background: linear-gradient(90deg, #1e88e5, #42a5f5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-.cta-button-mailblaze {
-    background: linear-gradient(90deg, #1e88e5, #42a5f5) !important;
-    color: #fff !important;
-}
-.brand-mailblaze .mini-card .title { color: #1e88e5; }
-.brand-mailblaze .mini-card { box-shadow: 0 4px 16px rgba(30,136,229,0.07); }
-.brand-mailblaze .card {
-    border: 2.5px solid #1e88e5;
-    box-shadow: 0 0 0 6px rgba(66,165,245,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-
-/* MAIL BLAZE */
-.brand-mailblaze .nav-dropdown {
-    border: 2.5px solid #1e88e5;
-    box-shadow: 0 0 0 6px rgba(66,165,245,0.18), 0 8px 32px rgba(0,0,0,0.08);
-    background: #fff;
-    border-radius: 18px;
-}
-.brand-mailblaze .nav-dropdown .navbar-link {
-    color: #1e88e5;
-    font-weight: 700;
-    border-radius: 12px;
-    margin: 2px 8px;
-    transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-mailblaze .nav-dropdown .navbar-link:hover,
-.brand-mailblaze .nav-dropdown .navbar-link.active {
-    background: #e3f0fd;
-    color: #1e88e5;
-    text-decoration: underline;
-    text-indent: 8px;
-}
-
-/* MAIL BLAZE */
-.brand-mailblaze .nav-category-title {
-    border: 2.5px solid #1e88e5;
-    box-shadow: 0 0 0 6px rgba(66,165,245,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-
-/* -------------------- NEURALTEXT -------------------- */
-.brand-neuraltext .headline {
-    background: linear-gradient(90deg, #6c47ff, #a084e8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-.cta-button-neuraltext {
-    background: linear-gradient(90deg, #6c47ff, #a084e8) !important;
-    color: #fff !important;
-}
-.brand-neuraltext .mini-card .title { color: #6c47ff; }
-.brand-neuraltext .mini-card { box-shadow: 0 4px 16px rgba(108,71,255,0.07); }
-.brand-neuraltext .card {
-    border: 2.5px solid #6c47ff;
-    box-shadow: 0 0 0 6px rgba(160,132,232,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-
-/* NEURALTEXT */
-.brand-neuraltext .nav-dropdown {
-    border: 2.5px solid #6c47ff;
-    box-shadow: 0 0 0 6px rgba(160,132,232,0.18), 0 8px 32px rgba(0,0,0,0.08);
-    background: #fff;
-    border-radius: 18px;
-}
-.brand-neuraltext .nav-dropdown .navbar-link {
-    color: #6c47ff;
-    font-weight: 700;
-    border-radius: 12px;
-    margin: 2px 8px;
-    transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-neuraltext .nav-dropdown .navbar-link:hover,
-.brand-neuraltext .nav-dropdown .navbar-link.active {
-    background: #ede3fd;
-    color: #6c47ff;
-    text-decoration: underline;
-    text-indent: 8px;
-}
-
-/* NEURALTEXT */
-.brand-neuraltext .nav-category-title {
-    border: 2.5px solid #6c47ff;
-    box-shadow: 0 0 0 6px rgba(160,132,232,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
 
 /* -------------------- WISE -------------------- */
@@ -844,8 +878,6 @@ body::before {
     border: 2.5px solid #003366;
     box-shadow: 0 0 0 6px rgba(23,128,61,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
-
-/* WISE */
 .brand-wise .nav-dropdown {
     border: 2.5px solid #003366;
     box-shadow: 0 0 0 6px rgba(23,128,61,0.18), 0 8px 32px rgba(0,0,0,0.08);
@@ -866,8 +898,6 @@ body::before {
     text-decoration: underline;
     text-indent: 8px;
 }
-
-/* WISE */
 .brand-wise .nav-category-title {
     border: 2.5px solid #003366;
     box-shadow: 0 0 0 6px rgba(23,128,61,0.18), 0 8px 32px rgba(0,0,0,0.08);
@@ -1014,92 +1044,6 @@ body::before {
         font-size: 1rem;
         padding: 8px 18px;
     }
-}
-
-/* -------------------- SUPER MONITORING -------------------- */
-.brand-supermonitoring .headline {
-    background: linear-gradient(90deg, #3a7bd5, #6a3093);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-.cta-button-supermonitoring {
-    background: linear-gradient(90deg, #3a7bd5, #6a3093) !important;
-    color: #fff !important;
-}
-.brand-supermonitoring .mini-card .title { color: #3a7bd5; }
-.brand-supermonitoring .mini-card { box-shadow: 0 4px 16px rgba(58,123,213,0.07); }
-.brand-supermonitoring .card {
-    border: 2.5px solid #3a7bd5;
-    box-shadow: 0 0 0 6px rgba(106,48,147,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-
-/* SUPER MONITORING NAV DROPDOWN */
-.brand-supermonitoring .nav-dropdown {
-    border: 2.5px solid #3a7bd5;
-    box-shadow: 0 0 0 6px rgba(106,48,147,0.18), 0 8px 32px rgba(0,0,0,0.08);
-    background: #fff;
-    border-radius: 18px;
-}
-.brand-supermonitoring .nav-dropdown .navbar-link {
-    color: #3a7bd5;
-    font-weight: 700;
-    border-radius: 12px;
-    margin: 2px 8px;
-    transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-supermonitoring .nav-dropdown .navbar-link:hover,
-.brand-supermonitoring .nav-dropdown .navbar-link.active {
-    background: #f3f6fd;
-    color: #6a3093;
-    text-decoration: underline;
-    text-indent: 8px;
-}
-.brand-supermonitoring .nav-category-title {
-    border: 2.5px solid #3a7bd5;
-    box-shadow: 0 0 0 6px rgba(106,48,147,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-
-/* -------------------- USERBACK -------------------- */
-.brand-userback .headline {
-    background: linear-gradient(90deg, #3a7bd5, #6a3093);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-.cta-button-userback {
-    background: linear-gradient(90deg, #3a7bd5, #6a3093) !important;
-    color: #fff !important;
-}
-.brand-userback .mini-card .title { color: #3a7bd5; }
-.brand-userback .mini-card { box-shadow: 0 4px 16px rgba(58,123,213,0.07); }
-.brand-userback .card {
-    border: 2.5px solid #3a7bd5;
-    box-shadow: 0 0 0 6px rgba(106,48,147,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-userback .nav-dropdown {
-    border: 2.5px solid #3a7bd5;
-    box-shadow: 0 0 0 6px rgba(106,48,147,0.18), 0 8px 32px rgba(0,0,0,0.08);
-    background: #fff;
-    border-radius: 18px;
-}
-.brand-userback .nav-dropdown .navbar-link {
-    color: #3a7bd5;
-    font-weight: 700;
-    border-radius: 12px;
-    margin: 2px 8px;
-    transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-userback .nav-dropdown .navbar-link:hover,
-.brand-userback .nav-dropdown .navbar-link.active {
-    background: #f3f6fd;
-    color: #6a3093;
-    text-decoration: underline;
-    text-indent: 8px;
-}
-.brand-userback .nav-category-title {
-    border: 2.5px solid #3a7bd5;
-    box-shadow: 0 0 0 6px rgba(106,48,147,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
 
 @media (max-width: 700px) {
