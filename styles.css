@@ -1375,4 +1375,50 @@ body::before {
     color: #8B5CF6;
     border-color: #8B5CF6;
     fill: #8B5CF6;
+}
+
+.share-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0 10px 0;
+}
+.share-label {
+  font-weight: 600;
+  color: #888;
+  margin-right: 8px;
+  font-size: 1.05rem;
+}
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f5f7fa;
+  border: 1.5px solid #e0e7ef;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: background 0.18s, box-shadow 0.18s, border 0.18s;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 2px;
+}
+.share-btn svg {
+  display: block;
+}
+.share-btn:hover {
+  background: #e3f0ff;
+  border-color: #b3d4fc;
+  box-shadow: 0 4px 16px rgba(30, 100, 200, 0.10);
+}
+.share-btn.share-facebook:hover svg { filter: brightness(1.1) drop-shadow(0 0 2px #1877f3); }
+.share-btn.share-messenger:hover svg { filter: brightness(1.1) drop-shadow(0 0 2px #00b2ff); }
+.share-btn.share-pinterest:hover svg { filter: brightness(1.1) drop-shadow(0 0 2px #e60023); }
+.share-btn.share-twitter:hover svg { filter: brightness(1.1) drop-shadow(0 0 2px #1da1f2); }
+.share-btn.share-whatsapp:hover svg { filter: brightness(1.1) drop-shadow(0 0 2px #25d366); }
+.share-btn.share-copy:hover svg { filter: brightness(1.1) drop-shadow(0 0 2px #555); }
+@media (max-width: 700px) {
+  .share-row { flex-wrap: wrap; gap: 6px; }
+  .share-btn { width: 34px; height: 34px; }
 } 
