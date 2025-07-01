@@ -20,6 +20,15 @@ document.addEventListener('DOMContentLoaded', function() {
             nav.classList.toggle('open');
           });
         }
+        // Set active class on nav button
+        const navBtns = document.querySelectorAll('.brand-nav-btn');
+        const path = window.location.pathname;
+        navBtns.forEach(btn => {
+          const href = btn.getAttribute('href');
+          if (href && path.includes(href.replace('/offers/', '').replace('.html', ''))) {
+            btn.classList.add('active');
+          }
+        });
       }, 100);
     });
 }); 
