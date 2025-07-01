@@ -10,6 +10,8 @@ Headline, subheadline, and offer details in the body.
 Button text and link.
 Card colors and accent styles to match the new brand (see step 2 for CSS).
 Use the brand's gradient/button class (e.g., .cta-button-newbrand) for all main action buttons and ensure the headline uses the brand's gradient style via the brand class, as seen in other offers.
+Add a unique <meta name="description"> tag in the <head> for SEO.
+Add descriptive alt text to all main offer buttons (use the alt attribute on <a> tags) for accessibility and SEO.
 2. Add Brand-Specific Styles
 In styles.css, add a new section for the brand by duplicating an existing brand's section (e.g., Baremetrics) as a template.
 Update the color codes and class names to match the new brand's palette.
