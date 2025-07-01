@@ -1100,6 +1100,48 @@ body::before {
   box-shadow: 0 0 0 6px rgba(0,168,225,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
 
+/* -------------------- SHEIN -------------------- */
+.brand-shein .headline {
+    background: linear-gradient(90deg, #ff5fa2, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.cta-button-shein {
+    background: linear-gradient(90deg, #ff5fa2, #000000) !important;
+    color: #fff !important;
+}
+.brand-shein .mini-card .title { color: #ff5fa2; }
+.brand-shein .mini-card { box-shadow: 0 4px 16px rgba(255,95,162,0.07); }
+.brand-shein .card {
+    border: 2.5px solid #ff5fa2;
+    box-shadow: 0 0 0 6px rgba(0,0,0,0.10), 0 8px 32px rgba(0,0,0,0.08);
+}
+.brand-shein .nav-dropdown {
+    border: 2.5px solid #ff5fa2;
+    box-shadow: 0 0 0 6px rgba(0,0,0,0.10), 0 8px 32px rgba(0,0,0,0.08);
+    background: #fff;
+    border-radius: 18px;
+}
+.brand-shein .nav-dropdown .navbar-link {
+    color: #ff5fa2;
+    font-weight: 700;
+    border-radius: 12px;
+    margin: 2px 8px;
+    transition: background 0.2s, color 0.2s, text-indent 0.2s;
+}
+.brand-shein .nav-dropdown .navbar-link:hover,
+.brand-shein .nav-dropdown .navbar-link.active {
+    background: #fff0f6;
+    color: #000000;
+    text-decoration: underline;
+    text-indent: 8px;
+}
+.brand-shein .nav-category-title {
+    border: 2.5px solid #ff5fa2;
+    box-shadow: 0 0 0 6px rgba(0,0,0,0.10), 0 8px 32px rgba(0,0,0,0.08);
+}
+
 /* --- END BRAND STYLES --- */
 
 /* --- RESPONSIVE STYLES (unchanged) --- */
