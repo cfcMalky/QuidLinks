@@ -1648,7 +1648,7 @@ body::before {
   color: transparent !important;
   background-image: linear-gradient(90deg, #ffe259, #ff6f00);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent !important;
   border: 2.5px solid #ffe259;
 }
 
@@ -1662,7 +1662,7 @@ body::before {
   color: transparent !important;
   background-image: linear-gradient(90deg, #43e97b, #00796b);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent !important;
   border: 2.5px solid #43e97b;
 }
 
@@ -1676,7 +1676,7 @@ body::before {
   color: transparent !important;
   background-image: linear-gradient(90deg, #00b4d8, #ff6f61);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent !important;
   border: 2.5px solid #00b4d8;
 }
 .brand-baremetrics .brand-nav-btn {
@@ -1688,7 +1688,7 @@ body::before {
   color: transparent !important;
   background-image: linear-gradient(90deg, #4158d0, #2ad2c9);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent !important;
   border: 2.5px solid #4158d0;
 }
 .brand-fiverr .brand-nav-btn {
@@ -1700,7 +1700,7 @@ body::before {
   color: transparent !important;
   background-image: linear-gradient(90deg, #1dbf73, #7c2ae8);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent !important;
   border: 2.5px solid #1dbf73;
 }
 .brand-mailblaze .brand-nav-btn {
@@ -1712,7 +1712,7 @@ body::before {
   color: transparent !important;
   background-image: linear-gradient(90deg, #1e88e5, #00c6fb);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent !important;
   border: 2.5px solid #1e88e5;
 }
 .brand-quidco .brand-nav-btn {
@@ -1724,7 +1724,7 @@ body::before {
   color: transparent !important;
   background-image: linear-gradient(90deg, #2193b0, #00c6fb);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent !important;
   border: 2.5px solid #2193b0;
 }
 .brand-engagebay .brand-nav-btn {
@@ -1736,6 +1736,6 @@ body::before {
   color: transparent !important;
   background-image: linear-gradient(90deg, #ff6600, #7c2ae8);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent !important;
   border: 2.5px solid #ff6600;
 }
