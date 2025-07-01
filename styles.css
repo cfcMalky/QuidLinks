@@ -271,49 +271,147 @@ body::before {
   }
 }
 
-/* --- BRAND-SPECIFIC STYLES (alphabetical order) --- */
+/* --- CORRECTED BRAND GRADIENTS: TEXT CLIP ONLY ON HEADLINE --- */
 
-/* -------------------- BAREMETRICS -------------------- */
+/* Giffgaff */
+.brand-giffgaff .headline {
+  background: linear-gradient(90deg, #ffe259, #ff6f00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-button-giffgaff,
+.brand-giffgaff .share-btn {
+  background: linear-gradient(90deg, #ffe259, #ff6f00) !important;
+  color: #222 !important;
+}
+.brand-giffgaff .share-btn:hover {
+  background: linear-gradient(90deg, #ff6f00, #ffe259) !important;
+}
+.brand-giffgaff .share-btn svg { fill: #222; }
+
+/* Raisin */
+.brand-raisin .headline {
+  background: linear-gradient(90deg, #f7971e, #7c2ae8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-button-raisin,
+.brand-raisin .share-btn {
+  background: linear-gradient(90deg, #f7971e, #7c2ae8) !important;
+  color: #222 !important;
+}
+.brand-raisin .share-btn:hover {
+  background: linear-gradient(90deg, #7c2ae8, #f7971e) !important;
+}
+.brand-raisin .share-btn svg { fill: #222; }
+
+/* TopCashback */
+.brand-topcashback .headline {
+  background: linear-gradient(90deg, #43e97b, #00796b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-button-topcashback,
+.brand-topcashback .share-btn {
+  background: linear-gradient(90deg, #43e97b, #00796b) !important;
+  color: #222 !important;
+}
+.brand-topcashback .share-btn:hover {
+  background: linear-gradient(90deg, #00796b, #43e97b) !important;
+}
+.brand-topcashback .share-btn svg { fill: #222; }
+
+/* Mailblaze */
+.brand-mailblaze .headline {
+  background: linear-gradient(90deg, #1e88e5, #00c6fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-button-mailblaze,
+.brand-mailblaze .share-btn {
+  background: linear-gradient(90deg, #1e88e5, #00c6fb) !important;
+  color: #fff !important;
+}
+.brand-mailblaze .share-btn:hover {
+  background: linear-gradient(90deg, #00c6fb, #1e88e5) !important;
+}
+.brand-mailblaze .share-btn svg { fill: #fff; }
+
+/* Quidco */
+.brand-quidco .headline {
+  background: linear-gradient(90deg, #2193b0, #00c6fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-button-quidco,
+.brand-quidco .share-btn {
+  background: linear-gradient(90deg, #2193b0, #00c6fb) !important;
+  color: #fff !important;
+}
+.brand-quidco .share-btn:hover {
+  background: linear-gradient(90deg, #00c6fb, #2193b0) !important;
+}
+.brand-quidco .share-btn svg { fill: #fff; }
+
+/* EngageBay */
+.brand-engagebay .headline {
+  background: linear-gradient(90deg, #ff6600, #7c2ae8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-button-engagebay,
+.brand-engagebay .share-btn {
+  background: linear-gradient(90deg, #ff6600, #7c2ae8) !important;
+  color: #fff !important;
+}
+.brand-engagebay .share-btn:hover {
+  background: linear-gradient(90deg, #7c2ae8, #ff6600) !important;
+}
+.brand-engagebay .share-btn svg { fill: #fff; }
+
+/* Baremetrics */
 .brand-baremetrics .headline {
-    background: linear-gradient(90deg, #4158d0, #c850c0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  background: linear-gradient(90deg, #4158d0, #2ad2c9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-.cta-button-baremetrics {
-    background: linear-gradient(90deg, #4158d0, #c850c0) !important;
-    color: #fff !important;
+.cta-button-baremetrics,
+.brand-baremetrics .share-btn {
+  background: linear-gradient(90deg, #4158d0, #2ad2c9) !important;
+  color: #fff !important;
 }
-.brand-baremetrics .mini-card .title { color: #6a1b9a; }
-.brand-baremetrics .mini-card { box-shadow: 0 4px 16px rgba(106,27,154,0.07); }
-.brand-baremetrics .card {
-    border: 2.5px solid #4158d0;
-    box-shadow: 0 0 0 6px rgba(200,80,192,0.18), 0 8px 32px rgba(0,0,0,0.08);
+.brand-baremetrics .share-btn:hover {
+  background: linear-gradient(90deg, #2ad2c9, #4158d0) !important;
 }
-.brand-baremetrics .nav-dropdown {
-    border: 2.5px solid #4158d0;
-    box-shadow: 0 0 0 6px rgba(200,80,192,0.18), 0 8px 32px rgba(0,0,0,0.08);
-    background: #fff;
-    border-radius: 18px;
+.brand-baremetrics .share-btn svg { fill: #fff; }
+
+/* Fiverr */
+.brand-fiverr .headline {
+  background: linear-gradient(90deg, #1dbf73, #7c2ae8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-.brand-baremetrics .nav-dropdown .navbar-link {
-    color: #6a1b9a;
-    font-weight: 700;
-    border-radius: 12px;
-    margin: 2px 8px;
-    transition: background 0.2s, color 0.2s, text-indent 0.2s;
+.cta-button-fiverr,
+.brand-fiverr .share-btn {
+  background: linear-gradient(90deg, #1dbf73, #7c2ae8) !important;
+  color: #fff !important;
 }
-.brand-baremetrics .nav-dropdown .navbar-link:hover,
-.brand-baremetrics .nav-dropdown .navbar-link.active {
-    background: #f3e6fa;
-    color: #4158d0;
-    text-decoration: underline;
-    text-indent: 8px;
+.brand-fiverr .share-btn:hover {
+  background: linear-gradient(90deg, #7c2ae8, #1dbf73) !important;
 }
-.brand-baremetrics .nav-category-title {
-    border: 2.5px solid #4158d0;
-    box-shadow: 0 0 0 6px rgba(200,80,192,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
+.brand-fiverr .share-btn svg { fill: #fff; }
+
+/* --- END CORRECTED BRAND GRADIENTS --- */
+
+/* --- BRAND-SPECIFIC STYLES (alphabetical order) --- */
 
 /* -------------------- BEFRUGAL -------------------- */
 .brand-befrugal .headline {
@@ -440,21 +538,6 @@ body::before {
     border: 2.5px solid #1dbf73;
     box-shadow: 0 0 0 6px rgba(0,230,160,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
-
-/* -------------------- GIFFGAFF -------------------- */
-.brand-giffgaff .headline,
-.cta-button-giffgaff,
-.brand-giffgaff .share-btn {
-  background: linear-gradient(90deg, #ffe259, #ff6f00) !important;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: #222 !important;
-}
-.brand-giffgaff .share-btn:hover {
-  background: linear-gradient(90deg, #ff6f00, #ffe259) !important;
-}
-.brand-giffgaff .share-btn svg { fill: #222; }
 
 /* -------------------- MAIL BLAZE -------------------- */
 .brand-mailblaze .headline,
@@ -611,21 +694,6 @@ body::before {
     border: 2.5px solid #8B5CF6;
     box-shadow: 0 0 0 6px rgba(236,72,153,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
-
-/* -------------------- RAISIN -------------------- */
-.brand-raisin .headline,
-.cta-button-raisin,
-.brand-raisin .share-btn {
-  background: linear-gradient(90deg, #f7971e, #7c2ae8) !important;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: #222 !important;
-}
-.brand-raisin .share-btn:hover {
-  background: linear-gradient(90deg, #7c2ae8, #f7971e) !important;
-}
-.brand-raisin .share-btn svg { fill: #222; }
 
 /* -------------------- SUPER MONITORING -------------------- */
 .brand-supermonitoring .headline {
