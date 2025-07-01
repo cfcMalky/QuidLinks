@@ -1630,7 +1630,7 @@ body::before {
   color: #222 !important;
 }
 .brand-raisin .brand-nav-btn:hover, .brand-raisin .brand-nav-btn.active {
-  background: #fff !important;
+  background: none !important;
   color: transparent !important;
   background-image: linear-gradient(90deg, #f7971e, #7c2ae8);
   -webkit-background-clip: text;
@@ -1644,7 +1644,7 @@ body::before {
   color: #222 !important;
 }
 .brand-giffgaff .brand-nav-btn:hover, .brand-giffgaff .brand-nav-btn.active {
-  background: #fff !important;
+  background: none !important;
   color: transparent !important;
   background-image: linear-gradient(90deg, #ffe259, #ff6f00);
   -webkit-background-clip: text;
@@ -1658,7 +1658,7 @@ body::before {
   color: #222 !important;
 }
 .brand-topcashback .brand-nav-btn:hover, .brand-topcashback .brand-nav-btn.active {
-  background: #fff !important;
+  background: none !important;
   color: transparent !important;
   background-image: linear-gradient(90deg, #43e97b, #00796b);
   -webkit-background-clip: text;
@@ -1672,7 +1672,7 @@ body::before {
   color: #fff !important;
 }
 .brand-monzo .brand-nav-btn:hover, .brand-monzo .brand-nav-btn.active {
-  background: #fff !important;
+  background: none !important;
   color: transparent !important;
   background-image: linear-gradient(90deg, #00b4d8, #ff6f61);
   -webkit-background-clip: text;
@@ -1684,7 +1684,7 @@ body::before {
   color: #fff !important;
 }
 .brand-baremetrics .brand-nav-btn:hover, .brand-baremetrics .brand-nav-btn.active {
-  background: #fff !important;
+  background: none !important;
   color: transparent !important;
   background-image: linear-gradient(90deg, #4158d0, #2ad2c9);
   -webkit-background-clip: text;
@@ -1696,7 +1696,7 @@ body::before {
   color: #fff !important;
 }
 .brand-fiverr .brand-nav-btn:hover, .brand-fiverr .brand-nav-btn.active {
-  background: #fff !important;
+  background: none !important;
   color: transparent !important;
   background-image: linear-gradient(90deg, #1dbf73, #7c2ae8);
   -webkit-background-clip: text;
@@ -1708,7 +1708,7 @@ body::before {
   color: #fff !important;
 }
 .brand-mailblaze .brand-nav-btn:hover, .brand-mailblaze .brand-nav-btn.active {
-  background: #fff !important;
+  background: none !important;
   color: transparent !important;
   background-image: linear-gradient(90deg, #1e88e5, #00c6fb);
   -webkit-background-clip: text;
@@ -1720,7 +1720,7 @@ body::before {
   color: #fff !important;
 }
 .brand-quidco .brand-nav-btn:hover, .brand-quidco .brand-nav-btn.active {
-  background: #fff !important;
+  background: none !important;
   color: transparent !important;
   background-image: linear-gradient(90deg, #2193b0, #00c6fb);
   -webkit-background-clip: text;
@@ -1732,7 +1732,7 @@ body::before {
   color: #fff !important;
 }
 .brand-engagebay .brand-nav-btn:hover, .brand-engagebay .brand-nav-btn.active {
-  background: #fff !important;
+  background: none !important;
   color: transparent !important;
   background-image: linear-gradient(90deg, #ff6600, #7c2ae8);
   -webkit-background-clip: text;
