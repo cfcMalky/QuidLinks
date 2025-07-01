@@ -442,88 +442,34 @@ body::before {
 }
 
 /* -------------------- GIFFGAFF -------------------- */
-.brand-giffgaff .headline {
-    background: linear-gradient(90deg, #ffe259, #ffa751);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.brand-giffgaff .headline,
+.cta-button-giffgaff,
+.brand-giffgaff .share-btn {
+  background: linear-gradient(90deg, #ffe259, #ff6f00) !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #222 !important;
 }
-.cta-button-giffgaff {
-    background: linear-gradient(90deg, #ffe259, #ffa751) !important;
-    color: #222 !important;
+.brand-giffgaff .share-btn:hover {
+  background: linear-gradient(90deg, #ff6f00, #ffe259) !important;
 }
-.brand-giffgaff .mini-card .title { color: #00a651; }
-.brand-giffgaff .mini-card { box-shadow: 0 4px 16px rgba(0,166,81,0.07); }
-.brand-giffgaff .card {
-    border: 2.5px solid #ffe259;
-    box-shadow: 0 0 0 6px rgba(255,167,81,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-giffgaff .nav-dropdown {
-    border: 2.5px solid #ffe259;
-    box-shadow: 0 0 0 6px rgba(255,167,81,0.18), 0 8px 32px rgba(0,0,0,0.08);
-    background: #fff;
-    border-radius: 18px;
-}
-.brand-giffgaff .nav-dropdown .navbar-link {
-    color: #00a651;
-    font-weight: 700;
-    border-radius: 12px;
-    margin: 2px 8px;
-    transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-giffgaff .nav-dropdown .navbar-link:hover,
-.brand-giffgaff .nav-dropdown .navbar-link.active {
-    background: #fffbe6;
-    color: #ffa751;
-    text-decoration: underline;
-    text-indent: 8px;
-}
-.brand-giffgaff .nav-category-title {
-    border: 2.5px solid #ffe259;
-    box-shadow: 0 0 0 6px rgba(255,167,81,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
+.brand-giffgaff .share-btn svg { fill: #222; }
 
 /* -------------------- MAIL BLAZE -------------------- */
-.brand-mailblaze .headline {
-    background: linear-gradient(90deg, #1e88e5, #42a5f5);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.brand-mailblaze .headline,
+.cta-button-mailblaze,
+.brand-mailblaze .share-btn {
+  background: linear-gradient(90deg, #1e88e5, #00c6fb) !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #fff !important;
 }
-.cta-button-mailblaze {
-    background: linear-gradient(90deg, #1e88e5, #42a5f5) !important;
-    color: #fff !important;
+.brand-mailblaze .share-btn:hover {
+  background: linear-gradient(90deg, #00c6fb, #1e88e5) !important;
 }
-.brand-mailblaze .mini-card .title { color: #1e88e5; }
-.brand-mailblaze .mini-card { box-shadow: 0 4px 16px rgba(30,136,229,0.07); }
-.brand-mailblaze .card {
-    border: 2.5px solid #1e88e5;
-    box-shadow: 0 0 0 6px rgba(66,165,245,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-mailblaze .nav-dropdown {
-    border: 2.5px solid #1e88e5;
-    box-shadow: 0 0 0 6px rgba(66,165,245,0.18), 0 8px 32px rgba(0,0,0,0.08);
-    background: #fff;
-    border-radius: 18px;
-}
-.brand-mailblaze .nav-dropdown .navbar-link {
-    color: #1e88e5;
-    font-weight: 700;
-    border-radius: 12px;
-    margin: 2px 8px;
-    transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-mailblaze .nav-dropdown .navbar-link:hover,
-.brand-mailblaze .nav-dropdown .navbar-link.active {
-    background: #e3f0fd;
-    color: #1e88e5;
-    text-decoration: underline;
-    text-indent: 8px;
-}
-.brand-mailblaze .nav-category-title {
-    border: 2.5px solid #1e88e5;
-    box-shadow: 0 0 0 6px rgba(66,165,245,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
+.brand-mailblaze .share-btn svg { fill: #fff; }
 
 /* -------------------- MONZO -------------------- */
 .brand-monzo .headline {
@@ -610,46 +556,19 @@ body::before {
 }
 
 /* -------------------- QUIDCO -------------------- */
-.brand-quidco .headline {
-    background: linear-gradient(90deg, #2193b0, #6dd5ed);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.brand-quidco .headline,
+.cta-button-quidco,
+.brand-quidco .share-btn {
+  background: linear-gradient(90deg, #2193b0, #00c6fb) !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #fff !important;
 }
-.cta-button-quidco {
-    background: linear-gradient(90deg, #2193b0, #6dd5ed) !important;
-    color: #fff !important;
+.brand-quidco .share-btn:hover {
+  background: linear-gradient(90deg, #00c6fb, #2193b0) !important;
 }
-.brand-quidco .mini-card .title { color: #0057b8; }
-.brand-quidco .mini-card { box-shadow: 0 4px 16px rgba(0,87,184,0.07); }
-.brand-quidco .card {
-    border: 2.5px solid #2193b0;
-    box-shadow: 0 0 0 6px rgba(109,213,237,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-quidco .nav-dropdown {
-    border: 2.5px solid #2193b0;
-    box-shadow: 0 0 0 6px rgba(109,213,237,0.18), 0 8px 32px rgba(0,0,0,0.08);
-    background: #fff;
-    border-radius: 18px;
-}
-.brand-quidco .nav-dropdown .navbar-link {
-    color: #0057b8;
-    font-weight: 700;
-    border-radius: 12px;
-    margin: 2px 8px;
-    transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-quidco .nav-dropdown .navbar-link:hover,
-.brand-quidco .nav-dropdown .navbar-link.active {
-    background: #e3f6fd;
-    color: #2193b0;
-    text-decoration: underline;
-    text-indent: 8px;
-}
-.brand-quidco .nav-category-title {
-    border: 2.5px solid #2193b0;
-    box-shadow: 0 0 0 6px rgba(109,213,237,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
+.brand-quidco .share-btn svg { fill: #fff; }
 
 /* -------------------- RAKUTEN -------------------- */
 .brand-rakuten .headline {
@@ -694,46 +613,19 @@ body::before {
 }
 
 /* -------------------- RAISIN -------------------- */
-.brand-raisin .headline {
-    background: linear-gradient(90deg, #f7971e, #ffd200);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.brand-raisin .headline,
+.cta-button-raisin,
+.brand-raisin .share-btn {
+  background: linear-gradient(90deg, #f7971e, #7c2ae8) !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #222 !important;
 }
-.cta-button-raisin {
-    background: linear-gradient(90deg, #f7971e, #ffd200) !important;
-    color: #222 !important;
+.brand-raisin .share-btn:hover {
+  background: linear-gradient(90deg, #7c2ae8, #f7971e) !important;
 }
-.brand-raisin .mini-card .title { color: #003366; }
-.brand-raisin .mini-card { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
-.brand-raisin .card {
-    border: 2.5px solid #f7971e;
-    box-shadow: 0 0 0 6px rgba(255,210,0,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-raisin .nav-dropdown {
-    border: 2.5px solid #f7971e;
-    box-shadow: 0 0 0 6px rgba(255,210,0,0.18), 0 8px 32px rgba(0,0,0,0.08);
-    background: #fff;
-    border-radius: 18px;
-}
-.brand-raisin .nav-dropdown .navbar-link {
-    color: #003366;
-    font-weight: 700;
-    border-radius: 12px;
-    margin: 2px 8px;
-    transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-raisin .nav-dropdown .navbar-link:hover,
-.brand-raisin .nav-dropdown .navbar-link.active {
-    background: #fffbe6;
-    color: #f7971e;
-    text-decoration: underline;
-    text-indent: 8px;
-}
-.brand-raisin .nav-category-title {
-    border: 2.5px solid #f7971e;
-    box-shadow: 0 0 0 6px rgba(255,210,0,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
+.brand-raisin .share-btn svg { fill: #222; }
 
 /* -------------------- SUPER MONITORING -------------------- */
 .brand-supermonitoring .headline {
@@ -778,46 +670,19 @@ body::before {
 }
 
 /* -------------------- TOPCASHBACK -------------------- */
-.brand-topcashback .headline {
-    background: linear-gradient(90deg, #43e97b, #38f9d7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.brand-topcashback .headline,
+.cta-button-topcashback,
+.brand-topcashback .share-btn {
+  background: linear-gradient(90deg, #43e97b, #00796b) !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: #222 !important;
 }
-.cta-button-topcashback {
-    background: linear-gradient(90deg, #43e97b, #38f9d7) !important;
-    color: #222 !important;
+.brand-topcashback .share-btn:hover {
+  background: linear-gradient(90deg, #00796b, #43e97b) !important;
 }
-.brand-topcashback .mini-card .title { color: #21b262; }
-.brand-topcashback .mini-card { box-shadow: 0 4px 16px rgba(33,178,98,0.07); }
-.brand-topcashback .card {
-    border: 2.5px solid #43e97b;
-    box-shadow: 0 0 0 6px rgba(56,249,215,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-topcashback .nav-dropdown {
-    border: 2.5px solid #43e97b;
-    box-shadow: 0 0 0 6px rgba(56,249,215,0.18), 0 8px 32px rgba(0,0,0,0.08);
-    background: #fff;
-    border-radius: 18px;
-}
-.brand-topcashback .nav-dropdown .navbar-link {
-    color: #21b262;
-    font-weight: 700;
-    border-radius: 12px;
-    margin: 2px 8px;
-    transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-topcashback .nav-dropdown .navbar-link:hover,
-.brand-topcashback .nav-dropdown .navbar-link.active {
-    background: #e3fdf6;
-    color: #43e97b;
-    text-decoration: underline;
-    text-indent: 8px;
-}
-.brand-topcashback .nav-category-title {
-    border: 2.5px solid #43e97b;
-    box-shadow: 0 0 0 6px rgba(56,249,215,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
+.brand-topcashback .share-btn svg { fill: #222; }
 
 /* -------------------- USERBACK -------------------- */
 .brand-userback .headline {
@@ -1466,18 +1331,18 @@ body::before {
 .brand-fiverr .share-btn svg { fill: #fff; }
 
 .brand-giffgaff .share-btn {
-  background: linear-gradient(90deg, #ffe259, #ffa751) !important;
+  background: linear-gradient(90deg, #ffe259, #ff6f00) !important;
 }
 .brand-giffgaff .share-btn:hover {
-  background: linear-gradient(90deg, #ffa751, #ffe259) !important;
+  background: linear-gradient(90deg, #ff6f00, #ffe259) !important;
 }
 .brand-giffgaff .share-btn svg { fill: #222; }
 
 .brand-mailblaze .share-btn {
-  background: linear-gradient(90deg, #1e88e5, #42a5f5) !important;
+  background: linear-gradient(90deg, #1e88e5, #00c6fb) !important;
 }
 .brand-mailblaze .share-btn:hover {
-  background: linear-gradient(90deg, #42a5f5, #1e88e5) !important;
+  background: linear-gradient(90deg, #00c6fb, #1e88e5) !important;
 }
 .brand-mailblaze .share-btn svg { fill: #fff; }
 
@@ -1498,10 +1363,10 @@ body::before {
 .brand-neuraltext .share-btn svg { fill: #fff; }
 
 .brand-quidco .share-btn {
-  background: linear-gradient(90deg, #2193b0, #6dd5ed) !important;
+  background: linear-gradient(90deg, #2193b0, #00c6fb) !important;
 }
 .brand-quidco .share-btn:hover {
-  background: linear-gradient(90deg, #6dd5ed, #2193b0) !important;
+  background: linear-gradient(90deg, #00c6fb, #2193b0) !important;
 }
 .brand-quidco .share-btn svg { fill: #fff; }
 
@@ -1514,10 +1379,10 @@ body::before {
 .brand-rakuten .share-btn svg { fill: #fff; }
 
 .brand-raisin .share-btn {
-  background: linear-gradient(90deg, #f7971e, #ffd200) !important;
+  background: linear-gradient(90deg, #f7971e, #7c2ae8) !important;
 }
 .brand-raisin .share-btn:hover {
-  background: linear-gradient(90deg, #ffd200, #f7971e) !important;
+  background: linear-gradient(90deg, #7c2ae8, #f7971e) !important;
 }
 .brand-raisin .share-btn svg { fill: #222; }
 
@@ -1530,10 +1395,10 @@ body::before {
 .brand-supermonitoring .share-btn svg { fill: #fff; }
 
 .brand-topcashback .share-btn {
-  background: linear-gradient(90deg, #43e97b, #38f9d7) !important;
+  background: linear-gradient(90deg, #43e97b, #00796b) !important;
 }
 .brand-topcashback .share-btn:hover {
-  background: linear-gradient(90deg, #38f9d7, #43e97b) !important;
+  background: linear-gradient(90deg, #00796b, #43e97b) !important;
 }
 .brand-topcashback .share-btn svg { fill: #222; }
 
