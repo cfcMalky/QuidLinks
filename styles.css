@@ -1016,6 +1016,48 @@ body::before {
   box-shadow: 0 0 0 6px rgba(0,198,251,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
 
+/* -------------------- PRINTIFY -------------------- */
+.brand-printify .headline {
+  background: linear-gradient(90deg, #354d19, #00b956);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-button-printify {
+  background: linear-gradient(90deg, #354d19, #00b956) !important;
+  color: #fff !important;
+}
+.brand-printify .mini-card .title { color: #354d19; }
+.brand-printify .mini-card { box-shadow: 0 4px 16px rgba(34, 51, 0, 0.07); }
+.brand-printify .card {
+  border: 2.5px solid #354d19;
+  box-shadow: 0 0 0 6px rgba(0,185,86,0.18), 0 8px 32px rgba(0,0,0,0.08);
+}
+.brand-printify .nav-dropdown {
+  border: 2.5px solid #354d19;
+  box-shadow: 0 0 0 6px rgba(0,185,86,0.18), 0 8px 32px rgba(0,0,0,0.08);
+  background: #fff;
+  border-radius: 18px;
+}
+.brand-printify .nav-dropdown .navbar-link {
+  color: #354d19;
+  font-weight: 700;
+  border-radius: 12px;
+  margin: 2px 8px;
+  transition: background 0.2s, color 0.2s, text-indent 0.2s;
+}
+.brand-printify .nav-dropdown .navbar-link:hover,
+.brand-printify .nav-dropdown .navbar-link.active {
+  background: #e3fbe9;
+  color: #00b956;
+  text-decoration: underline;
+  text-indent: 8px;
+}
+.brand-printify .nav-category-title {
+  border: 2.5px solid #354d19;
+  box-shadow: 0 0 0 6px rgba(0,185,86,0.18), 0 8px 32px rgba(0,0,0,0.08);
+}
+
 /* --- END BRAND STYLES --- */
 
 /* --- RESPONSIVE STYLES (unchanged) --- */
