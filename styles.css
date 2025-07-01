@@ -1608,7 +1608,7 @@ body::before {
   border-radius: 18px;
 } 
 
-/* --- CATEGORY NAV BUTTONS: BRAND STYLES --- */
+/* --- CATEGORY NAV BUTTONS: BRAND STYLES (REVISED) --- */
 .brand-nav-btn {
   display: inline-block;
   padding: 8px 22px;
@@ -1616,8 +1616,7 @@ body::before {
   border-radius: 18px;
   font-weight: 700;
   font-size: 1.08rem;
-  background: #fff;
-  border: 2.5px solid #eee;
+  border: none;
   cursor: pointer;
   transition: color 0.18s, background 0.18s, border 0.18s;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
@@ -1627,110 +1626,116 @@ body::before {
 
 /* Raisin (black text) */
 .brand-raisin .brand-nav-btn {
-  border-color: #f7971e;
-  color: #222;
+  background: linear-gradient(90deg, #f7971e, #7c2ae8) !important;
+  color: #222 !important;
 }
 .brand-raisin .brand-nav-btn:hover, .brand-raisin .brand-nav-btn.active {
-  background: #fff;
-  background-clip: padding-box;
-  color: transparent;
+  background: #fff !important;
+  color: transparent !important;
   background-image: linear-gradient(90deg, #f7971e, #7c2ae8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-color: #f7971e;
+  border: 2.5px solid #f7971e;
 }
 
 /* Giffgaff (black text) */
 .brand-giffgaff .brand-nav-btn {
-  border-color: #ffe259;
-  color: #222;
+  background: linear-gradient(90deg, #ffe259, #ff6f00) !important;
+  color: #222 !important;
 }
 .brand-giffgaff .brand-nav-btn:hover, .brand-giffgaff .brand-nav-btn.active {
-  background: #fff;
-  background-clip: padding-box;
-  color: transparent;
+  background: #fff !important;
+  color: transparent !important;
   background-image: linear-gradient(90deg, #ffe259, #ff6f00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-color: #ffe259;
+  border: 2.5px solid #ffe259;
 }
 
 /* TopCashback (black text) */
 .brand-topcashback .brand-nav-btn {
-  border-color: #43e97b;
-  color: #222;
+  background: linear-gradient(90deg, #43e97b, #00796b) !important;
+  color: #222 !important;
 }
 .brand-topcashback .brand-nav-btn:hover, .brand-topcashback .brand-nav-btn.active {
-  background: #fff;
-  background-clip: padding-box;
-  color: transparent;
+  background: #fff !important;
+  color: transparent !important;
   background-image: linear-gradient(90deg, #43e97b, #00796b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-color: #43e97b;
+  border: 2.5px solid #43e97b;
 }
 
 /* Brands with white CTA text (e.g., Monzo, Baremetrics, etc.) */
-.brand-monzo .brand-nav-btn,
-.brand-baremetrics .brand-nav-btn,
-.brand-fiverr .brand-nav-btn,
-.brand-mailblaze .brand-nav-btn,
-.brand-quidco .brand-nav-btn,
-.brand-engagebay .brand-nav-btn {
-  color: #fff;
+.brand-monzo .brand-nav-btn {
+  background: linear-gradient(90deg, #00b4d8, #ff6f61) !important;
+  color: #fff !important;
 }
-.brand-monzo .brand-nav-btn { border-color: #00b4d8; }
-.brand-baremetrics .brand-nav-btn { border-color: #4158d0; }
-.brand-fiverr .brand-nav-btn { border-color: #1dbf73; }
-.brand-mailblaze .brand-nav-btn { border-color: #1e88e5; }
-.brand-quidco .brand-nav-btn { border-color: #2193b0; }
-.brand-engagebay .brand-nav-btn { border-color: #ff6600; }
-
 .brand-monzo .brand-nav-btn:hover, .brand-monzo .brand-nav-btn.active {
-  background: #fff;
-  color: transparent;
+  background: #fff !important;
+  color: transparent !important;
   background-image: linear-gradient(90deg, #00b4d8, #ff6f61);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-color: #00b4d8;
+  border: 2.5px solid #00b4d8;
+}
+.brand-baremetrics .brand-nav-btn {
+  background: linear-gradient(90deg, #4158d0, #2ad2c9) !important;
+  color: #fff !important;
 }
 .brand-baremetrics .brand-nav-btn:hover, .brand-baremetrics .brand-nav-btn.active {
-  background: #fff;
-  color: transparent;
+  background: #fff !important;
+  color: transparent !important;
   background-image: linear-gradient(90deg, #4158d0, #2ad2c9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-color: #4158d0;
+  border: 2.5px solid #4158d0;
+}
+.brand-fiverr .brand-nav-btn {
+  background: linear-gradient(90deg, #1dbf73, #7c2ae8) !important;
+  color: #fff !important;
 }
 .brand-fiverr .brand-nav-btn:hover, .brand-fiverr .brand-nav-btn.active {
-  background: #fff;
-  color: transparent;
+  background: #fff !important;
+  color: transparent !important;
   background-image: linear-gradient(90deg, #1dbf73, #7c2ae8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-color: #1dbf73;
+  border: 2.5px solid #1dbf73;
+}
+.brand-mailblaze .brand-nav-btn {
+  background: linear-gradient(90deg, #1e88e5, #00c6fb) !important;
+  color: #fff !important;
 }
 .brand-mailblaze .brand-nav-btn:hover, .brand-mailblaze .brand-nav-btn.active {
-  background: #fff;
-  color: transparent;
+  background: #fff !important;
+  color: transparent !important;
   background-image: linear-gradient(90deg, #1e88e5, #00c6fb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-color: #1e88e5;
+  border: 2.5px solid #1e88e5;
+}
+.brand-quidco .brand-nav-btn {
+  background: linear-gradient(90deg, #2193b0, #00c6fb) !important;
+  color: #fff !important;
 }
 .brand-quidco .brand-nav-btn:hover, .brand-quidco .brand-nav-btn.active {
-  background: #fff;
-  color: transparent;
+  background: #fff !important;
+  color: transparent !important;
   background-image: linear-gradient(90deg, #2193b0, #00c6fb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-color: #2193b0;
+  border: 2.5px solid #2193b0;
+}
+.brand-engagebay .brand-nav-btn {
+  background: linear-gradient(90deg, #ff6600, #7c2ae8) !important;
+  color: #fff !important;
 }
 .brand-engagebay .brand-nav-btn:hover, .brand-engagebay .brand-nav-btn.active {
-  background: #fff;
-  color: transparent;
+  background: #fff !important;
+  color: transparent !important;
   background-image: linear-gradient(90deg, #ff6600, #7c2ae8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-color: #ff6600;
+  border: 2.5px solid #ff6600;
 }
