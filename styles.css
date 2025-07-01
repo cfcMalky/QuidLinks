@@ -1430,4 +1430,159 @@ body::before {
 @media (max-width: 700px) {
   .share-row.share-row-right { margin-right: 0; }
   .share-btn { width: 40px; height: 40px; min-width: 40px; min-height: 40px; }
+}
+
+/* Brand-specific share button gradients */
+.brand-baremetrics .share-btn {
+  background: linear-gradient(90deg, #6a1b9a, #9c27b0) !important;
+}
+.brand-baremetrics .share-btn:hover {
+  background: linear-gradient(90deg, #9c27b0, #6a1b9a) !important;
+}
+
+.brand-befrugal .share-btn {
+  background: linear-gradient(90deg, #0073e6, #0057b8) !important;
+}
+.brand-befrugal .share-btn:hover {
+  background: linear-gradient(90deg, #0057b8, #0073e6) !important;
+}
+
+.brand-engagebay .share-btn {
+  background: linear-gradient(90deg, #ff6600, #ff8533) !important;
+}
+.brand-engagebay .share-btn:hover {
+  background: linear-gradient(90deg, #ff8533, #ff6600) !important;
+}
+
+.brand-fiverr .share-btn {
+  background: linear-gradient(90deg, #1dbf73, #39d183) !important;
+}
+.brand-fiverr .share-btn:hover {
+  background: linear-gradient(90deg, #39d183, #1dbf73) !important;
+}
+
+.brand-giffgaff .share-btn {
+  background: linear-gradient(90deg, #00a651, #00cc66) !important;
+}
+.brand-giffgaff .share-btn:hover {
+  background: linear-gradient(90deg, #00cc66, #00a651) !important;
+}
+
+.brand-mailblaze .share-btn {
+  background: linear-gradient(90deg, #1e88e5, #42a5f5) !important;
+}
+.brand-mailblaze .share-btn:hover {
+  background: linear-gradient(90deg, #42a5f5, #1e88e5) !important;
+}
+
+.brand-monzo .share-btn {
+  background: linear-gradient(90deg, #fa4b60, #ff6b7a) !important;
+}
+.brand-monzo .share-btn:hover {
+  background: linear-gradient(90deg, #ff6b7a, #fa4b60) !important;
+}
+
+.brand-neuraltext .share-btn {
+  background: linear-gradient(90deg, #6c47ff, #8b6bff) !important;
+}
+.brand-neuraltext .share-btn:hover {
+  background: linear-gradient(90deg, #8b6bff, #6c47ff) !important;
+}
+
+.brand-quidco .share-btn {
+  background: linear-gradient(90deg, #0057b8, #0073e6) !important;
+}
+.brand-quidco .share-btn:hover {
+  background: linear-gradient(90deg, #0073e6, #0057b8) !important;
+}
+
+.brand-rakuten .share-btn {
+  background: linear-gradient(90deg, #8B5CF6, #a78bfa) !important;
+}
+.brand-rakuten .share-btn:hover {
+  background: linear-gradient(90deg, #a78bfa, #8B5CF6) !important;
+}
+
+.brand-raisin .share-btn {
+  background: linear-gradient(90deg, #003366, #004080) !important;
+}
+.brand-raisin .share-btn:hover {
+  background: linear-gradient(90deg, #004080, #003366) !important;
+}
+
+.brand-supermonitoring .share-btn {
+  background: linear-gradient(90deg, #3a7bd5, #5a9be5) !important;
+}
+.brand-supermonitoring .share-btn:hover {
+  background: linear-gradient(90deg, #5a9be5, #3a7bd5) !important;
+}
+
+.brand-topcashback .share-btn {
+  background: linear-gradient(90deg, #21b262, #4caf50) !important;
+}
+.brand-topcashback .share-btn:hover {
+  background: linear-gradient(90deg, #4caf50, #21b262) !important;
+}
+
+.brand-userback .share-btn {
+  background: linear-gradient(90deg, #3a7bd5, #5a9be5) !important;
+}
+.brand-userback .share-btn:hover {
+  background: linear-gradient(90deg, #5a9be5, #3a7bd5) !important;
+}
+
+.brand-virgin .share-btn {
+  background: linear-gradient(90deg, #e10a0a, #ff1a1a) !important;
+}
+.brand-virgin .share-btn:hover {
+  background: linear-gradient(90deg, #ff1a1a, #e10a0a) !important;
+}
+
+.brand-wise .share-btn {
+  background: linear-gradient(90deg, #003366, #004080) !important;
+}
+.brand-wise .share-btn:hover {
+  background: linear-gradient(90deg, #004080, #003366) !important;
+}
+
+.brand-outseta .share-btn {
+  background: linear-gradient(90deg, #240029, #4a0052) !important;
+}
+.brand-outseta .share-btn:hover {
+  background: linear-gradient(90deg, #4a0052, #240029) !important;
+}
+
+.brand-sharelytics .share-btn {
+  background: linear-gradient(90deg, #0057b8, #0073e6) !important;
+}
+.brand-sharelytics .share-btn:hover {
+  background: linear-gradient(90deg, #0073e6, #0057b8) !important;
+}
+
+.brand-printify .share-btn {
+  background: linear-gradient(90deg, #354d19, #4a6b23) !important;
+}
+.brand-printify .share-btn:hover {
+  background: linear-gradient(90deg, #4a6b23, #354d19) !important;
+}
+
+.brand-amazonprimevideo .share-btn {
+  background: linear-gradient(90deg, #232f3e, #37475a) !important;
+}
+.brand-amazonprimevideo .share-btn:hover {
+  background: linear-gradient(90deg, #37475a, #232f3e) !important;
+}
+
+.brand-shein .share-btn {
+  background: linear-gradient(90deg, #ff5fa2, #ff7fb8) !important;
+}
+.brand-shein .share-btn:hover {
+  background: linear-gradient(90deg, #ff7fb8, #ff5fa2) !important;
+}
+
+.brand-cashbackcouk .share-btn {
+  background: linear-gradient(90deg, #7c2ae8, #9d4edd) !important;
+}
+.brand-cashbackcouk .share-btn:hover {
+  background: linear-gradient(90deg, #9d4edd, #7c2ae8) !important;
 } 
