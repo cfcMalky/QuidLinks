@@ -1540,4 +1540,70 @@ body::before {
 .brand-cashbackcouk .share-btn:hover {
   background: linear-gradient(90deg, #2ad2c9, #7c2ae8) !important;
 }
-.brand-cashbackcouk .share-btn svg { fill: #fff; } 
+.brand-cashbackcouk .share-btn svg { fill: #fff; }
+
+/* --- RESTORE NAV DROPDOWN BORDERS AND SHADOWS FOR ALL BRANDS --- */
+
+/* Giffgaff */
+.brand-giffgaff .nav-dropdown, .brand-giffgaff .nav-category-title {
+  border: 2.5px solid #ffe259;
+  box-shadow: 0 0 0 6px rgba(255,167,81,0.18), 0 8px 32px rgba(0,0,0,0.08);
+  background: #fff;
+  border-radius: 18px;
+}
+
+/* Raisin */
+.brand-raisin .nav-dropdown, .brand-raisin .nav-category-title {
+  border: 2.5px solid #f7971e;
+  box-shadow: 0 0 0 6px rgba(124,42,232,0.13), 0 8px 32px rgba(0,0,0,0.08);
+  background: #fff;
+  border-radius: 18px;
+}
+
+/* TopCashback */
+.brand-topcashback .nav-dropdown, .brand-topcashback .nav-category-title {
+  border: 2.5px solid #43e97b;
+  box-shadow: 0 0 0 6px rgba(0,121,107,0.13), 0 8px 32px rgba(0,0,0,0.08);
+  background: #fff;
+  border-radius: 18px;
+}
+
+/* Mailblaze */
+.brand-mailblaze .nav-dropdown, .brand-mailblaze .nav-category-title {
+  border: 2.5px solid #1e88e5;
+  box-shadow: 0 0 0 6px rgba(0,198,251,0.18), 0 8px 32px rgba(0,0,0,0.08);
+  background: #fff;
+  border-radius: 18px;
+}
+
+/* Quidco */
+.brand-quidco .nav-dropdown, .brand-quidco .nav-category-title {
+  border: 2.5px solid #2193b0;
+  box-shadow: 0 0 0 6px rgba(0,198,251,0.18), 0 8px 32px rgba(0,0,0,0.08);
+  background: #fff;
+  border-radius: 18px;
+}
+
+/* EngageBay */
+.brand-engagebay .nav-dropdown, .brand-engagebay .nav-category-title {
+  border: 2.5px solid #ff6600;
+  box-shadow: 0 0 0 6px rgba(124,42,232,0.13), 0 8px 32px rgba(0,0,0,0.08);
+  background: #fff;
+  border-radius: 18px;
+}
+
+/* Baremetrics */
+.brand-baremetrics .nav-dropdown, .brand-baremetrics .nav-category-title {
+  border: 2.5px solid #4158d0;
+  box-shadow: 0 0 0 6px rgba(42,210,201,0.18), 0 8px 32px rgba(0,0,0,0.08);
+  background: #fff;
+  border-radius: 18px;
+}
+
+/* Fiverr */
+.brand-fiverr .nav-dropdown, .brand-fiverr .nav-category-title {
+  border: 2.5px solid #1dbf73;
+  box-shadow: 0 0 0 6px rgba(124,42,232,0.13), 0 8px 32px rgba(0,0,0,0.08);
+  background: #fff;
+  border-radius: 18px;
+} 
