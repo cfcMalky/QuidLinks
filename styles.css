@@ -1413,6 +1413,9 @@ body::before {
 }
 .share-btn svg {
   display: block;
+  width: 28px;
+  height: 28px;
+  fill: #fff;
 }
 .share-btn:hover {
   background: linear-gradient(90deg, #ff6f61, #00b4d8) !important;
