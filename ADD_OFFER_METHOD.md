@@ -24,9 +24,11 @@ Apply these classes to the offer page, buttons, and dropdown for full visual con
 3. Update the Navbar
 Add the new offer to the appropriate category in navbar.html with the correct link and incentive.
 Use the brand-specific class for dropdown styling if needed.
+Make sure the nav dropdowns are in alphabetical order
 4. Update the Homepage Carousel
 Add a new .offer-card for the brand in the relevant section in index.html.
 Use the brand-specific class for the card and button.
+Make sure the carousel offers are in alphabetical order
 5. Add to Referral Links List
 Add the new offer's main referral link to all-referral-links.txt in the root folder.
 Format: Brand Name: https://referral-link-here.com
