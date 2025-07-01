@@ -1350,3 +1350,78 @@ body::before {
   -webkit-text-fill-color: transparent !important;
   border: 2.5px solid #003366;
 }
+
+/* --- BANNER: EDGE-TO-EDGE WITH DARK OVERLAY --- */
+.site-banner {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 220px;
+  max-height: 340px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.site-banner img {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.banner-overlay-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(20,20,40,0.72);
+  z-index: 1;
+}
+.banner-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+.banner-title, .banner-tagline, .banner-home-btn, .banner-info-btn {
+  pointer-events: auto;
+}
+.banner-title {
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.22);
+}
+.banner-tagline {
+  font-size: 1.2rem;
+  color: #ffe259;
+  margin-bottom: 18px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+.banner-home-btn, .banner-info-btn {
+  display: inline-block;
+  margin: 0 8px;
+  padding: 10px 28px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 32px;
+  background: linear-gradient(90deg, #00b4d8, #ff6f61);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.banner-home-btn:hover, .banner-info-btn:hover {
+  background: linear-gradient(90deg, #ff6f61, #00b4d8);
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
+}
