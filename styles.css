@@ -315,6 +315,48 @@ body::before {
     box-shadow: 0 0 0 6px rgba(200,80,192,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
 
+/* -------------------- BEFRUGAL -------------------- */
+.brand-befrugal .headline {
+    background: linear-gradient(90deg, #0073e6, #ff7f32);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.cta-button-befrugal {
+    background: linear-gradient(90deg, #0073e6, #ff7f32) !important;
+    color: #fff !important;
+}
+.brand-befrugal .mini-card .title { color: #0073e6; }
+.brand-befrugal .mini-card { box-shadow: 0 4px 16px rgba(0,115,230,0.07); }
+.brand-befrugal .card {
+    border: 2.5px solid #0073e6;
+    box-shadow: 0 0 0 6px rgba(255,127,50,0.13), 0 8px 32px rgba(0,0,0,0.08);
+}
+.brand-befrugal .nav-dropdown {
+    border: 2.5px solid #0073e6;
+    box-shadow: 0 0 0 6px rgba(255,127,50,0.13), 0 8px 32px rgba(0,0,0,0.08);
+    background: #fff;
+    border-radius: 18px;
+}
+.brand-befrugal .nav-dropdown .navbar-link {
+    color: #0073e6;
+    font-weight: 700;
+    border-radius: 12px;
+    margin: 2px 8px;
+    transition: background 0.2s, color 0.2s, text-indent 0.2s;
+}
+.brand-befrugal .nav-dropdown .navbar-link:hover,
+.brand-befrugal .nav-dropdown .navbar-link.active {
+    background: #e6f3fd;
+    color: #ff7f32;
+    text-decoration: underline;
+    text-indent: 8px;
+}
+.brand-befrugal .nav-category-title {
+    border: 2.5px solid #0073e6;
+    box-shadow: 0 0 0 6px rgba(255,127,50,0.13), 0 8px 32px rgba(0,0,0,0.08);
+}
+
 /* -------------------- ENGAGEBAY -------------------- */
 .brand-engagebay .headline {
     background: linear-gradient(90deg, #ff6600, #ffb347);
