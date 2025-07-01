@@ -44,4 +44,7 @@ Offer: Userback
 Referral Link: https://userback.io/?via=michael
 
 Offer: Outseta
-Referral Link: https://www.outseta.com/?via=michael-mccallum 
+Referral Link: https://www.outseta.com/?via=michael-mccallum
+
+Offer: Sharelytics
+Referral Link: https://www.sharelytics.co?fpr=michael28 

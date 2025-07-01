@@ -974,6 +974,48 @@ body::before {
     box-shadow: 0 0 0 6px rgba(139,92,246,0.18), 0 8px 32px rgba(0,0,0,0.08);
 }
 
+/* -------------------- SHARELYTICS -------------------- */
+.brand-sharelytics .headline {
+  background: linear-gradient(90deg, #0057b8, #00c6fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-button-sharelytics {
+  background: linear-gradient(90deg, #0057b8, #00c6fb) !important;
+  color: #fff !important;
+}
+.brand-sharelytics .mini-card .title { color: #0057b8; }
+.brand-sharelytics .mini-card { box-shadow: 0 4px 16px rgba(0,87,184,0.07); }
+.brand-sharelytics .card {
+  border: 2.5px solid #0057b8;
+  box-shadow: 0 0 0 6px rgba(0,198,251,0.18), 0 8px 32px rgba(0,0,0,0.08);
+}
+.brand-sharelytics .nav-dropdown {
+  border: 2.5px solid #0057b8;
+  box-shadow: 0 0 0 6px rgba(0,198,251,0.18), 0 8px 32px rgba(0,0,0,0.08);
+  background: #fff;
+  border-radius: 18px;
+}
+.brand-sharelytics .nav-dropdown .navbar-link {
+  color: #0057b8;
+  font-weight: 700;
+  border-radius: 12px;
+  margin: 2px 8px;
+  transition: background 0.2s, color 0.2s, text-indent 0.2s;
+}
+.brand-sharelytics .nav-dropdown .navbar-link:hover,
+.brand-sharelytics .nav-dropdown .navbar-link.active {
+  background: #e3f0fd;
+  color: #00c6fb;
+  text-decoration: underline;
+  text-indent: 8px;
+}
+.brand-sharelytics .nav-category-title {
+  border: 2.5px solid #0057b8;
+  box-shadow: 0 0 0 6px rgba(0,198,251,0.18), 0 8px 32px rgba(0,0,0,0.08);
+}
+
 /* --- END BRAND STYLES --- */
 
 /* --- RESPONSIVE STYLES (unchanged) --- */
