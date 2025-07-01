@@ -1,7 +1,7 @@
 Refer 2 Earn: Method Sheet for Adding New Offers
 Follow these steps to add a new offer to the site, ensuring consistency and brand alignment.
 1. Create the Offer Page
-Duplicate an existing offer HTML file (e.g., offers/baremetrics.html).
+Duplicate an existing offer HTML file (e.g., offers/monzo.html) to ensure all latest features are included.
 Rename the file to match the new offer (e.g., offers/newbrand.html).
 Update the following:
 Title in the <title> tag.
@@ -12,6 +12,7 @@ Card colors and accent styles to match the new brand (see step 2 for CSS).
 Use the brand's gradient/button class (e.g., .cta-button-newbrand) for all main action buttons and ensure the headline uses the brand's gradient style via the brand class, as seen in other offers.
 Add a unique <meta name="description"> tag in the <head> for SEO.
 Add descriptive alt text to all main offer buttons (use the alt attribute on <a> tags) for accessibility and SEO.
+Include the social share button row (with SVG icons, gradient background, white icons, and right alignment) as seen in recent offer pages.
 2. Add Brand-Specific Styles
 In styles.css, add a new section for the brand by duplicating an existing brand's section (e.g., Baremetrics) as a template.
 Update the color codes and class names to match the new brand's palette.
