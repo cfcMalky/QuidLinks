@@ -32,6 +32,7 @@ Make sure the carousel offers are in alphabetical order
 5. Add to Referral Links List
 Add the new offer's main referral link to all-referral-links.txt in the root folder.
 Format: Brand Name: https://referral-link-here.com
+Make sure the links list is in alphabetical order
 6. Test
 Check the new offer page on desktop and mobile.
 Test navigation and carousel functionality.

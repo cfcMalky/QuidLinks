@@ -1236,4 +1236,17 @@ body::before {
     margin: 0;
     border-radius: 0;
   }
+}
+
+.category-section.media {
+    background: #f3e6fa;
+    border-color: #8B5CF6;
+}
+.category-section.media .category-title,
+.category-section.media .scroll-btn,
+.category-section.media .scroll-btn svg polygon,
+.category-section.media .view-all-link {
+    color: #8B5CF6;
+    border-color: #8B5CF6;
+    fill: #8B5CF6;
 } 
