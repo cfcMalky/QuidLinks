@@ -1184,6 +1184,48 @@ body::before {
     box-shadow: 0 0 0 6px rgba(0,0,0,0.10), 0 8px 32px rgba(0,0,0,0.08);
 }
 
+/* -------------------- CASHBACK.CO.UK -------------------- */
+.brand-cashbackcouk .headline {
+    background: linear-gradient(90deg, #7c2ae8, #2ad2c9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.cta-button-cashbackcouk {
+    background: linear-gradient(90deg, #7c2ae8, #2ad2c9) !important;
+    color: #fff !important;
+}
+.brand-cashbackcouk .mini-card .title { color: #7c2ae8; }
+.brand-cashbackcouk .mini-card { box-shadow: 0 4px 16px rgba(124,42,232,0.07); }
+.brand-cashbackcouk .card {
+    border: 2.5px solid #7c2ae8;
+    box-shadow: 0 0 0 6px rgba(42,210,201,0.13), 0 8px 32px rgba(0,0,0,0.08);
+}
+.brand-cashbackcouk .nav-dropdown {
+    border: 2.5px solid #7c2ae8;
+    box-shadow: 0 0 0 6px rgba(42,210,201,0.13), 0 8px 32px rgba(0,0,0,0.08);
+    background: #fff;
+    border-radius: 18px;
+}
+.brand-cashbackcouk .nav-dropdown .navbar-link {
+    color: #7c2ae8;
+    font-weight: 700;
+    border-radius: 12px;
+    margin: 2px 8px;
+    transition: background 0.2s, color 0.2s, text-indent 0.2s;
+}
+.brand-cashbackcouk .nav-dropdown .navbar-link:hover,
+.brand-cashbackcouk .nav-dropdown .navbar-link.active {
+    background: #f3e6fd;
+    color: #2ad2c9;
+    text-decoration: underline;
+    text-indent: 8px;
+}
+.brand-cashbackcouk .nav-category-title {
+    border: 2.5px solid #7c2ae8;
+    box-shadow: 0 0 0 6px rgba(42,210,201,0.13), 0 8px 32px rgba(0,0,0,0.08);
+}
+
 /* --- END BRAND STYLES --- */
 
 /* --- RESPONSIVE STYLES (unchanged) --- */
