@@ -1131,207 +1131,207 @@ body::before {
 /* --- BRAND NAV PILLS: MATCH CTA BUTTONS (ALPHABETICAL) --- */
 
 /* Amazon Prime Video */
-.brand-amazonprimevideo .nav-category-title {
+.brand-amazonprimevideo .brand-nav-btn {
   background: linear-gradient(90deg, #232f3e, #00a8e1) !important;
   color: #fff !important;
-  border-radius: 32px !important;
-  font-weight: 700 !important;
-  font-size: 1.15rem !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
-  border: none !important;
-  padding: 14px 38px !important;
-  margin: 0 8px !important;
-  transition: background 0.2s, color 0.2s, transform 0.2s !important;
-  display: inline-block !important;
+  border-radius: 32px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  border: none;
+  padding: 14px 38px;
+  margin: 0 8px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
 }
-.brand-amazonprimevideo .nav-category-title:hover, .brand-amazonprimevideo .nav-category-title.active {
+.brand-amazonprimevideo .brand-nav-btn:hover, .brand-amazonprimevideo .brand-nav-btn.active {
   background: linear-gradient(90deg, #00a8e1, #232f3e) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.05) !important;
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Baremetrics */
-.brand-baremetrics .nav-category-title {
+.brand-baremetrics .brand-nav-btn {
   background: linear-gradient(90deg, #4158d0, #2ad2c9) !important;
   color: #fff !important;
-  border-radius: 32px !important;
-  font-weight: 700 !important;
-  font-size: 1.15rem !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
-  border: none !important;
-  padding: 14px 38px !important;
-  margin: 0 8px !important;
-  transition: background 0.2s, color 0.2s, transform 0.2s !important;
-  display: inline-block !important;
+  border-radius: 32px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  border: none;
+  padding: 14px 38px;
+  margin: 0 8px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
 }
-.brand-baremetrics .nav-category-title:hover, .brand-baremetrics .nav-category-title.active {
+.brand-baremetrics .brand-nav-btn:hover, .brand-baremetrics .brand-nav-btn.active {
   background: linear-gradient(90deg, #2ad2c9, #4158d0) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.05) !important;
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Befrugal */
-.brand-befrugal .nav-category-title {
+.brand-befrugal .brand-nav-btn {
   background: linear-gradient(90deg, #0073e6, #ff7f32) !important;
   color: #fff !important;
-  border-radius: 32px !important;
-  font-weight: 700 !important;
-  font-size: 1.15rem !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
-  border: none !important;
-  padding: 14px 38px !important;
-  margin: 0 8px !important;
-  transition: background 0.2s, color 0.2s, transform 0.2s !important;
-  display: inline-block !important;
+  border-radius: 32px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  border: none;
+  padding: 14px 38px;
+  margin: 0 8px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
 }
-.brand-befrugal .nav-category-title:hover, .brand-befrugal .nav-category-title.active {
+.brand-befrugal .brand-nav-btn:hover, .brand-befrugal .brand-nav-btn.active {
   background: linear-gradient(90deg, #ff7f32, #0073e6) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.05) !important;
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Cashback.co.uk */
-.brand-cashbackcouk .nav-category-title {
+.brand-cashbackcouk .brand-nav-btn {
   background: linear-gradient(90deg, #7c2ae8, #2ad2c9) !important;
   color: #fff !important;
-  border-radius: 32px !important;
-  font-weight: 700 !important;
-  font-size: 1.15rem !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
-  border: none !important;
-  padding: 14px 38px !important;
-  margin: 0 8px !important;
-  transition: background 0.2s, color 0.2s, transform 0.2s !important;
-  display: inline-block !important;
+  border-radius: 32px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  border: none;
+  padding: 14px 38px;
+  margin: 0 8px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
 }
-.brand-cashbackcouk .nav-category-title:hover, .brand-cashbackcouk .nav-category-title.active {
+.brand-cashbackcouk .brand-nav-btn:hover, .brand-cashbackcouk .brand-nav-btn.active {
   background: linear-gradient(90deg, #2ad2c9, #7c2ae8) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.05) !important;
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* EngageBay */
-.brand-engagebay .nav-category-title {
+.brand-engagebay .brand-nav-btn {
   background: linear-gradient(90deg, #ff6600, #7c2ae8) !important;
   color: #fff !important;
-  border-radius: 32px !important;
-  font-weight: 700 !important;
-  font-size: 1.15rem !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
-  border: none !important;
-  padding: 14px 38px !important;
-  margin: 0 8px !important;
-  transition: background 0.2s, color 0.2s, transform 0.2s !important;
-  display: inline-block !important;
+  border-radius: 32px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  border: none;
+  padding: 14px 38px;
+  margin: 0 8px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
 }
-.brand-engagebay .nav-category-title:hover, .brand-engagebay .nav-category-title.active {
+.brand-engagebay .brand-nav-btn:hover, .brand-engagebay .brand-nav-btn.active {
   background: linear-gradient(90deg, #7c2ae8, #ff6600) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.05) !important;
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Fiverr */
-.brand-fiverr .nav-category-title {
+.brand-fiverr .brand-nav-btn {
   background: linear-gradient(90deg, #1dbf73, #7c2ae8) !important;
   color: #fff !important;
-  border-radius: 32px !important;
-  font-weight: 700 !important;
-  font-size: 1.15rem !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
-  border: none !important;
-  padding: 14px 38px !important;
-  margin: 0 8px !important;
-  transition: background 0.2s, color 0.2s, transform 0.2s !important;
-  display: inline-block !important;
+  border-radius: 32px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  border: none;
+  padding: 14px 38px;
+  margin: 0 8px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
 }
-.brand-fiverr .nav-category-title:hover, .brand-fiverr .nav-category-title.active {
+.brand-fiverr .brand-nav-btn:hover, .brand-fiverr .brand-nav-btn.active {
   background: linear-gradient(90deg, #7c2ae8, #1dbf73) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.05) !important;
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Giffgaff */
-.brand-giffgaff .nav-category-title {
+.brand-giffgaff .brand-nav-btn {
   background: linear-gradient(90deg, #ffe259, #ff6f00) !important;
   color: #222 !important;
-  border-radius: 32px !important;
-  font-weight: 700 !important;
-  font-size: 1.15rem !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
-  border: none !important;
-  padding: 14px 38px !important;
-  margin: 0 8px !important;
-  transition: background 0.2s, color 0.2s, transform 0.2s !important;
-  display: inline-block !important;
+  border-radius: 32px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  border: none;
+  padding: 14px 38px;
+  margin: 0 8px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
 }
-.brand-giffgaff .nav-category-title:hover, .brand-giffgaff .nav-category-title.active {
+.brand-giffgaff .brand-nav-btn:hover, .brand-giffgaff .brand-nav-btn.active {
   background: linear-gradient(90deg, #ff6f00, #ffe259) !important;
   color: #222 !important;
-  transform: translateY(-2px) scale(1.05) !important;
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Mailblaze */
-.brand-mailblaze .nav-category-title {
+.brand-mailblaze .brand-nav-btn {
   background: linear-gradient(90deg, #1e88e5, #00c6fb) !important;
   color: #fff !important;
-  border-radius: 32px !important;
-  font-weight: 700 !important;
-  font-size: 1.15rem !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
-  border: none !important;
-  padding: 14px 38px !important;
-  margin: 0 8px !important;
-  transition: background 0.2s, color 0.2s, transform 0.2s !important;
-  display: inline-block !important;
+  border-radius: 32px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  border: none;
+  padding: 14px 38px;
+  margin: 0 8px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
 }
-.brand-mailblaze .nav-category-title:hover, .brand-mailblaze .nav-category-title.active {
+.brand-mailblaze .brand-nav-btn:hover, .brand-mailblaze .brand-nav-btn.active {
   background: linear-gradient(90deg, #00c6fb, #1e88e5) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.05) !important;
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Monzo */
-.brand-monzo .nav-category-title {
+.brand-monzo .brand-nav-btn {
   background: linear-gradient(90deg, #00b4d8, #ff6f61) !important;
   color: #fff !important;
-  border-radius: 32px !important;
-  font-weight: 700 !important;
-  font-size: 1.15rem !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
-  border: none !important;
-  padding: 14px 38px !important;
-  margin: 0 8px !important;
-  transition: background 0.2s, color 0.2s, transform 0.2s !important;
-  display: inline-block !important;
+  border-radius: 32px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  border: none;
+  padding: 14px 38px;
+  margin: 0 8px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
 }
-.brand-monzo .nav-category-title:hover, .brand-monzo .nav-category-title.active {
+.brand-monzo .brand-nav-btn:hover, .brand-monzo .brand-nav-btn.active {
   background: linear-gradient(90deg, #ff6f61, #00b4d8) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.05) !important;
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Quidco */
-.brand-quidco .nav-category-title {
+.brand-quidco .brand-nav-btn {
   background: linear-gradient(90deg, #2193b0, #00c6fb) !important;
   color: #fff !important;
-  border-radius: 32px !important;
-  font-weight: 700 !important;
-  font-size: 1.15rem !important;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
-  border: none !important;
-  padding: 14px 38px !important;
-  margin: 0 8px !important;
-  transition: background 0.2s, color 0.2s, transform 0.2s !important;
-  display: inline-block !important;
+  border-radius: 32px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  border: none;
+  padding: 14px 38px;
+  margin: 0 8px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
 }
-.brand-quidco .nav-category-title:hover, .brand-quidco .nav-category-title.active {
+.brand-quidco .brand-nav-btn:hover, .brand-quidco .brand-nav-btn.active {
   background: linear-gradient(90deg, #00c6fb, #2193b0) !important;
   color: #fff !important;
   transform: translateY(-2px) scale(1.05);
 }
 
 /* Rakuten */
-.brand-rakuten .nav-category-title {
+.brand-rakuten .brand-nav-btn {
   background: linear-gradient(90deg, #8B5CF6, #EC4899) !important;
   color: #fff !important;
   border-radius: 32px;
@@ -1342,15 +1342,16 @@ body::before {
   padding: 14px 38px;
   margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
 }
-.brand-rakuten .nav-category-title:hover, .brand-rakuten .nav-category-title.active {
+.brand-rakuten .brand-nav-btn:hover, .brand-rakuten .brand-nav-btn.active {
   background: linear-gradient(90deg, #EC4899, #8B5CF6) !important;
   color: #fff !important;
   transform: translateY(-2px) scale(1.05);
 }
 
 /* Raisin */
-.brand-raisin .nav-category-title {
+.brand-raisin .brand-nav-btn {
   background: linear-gradient(90deg, #f7971e, #7c2ae8) !important;
   color: #222 !important;
   border-radius: 32px;
@@ -1361,15 +1362,16 @@ body::before {
   padding: 14px 38px;
   margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
 }
-.brand-raisin .nav-category-title:hover, .brand-raisin .nav-category-title.active {
+.brand-raisin .brand-nav-btn:hover, .brand-raisin .brand-nav-btn.active {
   background: linear-gradient(90deg, #7c2ae8, #f7971e) !important;
   color: #222 !important;
   transform: translateY(-2px) scale(1.05);
 }
 
 /* Shein */
-.brand-shein .nav-category-title {
+.brand-shein .brand-nav-btn {
   background: linear-gradient(90deg, #ff5fa2, #000000) !important;
   color: #fff !important;
   border-radius: 32px;
@@ -1380,15 +1382,16 @@ body::before {
   padding: 14px 38px;
   margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
 }
-.brand-shein .nav-category-title:hover, .brand-shein .nav-category-title.active {
+.brand-shein .brand-nav-btn:hover, .brand-shein .brand-nav-btn.active {
   background: linear-gradient(90deg, #000000, #ff5fa2) !important;
   color: #fff !important;
   transform: translateY(-2px) scale(1.05);
 }
 
 /* TopCashback */
-.brand-topcashback .nav-category-title {
+.brand-topcashback .brand-nav-btn {
   background: linear-gradient(90deg, #43e97b, #00796b) !important;
   color: #222 !important;
   border-radius: 32px;
@@ -1399,15 +1402,16 @@ body::before {
   padding: 14px 38px;
   margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
 }
-.brand-topcashback .nav-category-title:hover, .brand-topcashback .nav-category-title.active {
+.brand-topcashback .brand-nav-btn:hover, .brand-topcashback .brand-nav-btn.active {
   background: linear-gradient(90deg, #00796b, #43e97b) !important;
   color: #222 !important;
   transform: translateY(-2px) scale(1.05);
 }
 
 /* Virgin */
-.brand-virgin .nav-category-title {
+.brand-virgin .brand-nav-btn {
   background: linear-gradient(90deg, #e52d27, #b31217) !important;
   color: #fff !important;
   border-radius: 32px;
@@ -1418,15 +1422,16 @@ body::before {
   padding: 14px 38px;
   margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
 }
-.brand-virgin .nav-category-title:hover, .brand-virgin .nav-category-title.active {
+.brand-virgin .brand-nav-btn:hover, .brand-virgin .brand-nav-btn.active {
   background: linear-gradient(90deg, #b31217, #e52d27) !important;
   color: #fff !important;
   transform: translateY(-2px) scale(1.05);
 }
 
 /* Wise */
-.brand-wise .nav-category-title {
+.brand-wise .brand-nav-btn {
   background: linear-gradient(90deg, #003366, #17803d) !important;
   color: #fff !important;
   border-radius: 32px;
@@ -1437,8 +1442,9 @@ body::before {
   padding: 14px 38px;
   margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
 }
-.brand-wise .nav-category-title:hover, .brand-wise .nav-category-title.active {
+.brand-wise .brand-nav-btn:hover, .brand-wise .brand-nav-btn.active {
   background: linear-gradient(90deg, #17803d, #003366) !important;
   color: #fff !important;
   transform: translateY(-2px) scale(1.05);
@@ -1570,30 +1576,4 @@ body::before {
 }
 .brand-wise .banner-home-btn, .brand-wise .banner-info-btn {
   background-image: linear-gradient(90deg, #003366, #17803d);
-}
-
-/* --- UNIVERSAL NAV PILL STYLE FOR .brand-nav-btn (MATCHES HOME/INFO BUTTONS) --- */
-.brand-nav-btn {
-    display: inline-block;
-    margin: 0 8px;
-    padding: 10px 32px;
-    border: 2.5px solid #fff;
-    border-radius: 32px;
-    background: transparent;
-    color: #fff;
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-decoration: none;
-    transition: color 0.2s, border-color 0.2s, background 0.2s;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-    position: relative;
-    z-index: 3;
-    pointer-events: auto;
-}
-.brand-nav-btn:hover, .brand-nav-btn.active {
-    color: #ffe259;
-    border-color: #ffe259;
-    background: rgba(255,255,255,0.08);
-    text-decoration: none;
 }
