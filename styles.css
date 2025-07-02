@@ -247,24 +247,18 @@
 
 /* --- NAV DROPDOWN IMPROVEMENTS --- */
 .nav-dropdown {
-    display: none;
-    position: absolute;
+    position: absolute !important;
+    top: 100%;
     left: 0;
-    top: calc(100% + 16px);
-    flex-direction: column;
-    z-index: 100;
-    padding: 12px 0;
-    margin-top: 0;
-    min-width: 180px;
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-    border: 2.5px solid #eee;
+    right: auto;
+    margin-top: 8px;
+    min-width: 220px;
+    z-index: 1000 !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13);
 }
 
-.nav-category:hover .nav-dropdown,
-.nav-category:focus-within .nav-dropdown {
-    display: flex;
+.nav-category {
+    position: relative !important;
 }
 
 .nav-dropdown ul {
@@ -567,7 +561,7 @@ html, body {
 }
 
 .navbar {
-    position: relative;
+    position: static !important;
     z-index: 20;
     margin-top: 8px;
 }
