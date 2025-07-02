@@ -1960,3 +1960,66 @@ body::before {
     margin-right: 12px;
   }
 }
+
+/* CTA and Share Row: align CTA left, shares right */
+.cta-share-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+  margin: 24px 0 0 0;
+}
+
+.cta-share-row .cta-button {
+  margin: 0;
+}
+
+.cta-share-row .share-btn-group {
+  display: flex;
+  gap: 18px;
+}
+
+/* Make share buttons perfectly round */
+.share-btn {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  min-height: 56px;
+  max-width: 56px;
+  max-height: 56px;
+  padding: 0;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  margin: 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  border: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  vertical-align: middle;
+  gap: 0;
+}
+
+/* Responsive: smaller on mobile */
+@media (max-width: 700px) {
+  .share-btn {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    max-width: 44px;
+    max-height: 44px;
+    font-size: 1rem;
+    border-radius: 50%;
+  }
+  .cta-share-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .cta-share-row .share-btn-group {
+    justify-content: flex-end;
+    gap: 12px;
+  }
+}
