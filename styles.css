@@ -1848,3 +1848,75 @@ body::before {
   text-decoration: underline;
   text-indent: 8px;
 }
+
+/* -------------------- NEURALTEXT -------------------- */
+.brand-neuraltext .headline {
+  background: linear-gradient(90deg, #6c47ff, #1e1e2f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-button-neuraltext {
+  background: linear-gradient(90deg, #6c47ff, #1e1e2f) !important;
+  color: #fff !important;
+}
+
+/* -------------------- OUTSETA -------------------- */
+.brand-outseta .headline {
+  background: linear-gradient(90deg, #1a237e, #3949ab);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-button-outseta {
+  background: linear-gradient(90deg, #1a237e, #3949ab) !important;
+  color: #fff !important;
+}
+
+/* -------------------- PRINTIFY -------------------- */
+.brand-printify .headline {
+  background: linear-gradient(90deg, #00b09b, #96c93d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-button-printify {
+  background: linear-gradient(90deg, #00b09b, #96c93d) !important;
+  color: #fff !important;
+}
+
+/* -------------------- SHARELYTICS -------------------- */
+.brand-sharelytics .headline {
+  background: linear-gradient(90deg, #ff512f, #dd2476);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-button-sharelytics {
+  background: linear-gradient(90deg, #ff512f, #dd2476) !important;
+  color: #fff !important;
+}
+
+/* -------------------- SUPER MONITORING -------------------- */
+.brand-supermonitoring .headline {
+  background: linear-gradient(90deg, #0f2027, #2c5364);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-button-supermonitoring {
+  background: linear-gradient(90deg, #0f2027, #2c5364) !important;
+  color: #fff !important;
+}
+
+/* -------------------- USERBACK -------------------- */
+.brand-userback .headline {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-button-userback {
+  background: linear-gradient(90deg, #00c6ff, #0072ff) !important;
+  color: #fff !important;
+}
