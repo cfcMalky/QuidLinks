@@ -417,31 +417,20 @@
     transition: box-shadow 0.2s, border 0.2s;
     box-sizing: border-box;
 }
-.mini-card .icon {
-    font-size: 2.4rem;
-    margin-bottom: 12px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1;
+.mini-card .icon,
+.mini-card .title,
+.mini-card .desc {
     display: block;
+    width: 100%;
     text-align: center;
 }
-.mini-card .title {
-    color: #00b4d8;
-    font-weight: 800;
-    font-size: 1.13rem;
-    margin-bottom: 6px;
+.mini-card > * {
     margin-left: auto;
     margin-right: auto;
-    letter-spacing: 0.01em;
-    display: block;
-    text-align: center;
 }
 .mini-card .desc {
-    color: #232f3e;
-    font-size: 1.01rem;
-    font-weight: 500;
-    line-height: 1.5;
+    max-width: 90%;
+    word-break: break-word;
 }
 .mini-card:hover {
     box-shadow: 0 8px 32px rgba(0,180,216,0.13);
