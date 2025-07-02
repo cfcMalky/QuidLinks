@@ -2214,3 +2214,48 @@ body.brand-userback::before {
 .brand-outseta .mini-card .title { color: #1a237e; }
 .brand-sharelytics .mini-card { box-shadow: 0 4px 16px rgba(255,81,47,0.07); }
 .brand-sharelytics .mini-card .title { color: #ff512f; }
+
+/* -------------------- HOME -------------------- */
+body.brand-home::before {
+  background: linear-gradient(120deg, #7c2ae8 0%, #ffe259 100%);
+}
+.brand-home .headline {
+  background: linear-gradient(90deg, #7c2ae8, #ffe259);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.cta-button-home, .brand-home .share-btn {
+  background: linear-gradient(90deg, #7c2ae8, #ffe259) !important;
+  color: #fff !important;
+}
+.brand-home .card {
+  border: 2.5px solid #7c2ae8;
+  box-shadow: 0 0 0 6px rgba(124,42,232,0.13), 0 8px 32px rgba(0,0,0,0.08);
+}
+.brand-home .nav-dropdown, .brand-home .nav-category-title {
+  border: 2.5px solid #7c2ae8;
+  box-shadow: 0 0 0 6px rgba(255,226,89,0.13), 0 8px 32px rgba(0,0,0,0.08);
+  background: #fff;
+  border-radius: 18px;
+}
+.brand-home .nav-dropdown .navbar-link {
+  color: #7c2ae8;
+  font-weight: 700;
+  border-radius: 12px;
+  margin: 2px 8px;
+  transition: background 0.2s, color 0.2s, text-indent 0.2s;
+}
+.brand-home .nav-dropdown .navbar-link:hover,
+.brand-home .nav-dropdown .navbar-link.active {
+  background: #ffe259;
+  color: #7c2ae8;
+  text-decoration: underline;
+  text-indent: 8px;
+}
+.brand-home .share-btn:hover {
+  background: linear-gradient(90deg, #ffe259, #7c2ae8) !important;
+}
+.brand-home .share-btn svg { fill: #fff; }
+.brand-home .mini-card { box-shadow: 0 4px 16px rgba(124,42,232,0.07); }
+.brand-home .mini-card .title { color: #7c2ae8; }
