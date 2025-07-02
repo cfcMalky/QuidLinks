@@ -1,9 +1,7 @@
-/* Shared site styles for UK Value Hub */
-
+/* --- GLOBAL & GENERIC STYLES (applies to all brands) --- */
 html, body {
     overflow-x: hidden;
 }
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: transparent;
@@ -12,7 +10,6 @@ body {
     min-height: 100vh;
     position: relative;
 }
-
 body::before {
     content: '';
     position: fixed;
@@ -25,75 +22,9 @@ body::before {
     filter: blur(48px);
     transition: background 0.4s;
 }
-
-body.brand-monzo::before {
-    background: linear-gradient(120deg, #00b4d8 0%, #ff6f61 100%);
-}
-body.brand-giffgaff::before {
-    background: linear-gradient(120deg, #ffe259 0%, #ff6f00 100%);
-}
-body.brand-baremetrics::before {
-    background: linear-gradient(120deg, #4158d0 0%, #2ad2c9 100%);
-}
-body.brand-fiverr::before {
-    background: linear-gradient(120deg, #1dbf73 0%, #7c2ae8 100%);
-}
-body.brand-quidco::before {
-    background: linear-gradient(120deg, #2193b0 0%, #00c6fb 100%);
-}
-body.brand-raisin::before {
-    background: linear-gradient(120deg, #f7971e 0%, #7c2ae8 100%);
-}
-body.brand-engagebay::before {
-    background: linear-gradient(120deg, #ff6600 0%, #7c2ae8 100%);
-}
-body.brand-mailblaze::before {
-    background: linear-gradient(120deg, #1e88e5 0%, #00c6fb 100%);
-}
-body.brand-topcashback::before {
-    background: linear-gradient(120deg, #43e97b 0%, #00796b 100%);
-}
-body.brand-cashbackcouk::before {
-    background: linear-gradient(120deg, #7c2ae8 0%, #2ad2c9 100%);
-}
-body.brand-befrugal::before {
-    background: linear-gradient(120deg, #0073e6 0%, #ff7f32 100%);
-}
-body.brand-shein::before {
-    background: linear-gradient(120deg, #ff5fa2 0%, #000000 100%);
-}
-body.brand-rakuten::before {
-    background: linear-gradient(120deg, #8B5CF6 0%, #EC4899 100%);
-}
-body.brand-virgin::before {
-    background: linear-gradient(120deg, #e52d27 0%, #b31217 100%);
-}
-body.brand-wise::before {
-    background: linear-gradient(120deg, #003366 0%, #17803d 100%);
-}
-body.brand-neuraltext::before {
-    background: linear-gradient(120deg, #6c47ff 0%, #1e1e2f 100%);
-}
-body.brand-outseta::before {
-    background: linear-gradient(120deg, #1a237e 0%, #3949ab 100%);
-}
-body.brand-printify::before {
-    background: linear-gradient(120deg, #00b09b 0%, #96c93d 100%);
-}
-body.brand-sharelytics::before {
-    background: linear-gradient(120deg, #ff512f 0%, #dd2476 100%);
-}
-body.brand-supermonitoring::before {
-    background: linear-gradient(120deg, #0f2027 0%, #2c5364 100%);
-}
-body.brand-userback::before {
-    background: linear-gradient(120deg, #00c6ff 0%, #0072ff 100%);
-}
-
 .site-logo {
     display: none !important;
 }
-
 .container {
     max-width: 900px;
     margin: 0 auto;
@@ -101,7 +32,6 @@ body.brand-userback::before {
     background: transparent !important;
     border-radius: 24px;
 }
-
 /* Navigation Bar */
 .navbar {
     position: sticky;
@@ -120,18 +50,15 @@ body.brand-userback::before {
     flex-wrap: wrap;
     margin-bottom: 0;
 }
-
 .navbar-logo, .navbar-title {
     display: none;
 }
-
 .navbar-links {
     display: flex;
     gap: 24px;
     flex-wrap: wrap;
     z-index: 11;
 }
-
 .navbar-link {
     color: rgba(30,30,30,0.62);
     font-weight: 600;
@@ -139,17 +66,14 @@ body.brand-userback::before {
     border-radius: 18px;
     transition: color 0.2s, background 0.2s;
 }
-
 .navbar-link:hover,
 .navbar-link.active {
     color: #e10a0a;
     background: rgba(255,255,255,0.95);
 }
-
 .nav-category {
     position: relative;
 }
-
 .nav-category::after {
     content: '';
     display: block;
@@ -162,7 +86,6 @@ body.brand-userback::before {
     pointer-events: auto;
     background: transparent;
 }
-
 /* Modern glassy nav tablets */
 .nav-category-title {
     display: inline-block;
@@ -188,7 +111,6 @@ body.brand-userback::before {
     background: rgba(255,255,255,0.08);
     text-decoration: none;
 }
-
 .nav-dropdown {
     display: none;
     position: absolute;
@@ -199,14 +121,12 @@ body.brand-userback::before {
     padding: 0 0 8px 0;
     margin-top: 0;
 }
-
 .nav-category:hover .nav-dropdown,
 .nav-category:focus-within .nav-dropdown,
 .nav-dropdown:hover,
 .nav-dropdown:focus-within {
     display: flex;
 }
-
 .nav-dropdown .navbar-link {
     display: block;
     padding: 8px 18px;
@@ -214,10 +134,8 @@ body.brand-userback::before {
     transition: background 0.2s, color 0.2s;
     white-space: nowrap;
 }
-
 .nav-dropdown .navbar-link:hover, .nav-dropdown .navbar-link.active {
 }
-
 /* Card & Section Styles */
 .card {
     background: #fff !important;
@@ -233,20 +151,17 @@ body.brand-userback::before {
     padding: 28px 18px;
     margin-bottom: 24px;
 }
-
 .headline {
     font-size: 2.2rem;
     font-weight: 800;
     margin-bottom: 12px;
     color: #1a237e;
 }
-
 .subheadline {
     font-size: 1.2rem;
     color: #555;
     margin-bottom: 24px;
 }
-
 .cta-button {
     display: inline-block;
     padding: 16px 40px;
@@ -260,12 +175,10 @@ body.brand-userback::before {
     transition: background 0.2s, transform 0.2s;
     margin: 20px 0;
 }
-
 .cta-button:hover {
     background: #3949ab;
     transform: translateY(-2px) scale(1.03);
 }
-
 .cta-bottom-wrapper {
     width: 100%;
     max-width: 900px;
@@ -279,7 +192,6 @@ body.brand-userback::before {
     text-align: center;
     box-sizing: border-box;
 }
-
 /* Responsive */
 @media (max-width: 700px) {
     .container { padding: 16px 4px; }
@@ -293,7 +205,6 @@ body.brand-userback::before {
     .nav-category-title { font-size: 0.98rem; padding: 6px 10px; }
     .nav-dropdown { min-width: 110px; }
 }
-
 /* Hamburger hidden on desktop */
 .nav-hamburger {
   display: none;
@@ -306,7 +217,6 @@ body.brand-userback::before {
   left: 18px;
   z-index: 1001;
 }
-
 @media (max-width: 700px) {
   .navbar {
     position: relative;
@@ -355,1902 +265,286 @@ body.brand-userback::before {
     padding: 8px 18px;
   }
 }
-
-/* --- CORRECTED BRAND GRADIENTS: TEXT CLIP ONLY ON HEADLINE --- */
-
-/* Giffgaff */
-.brand-giffgaff .headline {
-  background: linear-gradient(90deg, #ffe259, #ff6f00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-giffgaff,
-.brand-giffgaff .share-btn {
-  background: linear-gradient(90deg, #ffe259, #ff6f00) !important;
-  color: #222 !important;
-}
-.brand-giffgaff .share-btn:hover {
-  background: linear-gradient(90deg, #ff6f00, #ffe259) !important;
-}
-.brand-giffgaff .share-btn svg { fill: #222; }
-
-/* Raisin */
-.brand-raisin .headline {
-  background: linear-gradient(90deg, #f7971e, #7c2ae8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-raisin,
-.brand-raisin .share-btn {
-  background: linear-gradient(90deg, #f7971e, #7c2ae8) !important;
-  color: #222 !important;
-}
-.brand-raisin .share-btn:hover {
-  background: linear-gradient(90deg, #7c2ae8, #f7971e) !important;
-}
-.brand-raisin .share-btn svg { fill: #222; }
-
-/* TopCashback */
-.brand-topcashback .headline {
-  background: linear-gradient(90deg, #43e97b, #00796b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-topcashback,
-.brand-topcashback .share-btn {
-  background: linear-gradient(90deg, #43e97b, #00796b) !important;
-  color: #222 !important;
-}
-.brand-topcashback .share-btn:hover {
-  background: linear-gradient(90deg, #00796b, #43e97b) !important;
-}
-.brand-topcashback .share-btn svg { fill: #222; }
-
-/* Mailblaze */
-.brand-mailblaze .headline {
-  background: linear-gradient(90deg, #1e88e5, #00c6fb);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-mailblaze,
-.brand-mailblaze .share-btn {
-  background: linear-gradient(90deg, #1e88e5, #00c6fb) !important;
-  color: #fff !important;
-}
-.brand-mailblaze .share-btn:hover {
-  background: linear-gradient(90deg, #00c6fb, #1e88e5) !important;
-}
-.brand-mailblaze .share-btn svg { fill: #fff; }
-
-/* Quidco */
-.brand-quidco .headline {
-  background: linear-gradient(90deg, #2193b0, #00c6fb);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-quidco,
-.brand-quidco .share-btn {
-  background: linear-gradient(90deg, #2193b0, #00c6fb) !important;
-  color: #fff !important;
-}
-.brand-quidco .share-btn:hover {
-  background: linear-gradient(90deg, #00c6fb, #2193b0) !important;
-}
-.brand-quidco .share-btn svg { fill: #fff; }
-
-/* EngageBay */
-.brand-engagebay .headline {
-  background: linear-gradient(90deg, #ff6600, #7c2ae8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-engagebay,
-.brand-engagebay .share-btn {
-  background: linear-gradient(90deg, #ff6600, #7c2ae8) !important;
-  color: #fff !important;
-}
-.brand-engagebay .share-btn:hover {
-  background: linear-gradient(90deg, #7c2ae8, #ff6600) !important;
-}
-.brand-engagebay .share-btn svg { fill: #fff; }
-
-/* Baremetrics */
-.brand-baremetrics .headline {
-  background: linear-gradient(90deg, #4158d0, #2ad2c9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-baremetrics,
-.brand-baremetrics .share-btn {
-  background: linear-gradient(90deg, #4158d0, #2ad2c9) !important;
-  color: #fff !important;
-}
-.brand-baremetrics .share-btn:hover {
-  background: linear-gradient(90deg, #2ad2c9, #4158d0) !important;
-}
-.brand-baremetrics .share-btn svg { fill: #fff; }
-
-/* Fiverr */
-.brand-fiverr .headline {
-  background: linear-gradient(90deg, #1dbf73, #7c2ae8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-fiverr,
-.brand-fiverr .share-btn {
-  background: linear-gradient(90deg, #1dbf73, #7c2ae8) !important;
-  color: #fff !important;
-}
-.brand-fiverr .share-btn:hover {
-  background: linear-gradient(90deg, #7c2ae8, #1dbf73) !important;
-}
-.brand-fiverr .share-btn svg { fill: #fff; }
-
-/* --- END CORRECTED BRAND GRADIENTS --- */
-
-/* --- BRAND-SPECIFIC STYLES (ALPHABETICAL, CONSISTENT STRUCTURE) --- */
-
-/* -------------------- AMAZON PRIME VIDEO -------------------- */
-.brand-amazonprimevideo .headline {
-  background: linear-gradient(90deg, #232f3e, #00a8e1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-amazonprimevideo, .brand-amazonprimevideo .share-btn {
-  background: linear-gradient(90deg, #232f3e, #00a8e1) !important;
-  color: #fff !important;
-}
-.brand-amazonprimevideo .card {
-  border: 2.5px solid #232f3e;
-  box-shadow: 0 0 0 6px rgba(0,168,225,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-amazonprimevideo .nav-dropdown, .brand-amazonprimevideo .nav-category-title {
-  border: 2.5px solid #232f3e;
-  box-shadow: 0 0 0 6px rgba(0,168,225,0.18), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-amazonprimevideo .nav-dropdown .navbar-link {
-  color: #232f3e;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-amazonprimevideo .nav-dropdown .navbar-link:hover,
-.brand-amazonprimevideo .nav-dropdown .navbar-link.active {
-  background: #e3f6fd;
-  color: #00a8e1;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-.brand-amazonprimevideo .share-btn:hover {
-  background: linear-gradient(90deg, #00a8e1, #232f3e) !important;
-}
-.brand-amazonprimevideo .share-btn svg { fill: #fff; }
-
-/* -------------------- BAREMETRICS -------------------- */
-.brand-baremetrics .headline {
-  background: linear-gradient(90deg, #4158d0, #2ad2c9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-baremetrics, .brand-baremetrics .share-btn {
-  background: linear-gradient(90deg, #4158d0, #2ad2c9) !important;
-  color: #fff !important;
-}
-.brand-baremetrics .card {
-  border: 2.5px solid #4158d0;
-  box-shadow: 0 0 0 6px rgba(42,210,201,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-baremetrics .nav-dropdown, .brand-baremetrics .nav-category-title {
-  border: 2.5px solid #4158d0;
-  box-shadow: 0 0 0 6px rgba(42,210,201,0.18), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-baremetrics .nav-dropdown .navbar-link {
-  color: #4158d0;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-baremetrics .nav-dropdown .navbar-link:hover,
-.brand-baremetrics .nav-dropdown .navbar-link.active {
-  background: #f3e6fa;
-  color: #2ad2c9;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-.brand-baremetrics .share-btn:hover {
-  background: linear-gradient(90deg, #2ad2c9, #4158d0) !important;
-}
-.brand-baremetrics .share-btn svg { fill: #fff; }
-
-/* -------------------- BEFRUGAL -------------------- */
-.brand-befrugal .headline {
-  background: linear-gradient(90deg, #0073e6, #ff7f32);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-befrugal, .brand-befrugal .share-btn {
-  background: linear-gradient(90deg, #0073e6, #ff7f32) !important;
-  color: #fff !important;
-}
-.brand-befrugal .card {
-  border: 2.5px solid #0073e6;
-  box-shadow: 0 0 0 6px rgba(255,127,50,0.13), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-befrugal .nav-dropdown, .brand-befrugal .nav-category-title {
-  border: 2.5px solid #0073e6;
-  box-shadow: 0 0 0 6px rgba(255,127,50,0.13), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-befrugal .nav-dropdown .navbar-link {
-  color: #0073e6;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-befrugal .nav-dropdown .navbar-link:hover,
-.brand-befrugal .nav-dropdown .navbar-link.active {
-  background: #e6f3fd;
-  color: #ff7f32;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-.brand-befrugal .share-btn:hover {
-  background: linear-gradient(90deg, #ff7f32, #0073e6) !important;
-}
-.brand-befrugal .share-btn svg { fill: #fff; }
-
-/* -------------------- CASHBACK.CO.UK -------------------- */
-.brand-cashbackcouk .headline {
-  background: linear-gradient(90deg, #7c2ae8, #2ad2c9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-cashbackcouk, .brand-cashbackcouk .share-btn {
-  background: linear-gradient(90deg, #7c2ae8, #2ad2c9) !important;
-  color: #fff !important;
-}
-.brand-cashbackcouk .card {
-  border: 2.5px solid #7c2ae8;
-  box-shadow: 0 0 0 6px rgba(42,210,201,0.13), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-cashbackcouk .nav-dropdown, .brand-cashbackcouk .nav-category-title {
-  border: 2.5px solid #7c2ae8;
-  box-shadow: 0 0 0 6px rgba(42,210,201,0.13), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-cashbackcouk .nav-dropdown .navbar-link {
-  color: #7c2ae8;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-cashbackcouk .nav-dropdown .navbar-link:hover,
-.brand-cashbackcouk .nav-dropdown .navbar-link.active {
-  background: #f3e6fd;
-  color: #2ad2c9;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-.brand-cashbackcouk .share-btn:hover {
-  background: linear-gradient(90deg, #2ad2c9, #7c2ae8) !important;
-}
-.brand-cashbackcouk .share-btn svg { fill: #fff; }
-
-/* -------------------- ENGAGEBAY -------------------- */
-.brand-engagebay .headline {
-  background: linear-gradient(90deg, #ff6600, #7c2ae8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-engagebay, .brand-engagebay .share-btn {
-  background: linear-gradient(90deg, #ff6600, #7c2ae8) !important;
-  color: #fff !important;
-}
-.brand-engagebay .card {
-  border: 2.5px solid #ff6600;
-  box-shadow: 0 0 0 6px rgba(124,42,232,0.13), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-engagebay .nav-dropdown, .brand-engagebay .nav-category-title {
-  border: 2.5px solid #ff6600;
-  box-shadow: 0 0 0 6px rgba(124,42,232,0.13), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-engagebay .nav-dropdown .navbar-link {
-  color: #ff6600;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-engagebay .nav-dropdown .navbar-link:hover,
-.brand-engagebay .nav-dropdown .navbar-link.active {
-  background: #fff6e3;
-  color: #7c2ae8;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-.brand-engagebay .share-btn:hover {
-  background: linear-gradient(90deg, #7c2ae8, #ff6600) !important;
-}
-.brand-engagebay .share-btn svg { fill: #fff; }
-
-/* -------------------- FIVERR -------------------- */
-.brand-fiverr .headline {
-  background: linear-gradient(90deg, #1dbf73, #7c2ae8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-fiverr, .brand-fiverr .share-btn {
-  background: linear-gradient(90deg, #1dbf73, #7c2ae8) !important;
-  color: #fff !important;
-}
-.brand-fiverr .card {
-  border: 2.5px solid #1dbf73;
-  box-shadow: 0 0 0 6px rgba(0,230,160,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-fiverr .nav-dropdown, .brand-fiverr .nav-category-title {
-  border: 2.5px solid #1dbf73;
-  box-shadow: 0 0 0 6px rgba(124,42,232,0.13), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-fiverr .nav-dropdown .navbar-link {
-  color: #1dbf73;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-fiverr .nav-dropdown .navbar-link:hover,
-.brand-fiverr .nav-dropdown .navbar-link.active {
-  background: #e6fff6;
-  color: #7c2ae8;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-.brand-fiverr .share-btn:hover {
-  background: linear-gradient(90deg, #7c2ae8, #1dbf73) !important;
-}
-.brand-fiverr .share-btn svg { fill: #fff; }
-
-/* -------------------- GIFFGAFF -------------------- */
-.brand-giffgaff .headline {
-  background: linear-gradient(90deg, #ffe259, #ff6f00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-giffgaff, .brand-giffgaff .share-btn {
-  background: linear-gradient(90deg, #ffe259, #ff6f00) !important;
-  color: #222 !important;
-}
-.brand-giffgaff .card {
-  border: 2.5px solid #ffe259;
-  box-shadow: 0 0 0 6px rgba(255,167,81,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-giffgaff .nav-dropdown, .brand-giffgaff .nav-category-title {
-  border: 2.5px solid #ffe259;
-  box-shadow: 0 0 0 6px rgba(255,167,81,0.18), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-giffgaff .nav-dropdown .navbar-link {
-  color: #ff6f00;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-giffgaff .nav-dropdown .navbar-link:hover,
-.brand-giffgaff .nav-dropdown .navbar-link.active {
-  background: #fffbe6;
-  color: #ffe259;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-.brand-giffgaff .share-btn:hover {
-  background: linear-gradient(90deg, #ff6f00, #ffe259) !important;
-}
-.brand-giffgaff .share-btn svg { fill: #222; }
-
-/* -------------------- MAILBLAZE -------------------- */
-.brand-mailblaze .headline {
-  background: linear-gradient(90deg, #1e88e5, #00c6fb);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-mailblaze, .brand-mailblaze .share-btn {
-  background: linear-gradient(90deg, #1e88e5, #00c6fb) !important;
-  color: #fff !important;
-}
-.brand-mailblaze .card {
-  border: 2.5px solid #1e88e5;
-  box-shadow: 0 0 0 6px rgba(0,198,251,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-mailblaze .nav-dropdown, .brand-mailblaze .nav-category-title {
-  border: 2.5px solid #1e88e5;
-  box-shadow: 0 0 0 6px rgba(0,198,251,0.18), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-mailblaze .nav-dropdown .navbar-link {
-  color: #1e88e5;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-mailblaze .nav-dropdown .navbar-link:hover,
-.brand-mailblaze .nav-dropdown .navbar-link.active {
-  background: #e3f0fd;
-  color: #00c6fb;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-.brand-mailblaze .share-btn:hover {
-  background: linear-gradient(90deg, #00c6fb, #1e88e5) !important;
-}
-.brand-mailblaze .share-btn svg { fill: #fff; }
-
-/* -------------------- MONZO -------------------- */
-.brand-monzo .headline {
-  background: linear-gradient(90deg, #00b4d8, #ff6f61);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-monzo, .brand-monzo .share-btn {
-  background: linear-gradient(90deg, #00b4d8, #ff6f61) !important;
-  color: #fff !important;
-}
-.brand-monzo .card {
-  border: 2.5px solid #00b4d8;
-  box-shadow: 0 0 0 6px rgba(255,111,97,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-monzo .nav-dropdown, .brand-monzo .nav-category-title {
-  border: 2.5px solid #00b4d8;
-  box-shadow: 0 0 0 6px rgba(255,111,97,0.18), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-monzo .nav-dropdown .navbar-link {
-  color: #fa4b60;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-monzo .nav-dropdown .navbar-link:hover,
-.brand-monzo .nav-dropdown .navbar-link.active {
-  background: #e3f6fd;
-  color: #00b4d8;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-.brand-monzo .share-btn:hover {
-  background: linear-gradient(90deg, #ff6f61, #00b4d8) !important;
-}
-.brand-monzo .share-btn svg { fill: #fff; }
-
-/* -------------------- QUIDCO -------------------- */
-.brand-quidco .headline {
-  background: linear-gradient(90deg, #2193b0, #00c6fb);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-quidco, .brand-quidco .share-btn {
-  background: linear-gradient(90deg, #2193b0, #00c6fb) !important;
-  color: #fff !important;
-}
-.brand-quidco .card {
-  border: 2.5px solid #2193b0;
-  box-shadow: 0 0 0 6px rgba(0,198,251,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-quidco .nav-dropdown, .brand-quidco .nav-category-title {
-  border: 2.5px solid #2193b0;
-  box-shadow: 0 0 0 6px rgba(0,198,251,0.18), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-quidco .nav-dropdown .navbar-link {
-  color: #2193b0;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-quidco .nav-dropdown .navbar-link:hover,
-.brand-quidco .nav-dropdown .navbar-link.active {
-  background: #e3f6fd;
-  color: #00c6fb;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-.brand-quidco .share-btn:hover {
-  background: linear-gradient(90deg, #00c6fb, #2193b0) !important;
-}
-.brand-quidco .share-btn svg { fill: #fff; }
-
-/* -------------------- RAKUTEN -------------------- */
-.brand-rakuten .headline {
-  background: linear-gradient(90deg, #8B5CF6, #EC4899);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-rakuten, .brand-rakuten .share-btn {
-  background: linear-gradient(90deg, #8B5CF6, #EC4899) !important;
-  color: #fff !important;
-}
-.brand-rakuten .card {
-  border: 2.5px solid #8B5CF6;
-  box-shadow: 0 0 0 6px rgba(236,72,153,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-rakuten .nav-dropdown, .brand-rakuten .nav-category-title {
-  border: 2.5px solid #8B5CF6;
-  box-shadow: 0 0 0 6px rgba(236,72,153,0.18), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-rakuten .nav-dropdown .navbar-link {
-  color: #8B5CF6;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-rakuten .nav-dropdown .navbar-link:hover,
-.brand-rakuten .nav-dropdown .navbar-link.active {
-  background: #f6e3fd;
-  color: #EC4899;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-.brand-rakuten .share-btn:hover {
-  background: linear-gradient(90deg, #EC4899, #8B5CF6) !important;
-}
-.brand-rakuten .share-btn svg { fill: #fff; }
-
-/* -------------------- RAISIN -------------------- */
-.brand-raisin .headline {
-  background: linear-gradient(90deg, #f7971e, #7c2ae8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-raisin, .brand-raisin .share-btn {
-  background: linear-gradient(90deg, #f7971e, #7c2ae8) !important;
-  color: #222 !important;
-}
-.brand-raisin .card {
-  border: 2.5px solid #f7971e;
-  box-shadow: 0 0 0 6px rgba(124,42,232,0.13), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-raisin .nav-dropdown, .brand-raisin .nav-category-title {
-  border: 2.5px solid #f7971e;
-  box-shadow: 0 0 0 6px rgba(124,42,232,0.13), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-raisin .nav-dropdown .navbar-link {
-  color: #f7971e;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-raisin .nav-dropdown .navbar-link:hover,
-.brand-raisin .nav-dropdown .navbar-link.active {
-  background: #fffbe6;
-  color: #7c2ae8;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-.brand-raisin .share-btn:hover {
-  background: linear-gradient(90deg, #7c2ae8, #f7971e) !important;
-}
-.brand-raisin .share-btn svg { fill: #222; }
-
-/* -------------------- SHEIN -------------------- */
-.brand-shein .headline {
-  background: linear-gradient(90deg, #ff5fa2, #000000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-shein, .brand-shein .share-btn {
-  background: linear-gradient(90deg, #ff5fa2, #000000) !important;
-  color: #fff !important;
-}
-.brand-shein .card {
-  border: 2.5px solid #ff5fa2;
-  box-shadow: 0 0 0 6px rgba(0,0,0,0.10), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-shein .nav-dropdown, .brand-shein .nav-category-title {
-  border: 2.5px solid #ff5fa2;
-  box-shadow: 0 0 0 6px rgba(0,0,0,0.10), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-shein .nav-dropdown .navbar-link {
-  color: #ff5fa2;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-shein .nav-dropdown .navbar-link:hover,
-.brand-shein .nav-dropdown .navbar-link.active {
-  background: #fff0f6;
-  color: #000000;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-.brand-shein .share-btn:hover {
-  background: linear-gradient(90deg, #000000, #ff5fa2) !important;
-}
-.brand-shein .share-btn svg { fill: #fff; }
-
-/* -------------------- TOPCASHBACK -------------------- */
-.brand-topcashback .headline {
-  background: linear-gradient(90deg, #43e97b, #00796b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-topcashback, .brand-topcashback .share-btn {
-  background: linear-gradient(90deg, #43e97b, #00796b) !important;
-  color: #222 !important;
-}
-.brand-topcashback .card {
-  border: 2.5px solid #43e97b;
-  box-shadow: 0 0 0 6px rgba(0,121,107,0.13), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-topcashback .nav-dropdown, .brand-topcashback .nav-category-title {
-  border: 2.5px solid #43e97b;
-  box-shadow: 0 0 0 6px rgba(0,121,107,0.13), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-topcashback .nav-dropdown .navbar-link {
-  color: #43e97b;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-topcashback .nav-dropdown .navbar-link:hover,
-.brand-topcashback .nav-dropdown .navbar-link.active {
-  background: #e3fdf6;
-  color: #00796b;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-.brand-topcashback .share-btn:hover {
-  background: linear-gradient(90deg, #00796b, #43e97b) !important;
-}
-.brand-topcashback .share-btn svg { fill: #222; }
-
-/* -------------------- VIRGIN -------------------- */
-.brand-virgin .headline {
-  background: linear-gradient(90deg, #e52d27, #b31217);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-virgin, .brand-virgin .share-btn {
-  background: linear-gradient(90deg, #e52d27, #b31217) !important;
-  color: #fff !important;
-}
-.brand-virgin .card {
-  border: 2.5px solid #e52d27;
-  box-shadow: 0 0 0 6px rgba(179,18,23,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-virgin .nav-dropdown, .brand-virgin .nav-category-title {
-  border: 2.5px solid #e52d27;
-  box-shadow: 0 0 0 6px rgba(179,18,23,0.18), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-virgin .nav-dropdown .navbar-link {
-  color: #e10a0a;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-virgin .nav-dropdown .navbar-link:hover,
-.brand-virgin .nav-dropdown .navbar-link.active {
-  background: #fde3e3;
-  color: #e52d27;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-.brand-virgin .share-btn:hover {
-  background: linear-gradient(90deg, #b31217, #e52d27) !important;
-}
-.brand-virgin .share-btn svg { fill: #fff; }
-
-/* -------------------- WISE -------------------- */
-.brand-wise .headline {
-  background: linear-gradient(90deg, #003366, #17803d);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-wise, .brand-wise .share-btn {
-  background: linear-gradient(90deg, #003366, #17803d) !important;
-  color: #fff !important;
-}
-.brand-wise .card {
-  border: 2.5px solid #003366;
-  box-shadow: 0 0 0 6px rgba(23,128,61,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-wise .nav-dropdown, .brand-wise .nav-category-title {
-  border: 2.5px solid #003366;
-  box-shadow: 0 0 0 6px rgba(23,128,61,0.18), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-wise .nav-dropdown .navbar-link {
-  color: #003366;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-wise .nav-dropdown .navbar-link:hover,
-.brand-wise .nav-dropdown .navbar-link.active {
-  background: #e3f6fd;
-  color: #17803d;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-.brand-wise .share-btn:hover {
-  background: linear-gradient(90deg, #17803d, #003366) !important;
-}
-.brand-wise .share-btn svg { fill: #fff; }
-
-/* -------------------- HOME/DEFAULT BRAND -------------------- */
-.brand-home .nav-category-title {
-  border: 2.5px solid #222;
-  box-shadow: 0 0 0 6px rgba(80,80,80,0.13), 0 8px 32px rgba(0,0,0,0.08);
-  background: linear-gradient(rgba(30,30,30,0.85), rgba(80,80,80,0.85)), url('banner.png') center/cover no-repeat;
-  color: #fff;
-}
-.brand-home .nav-dropdown {
-  border: 2.5px solid #222;
-  box-shadow: 0 0 0 6px rgba(80,80,80,0.13), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-home .nav-dropdown .navbar-link {
-  color: #222;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-home .nav-dropdown .navbar-link:hover,
-.brand-home .nav-dropdown .navbar-link.active {
-  background: #f3f3f3;
-  color: #ffe259;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-
-/* --- TEMPLATE FOR FUTURE BRANDS --- */
-/*
-.brand-NEWBRAND .headline {
-  background: linear-gradient(90deg, #PRIMARY, #SECONDARY);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-NEWBRAND, .brand-NEWBRAND .share-btn {
-  background: linear-gradient(90deg, #PRIMARY, #SECONDARY) !important;
-  color: #fff !important;
-}
-.brand-NEWBRAND .card {
-  border: 2.5px solid #PRIMARY;
-  box-shadow: 0 0 0 6px rgba(SECONDARY,0.18), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-NEWBRAND .nav-dropdown, .brand-NEWBRAND .nav-category-title {
-  border: 2.5px solid #PRIMARY;
-  box-shadow: 0 0 0 6px rgba(SECONDARY,0.18), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-NEWBRAND .nav-dropdown .navbar-link {
-  color: #PRIMARY;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-NEWBRAND .nav-dropdown .navbar-link:hover,
-.brand-NEWBRAND .nav-dropdown .navbar-link.active {
-  background: #BRANDBG;
-  color: #SECONDARY;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-.brand-NEWBRAND .share-btn:hover {
-  background: linear-gradient(90deg, #SECONDARY, #PRIMARY) !important;
-}
-.brand-NEWBRAND .share-btn svg { fill: #fff; }
-*/
-
-/* --- END BRAND STYLES --- */
-
-/* --- BRAND NAV PILLS: MATCH CTA BUTTONS (ALPHABETICAL) --- */
-
-/* Amazon Prime Video */
-.brand-amazonprimevideo .brand-nav-btn {
-  background: linear-gradient(90deg, #232f3e, #00a8e1) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-amazonprimevideo .brand-nav-btn:hover, .brand-amazonprimevideo .brand-nav-btn.active {
-  background: linear-gradient(90deg, #00a8e1, #232f3e) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Baremetrics */
-.brand-baremetrics .brand-nav-btn {
-  background: linear-gradient(90deg, #4158d0, #2ad2c9) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-baremetrics .brand-nav-btn:hover, .brand-baremetrics .brand-nav-btn.active {
-  background: linear-gradient(90deg, #2ad2c9, #4158d0) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Befrugal */
-.brand-befrugal .brand-nav-btn {
-  background: linear-gradient(90deg, #0073e6, #ff7f32) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-befrugal .brand-nav-btn:hover, .brand-befrugal .brand-nav-btn.active {
-  background: linear-gradient(90deg, #ff7f32, #0073e6) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Cashback.co.uk */
-.brand-cashbackcouk .brand-nav-btn {
-  background: linear-gradient(90deg, #7c2ae8, #2ad2c9) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-cashbackcouk .brand-nav-btn:hover, .brand-cashbackcouk .brand-nav-btn.active {
-  background: linear-gradient(90deg, #2ad2c9, #7c2ae8) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* EngageBay */
-.brand-engagebay .brand-nav-btn {
-  background: linear-gradient(90deg, #ff6600, #7c2ae8) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-engagebay .brand-nav-btn:hover, .brand-engagebay .brand-nav-btn.active {
-  background: linear-gradient(90deg, #7c2ae8, #ff6600) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Fiverr */
-.brand-fiverr .brand-nav-btn {
-  background: linear-gradient(90deg, #1dbf73, #7c2ae8) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-fiverr .brand-nav-btn:hover, .brand-fiverr .brand-nav-btn.active {
-  background: linear-gradient(90deg, #7c2ae8, #1dbf73) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Giffgaff */
-.brand-giffgaff .brand-nav-btn {
-  background: linear-gradient(90deg, #ffe259, #ff6f00) !important;
-  color: #222 !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-giffgaff .brand-nav-btn:hover, .brand-giffgaff .brand-nav-btn.active {
-  background: linear-gradient(90deg, #ff6f00, #ffe259) !important;
-  color: #222 !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Mailblaze */
-.brand-mailblaze .brand-nav-btn {
-  background: linear-gradient(90deg, #1e88e5, #00c6fb) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-mailblaze .brand-nav-btn:hover, .brand-mailblaze .brand-nav-btn.active {
-  background: linear-gradient(90deg, #00c6fb, #1e88e5) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Monzo */
-.brand-monzo .brand-nav-btn {
-  background: linear-gradient(90deg, #00b4d8, #ff6f61) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-monzo .brand-nav-btn:hover, .brand-monzo .brand-nav-btn.active {
-  background: linear-gradient(90deg, #ff6f61, #00b4d8) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Quidco */
-.brand-quidco .brand-nav-btn {
-  background: linear-gradient(90deg, #2193b0, #00c6fb) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-quidco .brand-nav-btn:hover, .brand-quidco .brand-nav-btn.active {
-  background: linear-gradient(90deg, #00c6fb, #2193b0) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Rakuten */
-.brand-rakuten .brand-nav-btn {
-  background: linear-gradient(90deg, #8B5CF6, #EC4899) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-rakuten .brand-nav-btn:hover, .brand-rakuten .brand-nav-btn.active {
-  background: linear-gradient(90deg, #EC4899, #8B5CF6) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Raisin */
-.brand-raisin .brand-nav-btn {
-  background: linear-gradient(90deg, #f7971e, #7c2ae8) !important;
-  color: #222 !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-raisin .brand-nav-btn:hover, .brand-raisin .brand-nav-btn.active {
-  background: linear-gradient(90deg, #7c2ae8, #f7971e) !important;
-  color: #222 !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Shein */
-.brand-shein .brand-nav-btn {
-  background: linear-gradient(90deg, #ff5fa2, #000000) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-shein .brand-nav-btn:hover, .brand-shein .brand-nav-btn.active {
-  background: linear-gradient(90deg, #000000, #ff5fa2) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* TopCashback */
-.brand-topcashback .brand-nav-btn {
-  background: linear-gradient(90deg, #43e97b, #00796b) !important;
-  color: #222 !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-topcashback .brand-nav-btn:hover, .brand-topcashback .brand-nav-btn.active {
-  background: linear-gradient(90deg, #00796b, #43e97b) !important;
-  color: #222 !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Virgin */
-.brand-virgin .brand-nav-btn {
-  background: linear-gradient(90deg, #e52d27, #b31217) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-virgin .brand-nav-btn:hover, .brand-virgin .brand-nav-btn.active {
-  background: linear-gradient(90deg, #b31217, #e52d27) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Wise */
-.brand-wise .brand-nav-btn {
-  background: linear-gradient(90deg, #003366, #17803d) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-wise .brand-nav-btn:hover, .brand-wise .brand-nav-btn.active {
-  background: linear-gradient(90deg, #17803d, #003366) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* NeuralText */
-.brand-neuraltext .brand-nav-btn {
-  background: linear-gradient(90deg, #6c47ff, #1e1e2f) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-neuraltext .brand-nav-btn:hover, .brand-neuraltext .brand-nav-btn.active {
-  background: linear-gradient(90deg, #1e1e2f, #6c47ff) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Outseta */
-.brand-outseta .brand-nav-btn {
-  background: linear-gradient(90deg, #1a237e, #3949ab) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-outseta .brand-nav-btn:hover, .brand-outseta .brand-nav-btn.active {
-  background: linear-gradient(90deg, #3949ab, #1a237e) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Printify */
-.brand-printify .brand-nav-btn {
-  background: linear-gradient(90deg, #00b09b, #96c93d) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-printify .brand-nav-btn:hover, .brand-printify .brand-nav-btn.active {
-  background: linear-gradient(90deg, #96c93d, #00b09b) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Sharelytics */
-.brand-sharelytics .brand-nav-btn {
-  background: linear-gradient(90deg, #ff512f, #dd2476) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-sharelytics .brand-nav-btn:hover, .brand-sharelytics .brand-nav-btn.active {
-  background: linear-gradient(90deg, #dd2476, #ff512f) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Super Monitoring */
-.brand-supermonitoring .brand-nav-btn {
-  background: linear-gradient(90deg, #0f2027, #2c5364) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-supermonitoring .brand-nav-btn:hover, .brand-supermonitoring .brand-nav-btn.active {
-  background: linear-gradient(90deg, #2c5364, #0f2027) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Userback */
-.brand-userback .brand-nav-btn {
-  background: linear-gradient(90deg, #00c6ff, #0072ff) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-userback .brand-nav-btn:hover, .brand-userback .brand-nav-btn.active {
-  background: linear-gradient(90deg, #0072ff, #00c6ff) !important;
-  color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* --- BANNER: EDGE-TO-EDGE WITH DARK OVERLAY --- */
-.site-banner {
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  min-height: 220px;
-  max-height: 340px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.site-banner img {
-  width: 100vw;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.banner-overlay-bg {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(20,20,40,0.72);
-  z-index: 1;
-}
-.banner-overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  pointer-events: none;
-}
-.banner-title, .banner-tagline, .banner-home-btn, .banner-info-btn {
-  pointer-events: auto;
-}
-.banner-title {
-  font-size: 2.6rem;
-  font-weight: 900;
-  color: #fff;
-  margin-bottom: 8px;
-  text-shadow: 0 2px 16px rgba(0,0,0,0.22);
-}
-.banner-tagline {
-  font-size: 1.2rem;
-  color: #ffe259;
-  margin-bottom: 18px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
-}
-.banner-home-btn, .banner-info-btn {
-  background: none !important;
-  border: none !important;
-  box-shadow: none !important;
-  color: #fff !important;
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  border-radius: 32px;
-  padding: 10px 32px;
-  margin: 0 8px;
-  transition: text-shadow 0.2s, transform 0.2s;
-  pointer-events: auto;
-}
-.banner-home-btn:hover, .banner-info-btn:hover {
-  text-shadow: 0 2px 12px rgba(0,0,0,0.12);
-  text-decoration: underline;
-  transform: scale(1.05);
-}
-
-/* Brand-specific gradient text for Home/Info buttons */
-.brand-monzo .banner-home-btn, .brand-monzo .banner-info-btn {
-  background-image: linear-gradient(90deg, #00b4d8, #ff6f61);
-}
-.brand-giffgaff .banner-home-btn, .brand-giffgaff .banner-info-btn {
-  background-image: linear-gradient(90deg, #ffe259, #ff6f00);
-}
-.brand-baremetrics .banner-home-btn, .brand-baremetrics .banner-info-btn {
-  background-image: linear-gradient(90deg, #4158d0, #2ad2c9);
-}
-.brand-fiverr .banner-home-btn, .brand-fiverr .banner-info-btn {
-  background-image: linear-gradient(90deg, #1dbf73, #7c2ae8);
-}
-.brand-quidco .banner-home-btn, .brand-quidco .banner-info-btn {
-  background-image: linear-gradient(90deg, #2193b0, #00c6fb);
-}
-.brand-raisin .banner-home-btn, .brand-raisin .banner-info-btn {
-  background-image: linear-gradient(90deg, #f7971e, #7c2ae8);
-}
-.brand-engagebay .banner-home-btn, .brand-engagebay .banner-info-btn {
-  background-image: linear-gradient(90deg, #ff6600, #7c2ae8);
-}
-.brand-mailblaze .banner-home-btn, .brand-mailblaze .banner-info-btn {
-  background-image: linear-gradient(90deg, #1e88e5, #00c6fb);
-}
-.brand-topcashback .banner-home-btn, .brand-topcashback .banner-info-btn {
-  background-image: linear-gradient(90deg, #43e97b, #00796b);
-}
-.brand-cashbackcouk .banner-home-btn, .brand-cashbackcouk .banner-info-btn {
-  background-image: linear-gradient(90deg, #7c2ae8, #2ad2c9);
-}
-.brand-befrugal .banner-home-btn, .brand-befrugal .banner-info-btn {
-  background-image: linear-gradient(90deg, #0073e6, #ff7f32);
-}
-.brand-shein .banner-home-btn, .brand-shein .banner-info-btn {
-  background-image: linear-gradient(90deg, #ff5fa2, #000000);
-}
-.brand-rakuten .banner-home-btn, .brand-rakuten .banner-info-btn {
-  background-image: linear-gradient(90deg, #8B5CF6, #EC4899);
-}
-.brand-virgin .banner-home-btn, .brand-virgin .banner-info-btn {
-  background-image: linear-gradient(90deg, #e52d27, #b31217);
-}
-.brand-wise .banner-home-btn, .brand-wise .banner-info-btn {
-  background-image: linear-gradient(90deg, #003366, #17803d);
-}
-
-/* --- BUSINESS TOOLS: DROPDOWN & SECTION BORDERS (ALPHABETICAL) --- */
-
-/* NeuralText */
-.brand-neuraltext .card {
-  border: 2.5px solid #6c47ff;
-  box-shadow: 0 0 0 6px rgba(108,71,255,0.13), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-neuraltext .nav-dropdown {
-  border: 2.5px solid #6c47ff;
-  box-shadow: 0 0 0 6px rgba(108,71,255,0.13), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-neuraltext .nav-dropdown .navbar-link {
-  color: #6c47ff;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-neuraltext .nav-dropdown .navbar-link:hover,
-.brand-neuraltext .nav-dropdown .navbar-link.active {
-  background: #ede3fd;
-  color: #1e1e2f;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-
-/* Outseta */
-.brand-outseta .card {
-  border: 2.5px solid #1a237e;
-  box-shadow: 0 0 0 6px rgba(26,35,126,0.13), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-outseta .nav-dropdown {
-  border: 2.5px solid #1a237e;
-  box-shadow: 0 0 0 6px rgba(26,35,126,0.13), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-outseta .nav-dropdown .navbar-link {
-  color: #1a237e;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-outseta .nav-dropdown .navbar-link:hover,
-.brand-outseta .nav-dropdown .navbar-link.active {
-  background: #e3e6fd;
-  color: #3949ab;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-
-/* Printify */
-.brand-printify .card {
-  border: 2.5px solid #00b09b;
-  box-shadow: 0 0 0 6px rgba(0,176,155,0.13), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-printify .nav-dropdown {
-  border: 2.5px solid #00b09b;
-  box-shadow: 0 0 0 6px rgba(0,176,155,0.13), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-printify .nav-dropdown .navbar-link {
-  color: #00b09b;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-printify .nav-dropdown .navbar-link:hover,
-.brand-printify .nav-dropdown .navbar-link.active {
-  background: #e3fdf6;
-  color: #96c93d;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-
-/* Sharelytics */
-.brand-sharelytics .card {
-  border: 2.5px solid #ff512f;
-  box-shadow: 0 0 0 6px rgba(255,81,47,0.13), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-sharelytics .nav-dropdown {
-  border: 2.5px solid #ff512f;
-  box-shadow: 0 0 0 6px rgba(255,81,47,0.13), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-sharelytics .nav-dropdown .navbar-link {
-  color: #ff512f;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-sharelytics .nav-dropdown .navbar-link:hover,
-.brand-sharelytics .nav-dropdown .navbar-link.active {
-  background: #fde3f3;
-  color: #dd2476;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-
-/* Super Monitoring */
-.brand-supermonitoring .card {
-  border: 2.5px solid #0f2027;
-  box-shadow: 0 0 0 6px rgba(15,32,39,0.13), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-supermonitoring .nav-dropdown {
-  border: 2.5px solid #0f2027;
-  box-shadow: 0 0 0 6px rgba(15,32,39,0.13), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-supermonitoring .nav-dropdown .navbar-link {
-  color: #0f2027;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-supermonitoring .nav-dropdown .navbar-link:hover,
-.brand-supermonitoring .nav-dropdown .navbar-link.active {
-  background: #e3e6fd;
-  color: #2c5364;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-
-/* Userback */
-.brand-userback .card {
-  border: 2.5px solid #00c6ff;
-  box-shadow: 0 0 0 6px rgba(0,198,255,0.13), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-userback .nav-dropdown {
-  border: 2.5px solid #00c6ff;
-  box-shadow: 0 0 0 6px rgba(0,198,255,0.13), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-userback .nav-dropdown .navbar-link {
-  color: #00c6ff;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-userback .nav-dropdown .navbar-link:hover,
-.brand-userback .nav-dropdown .navbar-link.active {
-  background: #e3f6fd;
-  color: #0072ff;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-
-/* -------------------- NEURALTEXT -------------------- */
-.brand-neuraltext .headline {
-  background: linear-gradient(90deg, #6c47ff, #1e1e2f);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-neuraltext {
-  background: linear-gradient(90deg, #6c47ff, #1e1e2f) !important;
-  color: #fff !important;
-}
-
-/* -------------------- OUTSETA -------------------- */
-.brand-outseta .headline {
-  background: linear-gradient(90deg, #1a237e, #3949ab);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-outseta {
-  background: linear-gradient(90deg, #1a237e, #3949ab) !important;
-  color: #fff !important;
-}
-
-/* -------------------- PRINTIFY -------------------- */
-.brand-printify .headline {
-  background: linear-gradient(90deg, #00b09b, #96c93d);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-printify {
-  background: linear-gradient(90deg, #00b09b, #96c93d) !important;
-  color: #fff !important;
-}
-
-/* -------------------- SHARELYTICS -------------------- */
-.brand-sharelytics .headline {
-  background: linear-gradient(90deg, #ff512f, #dd2476);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-sharelytics {
-  background: linear-gradient(90deg, #ff512f, #dd2476) !important;
-  color: #fff !important;
-}
-
-/* -------------------- SUPER MONITORING -------------------- */
-.brand-supermonitoring .headline {
-  background: linear-gradient(90deg, #0f2027, #2c5364);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-supermonitoring {
-  background: linear-gradient(90deg, #0f2027, #2c5364) !important;
-  color: #fff !important;
-}
-
-/* -------------------- USERBACK -------------------- */
-.brand-userback .headline {
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-userback {
-  background: linear-gradient(90deg, #00c6ff, #0072ff) !important;
-  color: #fff !important;
-}
-
-/* Universal share button sizing and spacing */
-.share-btn {
-  width: 56px;
-  height: 56px;
-  min-width: 56px;
-  min-height: 56px;
-  max-width: 56px;
-  max-height: 56px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-size: 1.3rem;
-  font-weight: 700;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  margin: 0;
-  padding: 0;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  vertical-align: middle;
-  gap: 0;
-}
-@media (max-width: 700px) {
-  .share-btn {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    min-height: 44px;
-    max-width: 44px;
-    max-height: 44px;
-    font-size: 1rem;
-    border-radius: 50%;
-  }
-}
-
-/* CTA and Share Row: align CTA left, shares right */
-.cta-share-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0;
-  width: 100%;
-  margin: 16px 0 0 0;
-}
-
-.cta-share-row .cta-button {
-  margin: 0;
-}
-
-.cta-share-row .share-btn-group {
-  display: flex;
-  gap: 18px;
-}
-
-/* Make share buttons perfectly round */
-.share-btn {
-  width: 56px;
-  height: 56px;
-  min-width: 56px;
-  min-height: 56px;
-  max-width: 56px;
-  max-height: 56px;
-  padding: 0;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.3rem;
-  margin: 0;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  vertical-align: middle;
-  gap: 0;
-}
-
-/* Responsive: smaller on mobile */
-@media (max-width: 700px) {
-  .share-btn {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    min-height: 44px;
-    max-width: 44px;
-    max-height: 44px;
-    font-size: 1rem;
-    border-radius: 50%;
-  }
-  .cta-share-row {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 16px;
-  }
-  .cta-share-row .share-btn-group {
-    justify-content: flex-end;
-    gap: 12px;
-  }
-}
-
-.card + .cta-bottom-wrapper {
-  margin-top: 0;
-}
-
-.brand-home .brand-nav-btn {
-  background: linear-gradient(90deg, #1a237e, #ffe259) !important;
-  color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.brand-home .brand-nav-btn:hover, .brand-home .brand-nav-btn.active {
-  background: linear-gradient(90deg, #ffe259, #1a237e) !important;
-  color: #1a237e !important;
-  transform: translateY(-2px) scale(1.05);
-}
-
-.banner-overlay .banner-nav-bar-bg {
-  background: rgba(20, 20, 40, 0.55);
-  border-radius: 36px;
-  padding: 8px 18px;
-  display: inline-block;
-  margin-top: 1.5em;
-  pointer-events: auto;
-}
-.banner-overlay .home-nav-bar,
-.banner-overlay .home-nav-bar .brand-nav-btn {
-  pointer-events: auto;
-}
-
-/* Universal card grid for offer pages */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  margin: 24px 0;
-}
-.mini-card {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 16px rgba(35,47,62,0.07);
-  padding: 24px 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-.mini-card .icon {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-}
-.mini-card .title {
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-bottom: 6px;
-  color: #232f3e;
-}
-.mini-card .desc {
-  color: #444;
-  font-size: 0.98rem;
-}
-@media (max-width: 700px) {
-  .card-grid { grid-template-columns: 1fr; }
-}
-
-/* Brand-specific mini-card styles */
-.brand-fiverr .mini-card { box-shadow: 0 4px 16px rgba(39,191,108,0.07); }
-.brand-fiverr .mini-card .title { color: #1dbf73; }
-.brand-engagebay .mini-card { box-shadow: 0 4px 16px rgba(255,102,0,0.07); }
-.brand-engagebay .mini-card .title { color: #ff6600; }
-.brand-wise .mini-card { box-shadow: 0 4px 16px rgba(0,128,0,0.07); }
-.brand-wise .mini-card .title { color: #17803d; }
-.brand-userback .mini-card { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
-.brand-userback .mini-card .title { color: #3a7bd5; }
-.brand-topcashback .mini-card { box-shadow: 0 4px 16px rgba(33,178,98,0.07); }
-.brand-topcashback .mini-card .title { color: #21b262; }
-.brand-supermonitoring .mini-card { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
-.brand-supermonitoring .mini-card .title { color: #3a7bd5; }
+/* --- END GLOBAL & GENERIC STYLES --- */
+
+/* --- HEADLINE: Brand Gradients (alphabetical by brand) --- */
+.brand-amazonprimevideo .headline { background: linear-gradient(90deg, #232f3e, #00a8e1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-baremetrics .headline { background: linear-gradient(90deg, #4158d0, #2ad2c9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-befrugal .headline { background: linear-gradient(90deg, #0073e6, #ff7f32); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-cashbackcouk .headline { background: linear-gradient(90deg, #7c2ae8, #2ad2c9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-engagebay .headline { background: linear-gradient(90deg, #ff6600, #7c2ae8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-fiverr .headline { background: linear-gradient(90deg, #1dbf73, #7c2ae8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-giffgaff .headline { background: linear-gradient(90deg, #ffe259, #ff6f00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-mailblaze .headline { background: linear-gradient(90deg, #1e88e5, #00c6fb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-monzo .headline { background: linear-gradient(90deg, #00b4d8, #ff6f61); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-neuraltext .headline { background: linear-gradient(90deg, #6c47ff, #1e1e2f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-outseta .headline { background: linear-gradient(90deg, #1a237e, #3949ab); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-printify .headline { background: linear-gradient(90deg, #00b09b, #96c93d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-quidco .headline { background: linear-gradient(90deg, #2193b0, #00c6fb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-raisin .headline { background: linear-gradient(90deg, #f7971e, #7c2ae8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-rakuten .headline { background: linear-gradient(90deg, #8B5CF6, #EC4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-sharelytics .headline { background: linear-gradient(90deg, #ff512f, #dd2476); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-shein .headline { background: linear-gradient(90deg, #ff5fa2, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-supermonitoring .headline { background: linear-gradient(90deg, #0f2027, #2c5364); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-topcashback .headline { background: linear-gradient(90deg, #43e97b, #00796b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-userback .headline { background: linear-gradient(90deg, #00c6ff, #0072ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-wise .headline { background: linear-gradient(90deg, #003366, #17803d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-home .headline { background: linear-gradient(90deg, #7c2ae8, #ffe259); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+/* --- END HEADLINE: Brand Gradients --- */
+
+/* --- CTA BUTTON: Brand Gradients (alphabetical by brand) --- */
+.brand-amazonprimevideo .share-btn, .cta-button-amazonprimevideo { background: linear-gradient(90deg, #232f3e, #00a8e1) !important; color: #fff !important; }
+.brand-baremetrics .share-btn, .cta-button-baremetrics { background: linear-gradient(90deg, #4158d0, #2ad2c9) !important; color: #fff !important; }
+.brand-befrugal .share-btn, .cta-button-befrugal { background: linear-gradient(90deg, #0073e6, #ff7f32) !important; color: #fff !important; }
+.brand-cashbackcouk .share-btn, .cta-button-cashbackcouk { background: linear-gradient(90deg, #7c2ae8, #2ad2c9) !important; color: #fff !important; }
+.brand-engagebay .share-btn, .cta-button-engagebay { background: linear-gradient(90deg, #ff6600, #7c2ae8) !important; color: #fff !important; }
+.brand-fiverr .share-btn, .cta-button-fiverr { background: linear-gradient(90deg, #1dbf73, #7c2ae8) !important; color: #fff !important; }
+.brand-giffgaff .share-btn, .cta-button-giffgaff { background: linear-gradient(90deg, #ffe259, #ff6f00) !important; color: #222 !important; }
+.brand-mailblaze .share-btn, .cta-button-mailblaze { background: linear-gradient(90deg, #1e88e5, #00c6fb) !important; color: #fff !important; }
+.brand-monzo .share-btn, .cta-button-monzo { background: linear-gradient(90deg, #00b4d8, #ff6f61) !important; color: #fff !important; }
+.brand-neuraltext .share-btn, .cta-button-neuraltext { background: linear-gradient(90deg, #6c47ff, #1e1e2f) !important; color: #fff !important; }
+.brand-outseta .share-btn, .cta-button-outseta { background: linear-gradient(90deg, #1a237e, #3949ab) !important; color: #fff !important; }
+.brand-printify .share-btn, .cta-button-printify { background: linear-gradient(90deg, #00b09b, #96c93d) !important; color: #fff !important; }
+.brand-quidco .share-btn, .cta-button-quidco { background: linear-gradient(90deg, #2193b0, #00c6fb) !important; color: #fff !important; }
+.brand-raisin .share-btn, .cta-button-raisin { background: linear-gradient(90deg, #f7971e, #7c2ae8) !important; color: #222 !important; }
+.brand-rakuten .share-btn, .cta-button-rakuten { background: linear-gradient(90deg, #8B5CF6, #EC4899) !important; color: #fff !important; }
+.brand-sharelytics .share-btn, .cta-button-sharelytics { background: linear-gradient(90deg, #ff512f, #dd2476) !important; color: #fff !important; }
+.brand-shein .share-btn, .cta-button-shein { background: linear-gradient(90deg, #ff5fa2, #000000) !important; color: #fff !important; }
+.brand-supermonitoring .share-btn, .cta-button-supermonitoring { background: linear-gradient(90deg, #0f2027, #2c5364) !important; color: #fff !important; }
+.brand-topcashback .share-btn, .cta-button-topcashback { background: linear-gradient(90deg, #43e97b, #00796b) !important; color: #222 !important; }
+.brand-userback .share-btn, .cta-button-userback { background: linear-gradient(90deg, #00c6ff, #0072ff) !important; color: #fff !important; }
+.brand-wise .share-btn, .cta-button-wise { background: linear-gradient(90deg, #003366, #17803d) !important; color: #fff !important; }
+.brand-home .share-btn, .cta-button-home { background: linear-gradient(90deg, #7c2ae8, #ffe259) !important; color: #fff !important; }
+/* --- END CTA BUTTON: Brand Gradients --- */
+
+/* --- CARD: Brand Border/Shadow (alphabetical by brand) --- */
+.brand-amazonprimevideo .card { border: 2.5px solid #232f3e; box-shadow: 0 0 0 6px rgba(0,168,225,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-baremetrics .card { border: 2.5px solid #4158d0; box-shadow: 0 0 0 6px rgba(42,210,201,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-befrugal .card { border: 2.5px solid #0073e6; box-shadow: 0 0 0 6px rgba(255,127,50,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-cashbackcouk .card { border: 2.5px solid #7c2ae8; box-shadow: 0 0 0 6px rgba(42,210,201,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-engagebay .card { border: 2.5px solid #ff6600; box-shadow: 0 0 0 6px rgba(124,42,232,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-fiverr .card { border: 2.5px solid #1dbf73; box-shadow: 0 0 0 6px rgba(0,230,160,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-giffgaff .card { border: 2.5px solid #ffe259; box-shadow: 0 0 0 6px rgba(255,167,81,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-mailblaze .card { border: 2.5px solid #1e88e5; box-shadow: 0 0 0 6px rgba(0,198,251,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-monzo .card { border: 2.5px solid #00b4d8; box-shadow: 0 0 0 6px rgba(255,111,97,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-neuraltext .card { border: 2.5px solid #6c47ff; box-shadow: 0 0 0 6px rgba(108,71,255,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-outseta .card { border: 2.5px solid #1a237e; box-shadow: 0 0 0 6px rgba(26,35,126,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-printify .card { border: 2.5px solid #00b09b; box-shadow: 0 0 0 6px rgba(0,176,155,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-quidco .card { border: 2.5px solid #2193b0; box-shadow: 0 0 0 6px rgba(0,198,251,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-raisin .card { border: 2.5px solid #f7971e; box-shadow: 0 0 0 6px rgba(124,42,232,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-rakuten .card { border: 2.5px solid #8B5CF6; box-shadow: 0 0 0 6px rgba(236,72,153,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-sharelytics .card { border: 2.5px solid #ff512f; box-shadow: 0 0 0 6px rgba(255,81,47,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-shein .card { border: 2.5px solid #ff5fa2; box-shadow: 0 0 0 6px rgba(0,0,0,0.10), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-supermonitoring .card { border: 2.5px solid #0f2027; box-shadow: 0 0 0 6px rgba(15,32,39,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-topcashback .card { border: 2.5px solid #43e97b; box-shadow: 0 0 0 6px rgba(0,121,107,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-userback .card { border: 2.5px solid #00c6ff; box-shadow: 0 0 0 6px rgba(0,198,255,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-wise .card { border: 2.5px solid #003366; box-shadow: 0 0 0 6px rgba(23,128,61,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-home .card { border: 2.5px solid #7c2ae8; box-shadow: 0 0 0 6px rgba(124,42,232,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+/* --- END CARD: Brand Border/Shadow --- */
+
+/* --- NAV DROPDOWN & NAV-CATEGORY-TITLE: Brand Borders/Backgrounds (alphabetical by brand) --- */
+.brand-amazonprimevideo .nav-dropdown, .brand-amazonprimevideo .nav-category-title { border: 2.5px solid #232f3e; box-shadow: 0 0 0 6px rgba(0,168,225,0.18), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-baremetrics .nav-dropdown, .brand-baremetrics .nav-category-title { border: 2.5px solid #4158d0; box-shadow: 0 0 0 6px rgba(42,210,201,0.18), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-befrugal .nav-dropdown, .brand-befrugal .nav-category-title { border: 2.5px solid #0073e6; box-shadow: 0 0 0 6px rgba(255,127,50,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-cashbackcouk .nav-dropdown, .brand-cashbackcouk .nav-category-title { border: 2.5px solid #7c2ae8; box-shadow: 0 0 0 6px rgba(42,210,201,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-engagebay .nav-dropdown, .brand-engagebay .nav-category-title { border: 2.5px solid #ff6600; box-shadow: 0 0 0 6px rgba(124,42,232,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-fiverr .nav-dropdown, .brand-fiverr .nav-category-title { border: 2.5px solid #1dbf73; box-shadow: 0 0 0 6px rgba(124,42,232,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-giffgaff .nav-dropdown, .brand-giffgaff .nav-category-title { border: 2.5px solid #ffe259; box-shadow: 0 0 0 6px rgba(255,167,81,0.18), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-mailblaze .nav-dropdown, .brand-mailblaze .nav-category-title { border: 2.5px solid #1e88e5; box-shadow: 0 0 0 6px rgba(0,198,251,0.18), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-monzo .nav-dropdown, .brand-monzo .nav-category-title { border: 2.5px solid #00b4d8; box-shadow: 0 0 0 6px rgba(255,111,97,0.18), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-neuraltext .nav-dropdown { border: 2.5px solid #6c47ff; box-shadow: 0 0 0 6px rgba(108,71,255,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-outseta .nav-dropdown { border: 2.5px solid #1a237e; box-shadow: 0 0 0 6px rgba(26,35,126,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-printify .nav-dropdown { border: 2.5px solid #00b09b; box-shadow: 0 0 0 6px rgba(0,176,155,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-quidco .nav-dropdown, .brand-quidco .nav-category-title { border: 2.5px solid #2193b0; box-shadow: 0 0 0 6px rgba(0,198,251,0.18), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-raisin .nav-dropdown, .brand-raisin .nav-category-title { border: 2.5px solid #f7971e; box-shadow: 0 0 0 6px rgba(124,42,232,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-rakuten .nav-dropdown, .brand-rakuten .nav-category-title { border: 2.5px solid #8B5CF6; box-shadow: 0 0 0 6px rgba(236,72,153,0.18), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-sharelytics .nav-dropdown { border: 2.5px solid #ff512f; box-shadow: 0 0 0 6px rgba(255,81,47,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-shein .nav-dropdown, .brand-shein .nav-category-title { border: 2.5px solid #ff5fa2; box-shadow: 0 0 0 6px rgba(0,0,0,0.10), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-supermonitoring .nav-dropdown { border: 2.5px solid #0f2027; box-shadow: 0 0 0 6px rgba(15,32,39,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-topcashback .nav-dropdown, .brand-topcashback .nav-category-title { border: 2.5px solid #43e97b; box-shadow: 0 0 0 6px rgba(0,121,107,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-userback .nav-dropdown { border: 2.5px solid #00c6ff; box-shadow: 0 0 0 6px rgba(0,198,255,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-wise .nav-dropdown, .brand-wise .nav-category-title { border: 2.5px solid #003366; box-shadow: 0 0 0 6px rgba(23,128,61,0.18), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-home .nav-dropdown, .brand-home .nav-category-title { border: 2.5px solid #222; box-shadow: 0 0 0 6px rgba(80,80,80,0.13), 0 8px 32px rgba(0,0,0,0.08); background: linear-gradient(rgba(30,30,30,0.85), rgba(80,80,80,0.85)), url('banner.png') center/cover no-repeat; color: #fff; border-radius: 18px; }
+/* --- END NAV DROPDOWN & NAV-CATEGORY-TITLE: Brand Borders/Backgrounds --- */
+
+/* --- NAV DROPDOWN .NAVBAR-LINK: Brand Color (alphabetical by brand) --- */
+.brand-amazonprimevideo .nav-dropdown .navbar-link { color: #232f3e; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-baremetrics .nav-dropdown .navbar-link { color: #4158d0; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-befrugal .nav-dropdown .navbar-link { color: #0073e6; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-cashbackcouk .nav-dropdown .navbar-link { color: #7c2ae8; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-engagebay .nav-dropdown .navbar-link { color: #ff6600; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-fiverr .nav-dropdown .navbar-link { color: #1dbf73; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-giffgaff .nav-dropdown .navbar-link { color: #ff6f00; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-mailblaze .nav-dropdown .navbar-link { color: #1e88e5; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-monzo .nav-dropdown .navbar-link { color: #fa4b60; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-neuraltext .nav-dropdown .navbar-link { color: #6c47ff; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-outseta .nav-dropdown .navbar-link { color: #1a237e; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-printify .nav-dropdown .navbar-link { color: #00b09b; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-quidco .nav-dropdown .navbar-link { color: #2193b0; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-raisin .nav-dropdown .navbar-link { color: #f7971e; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-rakuten .nav-dropdown .navbar-link { color: #8B5CF6; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-sharelytics .nav-dropdown .navbar-link { color: #ff512f; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-shein .nav-dropdown .navbar-link { color: #ff5fa2; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-supermonitoring .nav-dropdown .navbar-link { color: #0f2027; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-topcashback .nav-dropdown .navbar-link { color: #43e97b; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-userback .nav-dropdown .navbar-link { color: #00c6ff; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-wise .nav-dropdown .navbar-link { color: #003366; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+.brand-home .nav-dropdown .navbar-link { color: #222; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+/* --- END NAV DROPDOWN .NAVBAR-LINK: Brand Color --- */
+
+/* --- NAV DROPDOWN .NAVBAR-LINK:HOVER/.ACTIVE: Brand Color (alphabetical by brand) --- */
+.brand-amazonprimevideo .nav-dropdown .navbar-link:hover, .brand-amazonprimevideo .nav-dropdown .navbar-link.active { background: #e3f6fd; color: #00a8e1; text-decoration: underline; text-indent: 8px; }
+.brand-baremetrics .nav-dropdown .navbar-link:hover, .brand-baremetrics .nav-dropdown .navbar-link.active { background: #f3e6fa; color: #2ad2c9; text-decoration: underline; text-indent: 8px; }
+.brand-befrugal .nav-dropdown .navbar-link:hover, .brand-befrugal .nav-dropdown .navbar-link.active { background: #e6f3fd; color: #ff7f32; text-decoration: underline; text-indent: 8px; }
+.brand-cashbackcouk .nav-dropdown .navbar-link:hover, .brand-cashbackcouk .nav-dropdown .navbar-link.active { background: #f3e6fd; color: #2ad2c9; text-decoration: underline; text-indent: 8px; }
+.brand-engagebay .nav-dropdown .navbar-link:hover, .brand-engagebay .nav-dropdown .navbar-link.active { background: #fff6e3; color: #7c2ae8; text-decoration: underline; text-indent: 8px; }
+.brand-fiverr .nav-dropdown .navbar-link:hover, .brand-fiverr .nav-dropdown .navbar-link.active { background: #e6fff6; color: #7c2ae8; text-decoration: underline; text-indent: 8px; }
+.brand-giffgaff .nav-dropdown .navbar-link:hover, .brand-giffgaff .nav-dropdown .navbar-link.active { background: #fffbe6; color: #ffe259; text-decoration: underline; text-indent: 8px; }
+.brand-mailblaze .nav-dropdown .navbar-link:hover, .brand-mailblaze .nav-dropdown .navbar-link.active { background: #e3f0fd; color: #00c6fb; text-decoration: underline; text-indent: 8px; }
+.brand-monzo .nav-dropdown .navbar-link:hover, .brand-monzo .nav-dropdown .navbar-link.active { background: #e3f6fd; color: #00b4d8; text-decoration: underline; text-indent: 8px; }
+.brand-neuraltext .nav-dropdown .navbar-link:hover, .brand-neuraltext .nav-dropdown .navbar-link.active { background: #ede3fd; color: #1e1e2f; text-decoration: underline; text-indent: 8px; }
+.brand-outseta .nav-dropdown .navbar-link:hover, .brand-outseta .nav-dropdown .navbar-link.active { background: #e3e6fd; color: #3949ab; text-decoration: underline; text-indent: 8px; }
+.brand-printify .nav-dropdown .navbar-link:hover, .brand-printify .nav-dropdown .navbar-link.active { background: #e3fdf6; color: #96c93d; text-decoration: underline; text-indent: 8px; }
+.brand-quidco .nav-dropdown .navbar-link:hover, .brand-quidco .nav-dropdown .navbar-link.active { background: #e3f6fd; color: #00c6fb; text-decoration: underline; text-indent: 8px; }
+.brand-raisin .nav-dropdown .navbar-link:hover, .brand-raisin .nav-dropdown .navbar-link.active { background: #fffbe6; color: #7c2ae8; text-decoration: underline; text-indent: 8px; }
+.brand-rakuten .nav-dropdown .navbar-link:hover, .brand-rakuten .nav-dropdown .navbar-link.active { background: #f6e3fd; color: #EC4899; text-decoration: underline; text-indent: 8px; }
+.brand-sharelytics .nav-dropdown .navbar-link:hover, .brand-sharelytics .nav-dropdown .navbar-link.active { background: #fde3f3; color: #dd2476; text-decoration: underline; text-indent: 8px; }
+.brand-shein .nav-dropdown .navbar-link:hover, .brand-shein .nav-dropdown .navbar-link.active { background: #fff0f6; color: #000000; text-decoration: underline; text-indent: 8px; }
+.brand-supermonitoring .nav-dropdown .navbar-link:hover, .brand-supermonitoring .nav-dropdown .navbar-link.active { background: #e3e6fd; color: #2c5364; text-decoration: underline; text-indent: 8px; }
+.brand-topcashback .nav-dropdown .navbar-link:hover, .brand-topcashback .nav-dropdown .navbar-link.active { background: #e3fdf6; color: #00796b; text-decoration: underline; text-indent: 8px; }
+.brand-userback .nav-dropdown .navbar-link:hover, .brand-userback .nav-dropdown .navbar-link.active { background: #e3f6fd; color: #0072ff; text-decoration: underline; text-indent: 8px; }
+.brand-wise .nav-dropdown .navbar-link:hover, .brand-wise .nav-dropdown .navbar-link.active { background: #e3f6fd; color: #17803d; text-decoration: underline; text-indent: 8px; }
+.brand-home .nav-dropdown .navbar-link:hover, .brand-home .nav-dropdown .navbar-link.active { background: #f3f3f3; color: #ffe259; text-decoration: underline; text-indent: 8px; }
+/* --- END NAV DROPDOWN .NAVBAR-LINK:HOVER/.ACTIVE: Brand Color --- */
+
+/* --- BRAND NAV BUTTON: Brand Gradients (alphabetical by brand) --- */
+.brand-amazonprimevideo .brand-nav-btn { background: linear-gradient(90deg, #232f3e, #00a8e1) !important; color: #fff !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-baremetrics .brand-nav-btn { background: linear-gradient(90deg, #4158d0, #2ad2c9) !important; color: #fff !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-befrugal .brand-nav-btn { background: linear-gradient(90deg, #0073e6, #ff7f32) !important; color: #fff !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-cashbackcouk .brand-nav-btn { background: linear-gradient(90deg, #7c2ae8, #2ad2c9) !important; color: #fff !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-engagebay .brand-nav-btn { background: linear-gradient(90deg, #ff6600, #7c2ae8) !important; color: #fff !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-fiverr .brand-nav-btn { background: linear-gradient(90deg, #1dbf73, #7c2ae8) !important; color: #fff !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-giffgaff .brand-nav-btn { background: linear-gradient(90deg, #ffe259, #ff6f00) !important; color: #222 !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-mailblaze .brand-nav-btn { background: linear-gradient(90deg, #1e88e5, #00c6fb) !important; color: #fff !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-monzo .brand-nav-btn { background: linear-gradient(90deg, #00b4d8, #ff6f61) !important; color: #fff !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-neuraltext .brand-nav-btn { background: linear-gradient(90deg, #6c47ff, #1e1e2f) !important; color: #fff !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-outseta .brand-nav-btn { background: linear-gradient(90deg, #1a237e, #3949ab) !important; color: #fff !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-printify .brand-nav-btn { background: linear-gradient(90deg, #00b09b, #96c93d) !important; color: #fff !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-quidco .brand-nav-btn { background: linear-gradient(90deg, #2193b0, #00c6fb) !important; color: #fff !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-raisin .brand-nav-btn { background: linear-gradient(90deg, #f7971e, #7c2ae8) !important; color: #222 !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-rakuten .brand-nav-btn { background: linear-gradient(90deg, #8B5CF6, #EC4899) !important; color: #fff !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-sharelytics .brand-nav-btn { background: linear-gradient(90deg, #ff512f, #dd2476) !important; color: #fff !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-shein .brand-nav-btn { background: linear-gradient(90deg, #000000, #ff5fa2) !important; color: #fff !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-supermonitoring .brand-nav-btn { background: linear-gradient(90deg, #2c5364, #0f2027) !important; color: #fff !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-topcashback .brand-nav-btn { background: linear-gradient(90deg, #00796b, #43e97b) !important; color: #222 !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-wise .brand-nav-btn { background: linear-gradient(90deg, #17803d, #003366) !important; color: #fff !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+.brand-home .brand-nav-btn { background: linear-gradient(90deg, #ffe259, #7c2ae8) !important; color: #fff !important; border-radius: 32px; font-weight: 700; font-size: 1.15rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); border: none; padding: 14px 38px; margin: 0 8px; transition: background 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+/* --- END BRAND NAV BUTTON: Brand Gradients --- */
+
+/* --- BRAND NAV BUTTON :HOVER/.ACTIVE: Brand Gradients (alphabetical by brand) --- */
+.brand-amazonprimevideo .brand-nav-btn:hover, .brand-amazonprimevideo .brand-nav-btn.active { background: linear-gradient(90deg, #00a8e1, #232f3e) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-baremetrics .brand-nav-btn:hover, .brand-baremetrics .brand-nav-btn.active { background: linear-gradient(90deg, #2ad2c9, #4158d0) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-befrugal .brand-nav-btn:hover, .brand-befrugal .brand-nav-btn.active { background: linear-gradient(90deg, #ff7f32, #0073e6) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-cashbackcouk .brand-nav-btn:hover, .brand-cashbackcouk .brand-nav-btn.active { background: linear-gradient(90deg, #2ad2c9, #7c2ae8) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-engagebay .brand-nav-btn:hover, .brand-engagebay .brand-nav-btn.active { background: linear-gradient(90deg, #7c2ae8, #ff6600) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-fiverr .brand-nav-btn:hover, .brand-fiverr .brand-nav-btn.active { background: linear-gradient(90deg, #7c2ae8, #1dbf73) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-giffgaff .brand-nav-btn:hover, .brand-giffgaff .brand-nav-btn.active { background: linear-gradient(90deg, #ff6f00, #ffe259) !important; color: #222 !important; transform: translateY(-2px) scale(1.05); }
+.brand-mailblaze .brand-nav-btn:hover, .brand-mailblaze .brand-nav-btn.active { background: linear-gradient(90deg, #00c6fb, #1e88e5) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-monzo .brand-nav-btn:hover, .brand-monzo .brand-nav-btn.active { background: linear-gradient(90deg, #ff6f61, #00b4d8) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-neuraltext .brand-nav-btn:hover, .brand-neuraltext .brand-nav-btn.active { background: linear-gradient(90deg, #1e1e2f, #6c47ff) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-outseta .brand-nav-btn:hover, .brand-outseta .brand-nav-btn.active { background: linear-gradient(90deg, #3949ab, #1a237e) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-printify .brand-nav-btn:hover, .brand-printify .brand-nav-btn.active { background: linear-gradient(90deg, #96c93d, #00b09b) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-sharelytics .brand-nav-btn:hover, .brand-sharelytics .brand-nav-btn.active { background: linear-gradient(90deg, #dd2476, #ff512f) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-supermonitoring .brand-nav-btn:hover, .brand-supermonitoring .brand-nav-btn.active { background: linear-gradient(90deg, #2c5364, #0f2027) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-userback .brand-nav-btn:hover, .brand-userback .brand-nav-btn.active { background: linear-gradient(90deg, #0072ff, #00c6ff) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-wise .brand-nav-btn:hover, .brand-wise .brand-nav-btn.active { background: linear-gradient(90deg, #17803d, #003366) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-home .brand-nav-btn:hover, .brand-home .brand-nav-btn.active { background: linear-gradient(90deg, #ffe259, #7c2ae8) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+/* --- END BRAND NAV BUTTON :HOVER/.ACTIVE: Brand Gradients --- */
+
+/* --- MINI-CARD: Brand Box-Shadow & .title Color (alphabetical by brand) --- */
+.brand-baremetrics .mini-card { box-shadow: 0 4px 16px rgba(42,210,201,0.07); }
+.brand-baremetrics .mini-card .title { color: #4158d0; }
+.brand-befrugal .mini-card { box-shadow: 0 4px 16px rgba(0,115,230,0.07); }
+.brand-befrugal .mini-card .title { color: #0073e6; }
 .brand-cashbackcouk .mini-card { box-shadow: 0 4px 16px rgba(120,0,180,0.07); }
 .brand-cashbackcouk .mini-card .title { color: #7c2ae8; }
-.brand-printify .mini-card { box-shadow: 0 4px 16px rgba(34, 51, 0, 0.07); }
-.brand-printify .mini-card .title { color: #354d19; }
-.brand-virgin .mini-card { box-shadow: 0 4px 16px rgba(225,10,10,0.07); }
-.brand-virgin .mini-card .title { color: #e10a0a; }
-.brand-mailblaze .mini-card { box-shadow: 0 4px 16px rgba(30,136,229,0.07); }
-.brand-mailblaze .mini-card .title { color: #1e88e5; }
+.brand-engagebay .mini-card { box-shadow: 0 4px 16px rgba(255,102,0,0.07); }
+.brand-engagebay .mini-card .title { color: #ff6600; }
+.brand-fiverr .mini-card { box-shadow: 0 4px 16px rgba(39,191,108,0.07); }
+.brand-fiverr .mini-card .title { color: #1dbf73; }
 .brand-giffgaff .mini-card { box-shadow: 0 4px 16px rgba(255,226,89,0.07); }
 .brand-giffgaff .mini-card .title { color: #ffe259; }
+.brand-mailblaze .mini-card { box-shadow: 0 4px 16px rgba(30,136,229,0.07); }
+.brand-mailblaze .mini-card .title { color: #1e88e5; }
+.brand-neuraltext .mini-card { box-shadow: 0 4px 16px rgba(108,71,255,0.07); }
+.brand-neuraltext .mini-card .title { color: #6c47ff; }
+.brand-outseta .mini-card { box-shadow: 0 4px 16px rgba(26,35,126,0.07); }
+.brand-outseta .mini-card .title { color: #1a237e; }
+.brand-printify .mini-card { box-shadow: 0 4px 16px rgba(34, 51, 0, 0.07); }
+.brand-printify .mini-card .title { color: #354d19; }
+.brand-quidco .mini-card { box-shadow: 0 4px 16px rgba(0,198,251,0.07); }
+.brand-quidco .mini-card .title { color: #2193b0; }
 .brand-raisin .mini-card { box-shadow: 0 4px 16px rgba(247,151,30,0.07); }
 .brand-raisin .mini-card .title { color: #f7971e; }
 .brand-rakuten .mini-card { box-shadow: 0 4px 16px rgba(139,92,246,0.07); }
 .brand-rakuten .mini-card .title { color: #8B5CF6; }
 .brand-shein .mini-card { box-shadow: 0 4px 16px rgba(255,95,162,0.07); }
 .brand-shein .mini-card .title { color: #ff5fa2; }
-.brand-befrugal .mini-card { box-shadow: 0 4px 16px rgba(0,115,230,0.07); }
-.brand-befrugal .mini-card .title { color: #0073e6; }
-.brand-neuraltext .mini-card { box-shadow: 0 4px 16px rgba(108,71,255,0.07); }
-.brand-neuraltext .mini-card .title { color: #6c47ff; }
-.brand-outseta .mini-card { box-shadow: 0 4px 16px rgba(26,35,126,0.07); }
-.brand-outseta .mini-card .title { color: #1a237e; }
 .brand-sharelytics .mini-card { box-shadow: 0 4px 16px rgba(255,81,47,0.07); }
 .brand-sharelytics .mini-card .title { color: #ff512f; }
-
-/* -------------------- HOME -------------------- */
-body.brand-home::before {
-  background: linear-gradient(120deg, #7c2ae8 0%, #ffe259 100%);
-}
-.brand-home .headline {
-  background: linear-gradient(90deg, #7c2ae8, #ffe259);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.cta-button-home, .brand-home .share-btn {
-  background: linear-gradient(90deg, #7c2ae8, #ffe259) !important;
-  color: #fff !important;
-}
-.brand-home .card {
-  border: 2.5px solid #7c2ae8;
-  box-shadow: 0 0 0 6px rgba(124,42,232,0.13), 0 8px 32px rgba(0,0,0,0.08);
-}
-.brand-home .nav-dropdown, .brand-home .nav-category-title {
-  border: 2.5px solid #7c2ae8;
-  box-shadow: 0 0 0 6px rgba(255,226,89,0.13), 0 8px 32px rgba(0,0,0,0.08);
-  background: #fff;
-  border-radius: 18px;
-}
-.brand-home .nav-dropdown .navbar-link {
-  color: #7c2ae8;
-  font-weight: 700;
-  border-radius: 12px;
-  margin: 2px 8px;
-  transition: background 0.2s, color 0.2s, text-indent 0.2s;
-}
-.brand-home .nav-dropdown .navbar-link:hover,
-.brand-home .nav-dropdown .navbar-link.active {
-  background: #ffe259;
-  color: #7c2ae8;
-  text-decoration: underline;
-  text-indent: 8px;
-}
-.brand-home .share-btn:hover {
-  background: linear-gradient(90deg, #ffe259, #7c2ae8) !important;
-}
-.brand-home .share-btn svg { fill: #fff; }
+.brand-supermonitoring .mini-card { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+.brand-supermonitoring .mini-card .title { color: #3a7bd5; }
+.brand-topcashback .mini-card { box-shadow: 0 4px 16px rgba(33,178,98,0.07); }
+.brand-topcashback .mini-card .title { color: #21b262; }
+.brand-userback .mini-card { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+.brand-userback .mini-card .title { color: #3a7bd5; }
+.brand-wise .mini-card { box-shadow: 0 4px 16px rgba(0,128,0,0.07); }
+.brand-wise .mini-card .title { color: #17803d; }
 .brand-home .mini-card { box-shadow: 0 4px 16px rgba(124,42,232,0.07); }
 .brand-home .mini-card .title { color: #7c2ae8; }
+
+/* --- SHARE BUTTON :HOVER: Brand Gradients (alphabetical by brand) --- */
+.brand-amazonprimevideo .share-btn:hover { background: linear-gradient(90deg, #00a8e1, #232f3e) !important; }
+.brand-baremetrics .share-btn:hover { background: linear-gradient(90deg, #2ad2c9, #4158d0) !important; }
+.brand-befrugal .share-btn:hover { background: linear-gradient(90deg, #ff7f32, #0073e6) !important; }
+.brand-cashbackcouk .share-btn:hover { background: linear-gradient(90deg, #2ad2c9, #7c2ae8) !important; }
+.brand-engagebay .share-btn:hover { background: linear-gradient(90deg, #7c2ae8, #ff6600) !important; }
+.brand-fiverr .share-btn:hover { background: linear-gradient(90deg, #7c2ae8, #1dbf73) !important; }
+.brand-giffgaff .share-btn:hover { background: linear-gradient(90deg, #ff6f00, #ffe259) !important; }
+.brand-mailblaze .share-btn:hover { background: linear-gradient(90deg, #00c6fb, #1e88e5) !important; }
+.brand-monzo .share-btn:hover { background: linear-gradient(90deg, #ff6f61, #00b4d8) !important; }
+.brand-quidco .share-btn:hover { background: linear-gradient(90deg, #00c6fb, #2193b0) !important; }
+.brand-raisin .share-btn:hover { background: linear-gradient(90deg, #7c2ae8, #f7971e) !important; }
+.brand-rakuten .share-btn:hover { background: linear-gradient(90deg, #EC4899, #8B5CF6) !important; }
+.brand-shein .share-btn:hover { background: linear-gradient(90deg, #000000, #ff5fa2) !important; }
+.brand-wise .share-btn:hover { background: linear-gradient(90deg, #17803d, #003366) !important; }
+.brand-neuraltext .share-btn:hover { background: linear-gradient(90deg, #1e1e2f, #6c47ff) !important; }
+.brand-outseta .share-btn:hover { background: linear-gradient(90deg, #3949ab, #1a237e) !important; }
+.brand-printify .share-btn:hover { background: linear-gradient(90deg, #96c93d, #00b09b) !important; }
+.brand-sharelytics .share-btn:hover { background: linear-gradient(90deg, #dd2476, #ff512f) !important; }
+.brand-supermonitoring .share-btn:hover { background: linear-gradient(90deg, #2c5364, #0f2027) !important; }
+.brand-userback .share-btn:hover { background: linear-gradient(90deg, #0072ff, #00c6ff) !important; }
+.brand-home .share-btn:hover { background: linear-gradient(90deg, #ffe259, #7c2ae8) !important; }
+
+/* --- SHARE BUTTON SVG FILL: Brand Color (alphabetical by brand) --- */
+.brand-amazonprimevideo .share-btn svg { fill: #fff; }
+.brand-baremetrics .share-btn svg { fill: #fff; }
+.brand-befrugal .share-btn svg { fill: #fff; }
+.brand-cashbackcouk .share-btn svg { fill: #fff; }
+.brand-engagebay .share-btn svg { fill: #fff; }
+.brand-fiverr .share-btn svg { fill: #fff; }
+.brand-giffgaff .share-btn svg { fill: #222; }
+.brand-mailblaze .share-btn svg { fill: #fff; }
+.brand-monzo .share-btn svg { fill: #fff; }
+.brand-quidco .share-btn svg { fill: #fff; }
+.brand-raisin .share-btn svg { fill: #222; }
+.brand-rakuten .share-btn svg { fill: #fff; }
+.brand-shein .share-btn svg { fill: #fff; }
+.brand-wise .share-btn svg { fill: #fff; }
+.brand-neuraltext .share-btn svg { fill: #fff; }
+.brand-outseta .share-btn svg { fill: #fff; }
+.brand-printify .share-btn svg { fill: #fff; }
+.brand-sharelytics .share-btn svg { fill: #fff; }
+.brand-supermonitoring .share-btn svg { fill: #fff; }
+.brand-userback .share-btn svg { fill: #fff; }
+.brand-home .share-btn svg { fill: #fff; } 
