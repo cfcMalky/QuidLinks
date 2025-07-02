@@ -1131,185 +1131,195 @@ body::before {
 .brand-amazonprimevideo .nav-category-title {
   background: linear-gradient(90deg, #232f3e, #00a8e1) !important;
   color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border-radius: 32px !important;
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
+  border: none !important;
+  padding: 14px 38px !important;
+  margin: 0 8px !important;
+  transition: background 0.2s, color 0.2s, transform 0.2s !important;
+  display: inline-block !important;
 }
 .brand-amazonprimevideo .nav-category-title:hover, .brand-amazonprimevideo .nav-category-title.active {
   background: linear-gradient(90deg, #00a8e1, #232f3e) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
+  transform: translateY(-2px) scale(1.05) !important;
 }
 
 /* Baremetrics */
 .brand-baremetrics .nav-category-title {
   background: linear-gradient(90deg, #4158d0, #2ad2c9) !important;
   color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border-radius: 32px !important;
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
+  border: none !important;
+  padding: 14px 38px !important;
+  margin: 0 8px !important;
+  transition: background 0.2s, color 0.2s, transform 0.2s !important;
+  display: inline-block !important;
 }
 .brand-baremetrics .nav-category-title:hover, .brand-baremetrics .nav-category-title.active {
   background: linear-gradient(90deg, #2ad2c9, #4158d0) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
+  transform: translateY(-2px) scale(1.05) !important;
 }
 
 /* Befrugal */
 .brand-befrugal .nav-category-title {
   background: linear-gradient(90deg, #0073e6, #ff7f32) !important;
   color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border-radius: 32px !important;
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
+  border: none !important;
+  padding: 14px 38px !important;
+  margin: 0 8px !important;
+  transition: background 0.2s, color 0.2s, transform 0.2s !important;
+  display: inline-block !important;
 }
 .brand-befrugal .nav-category-title:hover, .brand-befrugal .nav-category-title.active {
   background: linear-gradient(90deg, #ff7f32, #0073e6) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
+  transform: translateY(-2px) scale(1.05) !important;
 }
 
 /* Cashback.co.uk */
 .brand-cashbackcouk .nav-category-title {
   background: linear-gradient(90deg, #7c2ae8, #2ad2c9) !important;
   color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border-radius: 32px !important;
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
+  border: none !important;
+  padding: 14px 38px !important;
+  margin: 0 8px !important;
+  transition: background 0.2s, color 0.2s, transform 0.2s !important;
+  display: inline-block !important;
 }
 .brand-cashbackcouk .nav-category-title:hover, .brand-cashbackcouk .nav-category-title.active {
   background: linear-gradient(90deg, #2ad2c9, #7c2ae8) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
+  transform: translateY(-2px) scale(1.05) !important;
 }
 
 /* EngageBay */
 .brand-engagebay .nav-category-title {
   background: linear-gradient(90deg, #ff6600, #7c2ae8) !important;
   color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border-radius: 32px !important;
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
+  border: none !important;
+  padding: 14px 38px !important;
+  margin: 0 8px !important;
+  transition: background 0.2s, color 0.2s, transform 0.2s !important;
+  display: inline-block !important;
 }
 .brand-engagebay .nav-category-title:hover, .brand-engagebay .nav-category-title.active {
   background: linear-gradient(90deg, #7c2ae8, #ff6600) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
+  transform: translateY(-2px) scale(1.05) !important;
 }
 
 /* Fiverr */
 .brand-fiverr .nav-category-title {
   background: linear-gradient(90deg, #1dbf73, #7c2ae8) !important;
   color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border-radius: 32px !important;
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
+  border: none !important;
+  padding: 14px 38px !important;
+  margin: 0 8px !important;
+  transition: background 0.2s, color 0.2s, transform 0.2s !important;
+  display: inline-block !important;
 }
 .brand-fiverr .nav-category-title:hover, .brand-fiverr .nav-category-title.active {
   background: linear-gradient(90deg, #7c2ae8, #1dbf73) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
+  transform: translateY(-2px) scale(1.05) !important;
 }
 
 /* Giffgaff */
 .brand-giffgaff .nav-category-title {
   background: linear-gradient(90deg, #ffe259, #ff6f00) !important;
   color: #222 !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border-radius: 32px !important;
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
+  border: none !important;
+  padding: 14px 38px !important;
+  margin: 0 8px !important;
+  transition: background 0.2s, color 0.2s, transform 0.2s !important;
+  display: inline-block !important;
 }
 .brand-giffgaff .nav-category-title:hover, .brand-giffgaff .nav-category-title.active {
   background: linear-gradient(90deg, #ff6f00, #ffe259) !important;
   color: #222 !important;
-  transform: translateY(-2px) scale(1.05);
+  transform: translateY(-2px) scale(1.05) !important;
 }
 
 /* Mailblaze */
 .brand-mailblaze .nav-category-title {
   background: linear-gradient(90deg, #1e88e5, #00c6fb) !important;
   color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border-radius: 32px !important;
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
+  border: none !important;
+  padding: 14px 38px !important;
+  margin: 0 8px !important;
+  transition: background 0.2s, color 0.2s, transform 0.2s !important;
+  display: inline-block !important;
 }
 .brand-mailblaze .nav-category-title:hover, .brand-mailblaze .nav-category-title.active {
   background: linear-gradient(90deg, #00c6fb, #1e88e5) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
+  transform: translateY(-2px) scale(1.05) !important;
 }
 
 /* Monzo */
 .brand-monzo .nav-category-title {
   background: linear-gradient(90deg, #00b4d8, #ff6f61) !important;
   color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border-radius: 32px !important;
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
+  border: none !important;
+  padding: 14px 38px !important;
+  margin: 0 8px !important;
+  transition: background 0.2s, color 0.2s, transform 0.2s !important;
+  display: inline-block !important;
 }
 .brand-monzo .nav-category-title:hover, .brand-monzo .nav-category-title.active {
   background: linear-gradient(90deg, #ff6f61, #00b4d8) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.05);
+  transform: translateY(-2px) scale(1.05) !important;
 }
 
 /* Quidco */
 .brand-quidco .nav-category-title {
   background: linear-gradient(90deg, #2193b0, #00c6fb) !important;
   color: #fff !important;
-  border-radius: 32px;
-  font-weight: 700;
-  font-size: 1.15rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  border: none;
-  padding: 14px 38px;
-  margin: 0 8px;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  border-radius: 32px !important;
+  font-weight: 700 !important;
+  font-size: 1.15rem !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
+  border: none !important;
+  padding: 14px 38px !important;
+  margin: 0 8px !important;
+  transition: background 0.2s, color 0.2s, transform 0.2s !important;
+  display: inline-block !important;
 }
 .brand-quidco .nav-category-title:hover, .brand-quidco .nav-category-title.active {
   background: linear-gradient(90deg, #00c6fb, #2193b0) !important;
