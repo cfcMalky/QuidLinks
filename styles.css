@@ -2046,3 +2046,16 @@ body::before {
   color: #1a237e !important;
   transform: translateY(-2px) scale(1.05);
 }
+
+.banner-overlay .banner-nav-bar-bg {
+  background: rgba(20, 20, 40, 0.55);
+  border-radius: 36px;
+  padding: 8px 18px;
+  display: inline-block;
+  margin-top: 1.5em;
+  pointer-events: auto;
+}
+.banner-overlay .home-nav-bar,
+.banner-overlay .home-nav-bar .brand-nav-btn {
+  pointer-events: auto;
+}
