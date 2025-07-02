@@ -326,6 +326,12 @@
     gap: 16px;
     margin-bottom: 12px;
 }
+.cta-share-row-inner {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
 .cta-share-row .cta-button {
     min-width: 120px;
     max-width: 220px;
