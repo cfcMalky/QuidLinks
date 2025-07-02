@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const links = offers.map(row => {
         const file = (row['File'] || '').replace(/.html$/i, '');
         const brand = row['Brand'] || '';
-        return `<li><a href="/pages/offers/${file}.html" class="navbar-link">${brand}</a></li>`;
+        return `<li><a href="/pages/offers/${file}/" class="navbar-link">${brand}</a></li>`;
       }).join('\n');
       return `<div class="nav-category">
         <button type="button" class="brand-nav-btn">${cat}</button>
@@ -67,7 +67,7 @@ ${headerButtons}${navCats}
       const path = window.location.pathname;
       navBtns.forEach(btn => {
         const href = btn.getAttribute('href');
-        if (href && path.includes(href.replace('/pages/offers/', '').replace('.html', ''))) {
+        if (href && path.includes(href.replace('/pages/offers/', '').replace('/', ''))) {
           btn.classList.add('active');
         }
       });

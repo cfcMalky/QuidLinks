@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return `<div class="offer-card ${brandClass} ${i < 2 ? 'visible' : 'hidden'}" style="margin: 0 12px; --category-border: ${headerColor};">
           <div class="offer-title">${brand}</div>
           <div class="offer-desc">${subheadline}</div>
-          <a href="/pages/offers/${file}.html" class="cta-button cta-button-${brandClass.replace('brand-','')}">View ${brand} Offer</a>
+          <a href="/pages/offers/${file}/" class="cta-button cta-button-${brandClass.replace('brand-','')}">View ${brand} Offer</a>
           <div class="mini-card" style="--mini-card-border: ${headerColor}; display:none;"></div>
         </div>`;
       }).join('\n');
