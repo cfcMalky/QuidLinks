@@ -322,7 +322,7 @@
 .cta-share-row {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 16px;
     margin-bottom: 12px;
 }
@@ -338,9 +338,10 @@
 }
 .share-btn-group {
     display: flex;
-    gap: 10px;
+    gap: 16px;
     align-items: center;
-    margin-left: 16px;
+    margin-left: 0;
+    margin-right: 0;
 }
 .share-btn {
     width: 48px;
@@ -356,10 +357,14 @@
     background: #fff;
     transition: background 0.2s, box-shadow 0.2s;
 }
-.share-btn img {
-    width: 24px;
-    height: 24px;
+.share-btn img,
+.share-btn svg {
+    width: 32px !important;
+    height: 32px !important;
     display: block;
+}
+.share-btn svg {
+    fill: #fff !important;
 }
 
 /* --- MINI-CARD STYLING --- */
