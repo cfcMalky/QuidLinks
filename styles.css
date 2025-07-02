@@ -19,7 +19,6 @@
 .brand-supermonitoring .headline { background: linear-gradient(90deg, #0f2027, #2c5364); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .brand-topcashback .headline { background: linear-gradient(90deg, #43e97b, #38f9d7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .brand-userback .headline { background: linear-gradient(90deg, #00c6ff, #0072ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.brand-virgin .headline { background: linear-gradient(90deg, #e52d27, #b31217); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .brand-wise .headline { background: linear-gradient(90deg, #003366, #17803d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .brand-home .headline { background: linear-gradient(90deg, #7c2ae8, #ffe259); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
@@ -589,4 +588,102 @@ body::before {
     font-size: 1rem;
     padding: 8px 18px;
   }
+}
+
+/* ===================================================================== */
+/* === ENHANCED HEADER, NAVIGATION, AND CTA/SHARE LAYOUT STYLES === */
+/* ===================================================================== */
+
+/* Pill-styled navigation buttons (main nav and banner nav) */
+.brand-nav-btn,
+.home-nav-bar a {
+    border-radius: 999px !important;
+    padding: 10px 32px !important;
+    font-size: 1.08rem;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border: none;
+    margin: 0 4px;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    background: #fff;
+    color: #7c2ae8;
+    text-decoration: none;
+    display: inline-block;
+}
+.brand-nav-btn:hover,
+.home-nav-bar a:hover,
+.brand-nav-btn.active,
+.home-nav-bar a.active {
+    background: #7c2ae8;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(124,42,232,0.13);
+}
+
+/* Overlay banner content */
+.site-banner {
+    position: relative;
+    width: 100%;
+    min-height: 220px;
+    overflow: hidden;
+}
+.banner-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+.banner-overlay-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(34, 34, 34, 0.32);
+    z-index: 1;
+}
+.banner-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    pointer-events: none;
+}
+.banner-title, .banner-tagline, .home-nav-bar {
+    pointer-events: auto;
+}
+.banner-title {
+    font-size: 2.6rem;
+    font-weight: 900;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    margin-bottom: 8px;
+}
+.banner-tagline {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    margin-bottom: 18px;
+}
+.home-nav-bar {
+    margin-top: 10px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* CTA and share buttons row */
+.cta-share-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+.cta-share-row .cta-button {
+    flex: 1 1 auto;
+}
+.share-btn-group {
+    display: flex;
+    gap: 8px;
 } 
