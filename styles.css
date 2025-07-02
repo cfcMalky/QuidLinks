@@ -414,16 +414,24 @@
 .mini-card .icon {
     font-size: 2.4rem;
     margin-bottom: 12px;
-    margin-right: 0;
+    margin-right: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
     line-height: 1;
+    display: block;
+    text-align: center;
 }
 .mini-card .title {
     color: #00b4d8;
     font-weight: 800;
     font-size: 1.13rem;
     margin-bottom: 6px;
-    margin-right: 0;
+    margin-right: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
     letter-spacing: 0.01em;
+    display: block;
+    text-align: center;
 }
 .mini-card .desc {
     color: #232f3e;
