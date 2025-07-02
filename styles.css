@@ -247,6 +247,7 @@
 
 /* --- NAV DROPDOWN IMPROVEMENTS --- */
 .nav-dropdown {
+    display: none !important;
     position: absolute !important;
     top: 100%;
     left: 0;
@@ -256,37 +257,28 @@
     z-index: 1000 !important;
     box-shadow: 0 8px 32px rgba(0,0,0,0.13);
 }
-
-.nav-category {
-    position: relative !important;
-}
-
-.nav-dropdown ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-dropdown li {
-    margin: 0;
-    padding: 0;
+.nav-category:hover .nav-dropdown,
+.nav-category:focus-within .nav-dropdown {
+    display: flex !important;
+    flex-direction: column;
 }
 
 .nav-dropdown .navbar-link {
-    display: block;
-    padding: 10px 24px;
-    margin: 0;
-    border-radius: 12px;
+    font-family: inherit;
     color: #232f3e;
     font-weight: 600;
     text-decoration: none;
+    text-align: left;
+    padding: 10px 24px;
+    border-radius: 12px;
+    margin: 0;
+    display: block;
     transition: background 0.2s, color 0.2s;
 }
-
 .nav-dropdown .navbar-link:hover,
 .nav-dropdown .navbar-link.active {
     background: #f3f3f3;
-    color: #00b4d8; /* Monzo blue for Monzo, or use brand color */
+    color: #00b4d8;
 }
 
 /* ===================================================================== */
