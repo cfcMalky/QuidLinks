@@ -392,3 +392,86 @@
     font-weight: 700;
     margin-right: 8px;
 }
+
+/* --- HEADER/BANNER FULL WIDTH & LAYOUT --- */
+.site-banner {
+    width: 100vw;
+    max-width: 100vw;
+    position: relative;
+    margin: 0 auto 32px auto;
+    padding: 0;
+    overflow: hidden;
+    display: block;
+}
+.banner-bg {
+    width: 100vw;
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+}
+.banner-img {
+    width: 100vw;
+    min-width: 100vw;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+}
+.banner-overlay-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100vw; height: 240px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.85) 100%);
+    z-index: 1;
+}
+.banner-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100vw; height: 240px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 32px 48px 0 48px;
+    box-sizing: border-box;
+}
+.banner-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #232f3e;
+    margin-bottom: 0.2em;
+}
+.banner-tagline {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #00b4d8;
+    margin-bottom: 1.2em;
+}
+.banner-nav-bar-bg {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5em;
+}
+.home-nav-bar {
+    width: auto;
+    display: flex;
+    gap: 18px;
+}
+@media (max-width: 900px) {
+    .banner-bg, .banner-img, .banner-overlay, .banner-overlay-bg, .site-banner, .banner-nav-bar-bg {
+        width: 100vw !important;
+        min-width: 100vw !important;
+        max-width: 100vw !important;
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+    .banner-overlay {
+        padding: 18px 8px 0 8px;
+        height: 180px;
+    }
+    .banner-bg, .banner-img, .banner-overlay-bg {
+        height: 180px;
+    }
+    .banner-title { font-size: 1.3rem; }
+    .banner-tagline { font-size: 1rem; }
+}
