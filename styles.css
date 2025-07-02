@@ -1690,3 +1690,161 @@ body::before {
 .brand-wise .banner-home-btn, .brand-wise .banner-info-btn {
   background-image: linear-gradient(90deg, #003366, #17803d);
 }
+
+/* --- BUSINESS TOOLS: DROPDOWN & SECTION BORDERS (ALPHABETICAL) --- */
+
+/* NeuralText */
+.brand-neuraltext .card {
+  border: 2.5px solid #6c47ff;
+  box-shadow: 0 0 0 6px rgba(108,71,255,0.13), 0 8px 32px rgba(0,0,0,0.08);
+}
+.brand-neuraltext .nav-dropdown {
+  border: 2.5px solid #6c47ff;
+  box-shadow: 0 0 0 6px rgba(108,71,255,0.13), 0 8px 32px rgba(0,0,0,0.08);
+  background: #fff;
+  border-radius: 18px;
+}
+.brand-neuraltext .nav-dropdown .navbar-link {
+  color: #6c47ff;
+  font-weight: 700;
+  border-radius: 12px;
+  margin: 2px 8px;
+  transition: background 0.2s, color 0.2s, text-indent 0.2s;
+}
+.brand-neuraltext .nav-dropdown .navbar-link:hover,
+.brand-neuraltext .nav-dropdown .navbar-link.active {
+  background: #ede3fd;
+  color: #1e1e2f;
+  text-decoration: underline;
+  text-indent: 8px;
+}
+
+/* Outseta */
+.brand-outseta .card {
+  border: 2.5px solid #1a237e;
+  box-shadow: 0 0 0 6px rgba(26,35,126,0.13), 0 8px 32px rgba(0,0,0,0.08);
+}
+.brand-outseta .nav-dropdown {
+  border: 2.5px solid #1a237e;
+  box-shadow: 0 0 0 6px rgba(26,35,126,0.13), 0 8px 32px rgba(0,0,0,0.08);
+  background: #fff;
+  border-radius: 18px;
+}
+.brand-outseta .nav-dropdown .navbar-link {
+  color: #1a237e;
+  font-weight: 700;
+  border-radius: 12px;
+  margin: 2px 8px;
+  transition: background 0.2s, color 0.2s, text-indent 0.2s;
+}
+.brand-outseta .nav-dropdown .navbar-link:hover,
+.brand-outseta .nav-dropdown .navbar-link.active {
+  background: #e3e6fd;
+  color: #3949ab;
+  text-decoration: underline;
+  text-indent: 8px;
+}
+
+/* Printify */
+.brand-printify .card {
+  border: 2.5px solid #00b09b;
+  box-shadow: 0 0 0 6px rgba(0,176,155,0.13), 0 8px 32px rgba(0,0,0,0.08);
+}
+.brand-printify .nav-dropdown {
+  border: 2.5px solid #00b09b;
+  box-shadow: 0 0 0 6px rgba(0,176,155,0.13), 0 8px 32px rgba(0,0,0,0.08);
+  background: #fff;
+  border-radius: 18px;
+}
+.brand-printify .nav-dropdown .navbar-link {
+  color: #00b09b;
+  font-weight: 700;
+  border-radius: 12px;
+  margin: 2px 8px;
+  transition: background 0.2s, color 0.2s, text-indent 0.2s;
+}
+.brand-printify .nav-dropdown .navbar-link:hover,
+.brand-printify .nav-dropdown .navbar-link.active {
+  background: #e3fdf6;
+  color: #96c93d;
+  text-decoration: underline;
+  text-indent: 8px;
+}
+
+/* Sharelytics */
+.brand-sharelytics .card {
+  border: 2.5px solid #ff512f;
+  box-shadow: 0 0 0 6px rgba(255,81,47,0.13), 0 8px 32px rgba(0,0,0,0.08);
+}
+.brand-sharelytics .nav-dropdown {
+  border: 2.5px solid #ff512f;
+  box-shadow: 0 0 0 6px rgba(255,81,47,0.13), 0 8px 32px rgba(0,0,0,0.08);
+  background: #fff;
+  border-radius: 18px;
+}
+.brand-sharelytics .nav-dropdown .navbar-link {
+  color: #ff512f;
+  font-weight: 700;
+  border-radius: 12px;
+  margin: 2px 8px;
+  transition: background 0.2s, color 0.2s, text-indent 0.2s;
+}
+.brand-sharelytics .nav-dropdown .navbar-link:hover,
+.brand-sharelytics .nav-dropdown .navbar-link.active {
+  background: #fde3f3;
+  color: #dd2476;
+  text-decoration: underline;
+  text-indent: 8px;
+}
+
+/* Super Monitoring */
+.brand-supermonitoring .card {
+  border: 2.5px solid #0f2027;
+  box-shadow: 0 0 0 6px rgba(15,32,39,0.13), 0 8px 32px rgba(0,0,0,0.08);
+}
+.brand-supermonitoring .nav-dropdown {
+  border: 2.5px solid #0f2027;
+  box-shadow: 0 0 0 6px rgba(15,32,39,0.13), 0 8px 32px rgba(0,0,0,0.08);
+  background: #fff;
+  border-radius: 18px;
+}
+.brand-supermonitoring .nav-dropdown .navbar-link {
+  color: #0f2027;
+  font-weight: 700;
+  border-radius: 12px;
+  margin: 2px 8px;
+  transition: background 0.2s, color 0.2s, text-indent 0.2s;
+}
+.brand-supermonitoring .nav-dropdown .navbar-link:hover,
+.brand-supermonitoring .nav-dropdown .navbar-link.active {
+  background: #e3e6fd;
+  color: #2c5364;
+  text-decoration: underline;
+  text-indent: 8px;
+}
+
+/* Userback */
+.brand-userback .card {
+  border: 2.5px solid #00c6ff;
+  box-shadow: 0 0 0 6px rgba(0,198,255,0.13), 0 8px 32px rgba(0,0,0,0.08);
+}
+.brand-userback .nav-dropdown {
+  border: 2.5px solid #00c6ff;
+  box-shadow: 0 0 0 6px rgba(0,198,255,0.13), 0 8px 32px rgba(0,0,0,0.08);
+  background: #fff;
+  border-radius: 18px;
+}
+.brand-userback .nav-dropdown .navbar-link {
+  color: #00c6ff;
+  font-weight: 700;
+  border-radius: 12px;
+  margin: 2px 8px;
+  transition: background 0.2s, color 0.2s, text-indent 0.2s;
+}
+.brand-userback .nav-dropdown .navbar-link:hover,
+.brand-userback .nav-dropdown .navbar-link.active {
+  background: #e3f6fd;
+  color: #0072ff;
+  text-decoration: underline;
+  text-indent: 8px;
+}
