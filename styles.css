@@ -1133,16 +1133,17 @@ body::before {
   color: #fff !important;
   border-radius: 32px;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   border: none;
-  padding: 12px 32px;
+  padding: 14px 38px;
+  margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 .brand-amazonprimevideo .nav-category-title:hover, .brand-amazonprimevideo .nav-category-title.active {
   background: linear-gradient(90deg, #00a8e1, #232f3e) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Baremetrics */
@@ -1151,16 +1152,17 @@ body::before {
   color: #fff !important;
   border-radius: 32px;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   border: none;
-  padding: 12px 32px;
+  padding: 14px 38px;
+  margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 .brand-baremetrics .nav-category-title:hover, .brand-baremetrics .nav-category-title.active {
   background: linear-gradient(90deg, #2ad2c9, #4158d0) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Befrugal */
@@ -1169,16 +1171,17 @@ body::before {
   color: #fff !important;
   border-radius: 32px;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   border: none;
-  padding: 12px 32px;
+  padding: 14px 38px;
+  margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 .brand-befrugal .nav-category-title:hover, .brand-befrugal .nav-category-title.active {
   background: linear-gradient(90deg, #ff7f32, #0073e6) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Cashback.co.uk */
@@ -1187,16 +1190,17 @@ body::before {
   color: #fff !important;
   border-radius: 32px;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   border: none;
-  padding: 12px 32px;
+  padding: 14px 38px;
+  margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 .brand-cashbackcouk .nav-category-title:hover, .brand-cashbackcouk .nav-category-title.active {
   background: linear-gradient(90deg, #2ad2c9, #7c2ae8) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* EngageBay */
@@ -1205,16 +1209,17 @@ body::before {
   color: #fff !important;
   border-radius: 32px;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   border: none;
-  padding: 12px 32px;
+  padding: 14px 38px;
+  margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 .brand-engagebay .nav-category-title:hover, .brand-engagebay .nav-category-title.active {
   background: linear-gradient(90deg, #7c2ae8, #ff6600) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Fiverr */
@@ -1223,16 +1228,17 @@ body::before {
   color: #fff !important;
   border-radius: 32px;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   border: none;
-  padding: 12px 32px;
+  padding: 14px 38px;
+  margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 .brand-fiverr .nav-category-title:hover, .brand-fiverr .nav-category-title.active {
   background: linear-gradient(90deg, #7c2ae8, #1dbf73) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Giffgaff */
@@ -1241,16 +1247,17 @@ body::before {
   color: #222 !important;
   border-radius: 32px;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   border: none;
-  padding: 12px 32px;
+  padding: 14px 38px;
+  margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 .brand-giffgaff .nav-category-title:hover, .brand-giffgaff .nav-category-title.active {
   background: linear-gradient(90deg, #ff6f00, #ffe259) !important;
   color: #222 !important;
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Mailblaze */
@@ -1259,16 +1266,17 @@ body::before {
   color: #fff !important;
   border-radius: 32px;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   border: none;
-  padding: 12px 32px;
+  padding: 14px 38px;
+  margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 .brand-mailblaze .nav-category-title:hover, .brand-mailblaze .nav-category-title.active {
   background: linear-gradient(90deg, #00c6fb, #1e88e5) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Monzo */
@@ -1277,16 +1285,17 @@ body::before {
   color: #fff !important;
   border-radius: 32px;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   border: none;
-  padding: 12px 32px;
+  padding: 14px 38px;
+  margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 .brand-monzo .nav-category-title:hover, .brand-monzo .nav-category-title.active {
   background: linear-gradient(90deg, #ff6f61, #00b4d8) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Quidco */
@@ -1295,16 +1304,17 @@ body::before {
   color: #fff !important;
   border-radius: 32px;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   border: none;
-  padding: 12px 32px;
+  padding: 14px 38px;
+  margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 .brand-quidco .nav-category-title:hover, .brand-quidco .nav-category-title.active {
   background: linear-gradient(90deg, #00c6fb, #2193b0) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Rakuten */
@@ -1313,16 +1323,17 @@ body::before {
   color: #fff !important;
   border-radius: 32px;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   border: none;
-  padding: 12px 32px;
+  padding: 14px 38px;
+  margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 .brand-rakuten .nav-category-title:hover, .brand-rakuten .nav-category-title.active {
   background: linear-gradient(90deg, #EC4899, #8B5CF6) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Raisin */
@@ -1331,16 +1342,17 @@ body::before {
   color: #222 !important;
   border-radius: 32px;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   border: none;
-  padding: 12px 32px;
+  padding: 14px 38px;
+  margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 .brand-raisin .nav-category-title:hover, .brand-raisin .nav-category-title.active {
   background: linear-gradient(90deg, #7c2ae8, #f7971e) !important;
   color: #222 !important;
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Shein */
@@ -1349,16 +1361,17 @@ body::before {
   color: #fff !important;
   border-radius: 32px;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   border: none;
-  padding: 12px 32px;
+  padding: 14px 38px;
+  margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 .brand-shein .nav-category-title:hover, .brand-shein .nav-category-title.active {
   background: linear-gradient(90deg, #000000, #ff5fa2) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* TopCashback */
@@ -1367,16 +1380,17 @@ body::before {
   color: #222 !important;
   border-radius: 32px;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   border: none;
-  padding: 12px 32px;
+  padding: 14px 38px;
+  margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 .brand-topcashback .nav-category-title:hover, .brand-topcashback .nav-category-title.active {
   background: linear-gradient(90deg, #00796b, #43e97b) !important;
   color: #222 !important;
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Virgin */
@@ -1385,16 +1399,17 @@ body::before {
   color: #fff !important;
   border-radius: 32px;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   border: none;
-  padding: 12px 32px;
+  padding: 14px 38px;
+  margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 .brand-virgin .nav-category-title:hover, .brand-virgin .nav-category-title.active {
   background: linear-gradient(90deg, #b31217, #e52d27) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* Wise */
@@ -1403,16 +1418,17 @@ body::before {
   color: #fff !important;
   border-radius: 32px;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   border: none;
-  padding: 12px 32px;
+  padding: 14px 38px;
+  margin: 0 8px;
   transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 .brand-wise .nav-category-title:hover, .brand-wise .nav-category-title.active {
   background: linear-gradient(90deg, #17803d, #003366) !important;
   color: #fff !important;
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(1.05);
 }
 
 /* --- BANNER: EDGE-TO-EDGE WITH DARK OVERLAY --- */
@@ -1470,22 +1486,73 @@ body::before {
   text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 .banner-home-btn, .banner-info-btn {
-  display: inline-block;
-  margin: 0 8px;
-  padding: 10px 28px;
-  font-size: 1.1rem;
+  background: none !important;
+  color: transparent !important;
+  background-image: linear-gradient(90deg, #00b4d8, #ff6f61); /* Default, will be overridden by brand */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: 700;
-  border-radius: 32px;
-  background: linear-gradient(90deg, #00b4d8, #ff6f61);
-  color: #fff;
+  font-size: 1.15rem;
   border: none;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  box-shadow: none;
+  border-radius: 32px;
+  padding: 10px 28px;
+  margin: 0 8px;
   text-decoration: none;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  transition: color 0.2s, text-shadow 0.2s, transform 0.2s;
   cursor: pointer;
+  outline: none;
 }
 .banner-home-btn:hover, .banner-info-btn:hover {
-  background: linear-gradient(90deg, #ff6f61, #00b4d8);
-  color: #fff;
-  transform: translateY(-2px) scale(1.03);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+/* Brand-specific gradient text for Home/Info buttons */
+.brand-monzo .banner-home-btn, .brand-monzo .banner-info-btn {
+  background-image: linear-gradient(90deg, #00b4d8, #ff6f61);
+}
+.brand-giffgaff .banner-home-btn, .brand-giffgaff .banner-info-btn {
+  background-image: linear-gradient(90deg, #ffe259, #ff6f00);
+}
+.brand-baremetrics .banner-home-btn, .brand-baremetrics .banner-info-btn {
+  background-image: linear-gradient(90deg, #4158d0, #2ad2c9);
+}
+.brand-fiverr .banner-home-btn, .brand-fiverr .banner-info-btn {
+  background-image: linear-gradient(90deg, #1dbf73, #7c2ae8);
+}
+.brand-quidco .banner-home-btn, .brand-quidco .banner-info-btn {
+  background-image: linear-gradient(90deg, #2193b0, #00c6fb);
+}
+.brand-raisin .banner-home-btn, .brand-raisin .banner-info-btn {
+  background-image: linear-gradient(90deg, #f7971e, #7c2ae8);
+}
+.brand-engagebay .banner-home-btn, .brand-engagebay .banner-info-btn {
+  background-image: linear-gradient(90deg, #ff6600, #7c2ae8);
+}
+.brand-mailblaze .banner-home-btn, .brand-mailblaze .banner-info-btn {
+  background-image: linear-gradient(90deg, #1e88e5, #00c6fb);
+}
+.brand-topcashback .banner-home-btn, .brand-topcashback .banner-info-btn {
+  background-image: linear-gradient(90deg, #43e97b, #00796b);
+}
+.brand-cashbackcouk .banner-home-btn, .brand-cashbackcouk .banner-info-btn {
+  background-image: linear-gradient(90deg, #7c2ae8, #2ad2c9);
+}
+.brand-befrugal .banner-home-btn, .brand-befrugal .banner-info-btn {
+  background-image: linear-gradient(90deg, #0073e6, #ff7f32);
+}
+.brand-shein .banner-home-btn, .brand-shein .banner-info-btn {
+  background-image: linear-gradient(90deg, #ff5fa2, #000000);
+}
+.brand-rakuten .banner-home-btn, .brand-rakuten .banner-info-btn {
+  background-image: linear-gradient(90deg, #8B5CF6, #EC4899);
+}
+.brand-virgin .banner-home-btn, .brand-virgin .banner-info-btn {
+  background-image: linear-gradient(90deg, #e52d27, #b31217);
+}
+.brand-wise .banner-home-btn, .brand-wise .banner-info-btn {
+  background-image: linear-gradient(90deg, #003366, #17803d);
 }
