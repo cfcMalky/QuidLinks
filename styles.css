@@ -478,3 +478,34 @@
     .banner-title { font-size: 1.3rem; }
     .banner-tagline { font-size: 1rem; }
 }
+
+/* --- HEADER NAV LINKS: WHITE TEXT, NO BG, UNDERLINE ON HOVER --- */
+.home-nav-bar .brand-nav-btn {
+    background: none !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-decoration: none;
+    transition: color 0.2s, text-decoration 0.2s;
+    font-weight: 700;
+    font-size: 1.08rem;
+    border-radius: 0 !important;
+    padding: 10px 32px !important;
+}
+.home-nav-bar .brand-nav-btn:hover,
+.home-nav-bar .brand-nav-btn:focus {
+    color: #fff !important;
+    text-decoration: underline;
+    background: none !important;
+}
+
+/* --- REMOVE WHITE EDGING/BORDER FROM BANNER IMAGE --- */
+.site-banner, .banner-bg, .banner-img {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+.site-banner {
+    margin: 0 0 32px 0 !important;
+    padding: 0 !important;
+}
