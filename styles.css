@@ -245,80 +245,55 @@
 .brand-wise .nav-dropdown, .brand-wise .nav-category-title { border: 2.5px solid #003366; box-shadow: 0 0 0 6px rgba(23,128,61,0.18), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
 .brand-home .nav-dropdown, .brand-home .nav-category-title { border: 2.5px solid #222; box-shadow: 0 0 0 6px rgba(80,80,80,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
 
-/* --- NAV DROPDOWN .NAVBAR-LINK: Brand Color (alphabetical by brand) --- */
-.brand-amazonprimevideo .nav-dropdown .navbar-link { color: #232f3e; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-baremetrics .nav-dropdown .navbar-link { color: #4158d0; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-befrugal .nav-dropdown .navbar-link { color: #0073e6; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-cashbackcouk .nav-dropdown .navbar-link { color: #7c2ae8; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-engagebay .nav-dropdown .navbar-link { color: #ff6600; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-fiverr .nav-dropdown .navbar-link { color: #1dbf73; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-giffgaff .nav-dropdown .navbar-link { color: #ff6f00; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-mailblaze .nav-dropdown .navbar-link { color: #1e88e5; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-monzo .nav-dropdown .navbar-link { color: #fa4b60; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-neuraltext .nav-dropdown .navbar-link { color: #6c47ff; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-outseta .nav-dropdown .navbar-link { color: #1a237e; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-printify .nav-dropdown .navbar-link { color: #00b09b; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-quidco .nav-dropdown .navbar-link { color: #2193b0; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-raisin .nav-dropdown .navbar-link { color: #f7971e; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-rakuten .nav-dropdown .navbar-link { color: #8B5CF6; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-sharelytics .nav-dropdown .navbar-link { color: #ff512f; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-shein .nav-dropdown .navbar-link { color: #ff5fa2; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-supermonitoring .nav-dropdown .navbar-link { color: #0f2027; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-topcashback .nav-dropdown .navbar-link { color: #43e97b; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-userback .nav-dropdown .navbar-link { color: #00c6ff; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-virgin .nav-dropdown .navbar-link { color: #e10a0a; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-wise .nav-dropdown .navbar-link { color: #003366; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
-.brand-home .nav-dropdown .navbar-link { color: #222; font-weight: 700; border-radius: 12px; margin: 2px 8px; transition: background 0.2s, color 0.2s, text-indent 0.2s; }
+/* --- NAV DROPDOWN IMPROVEMENTS --- */
+.nav-dropdown {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 16px);
+    flex-direction: column;
+    z-index: 100;
+    padding: 12px 0;
+    margin-top: 0;
+    min-width: 180px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    border: 2.5px solid #eee;
+}
 
-/* --- NAV DROPDOWN .NAVBAR-LINK:HOVER/.ACTIVE: Brand Color (alphabetical by brand) --- */
-.brand-amazonprimevideo .nav-dropdown .navbar-link:hover, .brand-amazonprimevideo .nav-dropdown .navbar-link.active { background: #e3f6fd; color: #00a8e1; text-decoration: underline; text-indent: 8px; }
-.brand-baremetrics .nav-dropdown .navbar-link:hover, .brand-baremetrics .nav-dropdown .navbar-link.active { background: #f3e6fa; color: #2ad2c9; text-decoration: underline; text-indent: 8px; }
-.brand-befrugal .nav-dropdown .navbar-link:hover, .brand-befrugal .nav-dropdown .navbar-link.active { background: #e6f3fd; color: #ff7f32; text-decoration: underline; text-indent: 8px; }
-.brand-cashbackcouk .nav-dropdown .navbar-link:hover, .brand-cashbackcouk .nav-dropdown .navbar-link.active { background: #f3e6fd; color: #2ad2c9; text-decoration: underline; text-indent: 8px; }
-.brand-engagebay .nav-dropdown .navbar-link:hover, .brand-engagebay .nav-dropdown .navbar-link.active { background: #fff6e3; color: #7c2ae8; text-decoration: underline; text-indent: 8px; }
-.brand-fiverr .nav-dropdown .navbar-link:hover, .brand-fiverr .nav-dropdown .navbar-link.active { background: #e6fff6; color: #7c2ae8; text-decoration: underline; text-indent: 8px; }
-.brand-giffgaff .nav-dropdown .navbar-link:hover, .brand-giffgaff .nav-dropdown .navbar-link.active { background: #fffbe6; color: #ffe259; text-decoration: underline; text-indent: 8px; }
-.brand-mailblaze .nav-dropdown .navbar-link:hover, .brand-mailblaze .nav-dropdown .navbar-link.active { background: #e3f0fd; color: #00c6fb; text-decoration: underline; text-indent: 8px; }
-.brand-monzo .nav-dropdown .navbar-link:hover, .brand-monzo .nav-dropdown .navbar-link.active { background: #e3f6fd; color: #00b4d8; text-decoration: underline; text-indent: 8px; }
-.brand-neuraltext .nav-dropdown .navbar-link:hover, .brand-neuraltext .nav-dropdown .navbar-link.active { background: #ede3fd; color: #1e1e2f; text-decoration: underline; text-indent: 8px; }
-.brand-outseta .nav-dropdown .navbar-link:hover, .brand-outseta .nav-dropdown .navbar-link.active { background: #e3e6fd; color: #3949ab; text-decoration: underline; text-indent: 8px; }
-.brand-printify .nav-dropdown .navbar-link:hover, .brand-printify .nav-dropdown .navbar-link.active { background: #e3fdf6; color: #96c93d; text-decoration: underline; text-indent: 8px; }
-.brand-quidco .nav-dropdown .navbar-link:hover, .brand-quidco .nav-dropdown .navbar-link.active { background: #e3f6fd; color: #00c6fb; text-decoration: underline; text-indent: 8px; }
-.brand-raisin .nav-dropdown .navbar-link:hover, .brand-raisin .nav-dropdown .navbar-link.active { background: #fffbe6; color: #7c2ae8; text-decoration: underline; text-indent: 8px; }
-.brand-rakuten .nav-dropdown .navbar-link:hover, .brand-rakuten .nav-dropdown .navbar-link.active { background: #f6e3fd; color: #EC4899; text-decoration: underline; text-indent: 8px; }
-.brand-sharelytics .nav-dropdown .navbar-link:hover, .brand-sharelytics .nav-dropdown .navbar-link.active { background: #fde3f3; color: #dd2476; text-decoration: underline; text-indent: 8px; }
-.brand-shein .nav-dropdown .navbar-link:hover, .brand-shein .nav-dropdown .navbar-link.active { background: #fff0f6; color: #000000; text-decoration: underline; text-indent: 8px; }
-.brand-supermonitoring .nav-dropdown .navbar-link:hover, .brand-supermonitoring .nav-dropdown .navbar-link.active { background: #e3e6fd; color: #2c5364; text-decoration: underline; text-indent: 8px; }
-.brand-topcashback .nav-dropdown .navbar-link:hover, .brand-topcashback .nav-dropdown .navbar-link.active { background: #e3fdf6; color: #00796b; text-decoration: underline; text-indent: 8px; }
-.brand-userback .nav-dropdown .navbar-link:hover, .brand-userback .nav-dropdown .navbar-link.active { background: #e3f6fd; color: #0072ff; text-decoration: underline; text-indent: 8px; }
-.brand-virgin .nav-dropdown .navbar-link:hover, .brand-virgin .nav-dropdown .navbar-link.active { background: #fde3e3; color: #e52d27; text-decoration: underline; text-indent: 8px; }
-.brand-wise .nav-dropdown .navbar-link:hover, .brand-wise .nav-dropdown .navbar-link.active { background: #e3f6fd; color: #17803d; text-decoration: underline; text-indent: 8px; }
-.brand-home .nav-dropdown .navbar-link:hover, .brand-home .nav-dropdown .navbar-link.active { background: #f3f3f3; color: #ffe259; text-decoration: underline; text-indent: 8px; }
+.nav-category:hover .nav-dropdown,
+.nav-category:focus-within .nav-dropdown {
+    display: flex;
+}
 
-/* --- NAV DROPDOWN .NAVBAR-LINK SVG: Brand Fill Color (alphabetical by brand) --- */
-.brand-amazonprimevideo .nav-dropdown .navbar-link svg { fill: #232f3e; }
-.brand-baremetrics .nav-dropdown .navbar-link svg { fill: #4158d0; }
-.brand-befrugal .nav-dropdown .navbar-link svg { fill: #0073e6; }
-.brand-cashbackcouk .nav-dropdown .navbar-link svg { fill: #7c2ae8; }
-.brand-engagebay .nav-dropdown .navbar-link svg { fill: #ff6600; }
-.brand-fiverr .nav-dropdown .navbar-link svg { fill: #1dbf73; }
-.brand-giffgaff .nav-dropdown .navbar-link svg { fill: #ff6f00; }
-.brand-mailblaze .nav-dropdown .navbar-link svg { fill: #1e88e5; }
-.brand-monzo .nav-dropdown .navbar-link svg { fill: #fa4b60; }
-.brand-neuraltext .nav-dropdown .navbar-link svg { fill: #6c47ff; }
-.brand-outseta .nav-dropdown .navbar-link svg { fill: #1a237e; }
-.brand-printify .nav-dropdown .navbar-link svg { fill: #00b09b; }
-.brand-quidco .nav-dropdown .navbar-link svg { fill: #2193b0; }
-.brand-raisin .nav-dropdown .navbar-link svg { fill: #f7971e; }
-.brand-rakuten .nav-dropdown .navbar-link svg { fill: #8B5CF6; }
-.brand-sharelytics .nav-dropdown .navbar-link svg { fill: #ff512f; }
-.brand-shein .nav-dropdown .navbar-link svg { fill: #ff5fa2; }
-.brand-supermonitoring .nav-dropdown .navbar-link svg { fill: #0f2027; }
-.brand-topcashback .nav-dropdown .navbar-link svg { fill: #43e97b; }
-.brand-userback .nav-dropdown .navbar-link svg { fill: #00c6ff; }
-.brand-virgin .nav-dropdown .navbar-link svg { fill: #e10a0a; }
-.brand-wise .nav-dropdown .navbar-link svg { fill: #003366; }
-.brand-home .nav-dropdown .navbar-link svg { fill: #222; }
+.nav-dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-dropdown li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-dropdown .navbar-link {
+    display: block;
+    padding: 10px 24px;
+    margin: 0;
+    border-radius: 12px;
+    color: #232f3e;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-dropdown .navbar-link:hover,
+.nav-dropdown .navbar-link.active {
+    background: #f3f3f3;
+    color: #00b4d8; /* Monzo blue for Monzo, or use brand color */
+}
 
 /* ===================================================================== */
 
