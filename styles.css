@@ -2023,3 +2023,7 @@ body::before {
     gap: 12px;
   }
 }
+
+.card:last-of-type {
+  margin-bottom: 16px;
+}
