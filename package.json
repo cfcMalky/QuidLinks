@@ -1,0 +1,24 @@
+{
+  "name": "refer2earn",
+  "version": "1.0.0",
+  "main": "generate_missing_offers.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfcMalky/refer2earn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cfcMalky/refer2earn/issues"
+  },
+  "homepage": "https://github.com/cfcMalky/refer2earn#readme",
+  "description": "",
+  "dependencies": {
+    "csv-parse": "^5.6.0",
+    "csv-stringify": "^6.5.2"
+  }
+}
