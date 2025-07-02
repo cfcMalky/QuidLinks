@@ -433,6 +433,10 @@
     padding: 32px 48px 0 48px;
     box-sizing: border-box;
     text-align: center;
+    pointer-events: none;
+}
+.banner-overlay > * {
+    pointer-events: auto;
 }
 .banner-title {
     font-size: 2.2rem;
@@ -538,4 +542,17 @@ html, body {
     outline: none !important;
     margin: 0 !important;
     padding: 0 !important;
+}
+
+/* Hide hamburger menu on desktop */
+@media (min-width: 900px) {
+    .nav-hamburger {
+        display: none !important;
+    }
+}
+/* Show hamburger menu on mobile */
+@media (max-width: 899px) {
+    .nav-hamburger {
+        display: block !important;
+    }
 }
