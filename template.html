@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{headline}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{headline}}</title>
     <link rel="stylesheet" href="../styles.css">
+    <meta name="description" content="{{subheadline}}">
 </head>
 <body class="{{brand_class}}">
     <script src="../inject-banner.js"></script>
@@ -15,7 +16,9 @@
             <div class="subheadline">{{subheadline}}</div>
             <div class="cta-share-row">
                 <a href="{{referral_link}}" class="cta-button cta-button-{{brand_class}}" target="_blank" rel="noopener">Sign Up</a>
-                <!-- {{share_buttons}} -->
+                <div class="share-btn-group">
+                    {{share_buttons}}
+                </div>
             </div>
         </div>
         <div class="card">
