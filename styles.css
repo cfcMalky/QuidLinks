@@ -433,10 +433,9 @@
     padding: 32px 48px 0 48px;
     box-sizing: border-box;
     text-align: center;
-    pointer-events: none;
 }
 .banner-overlay > * {
-    pointer-events: auto;
+    /* pointer-events: auto; */
 }
 .banner-title {
     font-size: 2.2rem;
