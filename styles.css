@@ -2005,41 +2005,36 @@ body.brand-userback::before {
 
 /* Universal share button sizing and spacing */
 .share-btn {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  min-height: 56px;
+  max-width: 56px;
+  max-height: 56px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 56px; /* match .cta-button height (16px padding + 1.2rem font + border) */
-  min-width: 56px;
-  padding: 0 22px;
-  border-radius: 32px;
-  font-size: 1.2rem;
+  border-radius: 50%;
+  font-size: 1.3rem;
   font-weight: 700;
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
   border: none;
-  margin: 0 0 0 18px; /* space to left of CTA, adjust as needed */
+  margin: 0;
+  padding: 0;
   transition: background 0.2s, color 0.2s, transform 0.2s;
   vertical-align: middle;
-  gap: 8px;
+  gap: 0;
 }
-
-/* If share button comes before CTA, add margin-right instead */
-.share-btn:not(:last-child) {
-  margin-right: 18px;
-  margin-left: 0;
-}
-
-/* Responsive: match .cta-button on mobile */
 @media (max-width: 700px) {
   .share-btn {
+    width: 44px;
     height: 44px;
     min-width: 44px;
-    padding: 0 14px;
+    min-height: 44px;
+    max-width: 44px;
+    max-height: 44px;
     font-size: 1rem;
-    border-radius: 24px;
-    margin-left: 12px;
-  }
-  .share-btn:not(:last-child) {
-    margin-right: 12px;
+    border-radius: 50%;
   }
 }
 
