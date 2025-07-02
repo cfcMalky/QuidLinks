@@ -1571,3 +1571,29 @@ body::before {
 .brand-wise .banner-home-btn, .brand-wise .banner-info-btn {
   background-image: linear-gradient(90deg, #003366, #17803d);
 }
+
+/* --- UNIVERSAL NAV PILL STYLE FOR .brand-nav-btn (MATCHES HOME/INFO BUTTONS) --- */
+.brand-nav-btn {
+    display: inline-block;
+    margin: 0 8px;
+    padding: 10px 32px;
+    border: 2.5px solid #fff;
+    border-radius: 32px;
+    background: transparent;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    position: relative;
+    z-index: 3;
+    pointer-events: auto;
+}
+.brand-nav-btn:hover, .brand-nav-btn.active {
+    color: #ffe259;
+    border-color: #ffe259;
+    background: rgba(255,255,255,0.08);
+    text-decoration: none;
+}
