@@ -2027,3 +2027,22 @@ body::before {
 .card + .cta-bottom-wrapper {
   margin-top: 0;
 }
+
+.brand-home .brand-nav-btn {
+  background: linear-gradient(90deg, #1a237e, #ffe259) !important;
+  color: #fff !important;
+  border-radius: 32px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  border: none;
+  padding: 14px 38px;
+  margin: 0 8px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
+}
+.brand-home .brand-nav-btn:hover, .brand-home .brand-nav-btn.active {
+  background: linear-gradient(90deg, #ffe259, #1a237e) !important;
+  color: #1a237e !important;
+  transform: translateY(-2px) scale(1.05);
+}
