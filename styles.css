@@ -2141,3 +2141,76 @@ body.brand-userback::before {
 .banner-overlay .home-nav-bar .brand-nav-btn {
   pointer-events: auto;
 }
+
+/* Universal card grid for offer pages */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin: 24px 0;
+}
+.mini-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(35,47,62,0.07);
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.mini-card .icon {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+.mini-card .title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  color: #232f3e;
+}
+.mini-card .desc {
+  color: #444;
+  font-size: 0.98rem;
+}
+@media (max-width: 700px) {
+  .card-grid { grid-template-columns: 1fr; }
+}
+
+/* Brand-specific mini-card styles */
+.brand-fiverr .mini-card { box-shadow: 0 4px 16px rgba(39,191,108,0.07); }
+.brand-fiverr .mini-card .title { color: #1dbf73; }
+.brand-engagebay .mini-card { box-shadow: 0 4px 16px rgba(255,102,0,0.07); }
+.brand-engagebay .mini-card .title { color: #ff6600; }
+.brand-wise .mini-card { box-shadow: 0 4px 16px rgba(0,128,0,0.07); }
+.brand-wise .mini-card .title { color: #17803d; }
+.brand-userback .mini-card { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+.brand-userback .mini-card .title { color: #3a7bd5; }
+.brand-topcashback .mini-card { box-shadow: 0 4px 16px rgba(33,178,98,0.07); }
+.brand-topcashback .mini-card .title { color: #21b262; }
+.brand-supermonitoring .mini-card { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+.brand-supermonitoring .mini-card .title { color: #3a7bd5; }
+.brand-cashbackcouk .mini-card { box-shadow: 0 4px 16px rgba(120,0,180,0.07); }
+.brand-cashbackcouk .mini-card .title { color: #7c2ae8; }
+.brand-printify .mini-card { box-shadow: 0 4px 16px rgba(34, 51, 0, 0.07); }
+.brand-printify .mini-card .title { color: #354d19; }
+.brand-virgin .mini-card { box-shadow: 0 4px 16px rgba(225,10,10,0.07); }
+.brand-virgin .mini-card .title { color: #e10a0a; }
+.brand-mailblaze .mini-card { box-shadow: 0 4px 16px rgba(30,136,229,0.07); }
+.brand-mailblaze .mini-card .title { color: #1e88e5; }
+.brand-giffgaff .mini-card { box-shadow: 0 4px 16px rgba(255,226,89,0.07); }
+.brand-giffgaff .mini-card .title { color: #ffe259; }
+.brand-raisin .mini-card { box-shadow: 0 4px 16px rgba(247,151,30,0.07); }
+.brand-raisin .mini-card .title { color: #f7971e; }
+.brand-rakuten .mini-card { box-shadow: 0 4px 16px rgba(139,92,246,0.07); }
+.brand-rakuten .mini-card .title { color: #8B5CF6; }
+.brand-shein .mini-card { box-shadow: 0 4px 16px rgba(255,95,162,0.07); }
+.brand-shein .mini-card .title { color: #ff5fa2; }
+.brand-befrugal .mini-card { box-shadow: 0 4px 16px rgba(0,115,230,0.07); }
+.brand-befrugal .mini-card .title { color: #0073e6; }
+.brand-neuraltext .mini-card { box-shadow: 0 4px 16px rgba(108,71,255,0.07); }
+.brand-neuraltext .mini-card .title { color: #6c47ff; }
+.brand-outseta .mini-card { box-shadow: 0 4px 16px rgba(26,35,126,0.07); }
+.brand-outseta .mini-card .title { color: #1a237e; }
+.brand-sharelytics .mini-card { box-shadow: 0 4px 16px rgba(255,81,47,0.07); }
+.brand-sharelytics .mini-card .title { color: #ff512f; }
