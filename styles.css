@@ -2024,6 +2024,6 @@ body::before {
   }
 }
 
-.card:last-of-type {
-  margin-bottom: 16px;
+.card + .cta-bottom-wrapper {
+  margin-top: 0;
 }
