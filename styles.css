@@ -26,67 +26,67 @@ body::before {
     transition: background 0.4s;
 }
 
-.brand-monzo body::before {
+body.brand-monzo::before {
     background: linear-gradient(120deg, #00b4d8 0%, #ff6f61 100%);
 }
-.brand-giffgaff body::before {
+body.brand-giffgaff::before {
     background: linear-gradient(120deg, #ffe259 0%, #ff6f00 100%);
 }
-.brand-baremetrics body::before {
+body.brand-baremetrics::before {
     background: linear-gradient(120deg, #4158d0 0%, #2ad2c9 100%);
 }
-.brand-fiverr body::before {
+body.brand-fiverr::before {
     background: linear-gradient(120deg, #1dbf73 0%, #7c2ae8 100%);
 }
-.brand-quidco body::before {
+body.brand-quidco::before {
     background: linear-gradient(120deg, #2193b0 0%, #00c6fb 100%);
 }
-.brand-raisin body::before {
+body.brand-raisin::before {
     background: linear-gradient(120deg, #f7971e 0%, #7c2ae8 100%);
 }
-.brand-engagebay body::before {
+body.brand-engagebay::before {
     background: linear-gradient(120deg, #ff6600 0%, #7c2ae8 100%);
 }
-.brand-mailblaze body::before {
+body.brand-mailblaze::before {
     background: linear-gradient(120deg, #1e88e5 0%, #00c6fb 100%);
 }
-.brand-topcashback body::before {
+body.brand-topcashback::before {
     background: linear-gradient(120deg, #43e97b 0%, #00796b 100%);
 }
-.brand-cashbackcouk body::before {
+body.brand-cashbackcouk::before {
     background: linear-gradient(120deg, #7c2ae8 0%, #2ad2c9 100%);
 }
-.brand-befrugal body::before {
+body.brand-befrugal::before {
     background: linear-gradient(120deg, #0073e6 0%, #ff7f32 100%);
 }
-.brand-shein body::before {
+body.brand-shein::before {
     background: linear-gradient(120deg, #ff5fa2 0%, #000000 100%);
 }
-.brand-rakuten body::before {
+body.brand-rakuten::before {
     background: linear-gradient(120deg, #8B5CF6 0%, #EC4899 100%);
 }
-.brand-virgin body::before {
+body.brand-virgin::before {
     background: linear-gradient(120deg, #e52d27 0%, #b31217 100%);
 }
-.brand-wise body::before {
+body.brand-wise::before {
     background: linear-gradient(120deg, #003366 0%, #17803d 100%);
 }
-.brand-neuraltext body::before {
+body.brand-neuraltext::before {
     background: linear-gradient(120deg, #6c47ff 0%, #1e1e2f 100%);
 }
-.brand-outseta body::before {
+body.brand-outseta::before {
     background: linear-gradient(120deg, #1a237e 0%, #3949ab 100%);
 }
-.brand-printify body::before {
+body.brand-printify::before {
     background: linear-gradient(120deg, #00b09b 0%, #96c93d 100%);
 }
-.brand-sharelytics body::before {
+body.brand-sharelytics::before {
     background: linear-gradient(120deg, #ff512f 0%, #dd2476 100%);
 }
-.brand-supermonitoring body::before {
+body.brand-supermonitoring::before {
     background: linear-gradient(120deg, #0f2027 0%, #2c5364 100%);
 }
-.brand-userback body::before {
+body.brand-userback::before {
     background: linear-gradient(120deg, #00c6ff 0%, #0072ff 100%);
 }
 
