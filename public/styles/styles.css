@@ -384,3 +384,54 @@ html, body { overflow-x: hidden; margin: 0; padding: 0; font-family: Verdana, sa
   background: none;
   border: none;
 }
+
+/* --- CATEGORY GRADIENT TEXT FOR NAVBAR DROPDOWNS --- */
+.gradient-text-banking {
+  background: linear-gradient(135deg, #e3f0ff 0%, #1976d2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.gradient-text-businesstools {
+  background: linear-gradient(135deg, #ffe3e3 0%, #d32f2f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.gradient-text-cashback {
+  background: linear-gradient(135deg, #e3fff3 0%, #009688 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.gradient-text-media {
+  background: linear-gradient(135deg, #f3e3ff 0%, #8e24aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.gradient-text-networks {
+  background: linear-gradient(135deg, #fffde3 0%, #ffd600 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.gradient-text-shopping {
+  background: linear-gradient(135deg, #ffe0b2 0%, #e65100 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.gradient-text-other {
+  background: linear-gradient(135deg, #f0f0f0 0%, #757575 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}

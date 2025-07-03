@@ -166,17 +166,39 @@ function buildNavbar(records, colMap) {
   });
   // Sort categories
   const sortedCats = Object.keys(categories).sort((a, b) => a.localeCompare(b));
+  // Category color and gradient maps
+  const categoryHeaderColors = {
+    'Banking': '#1a237e',
+    'Business Tools': '#b71c1c',
+    'Cashback': '#00695c',
+    'Media': '#7b1fa2',
+    'Networks': '#bfa600',
+    'Shopping': '#e65100',
+    'Other': '#444',
+  };
+  const categoryGradients = {
+    'Banking': 'linear-gradient(135deg, #e3f0ff 0%, #1976d2 100%)',
+    'Business Tools': 'linear-gradient(135deg, #ffe3e3 0%, #d32f2f 100%)',
+    'Cashback': 'linear-gradient(135deg, #e3fff3 0%, #009688 100%)',
+    'Media': 'linear-gradient(135deg, #f3e3ff 0%, #8e24aa 100%)',
+    'Networks': 'linear-gradient(135deg, #fffde3 0%, #ffd600 100%)',
+    'Shopping': 'linear-gradient(135deg, #ffe0b2 0%, #e65100 100%)',
+    'Other': 'linear-gradient(135deg, #f0f0f0 0%, #757575 100%)',
+  };
   // Build nav HTML
   const navCats = sortedCats.map(cat => {
     const offers = categories[cat].sort((a, b) => (getVal(a, 'Brand', colMap)||'').localeCompare(getVal(b, 'Brand', colMap)||''));
+    const catClass = cat.replace(/\s+/g, '').toLowerCase();
+    const headerColor = categoryHeaderColors[cat] || categoryHeaderColors['Other'];
+    const gradientClass = `gradient-text-${catClass}`;
     const links = offers.map(row => {
       const file = (getVal(row, 'File', colMap) || '').replace(/.html$/i, '');
       const brand = getVal(row, 'Brand', colMap) || '';
-      return `<li><a href="/pages/offers/${file}/" class="navbar-link">${brand}</a></li>`;
+      return `<li><a href="/pages/offers/${file}/" class="navbar-link ${gradientClass}">${brand}</a></li>`;
     }).join('\n');
     return `<div class="nav-category">
       <button type="button" class="brand-nav-btn category-nav-btn">${cat}</button>
-      <div class="nav-dropdown">
+      <div class="nav-dropdown" style="border: 2px solid ${headerColor};">
         <ul>
 ${links}
         </ul>
