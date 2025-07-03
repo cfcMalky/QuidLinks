@@ -21,6 +21,7 @@
 .brand-userback .headline { background: linear-gradient(90deg, #00c6ff, #0072ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .brand-wise .headline { background: linear-gradient(90deg, #003366, #17803d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .brand-home .headline { background: linear-gradient(90deg, #232f3e, #3a506b, #7c2ae8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-virgin .headline { background: linear-gradient(90deg, #e52d27, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
 /* --- CTA BUTTON: Brand Gradients (alphabetical by brand) --- */
 .brand-amazonprimevideo .share-btn, .cta-button-amazonprimevideo { background: linear-gradient(90deg, #232f3e, #00a8e1) !important; color: #fff !important; }
@@ -45,6 +46,7 @@
 .brand-userback .share-btn, .cta-button-userback { background: linear-gradient(90deg, #00c6ff, #0072ff) !important; color: #fff !important; }
 .brand-wise .share-btn, .cta-button-wise { background: linear-gradient(90deg, #003366, #17803d) !important; color: #fff !important; }
 .brand-home .share-btn, .cta-button-home { background: linear-gradient(90deg, #232f3e, #3a506b, #7c2ae8) !important; color: #fff !important; }
+.brand-virgin .share-btn, .cta-button-virgin { background: linear-gradient(90deg, #e52d27, #000000) !important; color: #fff !important; }
 
 /* --- CARD: Brand Border/Shadow (alphabetical by brand) --- */
 .brand-amazonprimevideo .card { border: 2.5px solid #232f3e; box-shadow: 0 0 0 6px rgba(0,168,225,0.18), 0 8px 32px rgba(0,0,0,0.08); }
@@ -67,57 +69,34 @@
 .brand-supermonitoring .card { border: 2.5px solid #0f2027; box-shadow: 0 0 0 6px rgba(15,32,39,0.13), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-topcashback .card { border: 2.5px solid #43e97b; box-shadow: 0 0 0 6px rgba(56,249,215,0.18), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-userback .card { border: 2.5px solid #00c6ff; box-shadow: 0 0 0 6px rgba(0,198,255,0.13), 0 8px 32px rgba(0,0,0,0.08); }
-.brand-virgin .card { border: 2.5px solid #e52d27; box-shadow: 0 0 0 6px rgba(179,18,23,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-virgin .card { border: 2.5px solid #e52d27; box-shadow: 0 0 0 6px rgba(0,0,0,0.13), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-wise .card { border: 2.5px solid #003366; box-shadow: 0 0 0 6px rgba(23,128,61,0.18), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-home .card { border: 2.5px solid #3a506b; box-shadow: 0 0 0 6px rgba(58,80,107,0.13), 0 8px 32px rgba(0,0,0,0.08); }
 
 /* --- MINI-CARD: Brand Box-Shadow & .title Color (alphabetical by brand) --- */
-.brand-amazonprimevideo .mini-card { box-shadow: 0 4px 16px rgba(0,168,225,0.07); }
-.brand-amazonprimevideo .mini-card .title { color: #232f3e; }
-.brand-baremetrics .mini-card { box-shadow: 0 4px 16px rgba(200,80,192,0.07); }
-.brand-baremetrics .mini-card .title { color: #4158d0; }
-.brand-befrugal .mini-card { box-shadow: 0 4px 16px rgba(0,115,230,0.07); }
-.brand-befrugal .mini-card .title { color: #0073e6; }
-.brand-cashbackcouk .mini-card { box-shadow: 0 4px 16px rgba(120,0,180,0.07); }
-.brand-cashbackcouk .mini-card .title { color: #7c2ae8; }
-.brand-engagebay .mini-card { box-shadow: 0 4px 16px rgba(255,102,0,0.07); }
-.brand-engagebay .mini-card .title { color: #ff6600; }
-.brand-fiverr .mini-card { box-shadow: 0 4px 16px rgba(39,191,108,0.07); }
-.brand-fiverr .mini-card .title { color: #1dbf73; }
-.brand-giffgaff .mini-card { box-shadow: 0 4px 16px rgba(255,226,89,0.07); }
-.brand-giffgaff .mini-card .title { color: #ffe259; }
-.brand-mailblaze .mini-card { box-shadow: 0 4px 16px rgba(30,136,229,0.07); }
-.brand-mailblaze .mini-card .title { color: #1e88e5; }
-.brand-monzo .mini-card { box-shadow: 0 4px 16px rgba(250,75,96,0.07); }
-.brand-monzo .mini-card .title { color: #fa4b60; }
-.brand-neuraltext .mini-card { box-shadow: 0 4px 16px rgba(108,71,255,0.07); }
-.brand-neuraltext .mini-card .title { color: #6c47ff; }
-.brand-outseta .mini-card { box-shadow: 0 4px 16px rgba(26,35,126,0.07); }
-.brand-outseta .mini-card .title { color: #1a237e; }
-.brand-printify .mini-card { box-shadow: 0 4px 16px rgba(0,176,155,0.07); }
-.brand-printify .mini-card .title { color: #00b09b; }
-.brand-quidco .mini-card { box-shadow: 0 4px 16px rgba(0,87,184,0.07); }
-.brand-quidco .mini-card .title { color: #2193b0; }
-.brand-raisin .mini-card { box-shadow: 0 4px 16px rgba(255,210,0,0.07); }
-.brand-raisin .mini-card .title { color: #f7971e; }
-.brand-rakuten .mini-card { box-shadow: 0 4px 16px rgba(139,92,246,0.07); }
-.brand-rakuten .mini-card .title { color: #8B5CF6; }
-.brand-sharelytics .mini-card { box-shadow: 0 4px 16px rgba(255,81,47,0.07); }
-.brand-sharelytics .mini-card .title { color: #ff512f; }
-.brand-shein .mini-card { box-shadow: 0 4px 16px rgba(255,95,162,0.07); }
-.brand-shein .mini-card .title { color: #ff5fa2; }
-.brand-supermonitoring .mini-card { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
-.brand-supermonitoring .mini-card .title { color: #3a7bd5; }
-.brand-topcashback .mini-card { box-shadow: 0 4px 16px rgba(33,178,98,0.07); }
-.brand-topcashback .mini-card .title { color: #21b262; }
-.brand-userback .mini-card { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
-.brand-userback .mini-card .title { color: #3a7bd5; }
-.brand-virgin .mini-card { box-shadow: 0 4px 16px rgba(229,45,39,0.07); }
-.brand-virgin .mini-card .title { color: #e52d27; }
-.brand-wise .mini-card { box-shadow: 0 4px 16px rgba(0,128,0,0.07); }
-.brand-wise .mini-card .title { color: #17803d; }
-.brand-home .mini-card { box-shadow: 0 4px 16px rgba(124,42,232,0.07); }
-.brand-home .mini-card .title { color: #3a506b; }
+.brand-amazonprimevideo .mini-card { border: 2.5px solid #232f3e; box-shadow: 0 0 0 6px rgba(0,168,225,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-baremetrics .mini-card { border: 2.5px solid #4158d0; box-shadow: 0 0 0 6px rgba(200,80,192,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-befrugal .mini-card { border: 2.5px solid #0073e6; box-shadow: 0 0 0 6px rgba(255,127,50,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-cashbackcouk .mini-card { border: 2.5px solid #7c2ae8; box-shadow: 0 0 0 6px rgba(42,210,201,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-engagebay .mini-card { border: 2.5px solid #ff6600; box-shadow: 0 0 0 6px rgba(255,179,71,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-fiverr .mini-card { border: 2.5px solid #1dbf73; box-shadow: 0 0 0 6px rgba(0,230,160,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-giffgaff .mini-card { border: 2.5px solid #ffe259; box-shadow: 0 0 0 6px rgba(255,167,81,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-mailblaze .mini-card { border: 2.5px solid #1e88e5; box-shadow: 0 0 0 6px rgba(66,165,245,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-monzo .mini-card { border: 2.5px solid #00b4d8; box-shadow: 0 0 0 6px rgba(255,111,97,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-neuraltext .mini-card { border: 2.5px solid #6c47ff; box-shadow: 0 0 0 6px rgba(160,132,232,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-outseta .mini-card { border: 2.5px solid #1a237e; box-shadow: 0 0 0 6px rgba(26,35,126,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-printify .mini-card { border: 2.5px solid #00b09b; box-shadow: 0 0 0 6px rgba(0,176,155,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-quidco .mini-card { border: 2.5px solid #2193b0; box-shadow: 0 0 0 6px rgba(109,213,237,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-raisin .mini-card { border: 2.5px solid #f7971e; box-shadow: 0 0 0 6px rgba(255,210,0,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-rakuten .mini-card { border: 2.5px solid #8B5CF6; box-shadow: 0 0 0 6px rgba(236,72,153,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-sharelytics .mini-card { border: 2.5px solid #ff512f; box-shadow: 0 0 0 6px rgba(255,81,47,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-shein .mini-card { border: 2.5px solid #ff5fa2; box-shadow: 0 0 0 6px rgba(0,0,0,0.10), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-supermonitoring .mini-card { border: 2.5px solid #0f2027; box-shadow: 0 0 0 6px rgba(15,32,39,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-topcashback .mini-card { border: 2.5px solid #43e97b; box-shadow: 0 0 0 6px rgba(56,249,215,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-userback .mini-card { border: 2.5px solid #00c6ff; box-shadow: 0 0 0 6px rgba(0,198,255,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-virgin .mini-card { border: 2.5px solid #e52d27; box-shadow: 0 0 0 6px rgba(0,0,0,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-wise .mini-card { border: 2.5px solid #003366; box-shadow: 0 0 0 6px rgba(23,128,61,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-home .mini-card { border: 2.5px solid #3a506b; box-shadow: 0 0 0 6px rgba(58,80,107,0.13), 0 8px 32px rgba(0,0,0,0.08); }
 
 /* --- SHARE BUTTON :HOVER: Brand Gradients (alphabetical by brand) --- */
 .brand-amazonprimevideo .share-btn:hover { background: linear-gradient(90deg, #00a8e1, #232f3e) !important; }
@@ -142,6 +121,7 @@
 .brand-userback .share-btn:hover { background: linear-gradient(90deg, #0072ff, #00c6ff) !important; }
 .brand-wise .share-btn:hover { background: linear-gradient(90deg, #17803d, #003366) !important; }
 .brand-home .share-btn:hover { background: linear-gradient(90deg, #232f3e, #3a506b, #7c2ae8) !important; }
+.brand-virgin .share-btn:hover { background: linear-gradient(90deg, #000000, #e52d27) !important; }
 
 /* --- SHARE BUTTON SVG FILL: Brand Color (alphabetical by brand) --- */
 .share-btn svg {
@@ -174,6 +154,7 @@
 .brand-userback .brand-nav-btn { background: linear-gradient(90deg, #00c6ff, #0072ff) !important; color: #fff !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
 .brand-wise .brand-nav-btn { background: linear-gradient(90deg, #17803d, #003366) !important; color: #fff !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
 .brand-home .brand-nav-btn { background: linear-gradient(90deg, #232f3e, #3a506b, #7c2ae8) !important; color: #fff !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
+.brand-virgin .brand-nav-btn { background: linear-gradient(90deg, #e52d27, #000000) !important; color: #fff !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
 
 /* --- BRAND NAV BUTTON :HOVER/.ACTIVE: Brand Gradients (alphabetical by brand) --- */
 .brand-amazonprimevideo .brand-nav-btn:hover, .brand-amazonprimevideo .brand-nav-btn.active { background: linear-gradient(90deg, #00a8e1, #232f3e) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
@@ -198,6 +179,7 @@
 .brand-userback .brand-nav-btn:hover, .brand-userback .brand-nav-btn.active { background: linear-gradient(90deg, #0072ff, #00c6ff) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
 .brand-wise .brand-nav-btn:hover, .brand-wise .brand-nav-btn.active { background: linear-gradient(90deg, #17803d, #003366) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
 .brand-home .brand-nav-btn:hover, .brand-home .brand-nav-btn.active { background: linear-gradient(90deg, #232f3e, #3a506b, #7c2ae8) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-virgin .brand-nav-btn:hover, .brand-virgin .brand-nav-btn.active { background: linear-gradient(90deg, #000000, #e52d27) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
 
 /* --- NAV DROPDOWN & NAV-CATEGORY-TITLE: Brand Borders/Backgrounds (alphabetical by brand) --- */
 .brand-amazonprimevideo .nav-dropdown, .brand-amazonprimevideo .nav-category-title { border: 2.5px solid #232f3e; box-shadow: 0 0 0 6px rgba(0,168,225,0.18), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
@@ -220,7 +202,7 @@
 .brand-supermonitoring .nav-dropdown, .brand-supermonitoring .nav-category-title { border: 2.5px solid #0f2027; box-shadow: 0 0 0 6px rgba(15,32,39,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
 .brand-topcashback .nav-dropdown, .brand-topcashback .nav-category-title { border: 2.5px solid #43e97b; box-shadow: 0 0 0 6px rgba(0,121,107,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
 .brand-userback .nav-dropdown, .brand-userback .nav-category-title { border: 2.5px solid #00c6ff; box-shadow: 0 0 0 6px rgba(0,198,255,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
-.brand-virgin .nav-dropdown, .brand-virgin .nav-category-title { border: 2.5px solid #e52d27; box-shadow: 0 0 0 6px rgba(179,18,23,0.18), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-virgin .nav-dropdown, .brand-virgin .nav-category-title { border: 2.5px solid #e52d27; box-shadow: 0 0 0 6px rgba(0,0,0,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
 .brand-wise .nav-dropdown, .brand-wise .nav-category-title { border: 2.5px solid #003366; box-shadow: 0 0 0 6px rgba(23,128,61,0.18), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
 .brand-home .nav-dropdown, .brand-home .nav-category-title { border: 2.5px solid #3a506b; box-shadow: 0 0 0 6px rgba(58,80,107,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
 
@@ -298,6 +280,13 @@
   gap: 0;
   font-family: Verdana, sans-serif !important;
 }
+.mini-card .title { color: var(--brand-color, #00b4d8); font-weight: 900; font-size: 1.32rem; margin-bottom: 8px; letter-spacing: 0.01em; font-family: Verdana, sans-serif !important; display: flex; align-items: center; justify-content: center; }
+.mini-card .desc { color: #232f3e; font-size: 1.12rem; font-weight: 500; line-height: 1.5; max-width: 92%; margin-left: auto; margin-right: auto; word-break: break-word; font-family: Verdana, sans-serif !important; display: flex; align-items: center; justify-content: center; }
+@media (min-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 .offer-card {
   border-radius: 18px;
   border: 2.5px solid var(--category-border, #00b4d8);
@@ -317,8 +306,6 @@
 }
 .mini-card > * { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; margin-left: auto; margin-right: auto; text-align: center; }
 .mini-card .icon { font-size: 2.6rem; margin-bottom: 14px; line-height: 1; display: flex; align-items: center; justify-content: center; }
-.mini-card .title { color: var(--brand-color, #00b4d8); font-weight: 900; font-size: 1.32rem; margin-bottom: 8px; letter-spacing: 0.01em; font-family: Verdana, sans-serif !important; display: flex; align-items: center; justify-content: center; }
-.mini-card .desc { color: #232f3e; font-size: 1.12rem; font-weight: 500; line-height: 1.5; max-width: 92%; margin-left: auto; margin-right: auto; word-break: break-word; font-family: Verdana, sans-serif !important; display: flex; align-items: center; justify-content: center; }
 .mini-card:hover { box-shadow: 0 8px 32px rgba(0,180,216,0.13); border: 2.5px solid var(--brand-color, #00b4d8); }
 .mini-card .icon,
 .mini-card .title,

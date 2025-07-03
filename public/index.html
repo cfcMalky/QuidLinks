@@ -139,6 +139,132 @@
             .scroll-btn.right { right: 0; }
             .scroll-btn { min-height: 80px; }
         }
+        .hero-gradient-carousel-width {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto 48px auto;
+            padding: 0;
+            background: linear-gradient(135deg, #fff 60%, #e0e0e0 100%);
+            border-radius: 28px;
+            border: 2.5px solid #111;
+            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.10);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-gradient-carousel-inner {
+            background: transparent;
+            border-radius: 24px;
+            padding: 48px 36px 32px 36px;
+            text-align: center;
+            width: 100%;
+        }
+        .hero-title {
+            font-size: 2.6rem;
+            font-weight: 900;
+            letter-spacing: 0.01em;
+            margin-bottom: 8px;
+            color: #1a237e;
+            text-shadow: 0 2px 12px rgba(26,35,126,0.08);
+        }
+        .hero-tagline {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #1976d2;
+            margin-bottom: 18px;
+        }
+        .hero-desc {
+            font-size: 1.15rem;
+            color: #333;
+            margin-bottom: 18px;
+        }
+        .hero-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 22px 0;
+        }
+        .hero-bullets li {
+            font-size: 1.08rem;
+            color: #222;
+            margin-bottom: 7px;
+            text-align: left;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-cta-row {
+            margin-top: 18px;
+        }
+        .hero-cta-btn {
+            background: linear-gradient(90deg, #1976d2 0%, #64b5f6 100%);
+            color: #fff;
+            font-size: 1.18rem;
+            font-weight: 700;
+            padding: 14px 38px;
+            border-radius: 24px;
+            text-decoration: none;
+            box-shadow: 0 2px 12px rgba(25,118,210,0.10);
+            transition: background 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+        .hero-cta-btn:hover {
+            background: linear-gradient(90deg, #1565c0 0%, #1976d2 100%);
+            box-shadow: 0 4px 18px rgba(25,118,210,0.18);
+        }
+        .hero-gradient-title {
+            color: #111;
+            font-size: 2.3rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+            letter-spacing: 0.01em;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+        .hero-gradient-tagline {
+            color: #222;
+            font-size: 1.18rem;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+        .hero-gradient-desc {
+            color: #222;
+            font-size: 1.08rem;
+            margin-bottom: 18px;
+        }
+        .hero-gradient-bullets {
+            color: #111;
+        }
+        .hero-gradient-bullets li {
+            color: #222;
+        }
+        .hero-gradient-btn {
+            background: linear-gradient(90deg, #222 0%, #888 100%);
+            color: #fff;
+            font-size: 1.12rem;
+            font-weight: 700;
+            padding: 13px 34px;
+            border-radius: 22px;
+            text-decoration: none;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+            transition: background 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+        .hero-gradient-btn:hover {
+            background: linear-gradient(90deg, #111 0%, #444 100%);
+            box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+        }
+        @media (max-width: 900px) {
+            .hero-gradient-carousel-width {
+                max-width: 98vw;
+                border-radius: 18px;
+            }
+            .hero-gradient-carousel-inner {
+                padding: 32px 10vw 24px 10vw;
+            }
+            .hero-title { font-size: 2rem; }
+            .hero-tagline { font-size: 1.1rem; }
+            .hero-bullets li { font-size: 1rem; }
+        }
     </style>
 </head>
 <body class="brand-home">
@@ -146,12 +272,21 @@
     <script src="/scripts/inject-banner.js"></script>
     <script src="/scripts/inject-navbar.js"></script>
     <div class="container">
-        <div style="text-align:center; color:#555; font-size:1.25rem; margin-bottom: 36px; font-style: italic;">
-            Welcome to Refer 2 Earn – your hub for the UK's best dual-incentive referral and affiliate offers! Whether you're a content creator, blogger, social media influencer, or just someone with a network of friends, this site is designed to help you turn your audience and connections into real, passive side-income.<br><br>
-            We hand-pick and showcase referral programs and affiliate deals where <b>both you and your friends or followers get rewarded</b>. From banking and business tools to cashback and mobile networks, every offer here is vetted for genuine value and transparency. <br><br>
-            <b>How does it work?</b> Simply browse the categories, pick an offer, and share your unique referral link. When someone signs up or makes a purchase, you both benefit – it's a win-win! <br><br>
-            Whether you're looking to supplement your income, add value for your audience, or just discover great deals, Refer 2 Earn makes it easy to get started. Explore, share, and start earning today!
-        </div>
+        <section class="hero-gradient-carousel-width">
+            <div class="hero-gradient-carousel-inner">
+                <p class="hero-desc hero-gradient-desc">
+                    Welcome to Refer 2 Earn – your hub for the UK's best dual-incentive referral and affiliate offers! Whether you're a content creator, blogger, social media influencer, or just someone with a network of friends, this site is designed to help you turn your audience and connections into real, passive side-income.
+                </p>
+                <ul class="hero-bullets hero-gradient-bullets">
+                    <li><b>Hand-picked offers:</b> Only the best, most transparent referral and affiliate programs.</li>
+                    <li><b>Dual rewards:</b> Both you and your friends or followers get rewarded.</li>
+                    <li><b>Easy to start:</b> Browse, share, and earn – it's that simple!</li>
+                </ul>
+                <div class="hero-cta-row">
+                    <a href="#carousels" class="hero-cta-btn hero-gradient-btn">Browse Offers</a>
+                </div>
+            </div>
+        </section>
         <!-- Dynamic carousels will be injected here -->
         <div id="carousels"></div>
     </div>

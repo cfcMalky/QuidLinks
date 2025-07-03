@@ -41,11 +41,53 @@ if (amazonPrimeRow) {
   console.log('Amazon Prime Video - getVal:', amazonPrimeRow[colMap['youtube video']]);
 }
 
-// Helper: Generate mini-card HTML
+// Emoji keyword to SVG filename mapping
+const emojiIconMap = {
+  'Sign Up': 'sign-up.svg',
+  'Bonus': 'bonus.svg',
+  'Bank': 'bank.svg',
+  'Refer': 'refer.svg',
+  'Track': 'track.svg',
+  'Shop': 'shop.svg',
+  'Earn': 'earn.svg',
+  'Cashback': 'cashback.svg',
+  'Commission': 'commission.svg',
+  'Discount': 'discount.svg',
+  'Secure': 'secure.svg',
+  'Support': 'support.svg',
+  'Features': 'features.svg',
+  'Analytics': 'analytics.svg',
+  'Rewards': 'rewards.svg',
+  // Add more mappings as needed
+};
+const defaultEmojiSvg = 'star.svg'; // Place a default SVG in public/emojis/star.svg
+
+// Helper: Get SVG icon filename for a title
+function getEmojiIcon(title) {
+  for (const key in emojiIconMap) {
+    if (title.toLowerCase().includes(key.toLowerCase())) {
+      return `/emojis/${emojiIconMap[key]}`;
+    }
+  }
+  return `/emojis/${defaultEmojiSvg}`;
+}
+
+// Helper: Extract emoji from start of string
+function extractEmojiAndTitle(str, fallback) {
+  // Regex for emoji at start
+  const match = str.match(/^([\p{Emoji_Presentation}\p{Extended_Pictographic}])\s*(.*)$/u);
+  if (match) {
+    return { emoji: match[1], title: match[2].trim() };
+  } else {
+    return { emoji: fallback, title: str.trim() };
+  }
+}
+
+// Helper: Generate mini-card HTML (original version)
 function miniCard(title, desc, icon) {
   // Escape quotes for SVG
   const safeIcon = icon.replace(/'/g, "&#39;").replace(/"/g, '&quot;');
-  return `<div class="mini-card" style="--mini-card-icon-bg: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\'><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'64\'>${safeIcon}</text></svg>');"><span class="title">${title}</span><span class="desc">${desc}</span></div>`;
+  return `<div class="mini-card" style="--mini-card-icon-bg: url('data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='64'>${safeIcon}</text></svg>');"><span class="title">${title}</span><span class="desc">${desc}</span></div>`;
 }
 
 // Helper: Generate share buttons
@@ -79,15 +121,9 @@ function shareButtons(refLink, headline) {
   `;
 }
 
-// Helper: Extract emoji from start of string
-function extractEmojiAndTitle(str, fallback) {
-  // Regex for emoji at start
-  const match = str.match(/^([\p{Emoji_Presentation}\p{Extended_Pictographic}])\s*(.*)$/u);
-  if (match) {
-    return { emoji: match[1], title: match[2].trim() };
-  } else {
-    return { emoji: fallback, title: str.trim() };
-  }
+// Helper: Title Case for brand name
+function toTitleCase(str) {
+  return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
 }
 
 // Offer page HTML template (Monzo structure)
@@ -103,7 +139,7 @@ function offerTemplate(offer) {
   const brandName = getVal(offer, 'Brand') || '';
   const youtubeUrl = getVal(offer, 'YouTube Video').trim();
   // Always add the placeholder div for the video, even if no video URL is present
-  let videoEmbed = '\n    <div id="offer-video"></div>\n';
+  let videoEmbed = `\n    <div class="card"><div class="headline" style="margin-bottom: 0.5em;">A Little Bit About ${toTitleCase(brandName)}</div><div id="offer-video"></div></div>\n`;
   // Mini-card icons
   const numberEmojis = ['1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟'];
   const defaultIcon = '💡';
