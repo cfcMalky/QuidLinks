@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const videoId = idMatch ? idMatch[1] : youtubeUrl;
       // Build embed
       const videoHtml = `
-        <div class="card offer-video-card">
+        <div class="offer-video-embed">
           <div style="width:100%;margin:0 auto;position:relative;padding-bottom:56.25%;height:0;">
             <iframe src="https://www.youtube.com/embed/${videoId}?modestbranding=1&rel=0&showinfo=0"
               title="YouTube video player" frameborder="0"

@@ -1,15 +1,14 @@
 const fs = require('fs');
 const path = require('path');
-const parse = require('csv-parse/sync');
+let fetchFn;
+try {
+  fetchFn = fetch; // Node 18+
+} catch {
+  fetchFn = require('node-fetch');
+}
 
 const OFFERS_DIR = path.join(__dirname, '../public/pages/offers');
-const CSV_PATH = path.join(__dirname, '../public/data/offers_sheet.csv');
-
-// Read and parse CSV
-const csvContent = fs.readFileSync(CSV_PATH, 'utf8');
-const records = parse.parse(csvContent, { columns: true, skip_empty_lines: true });
-const headers = Object.keys(records[0]);
-const csvMap = {};
+const SHEET_URL = 'https://opensheet.vercel.app/12TFRklj6X_k5gfQVmyrpFpRvteW39IfyIJMiwBSBXxY/Offers';
 
 // Helper: Normalize column names for robust access
 function getColMap(headers) {
@@ -20,20 +19,12 @@ function getColMap(headers) {
   return map;
 }
 
-const colMap = getColMap(headers);
-
-function getVal(row, col) {
-  // col: normalized (lowercase, trimmed)
+function getVal(row, col, colMap) {
   return row[colMap[col.trim().toLowerCase()]] || '';
 }
 
-records.forEach(row => {
-  csvMap[getVal(row, 'File').trim().toLowerCase()] = row;
-});
-
 // Helper: Generate mini-card HTML
 function miniCard(title, desc, icon) {
-  // Escape quotes for SVG
   const safeIcon = icon.replace(/'/g, "&#39;").replace(/"/g, '&quot;');
   return `<div class="mini-card" style="--mini-card-icon-bg: url('data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='64'>${safeIcon}</text></svg>');"><span class="title">${title}</span><span class="desc">${desc}</span></div>`;
 }
@@ -71,7 +62,6 @@ function shareButtons(refLink, headline) {
 
 // Helper: Extract emoji from start of string
 function extractEmojiAndTitle(str, fallback) {
-  // Regex for emoji at start
   const match = str.match(/^([\p{Emoji_Presentation}\p{Extended_Pictographic}])\s*(.*)$/u);
   if (match) {
     return { emoji: match[1], title: match[2].trim() };
@@ -81,22 +71,21 @@ function extractEmojiAndTitle(str, fallback) {
 }
 
 function normalizeBrandClass(str) {
-  // Remove 'brand-' if present, remove non-alphanum, lowercase, then prepend 'brand-'
   return 'brand-' + (str || '').toLowerCase().replace(/brand[-_]?/g, '').replace(/[^a-z0-9]/g, '');
 }
 
 // Offer page HTML template (Monzo structure)
 function offerTemplate(offer) {
-  const rawBrandClass = getVal(offer, 'Brand Class').trim();
+  const rawBrandClass = getVal(offer, 'Brand Class', colMap).trim();
   const brandClass = normalizeBrandClass(rawBrandClass);
-  const headline = getVal(offer, 'Headline') || '';
-  const subheadline = getVal(offer, 'Subheadline') || '';
-  const refLink = getVal(offer, 'Referral Link') || '#';
-  const howItWorks = (getVal(offer, 'How It Works') || '').split('|').map(s => s.trim()).filter(Boolean);
-  const whyChoose = (getVal(offer, 'Why Choose') || '').split('|').map(s => s.trim()).filter(Boolean);
-  const features = (getVal(offer, 'Features') || '').split('|').map(s => s.trim()).filter(Boolean);
-  const disclaimer = getVal(offer, 'Disclaimer') || '';
-  const brandName = getVal(offer, 'Brand') || '';
+  const headline = getVal(offer, 'Headline', colMap) || '';
+  const subheadline = getVal(offer, 'Subheadline', colMap) || '';
+  const refLink = getVal(offer, 'Referral Link', colMap) || '#';
+  const howItWorks = (getVal(offer, 'How It Works', colMap) || '').split('|').map(s => s.trim()).filter(Boolean);
+  const whyChoose = (getVal(offer, 'Why Choose', colMap) || '').split('|').map(s => s.trim()).filter(Boolean);
+  const features = (getVal(offer, 'Features', colMap) || '').split('|').map(s => s.trim()).filter(Boolean);
+  const disclaimer = getVal(offer, 'Disclaimer', colMap) || '';
+  const brandName = getVal(offer, 'Brand', colMap) || '';
   // Mini-card icons
   const numberEmojis = ['1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟'];
   const defaultIcon = '💡';
@@ -158,36 +147,50 @@ function offerTemplate(offer) {
 `;
 }
 
-// Ensure offers directory exists
-if (!fs.existsSync(OFFERS_DIR)) {
-  fs.mkdirSync(OFFERS_DIR, { recursive: true });
+async function main() {
+  // Fetch offers from Google Sheets
+  const response = await fetchFn(SHEET_URL);
+  const records = await response.json();
+  if (!records.length) {
+    console.log('No offers found.');
+    return;
+  }
+  const headers = Object.keys(records[0]);
+  global.colMap = getColMap(headers); // Make colMap available to offerTemplate
+
+  // Ensure offers directory exists
+  if (!fs.existsSync(OFFERS_DIR)) {
+    fs.mkdirSync(OFFERS_DIR, { recursive: true });
+  }
+
+  // Generate offer pages
+  let created = 0;
+  const generatedFiles = [];
+  records.forEach(row => {
+    const file = (getVal(row, 'File', colMap) || '').trim().toLowerCase();
+    if (!file) return;
+    const folderName = file.replace(/\.html$/i, '');
+    const offerDir = path.join(OFFERS_DIR, folderName);
+    if (!fs.existsSync(offerDir)) {
+      fs.mkdirSync(offerDir, { recursive: true });
+    }
+    const filePath = path.join(offerDir, 'index.html');
+    fs.writeFileSync(filePath, offerTemplate(row));
+    generatedFiles.push(folderName);
+    console.log(`Generated: pages/offers/${folderName}/index.html`);
+    created++;
+  });
+
+  // Write generated_offers.json manifest
+  const manifestPath = path.join(OFFERS_DIR, 'generated_offers.json');
+  fs.writeFileSync(manifestPath, JSON.stringify(generatedFiles, null, 2));
+  console.log(`Generated: pages/offers/generated_offers.json`);
+
+  if (created === 0) {
+    console.log('No offer pages generated.');
+  } else {
+    console.log(`Done! ${created} offer page(s) generated.`);
+  }
 }
 
-// Always (re)generate all offer pages from CSV
-let created = 0;
-const generatedFiles = [];
-records.forEach(row => {
-  const file = (getVal(row, 'File') || '').trim().toLowerCase();
-  if (!file) return;
-  const folderName = file.replace(/\.html$/i, '');
-  const offerDir = path.join(OFFERS_DIR, folderName);
-  if (!fs.existsSync(offerDir)) {
-    fs.mkdirSync(offerDir, { recursive: true });
-  }
-  const filePath = path.join(offerDir, 'index.html');
-  fs.writeFileSync(filePath, offerTemplate(row));
-  generatedFiles.push(folderName);
-  console.log(`Generated: pages/offers/${folderName}/index.html`);
-  created++;
-});
-
-// Write generated_offers.json manifest
-const manifestPath = path.join(OFFERS_DIR, 'generated_offers.json');
-fs.writeFileSync(manifestPath, JSON.stringify(generatedFiles, null, 2));
-console.log(`Generated: pages/offers/generated_offers.json`);
-
-if (created === 0) {
-  console.log('No offer pages generated.');
-} else {
-  console.log(`Done! ${created} offer page(s) generated.`);
-} 
+main(); 
