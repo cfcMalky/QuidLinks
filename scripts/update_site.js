@@ -196,14 +196,7 @@ function buildNavbar(records, colMap) {
       const brand = getVal(row, 'Brand', colMap) || '';
       return `<li><a href="/pages/offers/${file}/" class="navbar-link">${brand}</a></li>`;
     }).join('\n');
-    return `<div class="nav-category">
-      <button type="button" class="brand-nav-btn category-nav-btn">${cat}</button>
-      <div class="nav-dropdown" style="border: 2px solid ${headerColor};">
-        <ul>
-${links}
-        </ul>
-      </div>
-    </div>`;
+    return `<div class=\"nav-category\">\n      <button type=\"button\" class=\"brand-nav-btn category-nav-btn\">${cat}</button>\n      <div class=\"nav-dropdown\">\n        <ul>\n${links}\n        </ul>\n      </div>\n    </div>`;
   }).join('\n');
   const headerButtons = `
   <button class="nav-hamburger" aria-label="Open navigation">&#9776;</button>

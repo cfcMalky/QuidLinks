@@ -157,13 +157,30 @@ html, body { overflow-x: hidden; margin: 0; padding: 0; font-family: Verdana, sa
 .navbar { position: static !important; z-index: 20; margin-top: 8px; }
 .navbar > .brand-nav-btn { background: none !important; color: #fff !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; padding: 10px 32px !important; font-size: 1.08rem; font-weight: 700; margin: 0 4px; transition: color 0.2s, text-decoration 0.2s; }
 
-/* --- NAV DROPDOWN --- */
-.nav-category { position: relative; }
-.nav-dropdown { display: none; background: #fff; border: 1.5px solid #00b4d8; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
-.nav-dropdown .navbar-link { font-family: inherit; color: #888; font-weight: 600; text-decoration: none; text-align: left; padding: 10px 24px; border-radius: 12px; margin: 0; display: block; transition: background 0.2s, color 0.2s; }
-.nav-dropdown .navbar-link:hover, .nav-dropdown .navbar-link.active { background: #f3f3f3; color: #111; }
-.nav-category:hover .nav-dropdown, .nav-category:focus-within .nav-dropdown, .nav-category.open .nav-dropdown { display: flex !important; flex-direction: column; }
-.nav-dropdown ul { list-style: none; margin: 0; padding: 0; }
+/* --- BRAND-SPECIFIC NAV DROPDOWN STYLES (MATCH CARD) --- */
+.brand-amazonprimevideo .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-baremetrics .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-befrugal .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-cashbackcouk .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-engagebay .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-fiverr .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-giffgaff .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-mailblaze .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-monzo .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-neuraltext .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-outseta .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-printify .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-quidco .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-raisin .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-rakuten .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-sharelytics .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-shein .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-supermonitoring .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-topcashback .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-userback .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-virgin .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-wise .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.brand-home .nav-dropdown { background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
 
 /* --- NAVIGATION BUTTONS --- */
 .brand-nav-btn, .home-nav-bar .brand-nav-btn { background: linear-gradient(90deg, #232f3e, #3a506b, #7c2ae8) !important; color: #fff !important; border: none !important; box-shadow: 0 2px 8px rgba(0,0,0,0.07); border-radius: 999px !important; padding: 10px 32px !important; font-size: 1.08rem; font-weight: 700; margin: 0 4px; transition: background 0.2s, color 0.2s, box-shadow 0.2s; }
@@ -434,4 +451,41 @@ html, body { overflow-x: hidden; margin: 0; padding: 0; font-family: Verdana, sa
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+}
+
+.nav-dropdown { display: none; background: #fff; border-radius: 24px; min-width: 220px; box-shadow: 0 8px 32px rgba(0,0,0,0.13); z-index: 1000 !important; position: absolute !important; top: 100%; left: 0; }
+.nav-category:hover .nav-dropdown,
+.nav-category:focus-within .nav-dropdown,
+.nav-category.open .nav-dropdown { display: flex !important; flex-direction: column; }
+.nav-dropdown ul { list-style: none; margin: 0; padding: 0; }
+.nav-dropdown .navbar-link {
+  font-family: Verdana, sans-serif !important;
+  color: #888;
+  font-weight: 700;
+  font-size: 1.08rem;
+  text-decoration: none;
+  text-align: left;
+  padding: 10px 24px;
+  border-radius: 12px;
+  margin: 0;
+  display: block;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-dropdown .navbar-link:visited {
+  color: #888;
+  text-decoration: none;
+}
+.nav-dropdown .navbar-link:hover,
+.nav-dropdown .navbar-link.active {
+  background: #f3f3f3;
+  color: #111;
+  text-decoration: none;
+}
+
+/* --- FORCE NAV DROPDOWN TO SHOW ON HOVER/FOCUS --- */
+.nav-category:hover > .nav-dropdown,
+.nav-category:focus-within > .nav-dropdown,
+.nav-category.open > .nav-dropdown {
+  display: flex !important;
+  flex-direction: column;
 }
