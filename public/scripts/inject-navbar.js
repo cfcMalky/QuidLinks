@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const manifestSet = new Set(manifest.map(f => f.toLowerCase()));
     const records = parsed.data.filter(row => {
       const file = (row['File'] || '').trim().toLowerCase();
-      return manifestSet.has(file);
+      // Remove .html extension to match manifest entries
+      const slug = file.replace(/\.html$/i, '');
+      return manifestSet.has(slug);
     });
     // Group by category
     const categories = {};

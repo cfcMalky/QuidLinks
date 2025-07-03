@@ -102,14 +102,16 @@ function offerTemplate(offer) {
   const disclaimer = getVal(offer, 'Disclaimer') || '';
   const brandName = getVal(offer, 'Brand') || '';
   const youtubeUrl = getVal(offer, 'YouTube Video').trim();
-  let videoEmbed = '';
-  if (youtubeUrl) {
-    videoEmbed = `<div style='background:yellow;color:black;padding:16px;text-align:center;'>VIDEO EMBED HERE: ${youtubeUrl}</div>`;
-  }
+  // Always add the placeholder div for the video, even if no video URL is present
+  let videoEmbed = '\n    <div id="offer-video"></div>\n';
   // Mini-card icons
   const numberEmojis = ['1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟'];
   const defaultIcon = '💡';
   const featureIcon = '⭐';
+  const dynamicVideoScripts = `
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="/scripts/inject-offer-video.js"></script>
+`;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -163,8 +165,7 @@ function offerTemplate(offer) {
             ${disclaimer}
         </div>
     </div>
-</body>
-</html>
+    ${dynamicVideoScripts}
 `;
 }
 
@@ -179,14 +180,15 @@ const generatedFiles = [];
 records.forEach(row => {
   const file = (getVal(row, 'File') || '').trim().toLowerCase();
   if (!file) return;
-  const offerDir = path.join(OFFERS_DIR, file);
+  const folderName = file.replace(/\.html$/i, '');
+  const offerDir = path.join(OFFERS_DIR, folderName);
   if (!fs.existsSync(offerDir)) {
     fs.mkdirSync(offerDir, { recursive: true });
   }
   const filePath = path.join(offerDir, 'index.html');
   fs.writeFileSync(filePath, offerTemplate(row));
-  generatedFiles.push(file);
-  console.log(`Generated: pages/offers/${file}/index.html`);
+  generatedFiles.push(folderName);
+  console.log(`Generated: pages/offers/${folderName}/index.html`);
   created++;
 });
 

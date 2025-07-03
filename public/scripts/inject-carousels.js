@@ -7,16 +7,19 @@
 
 // Uses PapaParse for CSV parsing (add <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script> in your HTML)
 
+console.log("inject-carousels.js loaded");
+
 document.addEventListener('DOMContentLoaded', function () {
   Promise.all([
     fetch('/pages/offers/generated_offers.json').then(r => r.json()),
     fetch('/data/offers_sheet.csv').then(r => r.text())
   ]).then(([manifest, csvText]) => {
+    console.log("Fetched manifest and CSV", manifest, csvText.slice(0, 200));
     const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
     // Only include offers whose File (normalized) is in the manifest
     const manifestSet = new Set(manifest.map(f => f.toLowerCase()));
     const records = parsed.data.filter(row => {
-      const file = (row['File'] || '').trim().toLowerCase();
+      const file = (row['File'] || '').trim().toLowerCase().replace(/\.html$/, '');
       return manifestSet.has(file);
     });
     // Group by category
