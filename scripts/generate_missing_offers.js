@@ -31,6 +31,16 @@ records.forEach(row => {
   csvMap[getVal(row, 'File').trim().toLowerCase()] = row;
 });
 
+console.log('CSV Headers:', headers);
+// Find the Amazon Prime Video row and log its YouTube Video value
+const amazonPrimeRow = records.find(r => (r['Brand'] || '').toLowerCase().includes('amazon prime'));
+if (amazonPrimeRow) {
+  console.log('Amazon Prime Video - YouTube Video:', amazonPrimeRow['YouTube Video']);
+  // Also log the normalized access
+  const colMap = getColMap(headers);
+  console.log('Amazon Prime Video - getVal:', amazonPrimeRow[colMap['youtube video']]);
+}
+
 // Helper: Generate mini-card HTML
 function miniCard(title, desc, icon) {
   // Escape quotes for SVG
@@ -94,10 +104,7 @@ function offerTemplate(offer) {
   const youtubeUrl = getVal(offer, 'YouTube Video').trim();
   let videoEmbed = '';
   if (youtubeUrl) {
-    // Extract video ID if a full URL is provided
-    const match = youtubeUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/))([\w-]{11})/);
-    const videoId = match ? match[1] : youtubeUrl;
-    videoEmbed = `\n    <div class="offer-video-container" style="margin: 32px 0; text-align: center;">\n      <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allowfullscreen style="max-width: 100%; border-radius: 18px;"></iframe>\n    </div>\n    <style>\n      .offer-video-container { width: 100%; max-width: 700px; margin: 32px auto; }\n      .offer-video-container iframe { width: 100%; height: 360px; max-width: 100%; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); }\n      @media (max-width: 600px) { .offer-video-container iframe { height: 200px; } }\n    </style>\n  `;
+    videoEmbed = `<div style='background:yellow;color:black;padding:16px;text-align:center;'>VIDEO EMBED HERE: ${youtubeUrl}</div>`;
   }
   // Mini-card icons
   const numberEmojis = ['1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟'];
