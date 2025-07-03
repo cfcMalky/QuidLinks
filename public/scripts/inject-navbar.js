@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const links = offers.map(row => {
         const file = (row['File'] || '').replace(/.html$/i, '');
         const brand = row['Brand'] || '';
-        return `<li><a href="/pages/offers/${file}/" class="navbar-link">${brand}</a></li>`;
+        return `<li><a href="/pages/offers/${file}/" class="navbar-link brand-nav-btn category-nav-btn">${brand}</a></li>`;
       }).join('\n');
       return `<div class="nav-category">
         <button type="button" class="brand-nav-btn">${cat}</button>
