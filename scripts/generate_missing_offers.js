@@ -31,59 +31,7 @@ records.forEach(row => {
   csvMap[getVal(row, 'File').trim().toLowerCase()] = row;
 });
 
-console.log('CSV Headers:', headers);
-// Find the Amazon Prime Video row and log its YouTube Video value
-const amazonPrimeRow = records.find(r => (r['Brand'] || '').toLowerCase().includes('amazon prime'));
-if (amazonPrimeRow) {
-  console.log('Amazon Prime Video - YouTube Video:', amazonPrimeRow['YouTube Video']);
-  // Also log the normalized access
-  const colMap = getColMap(headers);
-  console.log('Amazon Prime Video - getVal:', amazonPrimeRow[colMap['youtube video']]);
-}
-
-// Emoji keyword to SVG filename mapping
-const emojiIconMap = {
-  'Sign Up': 'sign-up.svg',
-  'Bonus': 'bonus.svg',
-  'Bank': 'bank.svg',
-  'Refer': 'refer.svg',
-  'Track': 'track.svg',
-  'Shop': 'shop.svg',
-  'Earn': 'earn.svg',
-  'Cashback': 'cashback.svg',
-  'Commission': 'commission.svg',
-  'Discount': 'discount.svg',
-  'Secure': 'secure.svg',
-  'Support': 'support.svg',
-  'Features': 'features.svg',
-  'Analytics': 'analytics.svg',
-  'Rewards': 'rewards.svg',
-  // Add more mappings as needed
-};
-const defaultEmojiSvg = 'star.svg'; // Place a default SVG in public/emojis/star.svg
-
-// Helper: Get SVG icon filename for a title
-function getEmojiIcon(title) {
-  for (const key in emojiIconMap) {
-    if (title.toLowerCase().includes(key.toLowerCase())) {
-      return `/emojis/${emojiIconMap[key]}`;
-    }
-  }
-  return `/emojis/${defaultEmojiSvg}`;
-}
-
-// Helper: Extract emoji from start of string
-function extractEmojiAndTitle(str, fallback) {
-  // Regex for emoji at start
-  const match = str.match(/^([\p{Emoji_Presentation}\p{Extended_Pictographic}])\s*(.*)$/u);
-  if (match) {
-    return { emoji: match[1], title: match[2].trim() };
-  } else {
-    return { emoji: fallback, title: str.trim() };
-  }
-}
-
-// Helper: Generate mini-card HTML (original version)
+// Helper: Generate mini-card HTML
 function miniCard(title, desc, icon) {
   // Escape quotes for SVG
   const safeIcon = icon.replace(/'/g, "&#39;").replace(/"/g, '&quot;');
@@ -97,38 +45,50 @@ function shareButtons(refLink, headline) {
   return `
     <div class="share-btn-group">
       <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${encodedLink}" target="_blank" rel="noopener" aria-label="Share on Facebook">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M22.675 0h-21.35C.6 0 0 .6 0 1.326v21.348C0 23.4.6 24 1.326 24H12.82v-9.294H9.692V11.01h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.696h-3.12V24h6.116C23.4 24 24 23.4 24 22.674V1.326C24 .6 23.4 0 22.675 0"/></svg>
+        <img src="/icons/facebook.png" alt="Facebook" width="32" height="32" class="share-icon-img" />
       </a>
       <a class="share-btn" href="https://twitter.com/intent/tweet?url=${encodedLink}" target="_blank" rel="noopener" aria-label="Share on Twitter">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195A4.916 4.916 0 0 0 16.616 3c-2.717 0-4.92 2.206-4.92 4.924 0 .386.045.763.127 1.124C7.728 8.807 4.1 6.884 1.671 3.965c-.423.722-.666 1.561-.666 2.475 0 1.708.87 3.216 2.188 4.099a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417A9.867 9.867 0 0 1 0 21.543a13.94 13.94 0 0 0 7.548 2.209c9.057 0 14.009-7.496 14.009-13.986 0-.21 0-.423-.016-.634A9.936 9.936 0 0 0 24 4.557z"/></svg>
+        <img src="/icons/twitter.png" alt="Twitter" width="32" height="32" class="share-icon-img" />
       </a>
       <a class="share-btn" href="mailto:?subject=${encodedHeadline}&body=${encodedLink}" target="_blank" rel="noopener" aria-label="Share via Email">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M12 13.065L2.4 6.6A2 2 0 0 1 4 4h16a2 2 0 0 1 1.6 2.6l-9.6 6.465zm9.6-7.065A4 4 0 0 0 20 4H4a4 4 0 0 0-1.6.6l9.6 6.465L21.6 6zM2 8.236V20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8.236l-9.6 6.465L2 8.236z"/></svg>
+        <img src="/icons/email.png" alt="Email" width="32" height="32" class="share-icon-img" />
       </a>
       <a class="share-btn" href="https://www.linkedin.com/shareArticle?mini=true&url=${encodedLink}" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.29c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 10.29h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg>
+        <img src="/icons/linkedin.png" alt="LinkedIn" width="32" height="32" class="share-icon-img" />
       </a>
       <a class="share-btn" href="https://wa.me/?text=${encodedHeadline}%20${encodedLink}" target="_blank" rel="noopener" aria-label="Share on WhatsApp">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.18-1.62A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.85 0-3.63-.5-5.18-1.44l-.37-.22-3.67.96.98-3.58-.24-.37A9.93 9.93 0 0 1 2 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10zm5.2-7.6c-.28-.14-1.65-.81-1.9-.9-.25-.09-.43-.14-.61.14-.18.28-.28.7.9.86 1.08.16.18.32.2.6.07.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.97.95-.97 2.3 0 1.35.99 2.65 1.13 2.83.14.18 1.95 2.98 4.74 4.06.66.28 1.18.45 1.58.58.66.21 1.26.18 1.73.11.53-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.18-.53-.32z"/></svg>
+        <img src="/icons/whatsapp.png" alt="WhatsApp" width="32" height="32" class="share-icon-img" />
       </a>
       <a class="share-btn" href="https://pinterest.com/pin/create/button/?url=${encodedLink}" target="_blank" rel="noopener" aria-label="Share on Pinterest">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.16 9.39 7.6 11.09-.11-.94-.21-2.39.04-3.42.23-.97 1.48-6.18 1.48-6.18s-.37-.74-.37-1.83c0-1.72 1-3.01 2.25-3.01 1.06 0 1.57.8 1.57 1.76 0 1.07-.68 2.67-1.03 4.15-.29 1.22.62 2.22 1.82 2.22 2.18 0 3.86-2.3 3.86-5.62 0-2.94-2.12-5-5.15-5-3.51 0-5.57 2.63-5.57 5.35 0 1.07.41 2.22.92 2.84.1.12.11.23.08.36-.09.39-.29 1.22-.33 1.39-.05.22-.18.27-.41.16-1.53-.7-2.48-2.89-2.48-4.65 0-3.79 2.75-7.28 7.93-7.28 4.16 0 7.4 2.97 7.4 6.93 0 4.13-2.61 7.45-6.23 7.45-1.22 0-2.37-.63-2.76-1.36l-.75 2.87c-.22.85-.82 1.92-1.22 2.57.92.28 1.89.43 2.9.43 6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg>
+        <img src="/icons/pinterest.png" alt="Pinterest" width="32" height="32" class="share-icon-img" />
       </a>
       <button class="share-btn" aria-label="Copy Link" onclick="navigator.clipboard.writeText('${refLink}')">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        <img src="/icons/copy.png" alt="Copy Link" width="32" height="32" class="share-icon-img" />
       </button>
     </div>
   `;
 }
 
-// Helper: Title Case for brand name
-function toTitleCase(str) {
-  return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+// Helper: Extract emoji from start of string
+function extractEmojiAndTitle(str, fallback) {
+  // Regex for emoji at start
+  const match = str.match(/^([\p{Emoji_Presentation}\p{Extended_Pictographic}])\s*(.*)$/u);
+  if (match) {
+    return { emoji: match[1], title: match[2].trim() };
+  } else {
+    return { emoji: fallback, title: str.trim() };
+  }
+}
+
+function normalizeBrandClass(str) {
+  // Remove 'brand-' if present, remove non-alphanum, lowercase, then prepend 'brand-'
+  return 'brand-' + (str || '').toLowerCase().replace(/brand[-_]?/g, '').replace(/[^a-z0-9]/g, '');
 }
 
 // Offer page HTML template (Monzo structure)
 function offerTemplate(offer) {
-  const brandClass = getVal(offer, 'Brand Class').trim();
+  const rawBrandClass = getVal(offer, 'Brand Class').trim();
+  const brandClass = normalizeBrandClass(rawBrandClass);
   const headline = getVal(offer, 'Headline') || '';
   const subheadline = getVal(offer, 'Subheadline') || '';
   const refLink = getVal(offer, 'Referral Link') || '#';
@@ -137,17 +97,10 @@ function offerTemplate(offer) {
   const features = (getVal(offer, 'Features') || '').split('|').map(s => s.trim()).filter(Boolean);
   const disclaimer = getVal(offer, 'Disclaimer') || '';
   const brandName = getVal(offer, 'Brand') || '';
-  const youtubeUrl = getVal(offer, 'YouTube Video').trim();
-  // Always add the placeholder div for the video, even if no video URL is present
-  let videoEmbed = `\n    <div class="card"><div class="headline" style="margin-bottom: 0.5em;">A Little Bit About ${toTitleCase(brandName)}</div><div id="offer-video"></div></div>\n`;
   // Mini-card icons
   const numberEmojis = ['1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟'];
   const defaultIcon = '💡';
   const featureIcon = '⭐';
-  const dynamicVideoScripts = `
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-<script src="/scripts/inject-offer-video.js"></script>
-`;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -179,29 +132,29 @@ function offerTemplate(offer) {
           const { emoji, title: cleanTitle } = extractEmojiAndTitle(title.trim(), numberEmojis[i] || numberEmojis[numberEmojis.length-1]);
           return miniCard(cleanTitle, desc, emoji);
         }).join('')}</div></div>` : ''}
-        ${videoEmbed}
+        <div class="card offer-video-card"><div class="headline">A Little About ${brandName}</div><div id="offer-video"></div></div>
         ${whyChoose.length ? `<div class="card"><div class="headline">Why Choose ${brandName}?</div><div class="card-grid">${whyChoose.map((item) => {
           const [title, ...descArr] = item.split(':');
           const desc = descArr.join(':').trim();
           const { emoji, title: cleanTitle } = extractEmojiAndTitle(title.trim(), defaultIcon);
           return miniCard(cleanTitle, desc, emoji);
         }).join('')}</div></div>` : ''}
-        ${features.length ? `<div class="card"><div class="headline">Popular Features</div><div class="card-grid">${features.map((item) => {
-          const [title, ...descArr] = item.split(':');
-          const desc = descArr.join(':').trim();
-          const { emoji, title: cleanTitle } = extractEmojiAndTitle(title.trim(), featureIcon);
-          return miniCard(cleanTitle, desc, emoji);
-        }).join('')}</div></div>` : ''}
-        <div class="card" style="display: flex; justify-content: center; align-items: center; margin: 32px 0;">
-            <a href="${refLink}" class="cta-button cta-button-${brandClass.replace('brand-','')}" target="_blank" rel="noopener" style="width: 100%; text-align: center; font-size: 1.15em; margin: 0; padding-left: 24px; padding-right: 24px; padding-top: 28px; padding-bottom: 28px;">
-                Sign up now – it only takes a few minutes!
-            </a>
-        </div>
-        <div class="card" style="text-align:center; font-size:0.95rem; color:#888;">
-            ${disclaimer}
-        </div>
-    </div>
-    ${dynamicVideoScripts}
+      </div>
+      <div class="cta-bottom-row" style="display:flex; justify-content:center; align-items:center; width:100%; margin: 32px 0 0 0;">
+        <a href="${refLink}" class="cta-button cta-button-${brandClass.replace('brand-','')} cta-bottom-wide" target="_blank" rel="noopener" style="width:80%; max-width:700px; text-align:center; font-size:1.15em; margin:0 auto; padding-left:24px; padding-right:24px; padding-top:28px; padding-bottom:28px;">
+          Sign up now – it only takes a few minutes!
+        </a>
+      </div>
+      ${features.length ? `<div class="container"><div class="card"><div class="headline">Popular Features</div><div class="card-grid">${features.map((item) => {
+        const [title, ...descArr] = item.split(':');
+        const desc = descArr.join(':').trim();
+        const { emoji, title: cleanTitle } = extractEmojiAndTitle(title.trim(), featureIcon);
+        return miniCard(cleanTitle, desc, emoji);
+      }).join('')}</div></div></div>` : ''}
+      <div class="container"><div class="card" style="text-align:center; font-size:0.95rem; color:#888;">${disclaimer}</div></div>
+      <script src="/scripts/inject-offer-video.js"></script>
+</body>
+</html>
 `;
 }
 

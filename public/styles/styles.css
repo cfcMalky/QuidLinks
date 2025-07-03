@@ -1,11 +1,11 @@
 /* --- HEADLINE: Brand Gradients (alphabetical by brand) --- */
-.brand-amazonprimevideo .headline { background: linear-gradient(90deg, #232f3e, #00a8e1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-amazonprimevideo .headline { background: linear-gradient(90deg, #232f3e, #ff9900); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .brand-baremetrics .headline { background: linear-gradient(90deg, #4158d0, #c850c0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .brand-befrugal .headline { background: linear-gradient(90deg, #0073e6, #ff7f32); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .brand-cashbackcouk .headline { background: linear-gradient(90deg, #7c2ae8, #2ad2c9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .brand-engagebay .headline { background: linear-gradient(90deg, #ff6600, #7c2ae8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .brand-fiverr .headline { background: linear-gradient(90deg, #1dbf73, #00e6a0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.brand-giffgaff .headline { background: linear-gradient(90deg, #ffe259, #ffa751); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.brand-giffgaff .headline { background: linear-gradient(90deg, #000 60%, #00ff84 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .brand-mailblaze .headline { background: linear-gradient(90deg, #1e88e5, #00c6fb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .brand-monzo .headline { background: linear-gradient(90deg, #00b4d8, #ff6f61); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .brand-neuraltext .headline { background: linear-gradient(90deg, #6c47ff, #1e1e2f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -24,13 +24,13 @@
 .brand-virgin .headline { background: linear-gradient(90deg, #e52d27, #000000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
 /* --- CTA BUTTON: Brand Gradients (alphabetical by brand) --- */
-.brand-amazonprimevideo .share-btn, .cta-button-amazonprimevideo { background: linear-gradient(90deg, #232f3e, #00a8e1) !important; color: #fff !important; }
+.brand-amazonprimevideo .share-btn, .cta-button-amazonprimevideo { background: linear-gradient(90deg, #ff9900, #232f3e) !important; color: #fff !important; }
 .brand-baremetrics .share-btn, .cta-button-baremetrics { background: linear-gradient(90deg, #4158d0, #c850c0) !important; color: #fff !important; }
 .brand-befrugal .share-btn, .cta-button-befrugal { background: linear-gradient(90deg, #0073e6, #ff7f32) !important; color: #fff !important; }
 .brand-cashbackcouk .share-btn, .cta-button-cashbackcouk { background: linear-gradient(90deg, #7c2ae8, #2ad2c9) !important; color: #fff !important; }
 .brand-engagebay .share-btn, .cta-button-engagebay { background: linear-gradient(90deg, #ff6600, #7c2ae8) !important; color: #fff !important; }
 .brand-fiverr .share-btn, .cta-button-fiverr { background: linear-gradient(90deg, #1dbf73, #00e6a0) !important; color: #fff !important; }
-.brand-giffgaff .share-btn, .cta-button-giffgaff { background: linear-gradient(90deg, #ffe259, #ffa751) !important; color: #222 !important; }
+.brand-giffgaff .share-btn, .cta-button-giffgaff { background: linear-gradient(90deg, #000 80%, #00ff84 100%) !important; color: #fff !important; border: 2px solid #00ff84 !important; }
 .brand-mailblaze .share-btn, .cta-button-mailblaze { background: linear-gradient(90deg, #1e88e5, #00c6fb) !important; color: #fff !important; }
 .brand-monzo .share-btn, .cta-button-monzo { background: linear-gradient(90deg, #00b4d8, #ff6f61) !important; color: #fff !important; }
 .brand-neuraltext .share-btn, .cta-button-neuraltext { background: linear-gradient(90deg, #6c47ff, #1e1e2f) !important; color: #fff !important; }
@@ -49,13 +49,17 @@
 .brand-virgin .share-btn, .cta-button-virgin { background: linear-gradient(90deg, #e52d27, #000000) !important; color: #fff !important; }
 
 /* --- CARD: Brand Border/Shadow (alphabetical by brand) --- */
-.brand-amazonprimevideo .card { border: 2.5px solid #232f3e; box-shadow: 0 0 0 6px rgba(0,168,225,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-amazonprimevideo .card {
+  border: 2.5px solid #ff9900;
+  background: linear-gradient(135deg, #fffbe6 80%, #ff9900 100%);
+  box-shadow: 0 0 0 6px rgba(255,153,0,0.10), 0 8px 32px rgba(35,47,62,0.08);
+}
 .brand-baremetrics .card { border: 2.5px solid #4158d0; box-shadow: 0 0 0 6px rgba(200,80,192,0.18), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-befrugal .card { border: 2.5px solid #0073e6; box-shadow: 0 0 0 6px rgba(255,127,50,0.13), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-cashbackcouk .card { border: 2.5px solid #7c2ae8; box-shadow: 0 0 0 6px rgba(42,210,201,0.13), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-engagebay .card { border: 2.5px solid #ff6600; box-shadow: 0 0 0 6px rgba(255,179,71,0.18), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-fiverr .card { border: 2.5px solid #1dbf73; box-shadow: 0 0 0 6px rgba(0,230,160,0.18), 0 8px 32px rgba(0,0,0,0.08); }
-.brand-giffgaff .card { border: 2.5px solid #ffe259; box-shadow: 0 0 0 6px rgba(255,167,81,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-giffgaff .card { border: 2.5px solid #00ff84; box-shadow: 0 0 0 6px rgba(0,255,132,0.18), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-mailblaze .card { border: 2.5px solid #1e88e5; box-shadow: 0 0 0 6px rgba(66,165,245,0.18), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-monzo .card { border: 2.5px solid #00b4d8; box-shadow: 0 0 0 6px rgba(255,111,97,0.18), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-neuraltext .card { border: 2.5px solid #6c47ff; box-shadow: 0 0 0 6px rgba(160,132,232,0.18), 0 8px 32px rgba(0,0,0,0.08); }
@@ -74,13 +78,17 @@
 .brand-home .card { border: 2.5px solid #3a506b; box-shadow: 0 0 0 6px rgba(58,80,107,0.13), 0 8px 32px rgba(0,0,0,0.08); }
 
 /* --- MINI-CARD: Brand Box-Shadow & .title Color (alphabetical by brand) --- */
-.brand-amazonprimevideo .mini-card { border: 2.5px solid #232f3e; box-shadow: 0 0 0 6px rgba(0,168,225,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-amazonprimevideo .mini-card {
+  border: 2.5px solid #ff9900;
+  background: linear-gradient(135deg, #fffbe6 70%, #ff9900 100%);
+  box-shadow: 0 0 0 6px rgba(255,153,0,0.10), 0 8px 32px rgba(35,47,62,0.08);
+}
 .brand-baremetrics .mini-card { border: 2.5px solid #4158d0; box-shadow: 0 0 0 6px rgba(200,80,192,0.18), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-befrugal .mini-card { border: 2.5px solid #0073e6; box-shadow: 0 0 0 6px rgba(255,127,50,0.13), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-cashbackcouk .mini-card { border: 2.5px solid #7c2ae8; box-shadow: 0 0 0 6px rgba(42,210,201,0.13), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-engagebay .mini-card { border: 2.5px solid #ff6600; box-shadow: 0 0 0 6px rgba(255,179,71,0.18), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-fiverr .mini-card { border: 2.5px solid #1dbf73; box-shadow: 0 0 0 6px rgba(0,230,160,0.18), 0 8px 32px rgba(0,0,0,0.08); }
-.brand-giffgaff .mini-card { border: 2.5px solid #ffe259; box-shadow: 0 0 0 6px rgba(255,167,81,0.18), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-giffgaff .mini-card { border: 2.5px solid #00ff84; box-shadow: 0 0 0 6px rgba(0,255,132,0.18), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-mailblaze .mini-card { border: 2.5px solid #1e88e5; box-shadow: 0 0 0 6px rgba(66,165,245,0.18), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-monzo .mini-card { border: 2.5px solid #00b4d8; box-shadow: 0 0 0 6px rgba(255,111,97,0.18), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-neuraltext .mini-card { border: 2.5px solid #6c47ff; box-shadow: 0 0 0 6px rgba(160,132,232,0.18), 0 8px 32px rgba(0,0,0,0.08); }
@@ -97,15 +105,23 @@
 .brand-virgin .mini-card { border: 2.5px solid #e52d27; box-shadow: 0 0 0 6px rgba(0,0,0,0.13), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-wise .mini-card { border: 2.5px solid #003366; box-shadow: 0 0 0 6px rgba(23,128,61,0.18), 0 8px 32px rgba(0,0,0,0.08); }
 .brand-home .mini-card { border: 2.5px solid #3a506b; box-shadow: 0 0 0 6px rgba(58,80,107,0.13), 0 8px 32px rgba(0,0,0,0.08); }
+.brand-giffgaff .mini-card .title { color: #000 !important; }
+.brand-amazonprimevideo .mini-card .title {
+  color: #232f3e !important;
+  background: linear-gradient(90deg, #ff9900, #232f3e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 
 /* --- SHARE BUTTON :HOVER: Brand Gradients (alphabetical by brand) --- */
-.brand-amazonprimevideo .share-btn:hover { background: linear-gradient(90deg, #00a8e1, #232f3e) !important; }
+.brand-amazonprimevideo .share-btn:hover { background: linear-gradient(90deg, #232f3e, #ff9900) !important; }
 .brand-baremetrics .share-btn:hover { background: linear-gradient(90deg, #c850c0, #4158d0) !important; }
 .brand-befrugal .share-btn:hover { background: linear-gradient(90deg, #ff7f32, #0073e6) !important; }
 .brand-cashbackcouk .share-btn:hover { background: linear-gradient(90deg, #2ad2c9, #7c2ae8) !important; }
 .brand-engagebay .share-btn:hover { background: linear-gradient(90deg, #7c2ae8, #ff6600) !important; }
 .brand-fiverr .share-btn:hover { background: linear-gradient(90deg, #00e6a0, #1dbf73) !important; }
-.brand-giffgaff .share-btn:hover { background: linear-gradient(90deg, #ffa751, #ffe259) !important; }
+.brand-giffgaff .share-btn:hover { background: linear-gradient(90deg, #00ff84 60%, #000 100%) !important; color: #000 !important; }
 .brand-mailblaze .share-btn:hover { background: linear-gradient(90deg, #00c6fb, #1e88e5) !important; }
 .brand-monzo .share-btn:hover { background: linear-gradient(90deg, #ff6f61, #00b4d8) !important; }
 .brand-neuraltext .share-btn:hover { background: linear-gradient(90deg, #1e1e2f, #6c47ff) !important; }
@@ -132,13 +148,13 @@
 /* For best results, SVGs should use fill="currentColor" or no fill attribute. */
 
 /* --- BRAND NAV BUTTON: Brand Gradients (alphabetical by brand) --- */
-.brand-amazonprimevideo .brand-nav-btn { background: linear-gradient(90deg, #232f3e, #3a506b, #7c2ae8) !important; color: #fff !important; border: none !important; box-shadow: 0 2px 8px rgba(0,0,0,0.07); border-radius: 999px !important; padding: 10px 32px !important; font-size: 1.08rem; font-weight: 700; margin: 0 4px; transition: background 0.2s, color 0.2s, box-shadow 0.2s; }
+.brand-amazonprimevideo .brand-nav-btn { background: linear-gradient(90deg, #ff9900, #232f3e) !important; color: #fff !important; border: none !important; box-shadow: 0 2px 8px rgba(0,0,0,0.07); border-radius: 999px !important; padding: 10px 32px !important; font-size: 1.08rem; font-weight: 700; margin: 0 4px; transition: background 0.2s, color 0.2s, box-shadow 0.2s; }
 .brand-baremetrics .brand-nav-btn { background: linear-gradient(90deg, #4158d0, #c850c0) !important; color: #fff !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
 .brand-befrugal .brand-nav-btn { background: linear-gradient(90deg, #0073e6, #ff7f32) !important; color: #fff !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
 .brand-cashbackcouk .brand-nav-btn { background: linear-gradient(90deg, #7c2ae8, #2ad2c9) !important; color: #fff !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
 .brand-engagebay .brand-nav-btn { background: linear-gradient(90deg, #ff6600, #7c2ae8) !important; color: #fff !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
 .brand-fiverr .brand-nav-btn { background: linear-gradient(90deg, #1dbf73, #00e6a0) !important; color: #fff !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
-.brand-giffgaff .brand-nav-btn { background: linear-gradient(90deg, #ffe259, #ffa751) !important; color: #222 !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
+.brand-giffgaff .brand-nav-btn { background: linear-gradient(90deg, #000 80%, #00ff84 100%) !important; color: #fff !important; border: none !important; box-shadow: 0 2px 8px rgba(0,0,0,0.07); border-radius: 999px !important; padding: 10px 32px !important; font-size: 1.08rem; font-weight: 700; margin: 0 4px; transition: background 0.2s, color 0.2s, box-shadow 0.2s; }
 .brand-mailblaze .brand-nav-btn { background: linear-gradient(90deg, #1e88e5, #00c6fb) !important; color: #fff !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
 .brand-monzo .brand-nav-btn { background: linear-gradient(90deg, #00b4d8, #ff6f61) !important; color: #fff !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
 .brand-neuraltext .brand-nav-btn { background: linear-gradient(90deg, #6c47ff, #1e1e2f) !important; color: #fff !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
@@ -153,17 +169,17 @@
 .brand-topcashback .brand-nav-btn { background: linear-gradient(90deg, #00796b, #43e97b) !important; color: #222 !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
 .brand-userback .brand-nav-btn { background: linear-gradient(90deg, #00c6ff, #0072ff) !important; color: #fff !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
 .brand-wise .brand-nav-btn { background: linear-gradient(90deg, #17803d, #003366) !important; color: #fff !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
-.brand-home .brand-nav-btn { background: linear-gradient(90deg, #232f3e, #3a506b, #7c2ae8) !important; color: #fff !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
+.brand-home .brand-nav-btn { background: linear-gradient(90deg, #ff9900, #232f3e) !important; color: #fff !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
 .brand-virgin .brand-nav-btn { background: linear-gradient(90deg, #e52d27, #000000) !important; color: #fff !important; border: none !important; box-shadow: none !important; text-decoration: none; transition: color 0.2s, text-decoration 0.2s; font-weight: 700; font-size: 1.08rem; border-radius: 0 !important; padding: 10px 32px !important; }
 
 /* --- BRAND NAV BUTTON :HOVER/.ACTIVE: Brand Gradients (alphabetical by brand) --- */
-.brand-amazonprimevideo .brand-nav-btn:hover, .brand-amazonprimevideo .brand-nav-btn.active { background: linear-gradient(90deg, #00a8e1, #232f3e) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-amazonprimevideo .brand-nav-btn:hover, .brand-amazonprimevideo .brand-nav-btn.active { background: linear-gradient(90deg, #232f3e, #ff9900) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
 .brand-baremetrics .brand-nav-btn:hover, .brand-baremetrics .brand-nav-btn.active { background: linear-gradient(90deg, #2ad2c9, #4158d0) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
 .brand-befrugal .brand-nav-btn:hover, .brand-befrugal .brand-nav-btn.active { background: linear-gradient(90deg, #ff7f32, #0073e6) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
 .brand-cashbackcouk .brand-nav-btn:hover, .brand-cashbackcouk .brand-nav-btn.active { background: linear-gradient(90deg, #2ad2c9, #7c2ae8) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
 .brand-engagebay .brand-nav-btn:hover, .brand-engagebay .brand-nav-btn.active { background: linear-gradient(90deg, #7c2ae8, #ff6600) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
 .brand-fiverr .brand-nav-btn:hover, .brand-fiverr .brand-nav-btn.active { background: linear-gradient(90deg, #7c2ae8, #1dbf73) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
-.brand-giffgaff .brand-nav-btn:hover, .brand-giffgaff .brand-nav-btn.active { background: linear-gradient(90deg, #ff6f00, #ffe259) !important; color: #222 !important; transform: translateY(-2px) scale(1.05); }
+.brand-giffgaff .brand-nav-btn:hover, .brand-giffgaff .brand-nav-btn.active { background: linear-gradient(90deg, #00ff84 60%, #000 100%) !important; color: #000 !important; transform: translateY(-2px) scale(1.05); }
 .brand-mailblaze .brand-nav-btn:hover, .brand-mailblaze .brand-nav-btn.active { background: linear-gradient(90deg, #00c6fb, #1e88e5) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
 .brand-monzo .brand-nav-btn:hover, .brand-monzo .brand-nav-btn.active { background: linear-gradient(90deg, #ff6f61, #00b4d8) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
 .brand-neuraltext .brand-nav-btn:hover, .brand-neuraltext .brand-nav-btn.active { background: linear-gradient(90deg, #1e1e2f, #6c47ff) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
@@ -178,8 +194,8 @@
 .brand-topcashback .brand-nav-btn:hover, .brand-topcashback .brand-nav-btn.active { background: linear-gradient(90deg, #43e97b, #00796b) !important; color: #222 !important; transform: translateY(-2px) scale(1.05); }
 .brand-userback .brand-nav-btn:hover, .brand-userback .brand-nav-btn.active { background: linear-gradient(90deg, #0072ff, #00c6ff) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
 .brand-wise .brand-nav-btn:hover, .brand-wise .brand-nav-btn.active { background: linear-gradient(90deg, #17803d, #003366) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
-.brand-home .brand-nav-btn:hover, .brand-home .brand-nav-btn.active { background: linear-gradient(90deg, #232f3e, #3a506b, #7c2ae8) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
-.brand-virgin .brand-nav-btn:hover, .brand-virgin .brand-nav-btn.active { background: linear-gradient(90deg, #000000, #e52d27) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-home .brand-nav-btn:hover, .brand-home .brand-nav-btn.active { background: linear-gradient(90deg, #ff9900, #232f3e) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
+.brand-virgin .brand-nav-btn:hover, .brand-virgin .brand-nav-btn.active { background: linear-gradient(90deg, #e52d27, #000000) !important; color: #fff !important; transform: translateY(-2px) scale(1.05); }
 
 /* --- NAV DROPDOWN & NAV-CATEGORY-TITLE: Brand Borders/Backgrounds (alphabetical by brand) --- */
 .brand-amazonprimevideo .nav-dropdown, .brand-amazonprimevideo .nav-category-title { border: 2.5px solid #232f3e; box-shadow: 0 0 0 6px rgba(0,168,225,0.18), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
@@ -188,7 +204,7 @@
 .brand-cashbackcouk .nav-dropdown, .brand-cashbackcouk .nav-category-title { border: 2.5px solid #7c2ae8; box-shadow: 0 0 0 6px rgba(42,210,201,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
 .brand-engagebay .nav-dropdown, .brand-engagebay .nav-category-title { border: 2.5px solid #ff6600; box-shadow: 0 0 0 6px rgba(124,42,232,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
 .brand-fiverr .nav-dropdown, .brand-fiverr .nav-category-title { border: 2.5px solid #1dbf73; box-shadow: 0 0 0 6px rgba(124,42,232,0.13), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
-.brand-giffgaff .nav-dropdown, .brand-giffgaff .nav-category-title { border: 2.5px solid #ffe259; box-shadow: 0 0 0 6px rgba(255,167,81,0.18), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
+.brand-giffgaff .nav-dropdown, .brand-giffgaff .nav-category-title { border: 2.5px solid #00ff84; box-shadow: 0 0 0 6px rgba(0,255,132,0.18), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
 .brand-mailblaze .nav-dropdown, .brand-mailblaze .nav-category-title { border: 2.5px solid #1e88e5; box-shadow: 0 0 0 6px rgba(0,198,251,0.18), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
 .brand-monzo .nav-dropdown, .brand-monzo .nav-category-title { border: 2.5px solid #00b4d8; box-shadow: 0 0 0 6px rgba(255,111,97,0.18), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
 .brand-neuraltext .nav-dropdown, .brand-neuraltext .nav-category-title { border: 2.5px solid #6c47ff; box-shadow: 0 0 0 6px rgba(160,132,232,0.18), 0 8px 32px rgba(0,0,0,0.08); background: #fff; border-radius: 18px; }
@@ -484,7 +500,7 @@ html, body { overflow-x: hidden; margin: 0; padding: 0; font-family: Verdana, sa
 .brand-cashbackcouk .category-nav-btn { background: linear-gradient(90deg, #7c2ae8, #2ad2c9) !important; color: #fff !important; border-radius: 999px !important; }
 .brand-engagebay .category-nav-btn { background: linear-gradient(90deg, #ff6600, #7c2ae8) !important; color: #fff !important; border-radius: 999px !important; }
 .brand-fiverr .category-nav-btn { background: linear-gradient(90deg, #1dbf73, #00e6a0) !important; color: #fff !important; border-radius: 999px !important; }
-.brand-giffgaff .category-nav-btn { background: linear-gradient(90deg, #ffe259, #ffa751) !important; color: #222 !important; border-radius: 999px !important; }
+.brand-giffgaff .category-nav-btn { background: linear-gradient(90deg, #000 80%, #00ff84 100%) !important; color: #fff !important; border-radius: 999px !important; }
 .brand-mailblaze .category-nav-btn { background: linear-gradient(90deg, #1e88e5, #00c6fb) !important; color: #fff !important; border-radius: 999px !important; }
 .brand-monzo .category-nav-btn { background: linear-gradient(90deg, #00b4d8, #ff6f61) !important; color: #fff !important; border-radius: 999px !important; }
 .brand-neuraltext .category-nav-btn { background: linear-gradient(90deg, #6c47ff, #1e1e2f) !important; color: #fff !important; border-radius: 999px !important; }
@@ -493,7 +509,7 @@ html, body { overflow-x: hidden; margin: 0; padding: 0; font-family: Verdana, sa
 .brand-quidco .category-nav-btn { background: linear-gradient(90deg, #2193b0, #6dd5ed) !important; color: #fff !important; border-radius: 999px !important; }
 .brand-raisin .category-nav-btn { background: linear-gradient(90deg, #f7971e, #ffd200) !important; color: #222 !important; border-radius: 999px !important; }
 .brand-rakuten .category-nav-btn { background: linear-gradient(90deg, #8B5CF6, #EC4899) !important; color: #fff !important; border-radius: 999px !important; }
-.brand-sharelytics .category-nav-btn { background: linear-gradient(90deg, #ff512f, #dd2476) !important; color: #fff !important; border-radius: 999px !important; }
+.brand-sharelytics .category-nav-btn { background: linear-gradient(90deg, #000 80%, #00ff84 100%) !important; color: #fff !important; border-radius: 999px !important; }
 .brand-shein .category-nav-btn { background: linear-gradient(90deg, #000000, #ff5fa2) !important; color: #fff !important; border-radius: 999px !important; }
 .brand-supermonitoring .category-nav-btn { background: linear-gradient(90deg, #2c5364, #0f2027) !important; color: #fff !important; border-radius: 999px !important; }
 .brand-topcashback .category-nav-btn { background: linear-gradient(90deg, #00796b, #43e97b) !important; color: #222 !important; border-radius: 999px !important; }
@@ -532,5 +548,239 @@ html, body { overflow-x: hidden; margin: 0; padding: 0; font-family: Verdana, sa
   border-radius: 999px !important;
 }
 
-.brand-amazonprimevideo .category-nav-btn { background: linear-gradient(90deg, #232f3e, #00a8e1) !important; color: #fff !important; border-radius: 999px !important; }
-.brand-amazonprimevideo .navbar-links .category-nav-btn { background: linear-gradient(90deg, #232f3e, #00a8e1) !important; color: #fff !important; border-radius: 999px !important; }
+.brand-amazonprimevideo .category-nav-btn { background: linear-gradient(90deg, #ff9900, #232f3e) !important; color: #fff !important; border-radius: 999px !important; }
+.brand-amazonprimevideo .navbar-links .category-nav-btn { background: linear-gradient(90deg, #ff9900, #232f3e) !important; color: #fff !important; border-radius: 999px !important; }
+
+/* Amazon Prime Video CTA button: brand color gradient and hover */
+.brand-amazonprimevideo .cta-button {
+  background: linear-gradient(90deg, #ff9900, #232f3e) !important;
+  color: #fff !important;
+}
+.brand-amazonprimevideo .cta-button:hover {
+  background: linear-gradient(90deg, #232f3e, #ff9900) !important;
+  color: #fff !important;
+}
+
+/* Brand card and mini-card gradient backgrounds for all brands (except .brand-home and .offer-card) */
+.brand-amazonprimevideo .card, .brand-amazonprimevideo .mini-card {
+  background: linear-gradient(135deg, #fffbe6 80%, #ff9900 100%);
+}
+.brand-baremetrics .card, .brand-baremetrics .mini-card {
+  background: linear-gradient(135deg, #f5f3ff 80%, #4158d0 100%);
+}
+.brand-befrugal .card, .brand-befrugal .mini-card {
+  background: linear-gradient(135deg, #f0f8ff 80%, #0073e6 100%);
+}
+.brand-cashbackcouk .card, .brand-cashbackcouk .mini-card {
+  background: linear-gradient(135deg, #f7f3ff 80%, #7c2ae8 100%);
+}
+.brand-engagebay .card, .brand-engagebay .mini-card {
+  background: linear-gradient(135deg, #fff5e6 80%, #ff6600 100%);
+}
+.brand-fiverr .card, .brand-fiverr .mini-card {
+  background: linear-gradient(135deg, #e6fff5 80%, #1dbf73 100%);
+}
+.brand-giffgaff .card, .brand-giffgaff .mini-card {
+  background: linear-gradient(135deg, #f6fffa 80%, #00ff84 100%);
+}
+.brand-mailblaze .card, .brand-mailblaze .mini-card {
+  background: linear-gradient(135deg, #e6f3ff 80%, #1e88e5 100%);
+}
+.brand-monzo .card, .brand-monzo .mini-card {
+  background: linear-gradient(135deg, #e6faff 80%, #00b4d8 100%);
+}
+.brand-neuraltext .card, .brand-neuraltext .mini-card {
+  background: linear-gradient(135deg, #f3f0ff 80%, #6c47ff 100%);
+}
+.brand-outseta .card, .brand-outseta .mini-card {
+  background: linear-gradient(135deg, #e6eaff 80%, #1a237e 100%);
+}
+.brand-printify .card, .brand-printify .mini-card {
+  background: linear-gradient(135deg, #e6fff5 80%, #00b09b 100%);
+}
+.brand-quidco .card, .brand-quidco .mini-card {
+  background: linear-gradient(135deg, #e6faff 80%, #2193b0 100%);
+}
+.brand-raisin .card, .brand-raisin .mini-card {
+  background: linear-gradient(135deg, #fffbe6 80%, #f7971e 100%);
+}
+.brand-rakuten .card, .brand-rakuten .mini-card {
+  background: linear-gradient(135deg, #fbe6ff 80%, #8B5CF6 100%);
+}
+.brand-sharelytics .card, .brand-sharelytics .mini-card {
+  background: linear-gradient(135deg, #fff0ec 80%, #ff512f 100%);
+}
+.brand-shein .card, .brand-shein .mini-card {
+  background: linear-gradient(135deg, #fff0fa 80%, #ff5fa2 100%);
+}
+.brand-supermonitoring .card, .brand-supermonitoring .mini-card {
+  background: linear-gradient(135deg, #e6f0ff 80%, #0f2027 100%);
+}
+.brand-topcashback .card, .brand-topcashback .mini-card {
+  background: linear-gradient(135deg, #e6fff7 80%, #43e97b 100%);
+}
+.brand-userback .card, .brand-userback .mini-card {
+  background: linear-gradient(135deg, #e6f7ff 80%, #00c6ff 100%);
+}
+.brand-virgin .card, .brand-virgin .mini-card {
+  background: linear-gradient(135deg, #fff0f0 80%, #e52d27 100%);
+}
+.brand-wise .card, .brand-wise .mini-card {
+  background: linear-gradient(135deg, #e6f7ec 80%, #003366 100%);
+}
+
+/* Brand mini-card headline and info text gradients for all brands */
+.brand-amazonprimevideo .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-amazonprimevideo .mini-card .desc {
+  background: linear-gradient(90deg, #ff9900, #232f3e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-baremetrics .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-baremetrics .mini-card .desc {
+  background: linear-gradient(90deg, #4158d0, #c850c0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-befrugal .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-befrugal .mini-card .desc {
+  background: linear-gradient(90deg, #0073e6, #ff7f32);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-cashbackcouk .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-cashbackcouk .mini-card .desc {
+  background: linear-gradient(90deg, #7c2ae8, #2ad2c9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-engagebay .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-engagebay .mini-card .desc {
+  background: linear-gradient(90deg, #ff6600, #7c2ae8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-fiverr .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-fiverr .mini-card .desc {
+  background: linear-gradient(90deg, #1dbf73, #00e6a0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-giffgaff .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-giffgaff .mini-card .desc {
+  background: linear-gradient(90deg, #00ff84, #000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-mailblaze .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-mailblaze .mini-card .desc {
+  background: linear-gradient(90deg, #1e88e5, #00c6fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-monzo .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-monzo .mini-card .desc {
+  background: linear-gradient(90deg, #00b4d8, #ff6f61);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-neuraltext .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-neuraltext .mini-card .desc {
+  background: linear-gradient(90deg, #6c47ff, #1e1e2f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-outseta .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-outseta .mini-card .desc {
+  background: linear-gradient(90deg, #1a237e, #3949ab);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-printify .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-printify .mini-card .desc {
+  background: linear-gradient(90deg, #00b09b, #96c93d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-quidco .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-quidco .mini-card .desc {
+  background: linear-gradient(90deg, #2193b0, #6dd5ed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-raisin .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-raisin .mini-card .desc {
+  background: linear-gradient(90deg, #f7971e, #ffd200);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-rakuten .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-rakuten .mini-card .desc {
+  background: linear-gradient(90deg, #8B5CF6, #EC4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-sharelytics .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-sharelytics .mini-card .desc {
+  background: linear-gradient(90deg, #ff512f, #dd2476);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-shein .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-shein .mini-card .desc {
+  background: linear-gradient(90deg, #ff5fa2, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-supermonitoring .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-supermonitoring .mini-card .desc {
+  background: linear-gradient(90deg, #0f2027, #2c5364);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-topcashback .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-topcashback .mini-card .desc {
+  background: linear-gradient(90deg, #43e97b, #38f9d7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-userback .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-userback .mini-card .desc {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-virgin .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-virgin .mini-card .desc {
+  background: linear-gradient(90deg, #e52d27, #000000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-wise .mini-card .title { color: #232f3e !important; background: none !important; -webkit-text-fill-color: initial !important; }
+.brand-wise .mini-card .desc {
+  background: linear-gradient(90deg, #003366, #17803d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

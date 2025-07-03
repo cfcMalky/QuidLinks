@@ -64,6 +64,10 @@ document.addEventListener('DOMContentLoaded', function () {
       'brand-cashbackcouk': 'linear-gradient(135deg, #e3fff3 0%, #009688 100%)',
       // Add more as needed
     };
+    // Add normalization function for brand class
+    function normalizeBrandClass(str) {
+      return 'brand-' + (str || '').toLowerCase().replace(/brand[-_]?/g, '').replace(/[^a-z0-9]/g, '');
+    }
     // Build carousels
     const carouselsHtml = sortedCats.map((cat, catIdx) => {
       const offers = categories[cat].sort((a, b) => (a['Brand']||'').localeCompare(b['Brand']||''));
@@ -75,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const brand = row['Brand'] || '';
         const subheadline = row['Subheadline'] || '';
         const file = (row['File'] || '').replace(/.html$/i, '');
-        const brandClass = row['Brand Class'] || '';
+        const brandClass = normalizeBrandClass(row['Brand Class'] || '');
         const brandGradient = brandGradients[brandClass] || 'linear-gradient(135deg, #fff, #f5f5f5 100%)';
         // Only first 2 visible by default
         return `<div class="offer-card ${brandClass} ${i < 2 ? 'visible' : 'hidden'}" style="margin: 0 12px; --category-border: ${headerColor};">
