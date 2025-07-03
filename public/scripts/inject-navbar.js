@@ -29,10 +29,12 @@ document.addEventListener('DOMContentLoaded', function () {
       const links = offers.map(row => {
         const file = (row['File'] || '').replace(/.html$/i, '');
         const brand = row['Brand'] || '';
-        return `<li><a href="/pages/offers/${file}/" class="navbar-link brand-nav-btn category-nav-btn">${brand}</a></li>`;
+        // Only navbar-link for dropdown links
+        return `<li><a href="/pages/offers/${file}/" class="navbar-link">${brand}</a></li>`;
       }).join('\n');
+      // Add both brand-nav-btn and category-nav-btn to the pill button
       return `<div class="nav-category">
-        <button type="button" class="brand-nav-btn">${cat}</button>
+        <button type="button" class="brand-nav-btn category-nav-btn">${cat}</button>
         <div class="nav-dropdown">
           <ul>
 ${links}
