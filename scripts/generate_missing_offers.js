@@ -3,7 +3,7 @@ const path = require('path');
 const parse = require('csv-parse/sync');
 
 const OFFERS_DIR = path.join(__dirname, '../public/pages/offers');
-const CSV_PATH = path.join(__dirname, '../data/offers_sheet.csv');
+const CSV_PATH = path.join(__dirname, '../public/data/offers_sheet.csv');
 
 // Read and parse CSV
 const csvContent = fs.readFileSync(CSV_PATH, 'utf8');
@@ -91,6 +91,14 @@ function offerTemplate(offer) {
   const features = (getVal(offer, 'Features') || '').split('|').map(s => s.trim()).filter(Boolean);
   const disclaimer = getVal(offer, 'Disclaimer') || '';
   const brandName = getVal(offer, 'Brand') || '';
+  const youtubeUrl = getVal(offer, 'YouTube Video').trim();
+  let videoEmbed = '';
+  if (youtubeUrl) {
+    // Extract video ID if a full URL is provided
+    const match = youtubeUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/))([\w-]{11})/);
+    const videoId = match ? match[1] : youtubeUrl;
+    videoEmbed = `\n    <div class="offer-video-container" style="margin: 32px 0; text-align: center;">\n      <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allowfullscreen style="max-width: 100%; border-radius: 18px;"></iframe>\n    </div>\n    <style>\n      .offer-video-container { width: 100%; max-width: 700px; margin: 32px auto; }\n      .offer-video-container iframe { width: 100%; height: 360px; max-width: 100%; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); }\n      @media (max-width: 600px) { .offer-video-container iframe { height: 200px; } }\n    </style>\n  `;
+  }
   // Mini-card icons
   const numberEmojis = ['1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟'];
   const defaultIcon = '💡';
@@ -126,6 +134,7 @@ function offerTemplate(offer) {
           const { emoji, title: cleanTitle } = extractEmojiAndTitle(title.trim(), numberEmojis[i] || numberEmojis[numberEmojis.length-1]);
           return miniCard(cleanTitle, desc, emoji);
         }).join('')}</div></div>` : ''}
+        ${videoEmbed}
         ${whyChoose.length ? `<div class="card"><div class="headline">Why Choose ${brandName}?</div><div class="card-grid">${whyChoose.map((item) => {
           const [title, ...descArr] = item.split(':');
           const desc = descArr.join(':').trim();
