@@ -194,7 +194,7 @@ function buildNavbar(records, colMap) {
     const links = offers.map(row => {
       const file = (getVal(row, 'File', colMap) || '').replace(/.html$/i, '');
       const brand = getVal(row, 'Brand', colMap) || '';
-      return `<li><a href="/pages/offers/${file}/" class="navbar-link ${gradientClass}">${brand}</a></li>`;
+      return `<li><a href="/pages/offers/${file}/" class="navbar-link">${brand}</a></li>`;
     }).join('\n');
     return `<div class="nav-category">
       <button type="button" class="brand-nav-btn category-nav-btn">${cat}</button>
