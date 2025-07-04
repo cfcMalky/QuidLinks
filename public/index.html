@@ -4,294 +4,326 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Refer 2 Earn - Turn Referrals Into Real Rewards</title>
+    <link rel="stylesheet" href="/styles/brand-colors.css">
     <link rel="stylesheet" href="/styles/styles.css">
-    <style>
-        .category-section {
-            margin-bottom: 48px;
-            position: relative;
-            padding: 32px 0 48px 0;
-            border-radius: 28px;
-            box-shadow: 0 2px 16px rgba(26,35,126,0.06);
-            border: 2px solid;
-        }
-        .category-section.banking {
-            background: #e3edfa;
-            border-color: #1565c0;
-        }
-        .category-section.banking .category-title,
-        .category-section.banking .scroll-btn,
-        .category-section.banking .scroll-btn svg polygon,
-        .category-section.banking .view-all-link {
-            color: #1565c0;
-            border-color: #1565c0;
-            fill: #1565c0;
-        }
-        .category-section.businesstools {
-            background: #fae3e3;
-            border-color: #c62828;
-        }
-        .category-section.businesstools .category-title,
-        .category-section.businesstools .scroll-btn,
-        .category-section.businesstools .scroll-btn svg polygon,
-        .category-section.businesstools .view-all-link {
-            color: #c62828;
-            border-color: #c62828;
-            fill: #c62828;
-        }
-        .category-section.cashback {
-            background: #e3faed;
-            border-color: #1b7a4f;
-        }
-        .category-section.cashback .category-title,
-        .category-section.cashback .scroll-btn,
-        .category-section.cashback .scroll-btn svg polygon,
-        .category-section.cashback .view-all-link {
-            color: #1b7a4f;
-            border-color: #1b7a4f;
-            fill: #1b7a4f;
-        }
-        .category-section.networks {
-            background: #fffbe3;
-            border-color: #bfa100;
-        }
-        .category-section.networks .category-title,
-        .category-section.networks .scroll-btn,
-        .category-section.networks .scroll-btn svg polygon,
-        .category-section.networks .view-all-link {
-            color: #bfa100;
-            border-color: #bfa100;
-            fill: #bfa100;
-        }
-        .category-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 18px; margin-left: 24px; text-align: center; margin-left: 0; }
-        .offers-row {
-            display: flex;
-            gap: 24px;
-            position: relative;
-            min-height: 220px;
-            overflow: hidden;
-            width: 100%;
-            justify-content: center;
-            align-items: stretch;
-        }
-        .offer-card {
-            background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-            padding: 32px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            min-width: 320px;
-            max-width: 340px;
-            flex: 0 0 48%;
-            transition: opacity 0.3s, transform 0.3s;
-            height: 100%;
-        }
-        .offer-card.hidden { opacity: 0; pointer-events: none; position: absolute; }
-        .offer-card.visible { opacity: 1; pointer-events: auto; position: relative; }
-        .offer-card .offer-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
-        .offer-card .offer-desc { color: #555; font-size: 1rem; margin-bottom: 18px; }
-        .offer-card .cta-button { margin: 0; }
-        .scroll-btn {
-            position: absolute;
-            top: 16px;
-            bottom: 16px;
-            margin: auto 0;
-            background: transparent;
-            border: none;
-            border-radius: 0;
-            width: 32px;
-            min-width: 32px;
-            height: calc(100% - 32px);
-            min-height: 120px;
-            max-height: 100%;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2;
-            box-shadow: none;
-            transition: background 0.2s;
-        }
-        .scroll-btn svg {
-            display: block;
-            width: 100%;
-            height: 100%;
-            min-height: 100%;
-        }
-        .scroll-btn:hover { background: rgba(0,0,0,0.04); }
-        .scroll-btn.left { left: 16px; }
-        .scroll-btn.right { right: 16px; }
-        .scroll-btn.hidden { display: none !important; }
-        .view-all-link {
-            position: absolute;
-            right: 32px;
-            bottom: -28px;
-            font-size: 1rem;
-            text-decoration: underline;
-            cursor: pointer;
-            font-weight: 600;
-        }
-        @media (max-width: 900px) {
-            .offer-card { min-width: 80vw; max-width: 90vw; }
-            .scroll-btn.left { left: 0; }
-            .scroll-btn.right { right: 0; }
-            .scroll-btn { min-height: 80px; }
-        }
-        .hero-gradient-carousel-width {
-            max-width: 900px;
-            width: 100%;
-            margin: 0 auto 48px auto;
-            padding: 0;
-            background: linear-gradient(135deg, #fff 60%, #e0e0e0 100%);
-            border-radius: 28px;
-            border: 2.5px solid #111;
-            box-shadow: 0 8px 32px 0 rgba(31,38,135,0.10);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero-gradient-carousel-inner {
-            background: transparent;
-            border-radius: 24px;
-            padding: 48px 36px 32px 36px;
-            text-align: center;
-            width: 100%;
-        }
-        .hero-title {
-            font-size: 2.6rem;
-            font-weight: 900;
-            letter-spacing: 0.01em;
-            margin-bottom: 8px;
-            color: #1a237e;
-            text-shadow: 0 2px 12px rgba(26,35,126,0.08);
-        }
-        .hero-tagline {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: #1976d2;
-            margin-bottom: 18px;
-        }
-        .hero-desc {
-            font-size: 1.15rem;
-            color: #333;
-            margin-bottom: 18px;
-        }
-        .hero-bullets {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 22px 0;
-        }
-        .hero-bullets li {
-            font-size: 1.08rem;
-            color: #222;
-            margin-bottom: 7px;
-            text-align: left;
-            max-width: 520px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .hero-cta-row {
-            margin-top: 18px;
-        }
-        .hero-cta-btn {
-            background: linear-gradient(90deg, #1976d2 0%, #64b5f6 100%);
-            color: #fff;
-            font-size: 1.18rem;
-            font-weight: 700;
-            padding: 14px 38px;
-            border-radius: 24px;
-            text-decoration: none;
-            box-shadow: 0 2px 12px rgba(25,118,210,0.10);
-            transition: background 0.2s, box-shadow 0.2s;
-            display: inline-block;
-        }
-        .hero-cta-btn:hover {
-            background: linear-gradient(90deg, #1565c0 0%, #1976d2 100%);
-            box-shadow: 0 4px 18px rgba(25,118,210,0.18);
-        }
-        .hero-gradient-title {
-            color: #111;
-            font-size: 2.3rem;
-            font-weight: 900;
-            margin-bottom: 8px;
-            letter-spacing: 0.01em;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.04);
-        }
-        .hero-gradient-tagline {
-            color: #222;
-            font-size: 1.18rem;
-            font-weight: 700;
-            margin-bottom: 18px;
-        }
-        .hero-gradient-desc {
-            color: #222;
-            font-size: 1.08rem;
-            margin-bottom: 18px;
-        }
-        .hero-gradient-bullets {
-            color: #111;
-        }
-        .hero-gradient-bullets li {
-            color: #222;
-        }
-        .hero-gradient-btn {
-            background: linear-gradient(90deg, #222 0%, #888 100%);
-            color: #fff;
-            font-size: 1.12rem;
-            font-weight: 700;
-            padding: 13px 34px;
-            border-radius: 22px;
-            text-decoration: none;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-            transition: background 0.2s, box-shadow 0.2s;
-            display: inline-block;
-        }
-        .hero-gradient-btn:hover {
-            background: linear-gradient(90deg, #111 0%, #444 100%);
-            box-shadow: 0 4px 18px rgba(0,0,0,0.18);
-        }
-        @media (max-width: 900px) {
-            .hero-gradient-carousel-width {
-                max-width: 98vw;
-                border-radius: 18px;
-            }
-            .hero-gradient-carousel-inner {
-                padding: 32px 10vw 24px 10vw;
-            }
-            .hero-title { font-size: 2rem; }
-            .hero-tagline { font-size: 1.1rem; }
-            .hero-bullets li { font-size: 1rem; }
-        }
-    </style>
+    
 </head>
 <body class="brand-home">
-    <nav id="navbar"></nav>
-    <script src="/scripts/inject-banner.js"></script>
-    <script src="/scripts/inject-navbar.js"></script>
-    <div class="container">
-        <section class="hero-gradient-carousel-width">
-            <div class="hero-gradient-carousel-inner">
-                <p class="hero-desc hero-gradient-desc">
-                    Welcome to Refer 2 Earn – your hub for the UK's best dual-incentive referral and affiliate offers! Whether you're a content creator, blogger, social media influencer, or just someone with a network of friends, this site is designed to help you turn your audience and connections into real, passive side-income.
-                </p>
-                <ul class="hero-bullets hero-gradient-bullets">
-                    <li><b>Hand-picked offers:</b> Only the best, most transparent referral and affiliate programs.</li>
-                    <li><b>Dual rewards:</b> Both you and your friends or followers get rewarded.</li>
-                    <li><b>Easy to start:</b> Browse, share, and earn – it's that simple!</li>
-                </ul>
-                <div class="hero-cta-row">
-                    <a href="#carousels" class="hero-cta-btn hero-gradient-btn">Browse Offers</a>
-                </div>
-            </div>
-        </section>
-        <!-- Dynamic carousels will be injected here -->
-        <div id="carousels"></div>
+    
+<header class="site-banner">
+    <div class="banner-bg">
+        <img src="/banner.png" alt="Refer 2 Earn banner" class="banner-img">
+        <div class="banner-overlay-bg"></div>
     </div>
-    <!-- Add PapaParse and dynamic carousel script before closing body tag -->
-    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-    <script src="/scripts/inject-carousels.js"></script>
+    <div class="banner-overlay">
+        <div class="banner-title">Refer 2 Earn</div>
+        <div class="banner-tagline">Turn Referrals Into Real Rewards</div>
+        <nav class="banner-nav-bar-bg">
+            <div class="home-nav-bar" style="display: flex; justify-content: center; gap: 18px;">
+                <a href="/" class="brand-nav-btn">Home</a>
+                <a href="/pages/information.html" class="brand-nav-btn">Information</a>
+                <a href="/pages/privacy-policy.html" class="brand-nav-btn">Privacy Policy</a>
+                <a href="/pages/terms-of-use.html" class="brand-nav-btn">Terms of Use</a>
+            </div>
+        </nav>
+    </div>
+</header>
+    <nav class="navbar">
+
+  <button class="nav-hamburger" aria-label="Open navigation">&#9776;</button>
+  <div class="navbar-links" style="justify-content:center; width:100%; display:flex;">
+<div class="nav-category">
+      <button type="button" class="brand-nav-btn category-nav-btn">Banking</button>
+      <div class="nav-dropdown">
+        <ul>
+<li><a href="/pages/offers/monzo/" class="navbar-link">Monzo</a></li>
+<li><a href="/pages/offers/raisin/" class="navbar-link">Raisin</a></li>
+<li><a href="/pages/offers/wise/" class="navbar-link">Wise</a></li>
+        </ul>
+      </div>
+    </div>
+<div class="nav-category">
+      <button type="button" class="brand-nav-btn category-nav-btn">Business Tools</button>
+      <div class="nav-dropdown">
+        <ul>
+<li><a href="/pages/offers/baremetrics/" class="navbar-link">Baremetrics</a></li>
+<li><a href="/pages/offers/engagebay/" class="navbar-link">EngageBay</a></li>
+<li><a href="/pages/offers/fiverr/" class="navbar-link">Fiverr</a></li>
+<li><a href="/pages/offers/mailblaze/" class="navbar-link">Mail Blaze</a></li>
+<li><a href="/pages/offers/neuraltext/" class="navbar-link">Neuraltext</a></li>
+<li><a href="/pages/offers/outseta/" class="navbar-link">Outseta</a></li>
+<li><a href="/pages/offers/printify/" class="navbar-link">Printify</a></li>
+<li><a href="/pages/offers/sharelytics/" class="navbar-link">Sharelytics</a></li>
+<li><a href="/pages/offers/supermonitoring/" class="navbar-link">Super Monitoring</a></li>
+<li><a href="/pages/offers/userback/" class="navbar-link">Userback</a></li>
+        </ul>
+      </div>
+    </div>
+<div class="nav-category">
+      <button type="button" class="brand-nav-btn category-nav-btn">Cashback</button>
+      <div class="nav-dropdown">
+        <ul>
+<li><a href="/pages/offers/befrugal/" class="navbar-link">BeFrugal</a></li>
+<li><a href="/pages/offers/cashback-co-uk/" class="navbar-link">Cashback.co.uk</a></li>
+<li><a href="/pages/offers/quidco/" class="navbar-link">Quidco</a></li>
+<li><a href="/pages/offers/rakuten/" class="navbar-link">Rakuten</a></li>
+<li><a href="/pages/offers/topcashback/" class="navbar-link">TopCashback</a></li>
+        </ul>
+      </div>
+    </div>
+<div class="nav-category">
+      <button type="button" class="brand-nav-btn category-nav-btn">Media</button>
+      <div class="nav-dropdown">
+        <ul>
+<li><a href="/pages/offers/amazon-prime-video/" class="navbar-link">Amazon Prime Video</a></li>
+        </ul>
+      </div>
+    </div>
+<div class="nav-category">
+      <button type="button" class="brand-nav-btn category-nav-btn">Networks</button>
+      <div class="nav-dropdown">
+        <ul>
+<li><a href="/pages/offers/giffgaff/" class="navbar-link">Giffgaff</a></li>
+<li><a href="/pages/offers/virgin/" class="navbar-link">Virgin</a></li>
+        </ul>
+      </div>
+    </div>
+<div class="nav-category">
+      <button type="button" class="brand-nav-btn category-nav-btn">Shopping</button>
+      <div class="nav-dropdown">
+        <ul>
+<li><a href="/pages/offers/shein/" class="navbar-link">Shein</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+    <div class="container">
+      
+    <div class="card">
+      <div class="headline">Welcome to Refer 2 Earn</div>
+      <div class="subheadline">
+        Your hub for the UK's best dual-incentive referral and affiliate offers! Whether you're a content creator, blogger, social media influencer, or just someone with a network of friends, this site is designed to help you turn your audience and connections into real, passive side-income.
+      </div>
+      <ul class="hero-bullets hero-gradient-bullets">
+        <li><b>Hand-picked offers:</b> Only the best, most transparent referral and affiliate programs.</li>
+        <li><b>Dual rewards:</b> Both you and your friends or followers get rewarded.</li>
+        <li><b>Easy to start:</b> Browse, share, and earn – it's that simple!</li>
+      </ul>
+      <div class="hero-cta-row">
+        <a href="#carousels" class="hero-cta-btn hero-gradient-btn">Browse Offers</a>
+      </div>
+    </div>
+  
+      <div class="category-section banking" style="background: linear-gradient(135deg, #e3f0ff 0%, #1976d2 100%); border: 3px solid #1a237e; position:relative; border-radius:28px; margin-bottom:48px; padding:32px 0 48px 0; box-shadow:0 2px 16px rgba(26,35,126,0.06);">
+      <div class="category-title" style="color: #1a237e; text-align:center; font-size:2.1rem; font-weight:900; text-decoration:underline; margin-bottom:24px;">Banking</div>
+      <div style="position:relative; display:flex; align-items:center; justify-content:center;">
+        
+      <button class="carousel-chevron left" data-carousel="offers-row-banking" aria-label="Scroll left" style="position:absolute; left:-48px; top:50%; transform:translateY(-50%); background:none; border:none; color:#1a237e; font-size:2.5rem; cursor:pointer; z-index:2;">&#8249;</button>
+      <button class="carousel-chevron right" data-carousel="offers-row-banking" aria-label="Scroll right" style="position:absolute; right:-48px; top:50%; transform:translateY(-50%); background:none; border:none; color:#1a237e; font-size:2.5rem; cursor:pointer; z-index:2;">&#8250;</button>
+    
+        <div class="carousel-cards-wrapper" id="offers-row-banking" style="display:flex; overflow:hidden; width:600px; margin:0 auto; position:relative;"><div class="brand-monzo"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Monzo</div>
+        <div class="caro-offer-desc">Open a Monzo account with the link below, make a card payment, and get £5 free! Enjoy smart banking, instant notifications, and no monthly fees.</div>
+        <a href="/pages/offers/monzo/" class="carousel-cta-button cta-button-monzo">
+          <span class="carousel-cta-gradient-text">View Monzo Offer</span>
+        </a>
+      </div></div><div class="brand-raisin"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Raisin</div>
+        <div class="caro-offer-desc">Open a savings account via Raisin and get a £50 welcome bonus when you deposit £10,000 or more. Plus, refer friends and earn extra rewards for each successful referral!</div>
+        <a href="/pages/offers/raisin/" class="carousel-cta-button cta-button-raisin">
+          <span class="carousel-cta-gradient-text">View Raisin Offer</span>
+        </a>
+      </div></div><div class="brand-wise"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Wise</div>
+        <div class="caro-offer-desc">Invite 3 friends to Wise and earn £75 for yourself. Your friends get a free card or a transfer up to £500 with zero fees!</div>
+        <a href="/pages/offers/wise/" class="carousel-cta-button cta-button-wise">
+          <span class="carousel-cta-gradient-text">View Wise Offer</span>
+        </a>
+      </div></div></div>
+      </div>
+    </div>
+<div class="category-section businesstools" style="background: linear-gradient(135deg, #ffe3e3 0%, #d32f2f 100%); border: 3px solid #b71c1c; position:relative; border-radius:28px; margin-bottom:48px; padding:32px 0 48px 0; box-shadow:0 2px 16px rgba(26,35,126,0.06);">
+      <div class="category-title" style="color: #b71c1c; text-align:center; font-size:2.1rem; font-weight:900; text-decoration:underline; margin-bottom:24px;">Business Tools</div>
+      <div style="position:relative; display:flex; align-items:center; justify-content:center;">
+        
+      <button class="carousel-chevron left" data-carousel="offers-row-businesstools" aria-label="Scroll left" style="position:absolute; left:-48px; top:50%; transform:translateY(-50%); background:none; border:none; color:#b71c1c; font-size:2.5rem; cursor:pointer; z-index:2;">&#8249;</button>
+      <button class="carousel-chevron right" data-carousel="offers-row-businesstools" aria-label="Scroll right" style="position:absolute; right:-48px; top:50%; transform:translateY(-50%); background:none; border:none; color:#b71c1c; font-size:2.5rem; cursor:pointer; z-index:2;">&#8250;</button>
+    
+        <div class="carousel-cards-wrapper" id="offers-row-businesstools" style="display:flex; overflow:hidden; width:600px; margin:0 auto; position:relative;"><div class="brand-baremetrics"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Baremetrics</div>
+        <div class="caro-offer-desc">Sign up for Baremetrics and get $50 in account credit. Plus, refer friends and earn recurring commissions for each successful referral!</div>
+        <a href="/pages/offers/baremetrics/" class="carousel-cta-button cta-button-baremetrics">
+          <span class="carousel-cta-gradient-text">View Baremetrics Offer</span>
+        </a>
+      </div></div><div class="brand-engagebay"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">EngageBay</div>
+        <div class="caro-offer-desc">Sign up for EngageBay and get 20% off your first purchase. Plus, refer friends and earn recurring commissions for each successful referral!</div>
+        <a href="/pages/offers/engagebay/" class="carousel-cta-button cta-button-engagebay">
+          <span class="carousel-cta-gradient-text">View EngageBay Offer</span>
+        </a>
+      </div></div><div class="brand-fiverr"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Fiverr</div>
+        <div class="caro-offer-desc">Sign up for Fiverr and get 10% off your first order. Plus, refer friends and earn up to $100 for each successful referral!</div>
+        <a href="/pages/offers/fiverr/" class="carousel-cta-button cta-button-fiverr">
+          <span class="carousel-cta-gradient-text">View Fiverr Offer</span>
+        </a>
+      </div></div><div class="brand-mailblaze"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Mail Blaze</div>
+        <div class="caro-offer-desc">Sign up for Mail Blaze and get 10% off your first purchase. Plus, refer friends and earn affiliate commissions for each successful referral!</div>
+        <a href="/pages/offers/mailblaze/" class="carousel-cta-button cta-button-mailblaze">
+          <span class="carousel-cta-gradient-text">View Mail Blaze Offer</span>
+        </a>
+      </div></div><div class="brand-neuraltext"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Neuraltext</div>
+        <div class="caro-offer-desc">Sign up for NeuralText and get 20% off your first purchase. Plus, refer friends and earn affiliate commissions for each successful referral!</div>
+        <a href="/pages/offers/neuraltext/" class="carousel-cta-button cta-button-neuraltext">
+          <span class="carousel-cta-gradient-text">View Neuraltext Offer</span>
+        </a>
+      </div></div><div class="brand-outseta"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Outseta</div>
+        <div class="caro-offer-desc">Sign up for Outseta and get a 7-day free trial of the all-in-one membership platform for SaaS, courses, and communities. No credit card required!</div>
+        <a href="/pages/offers/outseta/" class="carousel-cta-button cta-button-outseta">
+          <span class="carousel-cta-gradient-text">View Outseta Offer</span>
+        </a>
+      </div></div><div class="brand-printify"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Printify</div>
+        <div class="caro-offer-desc">Join the Printify Affiliate Program and earn 5% from every sale your referrals make. Free to join, global reach, and 1000+ products to promote!</div>
+        <a href="/pages/offers/printify/" class="carousel-cta-button cta-button-printify">
+          <span class="carousel-cta-gradient-text">View Printify Offer</span>
+        </a>
+      </div></div><div class="brand-sharelytics"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Sharelytics</div>
+        <div class="caro-offer-desc">Sign up for the Sharelytics affiliate program and earn 30% recurring commission for every customer you refer! Plus, get $100 cash for top performers.</div>
+        <a href="/pages/offers/sharelytics/" class="carousel-cta-button cta-button-sharelytics">
+          <span class="carousel-cta-gradient-text">View Sharelytics Offer</span>
+        </a>
+      </div></div><div class="brand-supermonitoring"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Super Monitoring</div>
+        <div class="caro-offer-desc">Website uptime and performance monitoring. Get notified instantly about downtime, slow loading, SSL issues, domain expiry, and more. Trusted by major brands.Earn a 30% lifetime commission for every customer you refer!</div>
+        <a href="/pages/offers/supermonitoring/" class="carousel-cta-button cta-button-supermonitoring">
+          <span class="carousel-cta-gradient-text">View Super Monitoring Offer</span>
+        </a>
+      </div></div><div class="brand-userback"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Userback</div>
+        <div class="caro-offer-desc">Collect and act on user feedback 10x faster with Userback. Visual feedback, bug reporting, surveys, session replay, and moreall in one platform for product teams.Earn a 35% commission for 12 months for every customer you refer!</div>
+        <a href="/pages/offers/userback/" class="carousel-cta-button cta-button-userback">
+          <span class="carousel-cta-gradient-text">View Userback Offer</span>
+        </a>
+      </div></div></div>
+      </div>
+    </div>
+<div class="category-section cashback" style="background: linear-gradient(135deg, #e3fff3 0%, #009688 100%); border: 3px solid #00695c; position:relative; border-radius:28px; margin-bottom:48px; padding:32px 0 48px 0; box-shadow:0 2px 16px rgba(26,35,126,0.06);">
+      <div class="category-title" style="color: #00695c; text-align:center; font-size:2.1rem; font-weight:900; text-decoration:underline; margin-bottom:24px;">Cashback</div>
+      <div style="position:relative; display:flex; align-items:center; justify-content:center;">
+        
+      <button class="carousel-chevron left" data-carousel="offers-row-cashback" aria-label="Scroll left" style="position:absolute; left:-48px; top:50%; transform:translateY(-50%); background:none; border:none; color:#00695c; font-size:2.5rem; cursor:pointer; z-index:2;">&#8249;</button>
+      <button class="carousel-chevron right" data-carousel="offers-row-cashback" aria-label="Scroll right" style="position:absolute; right:-48px; top:50%; transform:translateY(-50%); background:none; border:none; color:#00695c; font-size:2.5rem; cursor:pointer; z-index:2;">&#8250;</button>
+    
+        <div class="carousel-cards-wrapper" id="offers-row-cashback" style="display:flex; overflow:hidden; width:600px; margin:0 auto; position:relative;"><div class="brand-befrugal"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">BeFrugal</div>
+        <div class="caro-offer-desc">Invite friends to BeFrugal and you both get a $10 bonus when your friend earns $10 in Cash Back. Shop, save, and earn together!</div>
+        <a href="/pages/offers/befrugal/" class="carousel-cta-button cta-button-befrugal">
+          <span class="carousel-cta-gradient-text">View BeFrugal Offer</span>
+        </a>
+      </div></div><div class="brand-cashbackcouk"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Cashback.co.uk</div>
+        <div class="caro-offer-desc">Refer friends to Cashback.co.uk and earn 10% of their earnings for life! Your friends get a £10 welcome bonus (instead of £5) when they join with your link.</div>
+        <a href="/pages/offers/cashback-co-uk/" class="carousel-cta-button cta-button-cashbackcouk">
+          <span class="carousel-cta-gradient-text">View Cashback.co.uk Offer</span>
+        </a>
+      </div></div><div class="brand-quidco"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Quidco</div>
+        <div class="caro-offer-desc">Refer a friend and earn £25 cashback, plus your friend gets a £20 sign-up bonus when they join and earn £5 cashback.</div>
+        <a href="/pages/offers/quidco/" class="carousel-cta-button cta-button-quidco">
+          <span class="carousel-cta-gradient-text">View Quidco Offer</span>
+        </a>
+      </div></div><div class="brand-rakuten"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Rakuten</div>
+        <div class="caro-offer-desc">Sign up for Rakuten UK and earn £25 cashback on your first qualifying purchase. Plus, refer friends and earn even more cashback rewards for each successful referral!</div>
+        <a href="/pages/offers/rakuten/" class="carousel-cta-button cta-button-rakuten">
+          <span class="carousel-cta-gradient-text">View Rakuten Offer</span>
+        </a>
+      </div></div><div class="brand-topcashback"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">TopCashback</div>
+        <div class="caro-offer-desc">Sign up for TopCashback and earn a £10 bonus on your first qualifying purchase. Plus, refer friends and earn even more cashback rewards for each successful referral!</div>
+        <a href="/pages/offers/topcashback/" class="carousel-cta-button cta-button-topcashback">
+          <span class="carousel-cta-gradient-text">View TopCashback Offer</span>
+        </a>
+      </div></div></div>
+      </div>
+    </div>
+<div class="category-section media" style="background: linear-gradient(135deg, #f3e3ff 0%, #8e24aa 100%); border: 3px solid #7b1fa2; position:relative; border-radius:28px; margin-bottom:48px; padding:32px 0 48px 0; box-shadow:0 2px 16px rgba(26,35,126,0.06);">
+      <div class="category-title" style="color: #7b1fa2; text-align:center; font-size:2.1rem; font-weight:900; text-decoration:underline; margin-bottom:24px;">Media</div>
+      <div style="position:relative; display:flex; align-items:center; justify-content:center;">
+        
+        <div class="carousel-cards-wrapper" id="offers-row-media" style="display:flex; overflow:hidden; width:600px; margin:0 auto; position:relative;"><div class="brand-amazonprimevideo"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Amazon Prime Video</div>
+        <div class="caro-offer-desc">Promote Amazon Prime Video and earn commissions through the Amazon Associates program. Get paid for every new sign-up and enjoy top streaming rewards!</div>
+        <a href="/pages/offers/amazon-prime-video/" class="carousel-cta-button cta-button-amazonprimevideo">
+          <span class="carousel-cta-gradient-text">View Amazon Prime Video Offer</span>
+        </a>
+      </div></div></div>
+      </div>
+    </div>
+<div class="category-section networks" style="background: linear-gradient(135deg, #fffde3 0%, #ffd600 100%); border: 3px solid #bfa600; position:relative; border-radius:28px; margin-bottom:48px; padding:32px 0 48px 0; box-shadow:0 2px 16px rgba(26,35,126,0.06);">
+      <div class="category-title" style="color: #bfa600; text-align:center; font-size:2.1rem; font-weight:900; text-decoration:underline; margin-bottom:24px;">Networks</div>
+      <div style="position:relative; display:flex; align-items:center; justify-content:center;">
+        
+        <div class="carousel-cards-wrapper" id="offers-row-networks" style="display:flex; overflow:hidden; width:600px; margin:0 auto; position:relative;"><div class="brand-giffgaff"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Giffgaff</div>
+        <div class="caro-offer-desc">Order a free SIM and activate with £10 to get £5 extra credit. Flexible, no-contract plans and free EU roaming!</div>
+        <a href="/pages/offers/giffgaff/" class="carousel-cta-button cta-button-giffgaff">
+          <span class="carousel-cta-gradient-text">View Giffgaff Offer</span>
+        </a>
+      </div></div><div class="brand-virgin"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Virgin</div>
+        <div class="caro-offer-desc">Sign up for Virgin Media broadband and get £50 cash back. Plus, refer friends and earn extra rewards for each successful referral!</div>
+        <a href="/pages/offers/virgin/" class="carousel-cta-button cta-button-virgin">
+          <span class="carousel-cta-gradient-text">View Virgin Offer</span>
+        </a>
+      </div></div></div>
+      </div>
+    </div>
+<div class="category-section shopping" style="background: linear-gradient(135deg, #ffe0b2 0%, #e65100 100%); border: 3px solid #e65100; position:relative; border-radius:28px; margin-bottom:48px; padding:32px 0 48px 0; box-shadow:0 2px 16px rgba(26,35,126,0.06);">
+      <div class="category-title" style="color: #e65100; text-align:center; font-size:2.1rem; font-weight:900; text-decoration:underline; margin-bottom:24px;">Shopping</div>
+      <div style="position:relative; display:flex; align-items:center; justify-content:center;">
+        
+        <div class="carousel-cards-wrapper" id="offers-row-shopping" style="display:flex; overflow:hidden; width:600px; margin:0 auto; position:relative;"><div class="brand-shein"><div class="mini-card carousel-mini-card">
+        <div class="caro-offer-title">Shein</div>
+        <div class="caro-offer-desc">Promote SHEIN and earn commissions through the SHEIN Affiliate Program. Get paid for every sale your referrals make!</div>
+        <a href="/pages/offers/shein/" class="carousel-cta-button cta-button-shein">
+          <span class="carousel-cta-gradient-text">View Shein Offer</span>
+        </a>
+      </div></div></div>
+      </div>
+    </div><style>
+.carousel-cards-wrapper { gap: 0; }
+.carousel-mini-card { transition: box-shadow 0.2s, background 0.2s; box-sizing: border-box; }
+.carousel-mini-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.13); }
+.carousel-cta-button { font-weight: 700; border-radius: 24px; text-align: center; font-size: 1.05rem; box-shadow: none; border: none; transition: box-shadow 0.2s; min-width: 120px; max-width: 180px; padding: 10px 0; position:relative; overflow:hidden; background:#111; }
+.carousel-cta-button:hover { box-shadow: 0 2px 12px rgba(25,118,210,0.18); }
+.carousel-cta-gradient-text { background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent; display:inline-block; width:100%; }
+</style><script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.carousel-chevron').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const rowId = btn.getAttribute('data-carousel');
+        const wrapper = document.getElementById(rowId);
+        if (!wrapper) return;
+        const card = wrapper.querySelector('.mini-card');
+        if (!card) return;
+        const cardWidth = card.offsetWidth + 16; // card + margin
+        const scrollAmount = cardWidth * 2; // show 2 cards at a time
+        if (btn.classList.contains('left')) {
+          wrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        } else {
+          wrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      });
+    });
+  });
+  </script>
+    </div>
 </body>
-</html> 
+</html>

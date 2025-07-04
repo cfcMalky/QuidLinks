@@ -1,0 +1,551 @@
+/* AUTO-GENERATED BRAND COLORS CSS */
+.brand-amazonprimevideo {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #ff9900;
+  --carousel-mini-card-grad-1: #232f3e;
+  --carousel-mini-card-grad-2: #ff9900;
+  --cta-btn-grad-1: #ff9900;
+  --cta-btn-grad-2: #232f3e;
+  --headline-grad-1: #232f3e;
+  --headline-grad-2: #ff9900;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #ff9900;
+  --mini-card-desc-grad-1: #ff9900;
+  --mini-card-desc-grad-2: #232f3e;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #232f3e;
+  --nav-btn-grad-2: #ff9900;
+  --nav-dropdown-border: #ff9900;
+  --nav-dropdown-shadow: rgba(255,153,0,0.10);
+  --share-btn-grad-1: #ff9900;
+  --share-btn-grad-2: #232f3e;
+  --share-btn-text-color: #fff;
+}
+
+.brand-baremetrics {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #4158d0;
+  --carousel-mini-card-grad-1: #4158d0;
+  --carousel-mini-card-grad-2: #c850c0;
+  --cta-btn-grad-1: #4158d0;
+  --cta-btn-grad-2: #c850c0;
+  --headline-grad-1: #4158d0;
+  --headline-grad-2: #c850c0;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #4158d0;
+  --mini-card-desc-grad-1: #4158d0;
+  --mini-card-desc-grad-2: #c850c0;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #4158d0;
+  --nav-btn-grad-2: #c850c0;
+  --nav-dropdown-border: #4158d0;
+  --nav-dropdown-shadow: rgba(200,80,192,0.18);
+  --share-btn-grad-1: #4158d0;
+  --share-btn-grad-2: #c850c0;
+  --share-btn-text-color: #fff;
+}
+
+.brand-befrugal {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #0073e6;
+  --carousel-mini-card-grad-1: #0073e6;
+  --carousel-mini-card-grad-2: #ff7f32;
+  --cta-btn-grad-1: #0073e6;
+  --cta-btn-grad-2: #ff7f32;
+  --headline-grad-1: #0073e6;
+  --headline-grad-2: #ff7f32;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #0073e6;
+  --mini-card-desc-grad-1: #0073e6;
+  --mini-card-desc-grad-2: #ff7f32;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #0073e6;
+  --nav-btn-grad-2: #ff7f32;
+  --nav-dropdown-border: #0073e6;
+  --nav-dropdown-shadow: rgba(255,127,50,0.13);
+  --share-btn-grad-1: #0073e6;
+  --share-btn-grad-2: #ff7f32;
+  --share-btn-text-color: #fff;
+}
+
+.brand-cashbackcouk {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #7c2ae8;
+  --carousel-mini-card-grad-1: #7c2ae8;
+  --carousel-mini-card-grad-2: #2ad2c9;
+  --cta-btn-grad-1: #7c2ae8;
+  --cta-btn-grad-2: #2ad2c9;
+  --headline-grad-1: #7c2ae8;
+  --headline-grad-2: #2ad2c9;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #7c2ae8;
+  --mini-card-desc-grad-1: #7c2ae8;
+  --mini-card-desc-grad-2: #2ad2c9;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #7c2ae8;
+  --nav-btn-grad-2: #2ad2c9;
+  --nav-dropdown-border: #7c2ae8;
+  --nav-dropdown-shadow: rgba(42,210,201,0.13);
+  --share-btn-grad-1: #7c2ae8;
+  --share-btn-grad-2: #2ad2c9;
+  --share-btn-text-color: #fff;
+}
+
+.brand-engagebay {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #ff6600;
+  --carousel-mini-card-grad-1: #ff6600;
+  --carousel-mini-card-grad-2: #7c2ae8;
+  --cta-btn-grad-1: #ff6600;
+  --cta-btn-grad-2: #7c2ae8;
+  --headline-grad-1: #ff6600;
+  --headline-grad-2: #7c2ae8;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #ff6600;
+  --mini-card-desc-grad-1: #ff6600;
+  --mini-card-desc-grad-2: #7c2ae8;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #ff6600;
+  --nav-btn-grad-2: #7c2ae8;
+  --nav-dropdown-border: #ff6600;
+  --nav-dropdown-shadow: rgba(255,179,71,0.18);
+  --share-btn-grad-1: #ff6600;
+  --share-btn-grad-2: #7c2ae8;
+  --share-btn-text-color: #fff;
+}
+
+.brand-fiverr {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #1dbf73;
+  --carousel-mini-card-grad-1: #1dbf73;
+  --carousel-mini-card-grad-2: #00e6a0;
+  --cta-btn-grad-1: #1dbf73;
+  --cta-btn-grad-2: #00e6a0;
+  --headline-grad-1: #1dbf73;
+  --headline-grad-2: #00e6a0;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #1dbf73;
+  --mini-card-desc-grad-1: #1dbf73;
+  --mini-card-desc-grad-2: #00e6a0;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #1dbf73;
+  --nav-btn-grad-2: #00e6a0;
+  --nav-dropdown-border: #1dbf73;
+  --nav-dropdown-shadow: rgba(0,230,160,0.18);
+  --share-btn-grad-1: #1dbf73;
+  --share-btn-grad-2: #00e6a0;
+  --share-btn-text-color: #fff;
+}
+
+.brand-giffgaff {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #00ff84;
+  --carousel-mini-card-grad-1: #000;
+  --carousel-mini-card-grad-2: #00ff84;
+  --cta-btn-grad-1: #000;
+  --cta-btn-grad-2: #00ff84;
+  --headline-grad-1: #000;
+  --headline-grad-2: #00ff84;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #00ff84;
+  --mini-card-desc-grad-1: #00ff84;
+  --mini-card-desc-grad-2: #000;
+  --mini-card-title: #000;
+  --nav-btn-grad-1: #000;
+  --nav-btn-grad-2: #00ff84;
+  --nav-dropdown-border: #00ff84;
+  --nav-dropdown-shadow: rgba(0,255,132,0.18);
+  --share-btn-grad-1: #000;
+  --share-btn-grad-2: #00ff84;
+  --share-btn-text-color: #fff;
+}
+
+.brand-mailblaze {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #1e88e5;
+  --carousel-mini-card-grad-1: #1e88e5;
+  --carousel-mini-card-grad-2: #00c6fb;
+  --cta-btn-grad-1: #1e88e5;
+  --cta-btn-grad-2: #00c6fb;
+  --headline-grad-1: #1e88e5;
+  --headline-grad-2: #00c6fb;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #1e88e5;
+  --mini-card-desc-grad-1: #1e88e5;
+  --mini-card-desc-grad-2: #00c6fb;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #1e88e5;
+  --nav-btn-grad-2: #00c6fb;
+  --nav-dropdown-border: #1e88e5;
+  --nav-dropdown-shadow: rgba(66,165,245,0.18);
+  --share-btn-grad-1: #1e88e5;
+  --share-btn-grad-2: #00c6fb;
+  --share-btn-text-color: #fff;
+}
+
+.brand-monzo {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #00b4d8;
+  --carousel-mini-card-grad-1: #00b4d8;
+  --carousel-mini-card-grad-2: #ff6f61;
+  --cta-btn-grad-1: #00b4d8;
+  --cta-btn-grad-2: #ff6f61;
+  --headline-grad-1: #00b4d8;
+  --headline-grad-2: #ff6f61;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #00b4d8;
+  --mini-card-desc-grad-1: #00b4d8;
+  --mini-card-desc-grad-2: #ff6f61;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #00b4d8;
+  --nav-btn-grad-2: #ff6f61;
+  --nav-dropdown-border: #00b4d8;
+  --nav-dropdown-shadow: rgba(255,111,97,0.18);
+  --share-btn-grad-1: #00b4d8;
+  --share-btn-grad-2: #ff6f61;
+  --share-btn-text-color: #fff;
+}
+
+.brand-neuraltext {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #6c47ff;
+  --carousel-mini-card-grad-1: #6c47ff;
+  --carousel-mini-card-grad-2: #1e1e2f;
+  --cta-btn-grad-1: #6c47ff;
+  --cta-btn-grad-2: #1e1e2f;
+  --headline-grad-1: #6c47ff;
+  --headline-grad-2: #1e1e2f;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #6c47ff;
+  --mini-card-desc-grad-1: #6c47ff;
+  --mini-card-desc-grad-2: #1e1e2f;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #6c47ff;
+  --nav-btn-grad-2: #1e1e2f;
+  --nav-dropdown-border: #6c47ff;
+  --nav-dropdown-shadow: rgba(160,132,232,0.18);
+  --share-btn-grad-1: #6c47ff;
+  --share-btn-grad-2: #1e1e2f;
+  --share-btn-text-color: #fff;
+}
+
+.brand-outseta {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #1a237e;
+  --carousel-mini-card-grad-1: #1a237e;
+  --carousel-mini-card-grad-2: #3949ab;
+  --cta-btn-grad-1: #1a237e;
+  --cta-btn-grad-2: #3949ab;
+  --headline-grad-1: #1a237e;
+  --headline-grad-2: #3949ab;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #1a237e;
+  --mini-card-desc-grad-1: #1a237e;
+  --mini-card-desc-grad-2: #3949ab;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #1a237e;
+  --nav-btn-grad-2: #3949ab;
+  --nav-dropdown-border: #1a237e;
+  --nav-dropdown-shadow: rgba(26,35,126,0.13);
+  --share-btn-grad-1: #1a237e;
+  --share-btn-grad-2: #3949ab;
+  --share-btn-text-color: #fff;
+}
+
+.brand-printify {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #00b09b;
+  --carousel-mini-card-grad-1: #00b09b;
+  --carousel-mini-card-grad-2: #96c93d;
+  --cta-btn-grad-1: #00b09b;
+  --cta-btn-grad-2: #96c93d;
+  --headline-grad-1: #00b09b;
+  --headline-grad-2: #96c93d;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #00b09b;
+  --mini-card-desc-grad-1: #00b09b;
+  --mini-card-desc-grad-2: #96c93d;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #00b09b;
+  --nav-btn-grad-2: #96c93d;
+  --nav-dropdown-border: #00b09b;
+  --nav-dropdown-shadow: rgba(0,176,155,0.13);
+  --share-btn-grad-1: #00b09b;
+  --share-btn-grad-2: #96c93d;
+  --share-btn-text-color: #fff;
+}
+
+.brand-quidco {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #2193b0;
+  --carousel-mini-card-grad-1: #2193b0;
+  --carousel-mini-card-grad-2: #6dd5ed;
+  --cta-btn-grad-1: #2193b0;
+  --cta-btn-grad-2: #6dd5ed;
+  --headline-grad-1: #2193b0;
+  --headline-grad-2: #6dd5ed;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #2193b0;
+  --mini-card-desc-grad-1: #2193b0;
+  --mini-card-desc-grad-2: #6dd5ed;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #2193b0;
+  --nav-btn-grad-2: #6dd5ed;
+  --nav-dropdown-border: #2193b0;
+  --nav-dropdown-shadow: rgba(109,213,237,0.18);
+  --share-btn-grad-1: #2193b0;
+  --share-btn-grad-2: #6dd5ed;
+  --share-btn-text-color: #fff;
+}
+
+.brand-raisin {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #f7971e;
+  --carousel-mini-card-grad-1: #f7971e;
+  --carousel-mini-card-grad-2: #ffd200;
+  --cta-btn-grad-1: #f7971e;
+  --cta-btn-grad-2: #ffd200;
+  --headline-grad-1: #f7971e;
+  --headline-grad-2: #ffd200;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #f7971e;
+  --mini-card-desc-grad-1: #f7971e;
+  --mini-card-desc-grad-2: #ffd200;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #f7971e;
+  --nav-btn-grad-2: #ffd200;
+  --nav-dropdown-border: #f7971e;
+  --nav-dropdown-shadow: rgba(255,210,0,0.18);
+  --share-btn-grad-1: #f7971e;
+  --share-btn-grad-2: #ffd200;
+  --share-btn-text-color: #222;
+}
+
+.brand-rakuten {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #8B5CF6;
+  --carousel-mini-card-grad-1: #8B5CF6;
+  --carousel-mini-card-grad-2: #EC4899;
+  --cta-btn-grad-1: #8B5CF6;
+  --cta-btn-grad-2: #EC4899;
+  --headline-grad-1: #8B5CF6;
+  --headline-grad-2: #EC4899;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #8B5CF6;
+  --mini-card-desc-grad-1: #8B5CF6;
+  --mini-card-desc-grad-2: #EC4899;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #8B5CF6;
+  --nav-btn-grad-2: #EC4899;
+  --nav-dropdown-border: #8B5CF6;
+  --nav-dropdown-shadow: rgba(236,72,153,0.18);
+  --share-btn-grad-1: #8B5CF6;
+  --share-btn-grad-2: #EC4899;
+  --share-btn-text-color: #fff;
+}
+
+.brand-sharelytics {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #ff512f;
+  --carousel-mini-card-grad-1: #ff512f;
+  --carousel-mini-card-grad-2: #dd2476;
+  --cta-btn-grad-1: #ff512f;
+  --cta-btn-grad-2: #dd2476;
+  --headline-grad-1: #ff512f;
+  --headline-grad-2: #dd2476;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #ff512f;
+  --mini-card-desc-grad-1: #ff512f;
+  --mini-card-desc-grad-2: #dd2476;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #ff512f;
+  --nav-btn-grad-2: #dd2476;
+  --nav-dropdown-border: #ff512f;
+  --nav-dropdown-shadow: rgba(255,81,47,0.13);
+  --share-btn-grad-1: #ff512f;
+  --share-btn-grad-2: #dd2476;
+  --share-btn-text-color: #fff;
+}
+
+.brand-shein {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #ff5fa2;
+  --carousel-mini-card-grad-1: #ff5fa2;
+  --carousel-mini-card-grad-2: #000000;
+  --cta-btn-grad-1: #000000;
+  --cta-btn-grad-2: #ff5fa2;
+  --headline-grad-1: #ff5fa2;
+  --headline-grad-2: #000000;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #ff5fa2;
+  --mini-card-desc-grad-1: #ff5fa2;
+  --mini-card-desc-grad-2: #000000;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #ff5fa2;
+  --nav-btn-grad-2: #000000;
+  --nav-dropdown-border: #ff5fa2;
+  --nav-dropdown-shadow: rgba(0,0,0,0.10);
+  --share-btn-grad-1: #000000;
+  --share-btn-grad-2: #ff5fa2;
+  --share-btn-text-color: #fff;
+}
+
+.brand-supermonitoring {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #0f2027;
+  --carousel-mini-card-grad-1: #0f2027;
+  --carousel-mini-card-grad-2: #2c5364;
+  --cta-btn-grad-1: #0f2027;
+  --cta-btn-grad-2: #2c5364;
+  --headline-grad-1: #0f2027;
+  --headline-grad-2: #2c5364;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #0f2027;
+  --mini-card-desc-grad-1: #0f2027;
+  --mini-card-desc-grad-2: #2c5364;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #0f2027;
+  --nav-btn-grad-2: #2c5364;
+  --nav-dropdown-border: #0f2027;
+  --nav-dropdown-shadow: rgba(15,32,39,0.13);
+  --share-btn-grad-1: #0f2027;
+  --share-btn-grad-2: #2c5364;
+  --share-btn-text-color: #fff;
+}
+
+.brand-topcashback {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #43e97b;
+  --carousel-mini-card-grad-1: #43e97b;
+  --carousel-mini-card-grad-2: #38f9d7;
+  --cta-btn-grad-1: #43e97b;
+  --cta-btn-grad-2: #38f9d7;
+  --headline-grad-1: #43e97b;
+  --headline-grad-2: #38f9d7;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #43e97b;
+  --mini-card-desc-grad-1: #43e97b;
+  --mini-card-desc-grad-2: #38f9d7;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #43e97b;
+  --nav-btn-grad-2: #38f9d7;
+  --nav-dropdown-border: #43e97b;
+  --nav-dropdown-shadow: rgba(56,249,215,0.18);
+  --share-btn-grad-1: #43e97b;
+  --share-btn-grad-2: #38f9d7;
+  --share-btn-text-color: #222;
+}
+
+.brand-userback {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #00c6ff;
+  --carousel-mini-card-grad-1: #00c6ff;
+  --carousel-mini-card-grad-2: #0072ff;
+  --cta-btn-grad-1: #00c6ff;
+  --cta-btn-grad-2: #0072ff;
+  --headline-grad-1: #00c6ff;
+  --headline-grad-2: #0072ff;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #00c6ff;
+  --mini-card-desc-grad-1: #00c6ff;
+  --mini-card-desc-grad-2: #0072ff;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #00c6ff;
+  --nav-btn-grad-2: #0072ff;
+  --nav-dropdown-border: #00c6ff;
+  --nav-dropdown-shadow: rgba(0,198,255,0.13);
+  --share-btn-grad-1: #00c6ff;
+  --share-btn-grad-2: #0072ff;
+  --share-btn-text-color: #fff;
+}
+
+.brand-virgin {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #e52d27;
+  --carousel-mini-card-grad-1: #e52d27;
+  --carousel-mini-card-grad-2: #000000;
+  --cta-btn-grad-1: #e52d27;
+  --cta-btn-grad-2: #000000;
+  --headline-grad-1: #e52d27;
+  --headline-grad-2: #000000;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #e52d27;
+  --mini-card-desc-grad-1: #e52d27;
+  --mini-card-desc-grad-2: #000000;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #e52d27;
+  --nav-btn-grad-2: #000000;
+  --nav-dropdown-border: #e52d27;
+  --nav-dropdown-shadow: rgba(0,0,0,0.13);
+  --share-btn-grad-1: #e52d27;
+  --share-btn-grad-2: #000000;
+  --share-btn-text-color: #fff;
+}
+
+.brand-wise {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #003366;
+  --carousel-mini-card-grad-1: #003366;
+  --carousel-mini-card-grad-2: #17803d;
+  --cta-btn-grad-1: #003366;
+  --cta-btn-grad-2: #17803d;
+  --headline-grad-1: #003366;
+  --headline-grad-2: #17803d;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #003366;
+  --mini-card-desc-grad-1: #003366;
+  --mini-card-desc-grad-2: #17803d;
+  --mini-card-title: #232f3e;
+  --nav-btn-grad-1: #003366;
+  --nav-btn-grad-2: #17803d;
+  --nav-dropdown-border: #003366;
+  --nav-dropdown-shadow: rgba(23,128,61,0.18);
+  --share-btn-grad-1: #003366;
+  --share-btn-grad-2: #17803d;
+  --share-btn-text-color: #fff;
+}
+

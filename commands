@@ -1,0 +1,5 @@
+start localhost 3000:
+npx serve public -l 3000
+
+update site:
+node scripts\update_site.js
