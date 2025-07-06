@@ -666,3 +666,61 @@
   --share-btn-text-color: #fff;
 }
 
+.brand-temu {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #000104;
+  --carousel-mini-card-grad-1: #fff;
+  --carousel-mini-card-grad-2: #fff;
+  --carousel-mini-card-btn-grad-1: #000104;
+  --carousel-mini-card-btn-grad-2: #fc7700;
+  --carousel-mini-card-text-grad-1: #000104;
+  --carousel-mini-card-text-grad-2: #fc7700;
+  --cta-btn-grad-1: #000104;
+  --cta-btn-grad-2: #fc7700;
+  --headline-grad-1: #000104;
+  --headline-grad-2: #fc7700;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #000104;
+  --mini-card-desc-grad-1: #000104;
+  --mini-card-desc-grad-2: #fc7700;
+  --mini-card-title: #000;
+  --nav-btn-grad-1: #000104;
+  --nav-btn-grad-2: #fc7700;
+  --nav-dropdown-border: #000104;
+  --nav-dropdown-shadow: rgba(255,153,0,0.10);
+  --share-btn-grad-1: #000104;
+  --share-btn-grad-2: #fc7700;
+  --share-btn-text-color: #fff;
+}
+
+.brand-aliexpress {
+  --card-bg-grad-1: #fff;
+  --card-bg-grad-2: #fff;
+  --card-border: #e52e04;
+  --carousel-mini-card-grad-1: #fff;
+  --carousel-mini-card-grad-2: #fff;
+  --carousel-mini-card-btn-grad-1: #e52e04;
+  --carousel-mini-card-btn-grad-2: #fe9900;
+  --carousel-mini-card-text-grad-1: #e52e04;
+  --carousel-mini-card-text-grad-2: #fe9900;
+  --cta-btn-grad-1: #e52e04;
+  --cta-btn-grad-2: #fe9900;
+  --headline-grad-1: #e52e04;
+  --headline-grad-2: #fe9900;
+  --mini-card-bg-grad-1: #fff;
+  --mini-card-bg-grad-2: #fff;
+  --mini-card-border: #e52e04;
+  --mini-card-desc-grad-1: #e52e04;
+  --mini-card-desc-grad-2: #fe9900;
+  --mini-card-title: #000;
+  --nav-btn-grad-1: #e52e04;
+  --nav-btn-grad-2: #fe9900;
+  --nav-dropdown-border: #e52e04;
+  --nav-dropdown-shadow: rgba(255,153,0,0.10);
+  --share-btn-grad-1: #e52e04;
+  --share-btn-grad-2: #fe9900;
+  --share-btn-text-color: #fff;
+}
+

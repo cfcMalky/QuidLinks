@@ -22,7 +22,7 @@ const DEFAULT_IMAGE = `${BASE_URL}/banner.png`;
 const bannerHtml = `
 <header class="site-banner">
     <div class="banner-bg">
-        <img src="/banner.png" alt="Refer 2 Earn banner" class="banner-img">
+        <img src="/banner.png" alt="${SITE_NAME} banner" class="banner-img">
         <div class="banner-overlay-bg"></div>
     </div>
     <div class="banner-overlay">
@@ -457,7 +457,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function generateStaticPage({ title, headExtras, bodyClass, mainHtml, navbarHtml, carouselsHtml, bannerHtml, description, canonical, image }) {
   const metaTags = getMetaTags({
     title,
-    description: description || "Turn referrals into real rewards with the UK's best referral and affiliate offers. Start earning today with Refer 2 Earn.",
+    description: description || "Turn referrals into real rewards with the UK's best referral and affiliate offers. Start earning today with QuidLinks.",
     url: canonical || BASE_URL,
     image: image || DEFAULT_IMAGE,
   });
@@ -689,7 +689,7 @@ async function main() {
   `;
   const indexHeadExtras = '';
   const indexHtml = generateStaticPage({
-    title: 'Refer 2 Earn - Turn Referrals Into Real Rewards',
+    title: 'QuidLinks – Turn Referrals Into Real Rewards',
     headExtras: indexHeadExtras,
     bodyClass: 'brand-home',
     mainHtml: indexMainHtml,
