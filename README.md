@@ -1,4 +1,4 @@
-# Refer2Earn Project Structure
+# QuidLinks Project Structure
 
 This project has been reorganized for clarity and scalability. The new structure is:
 
