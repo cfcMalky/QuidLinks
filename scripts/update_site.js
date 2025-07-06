@@ -171,6 +171,28 @@ function getOfferJsonLd({ brand, headline, subheadline, canonical, logo }) {
   }, null, 2);
 }
 
+// --- PRODUCT JSON-LD ---
+function getProductJsonLd({ brand, headline, subheadline, canonical, logo }) {
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": headline,
+    "description": subheadline,
+    "image": logo,
+    "brand": {
+      "@type": "Brand",
+      "name": brand
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": canonical,
+      "price": "0",
+      "priceCurrency": "GBP",
+      "availability": "https://schema.org/InStock"
+    }
+  }, null, 2);
+}
+
 function offerTemplate(offer, colMap, navbarHtml, carouselsHtml, bannerHtml, metaTitle, metaDesc, canonical, image) {
   const brandName = getVal(offer, 'Brand', colMap).trim();
   const brandClass = getBrandClass(brandName);
@@ -204,7 +226,7 @@ function offerTemplate(offer, colMap, navbarHtml, carouselsHtml, bannerHtml, met
   
   // --- JSON-LD SCRIPTS ---
   const orgJsonLd = `<script type="application/ld+json">${getOrganizationJsonLd()}</script>`;
-  const offerJsonLd = `<script type="application/ld+json">${getOfferJsonLd({ brand: brandName, headline, subheadline, canonical, logo: offerImage })}</script>`;
+  const productJsonLd = `<script type="application/ld+json">${getProductJsonLd({ brand: brandName, headline, subheadline, canonical, logo: offerImage })}</script>`;
   
   // Add affiliate disclosure (custom styled, no border, width match, gradient text)
   const affiliateDisclosure = `
@@ -248,7 +270,7 @@ function offerTemplate(offer, colMap, navbarHtml, carouselsHtml, bannerHtml, met
     <link rel="canonical" href="${canonical}">
     ${metaTags}
     ${orgJsonLd}
-    ${offerJsonLd}
+    ${productJsonLd}
 </head>
 <body class="${brandClass}">
     ${bannerHtml || ''}
@@ -347,7 +369,7 @@ function buildNavbar(records, colMap) {
   <button class="nav-hamburger" aria-label="Open navigation">&#9776;</button>
   <div class="navbar-links" style="justify-content:center; width:100%; display:flex;">
 `;
-  const navHtml = `<nav class="navbar">
+  const navHtml = `<nav class="navbar" aria-label="Main navigation">
 ${headerButtons}${navCats}
   </div>
 </nav>`;
@@ -417,12 +439,13 @@ function buildCarousels(records, colMap) {
       // Logo path for mini-card background
       const logoPath = `/pages/offers/${file}/logo.png`;
       return `<div class="${brandClass}"><div class="mini-card carousel-mini-card" style="width:${cardWidth}px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;${isLast ? ' margin-right:8px;' : ''}; --carousel-logo-url: url('${logoPath}'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
+        <img src="${logoPath}" alt="${brand} logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
         <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
           <div class="caro-offer-title">${brand}</div>
           <div class="caro-offer-desc">${subheadline}</div>
         </div>
         <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/${file}/" class="carousel-cta-button cta-button-${brandClass.replace('brand-','')}"><span class="carousel-cta-gradient-text">View offer</span></a>
+          <a href="/pages/offers/${file}/" class="carousel-cta-button cta-button-${brandClass.replace('brand-','')}" aria-label="View offer for ${brand}"><span class="carousel-cta-gradient-text">View offer</span></a>
         </div>
       </div></div>`;
     }).join('');
@@ -433,13 +456,13 @@ function buildCarousels(records, colMap) {
     const windowWidth = cardWidth * 2 + gap;
     const carouselWrapper = `
       <div class="${carouselRowClass}" style="display:flex; align-items:center; justify-content:center; width:auto; max-width:none; margin:0 auto; position:relative;">
-        ${showChevrons ? `<button class="carousel-chevron left" data-carousel="${rowId}" aria-label="Scroll left" style="margin-right:8px;">&#8249;</button>` : ''}
+        ${showChevrons ? `<button class="carousel-chevron left" data-carousel="${rowId}" aria-label="Scroll left in ${cat} carousel" tabindex="0" role="button">&#8249;</button>` : ''}
         <div class="carousel-window" style="overflow:hidden; width:${windowWidth}px;">
           <div class="carousel-track" style="display:flex; gap:${gap}px; transition: transform 0.4s cubic-bezier(.4,0,.2,1); will-change: transform;">
             ${cardsHtml}
           </div>
         </div>
-        ${showChevrons ? `<button class="carousel-chevron right" data-carousel="${rowId}" aria-label="Scroll right" style="margin-left:8px;">&#8250;</button>` : ''}
+        ${showChevrons ? `<button class="carousel-chevron right" data-carousel="${rowId}" aria-label="Scroll right in ${cat} carousel" tabindex="0" role="button">&#8250;</button>` : ''}
       </div>
     `;
 

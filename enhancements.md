@@ -12,9 +12,9 @@
 <!-- - Config File -->
 
 ## 3. SEO & Performance
-<!-- The following task is now complete: -->
+<!-- The following tasks are now complete: -->
 <!-- - Meta Tag Automation -->
-- **Structured Data**: Add JSON-LD schema for offers and organization.
+<!-- - Structured Data -->
 - **Accessibility**: Audit for ARIA labels and keyboard navigation.
 - **Performance**: Consider minifying CSS and optimizing images.
 

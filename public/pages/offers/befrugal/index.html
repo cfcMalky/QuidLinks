@@ -31,14 +31,20 @@
 }</script>
     <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "Offer",
+  "@type": "Product",
   "name": "Earn $10 Bonus with BeFrugal",
   "description": "Invite friends to BeFrugal and you both get a $10 bonus when your friend earns $10 in Cash Back. Shop, save, and earn together!",
-  "url": "https://quidlinks.com/pages/offers/befrugal/",
   "image": "https://quidlinks.com/pages/offers/befrugal/logo.png",
   "brand": {
     "@type": "Brand",
     "name": "BeFrugal"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://quidlinks.com/pages/offers/befrugal/",
+    "price": "0",
+    "priceCurrency": "GBP",
+    "availability": "https://schema.org/InStock"
   }
 }</script>
 </head>
@@ -62,7 +68,7 @@
         </nav>
     </div>
 </header>
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
 
   <button class="nav-hamburger" aria-label="Open navigation">&#9776;</button>
   <div class="navbar-links" style="justify-content:center; width:100%; display:flex;">

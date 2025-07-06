@@ -31,14 +31,20 @@
 }</script>
     <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "Offer",
+  "@type": "Product",
   "name": "Get £5 Free with Monzo",
   "description": "Open a Monzo account with the link below, make a card payment, and get £5 free! Enjoy smart banking, instant notifications, and no monthly fees.",
-  "url": "https://quidlinks.com/pages/offers/monzo/",
   "image": "https://quidlinks.com/pages/offers/monzo/logo.png",
   "brand": {
     "@type": "Brand",
     "name": "Monzo"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://quidlinks.com/pages/offers/monzo/",
+    "price": "0",
+    "priceCurrency": "GBP",
+    "availability": "https://schema.org/InStock"
   }
 }</script>
 </head>
@@ -62,7 +68,7 @@
         </nav>
     </div>
 </header>
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
 
   <button class="nav-hamburger" aria-label="Open navigation">&#9776;</button>
   <div class="navbar-links" style="justify-content:center; width:100%; display:flex;">
