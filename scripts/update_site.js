@@ -165,10 +165,10 @@ function offerTemplate(offer, colMap, navbarHtml, carouselsHtml, bannerHtml, met
     image: image || DEFAULT_IMAGE,
   });
   
-  // Add affiliate disclosure
-  const affiliateDisclosure = `<div style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 12px; margin: 16px 0; font-size: 0.9rem; color: #666; text-align: center;">
-    <strong>Affiliate Disclosure:</strong> This referral program is managed by ${brandName}. Terms and conditions apply. ${SITE_NAME} may earn a commission for successful referrals.
-  </div>`;
+  // Add affiliate disclosure (now for the footer)
+  const affiliateDisclosureFooter = `<footer style="margin: 48px auto 0 auto; padding: 18px 0 12px 0; text-align: center; color: #666; font-size: 0.98rem; max-width: 900px;">
+    <strong>Affiliate Disclosure:</strong> This referral program is managed by ${brandName}. Terms and conditions apply. QuidLinks may earn a commission for successful referrals.
+  </footer>`;
   
   // Add video introduction text
   const videoIntro = ytUrl ? `<div style="margin-bottom: 12px; color: #555; font-size: 0.95rem;">
@@ -201,7 +201,6 @@ function offerTemplate(offer, colMap, navbarHtml, carouselsHtml, bannerHtml, met
                     ${shareButtons(refLink, headline)}
                 </div>
             </div>
-            ${affiliateDisclosure}
         </div>
         ${howItWorks.length ? `<div class="card"><div class="headline">How It Works</div><div class="card-grid">${howItWorks.map((step, i) => {
           const [title, ...descArr] = step.split(':');
@@ -233,6 +232,7 @@ function offerTemplate(offer, colMap, navbarHtml, carouselsHtml, bannerHtml, met
         return miniCard(cleanTitle, desc, emoji);
       }).join('')}</div></div></div>` : ''}
       <div class="container"><div class="card" style="text-align:center; font-size:0.95rem; color:#888;">${disclaimer}</div></div>
+      ${affiliateDisclosureFooter}
 </body>
 </html>`;
 }
