@@ -71,7 +71,7 @@ function shareButtons(refLink, headline) {
         <img src="/icons/whatsapp.png" alt="WhatsApp" width="32" height="32" class="share-icon-img" />
       </a>
       <a class="share-btn" href="https://pinterest.com/pin/create/button/?url=${encodedLink}" target="_blank" rel="noopener" aria-label="Share on Pinterest">
-        <img src="/icons/pinterest.png" alt="Pinterest" width="32" height="32" class="share-icon-img" />
+        <img src="/icons/pinterest.png" alt="Pinterest" width="34" height="34" class="share-icon-img" />
       </a>
       <button class="share-btn" aria-label="Copy Link" onclick="navigator.clipboard.writeText('${refLink}')">
         <img src="/icons/copy.png" alt="Copy Link" width="32" height="32" class="share-icon-img" />
@@ -311,64 +311,115 @@ function buildCarousels(records, colMap) {
     const headerColor = categoryHeaderColors[cat] || categoryHeaderColors['Other'];
     const catClass = cat.replace(/\s+/g, '').toLowerCase();
     const rowId = `offers-row-${catClass}`;
-    const cards = offers.map((row, i) => {
+    const cardWidth = 340;
+    const gap = 36;
+    const visibleCards = 2;
+    const rowMaxWidth = cardWidth * visibleCards + gap;
+    const cardsHtml = offers.map((row, i) => {
       const brand = getVal(row, 'Brand', colMap) || '';
       const brandClass = getBrandClass(brand);
       const subheadline = getVal(row, 'Subheadline', colMap) || '';
       const file = (getVal(row, 'File', colMap) || '').replace(/.html$/i, '');
-      return `<div class="${brandClass}"><div class="mini-card carousel-mini-card">
-        <div class="caro-offer-title">${brand}</div>
-        <div class="caro-offer-desc">${subheadline}</div>
-        <a href="/pages/offers/${file}/" class="carousel-cta-button cta-button-${brandClass.replace('brand-','')}">
-          <span class="carousel-cta-gradient-text">View ${brand} Offer</span>
-        </a>
+      // Add right margin to last card for border visibility
+      const isLast = i === offers.length - 1;
+      return `<div class="${brandClass}"><div class="mini-card carousel-mini-card" style="width:${cardWidth}px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;${isLast ? ' margin-right:8px;' : ''}">
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start;">
+          <div class="caro-offer-title">${brand}</div>
+          <div class="caro-offer-desc">${subheadline}</div>
+        </div>
+        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto;">
+          <a href="/pages/offers/${file}/" class="carousel-cta-button cta-button-${brandClass.replace('brand-','')}"><span class="carousel-cta-gradient-text">View offer</span></a>
+        </div>
       </div></div>`;
     }).join('');
-    // Carousel wrapper for 2 cards at a time, just wide enough for 2 cards + spacing
-    const carouselWrapper = `<div class="carousel-cards-wrapper" id="${rowId}" style="display:flex; overflow:hidden; width:600px; margin:0 auto; position:relative;">${cards}</div>`;
-    // Chevrons
-    const chevrons = offers.length > 2 ? `
-      <button class="carousel-chevron left" data-carousel="${rowId}" aria-label="Scroll left" style="position:absolute; left:-48px; top:50%; transform:translateY(-50%); background:none; border:none; color:${headerColor}; font-size:2.5rem; cursor:pointer; z-index:2;">&#8249;</button>
-      <button class="carousel-chevron right" data-carousel="${rowId}" aria-label="Scroll right" style="position:absolute; right:-48px; top:50%; transform:translateY(-50%); background:none; border:none; color:${headerColor}; font-size:2.5rem; cursor:pointer; z-index:2;">&#8250;</button>
-    ` : '';
+    const isSingleCard = offers.length === 1;
+    const isDoubleCard = offers.length === 2;
+    const showChevrons = offers.length > 2;
+    const carouselRowClass = `carousel-row${isSingleCard ? ' single-card' : ''}${isDoubleCard ? ' double-card' : ''}`;
+    const windowWidth = cardWidth * 2 + gap;
+    const carouselWrapper = `
+      <div class="${carouselRowClass}" style="display:flex; align-items:center; justify-content:center; width:auto; max-width:none; margin:0 auto; position:relative;">
+        ${showChevrons ? `<button class="carousel-chevron left" data-carousel="${rowId}" aria-label="Scroll left" style="margin-right:8px;">&#8249;</button>` : ''}
+        <div class="carousel-window" style="overflow:hidden; width:${windowWidth}px;">
+          <div class="carousel-track" style="display:flex; gap:${gap}px; transition: transform 0.4s cubic-bezier(.4,0,.2,1); will-change: transform;">
+            ${cardsHtml}
+          </div>
+        </div>
+        ${showChevrons ? `<button class="carousel-chevron right" data-carousel="${rowId}" aria-label="Scroll right" style="margin-left:8px;">&#8250;</button>` : ''}
+      </div>
+    `;
+
+  const carouselStyle = `<style>
+.carousel-row { display: flex; align-items: center; justify-content: center; max-width: ${rowMaxWidth + 120}px; margin: 0 auto; position: relative; }
+.carousel-track { display: flex; gap: 36px; }
+.carousel-mini-card { transition: box-shadow 0.2s, background 0.2s; box-sizing: border-box; width: 340px !important; min-width: 340px !important; max-width: 340px !important; flex: 0 0 auto !important; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch; margin: 0; }
+.carousel-mini-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.13); }
+.carousel-cta-button { font-weight: 700; border-radius: 24px; text-align: center; font-size: 1.05rem; box-shadow: none; border: none; transition: box-shadow 0.2s; min-width: 120px; max-width: 180px; padding: 10px 0; position:relative; overflow:hidden; background: linear-gradient(90deg, var(--carousel-mini-card-btn-grad-1, #111), var(--carousel-mini-card-btn-grad-2, #333)); color: #fff; margin: 0 auto; display: block; }
+.carousel-cta-button:hover { box-shadow: 0 2px 12px rgba(25,118,210,0.18); }
+.carousel-cta-gradient-text { color: inherit; display:inline-block; width:100%; font-weight:inherit; }
+.caro-offer-desc { background: linear-gradient(90deg, var(--carousel-mini-card-text-grad-1, #232f3e), var(--carousel-mini-card-text-grad-2, #232f3e)); background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent; display: block; }
+.carousel-chevron { background: none; border: none; font-size: 2.5rem; cursor: pointer; z-index: 2; color: #222; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s; }
+.carousel-chevron:hover { background: #f3f3f3; }
+@media (max-width: 900px) { .carousel-row { max-width: 100vw !important; } .carousel-mini-card { min-width: 90vw !important; max-width: 90vw !important; } }
+</style>`;
     return `<div class="category-section ${catClass}" style="background: ${gradient}; border: 3px solid ${headerColor}; position:relative; border-radius:28px; margin-bottom:48px; padding:32px 0 48px 0; box-shadow:0 2px 16px rgba(26,35,126,0.06);">
       <div class="category-title" style="color: ${headerColor}; text-align:center; font-size:2.1rem; font-weight:900; text-decoration:underline; margin-bottom:24px;">${cat}</div>
       <div style="position:relative; display:flex; align-items:center; justify-content:center;">
-        ${chevrons}
         ${carouselWrapper}
       </div>
     </div>`;
   }).join('\n');
   // Add CSS for new carousel/mini-card/button styles
   const carouselStyle = `<style>
-.carousel-cards-wrapper { gap: 0; }
-.carousel-mini-card { transition: box-shadow 0.2s, background 0.2s; box-sizing: border-box; }
+.carousel-viewport { overflow: hidden; position: relative; box-sizing: content-box; }
+.carousel-track { display: flex; transition: transform 0.4s cubic-bezier(.4,0,.2,1); will-change: transform; gap: 36px; }
+.carousel-mini-card { transition: box-shadow 0.2s, background 0.2s; box-sizing: border-box; width: 340px !important; height: 400px !important; min-width: 340px !important; max-width: 340px !important; flex: 0 0 auto !important; }
 .carousel-mini-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.13); }
-.carousel-cta-button { font-weight: 700; border-radius: 24px; text-align: center; font-size: 1.05rem; box-shadow: none; border: none; transition: box-shadow 0.2s; min-width: 120px; max-width: 180px; padding: 10px 0; position:relative; overflow:hidden; background:#111; }
+.carousel-cta-button { font-weight: 700; border-radius: 24px; text-align: center; font-size: 1.05rem; box-shadow: none; border: none; transition: box-shadow 0.2s; min-width: 120px; max-width: 180px; padding: 10px 0; position:relative; overflow:hidden; background: linear-gradient(90deg, var(--carousel-mini-card-btn-grad-1, #111), var(--carousel-mini-card-btn-grad-2, #333)); color: #fff; margin: 0 auto; display: block; }
 .carousel-cta-button:hover { box-shadow: 0 2px 12px rgba(25,118,210,0.18); }
-.carousel-cta-gradient-text { background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent; display:inline-block; width:100%; }
+.carousel-cta-gradient-text { color: inherit; display:inline-block; width:100%; font-weight:inherit; }
+.caro-offer-desc { background: linear-gradient(90deg, var(--carousel-mini-card-text-grad-1, #232f3e), var(--carousel-mini-card-text-grad-2, #232f3e)); background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent; display: block; }
+.carousel-chevron { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 2.5rem; cursor: pointer; z-index: 2; }
+.carousel-chevron.left { left: -32px; }
+.carousel-chevron.right { right: -32px; }
+@media (max-width: 1200px) { .carousel-viewport { width: 100vw !important; } .carousel-mini-card { min-width: 90vw !important; max-width: 90vw !important; } }
 </style>`;
   // Add JS for carousel navigation
   const carouselScript = `<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.carousel-chevron').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        const rowId = btn.getAttribute('data-carousel');
-        const wrapper = document.getElementById(rowId);
-        if (!wrapper) return;
-        const card = wrapper.querySelector('.mini-card');
-        if (!card) return;
-        const cardWidth = card.offsetWidth + 16; // card + margin
-        const scrollAmount = cardWidth * 2; // show 2 cards at a time
-        if (btn.classList.contains('left')) {
-          wrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        } else {
-          wrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        }
-      });
-    });
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.carousel-row').forEach(function(row) {
+    const windowEl = row.querySelector('.carousel-window');
+    const track = windowEl.querySelector('.carousel-track');
+    const cards = track.querySelectorAll('.mini-card');
+    const cardWidth = 340;
+    const gap = 36;
+    const visible = 2;
+    let current = 0;
+    function updateChevrons() {
+      const left = row.querySelector('.carousel-chevron.left');
+      const right = row.querySelector('.carousel-chevron.right');
+      if (!left || !right) return;
+      left.disabled = current === 0;
+      right.disabled = current >= cards.length - visible;
+      left.style.opacity = left.disabled ? 0.3 : 1;
+      right.style.opacity = right.disabled ? 0.3 : 1;
+      left.style.pointerEvents = left.disabled ? 'none' : 'auto';
+      right.style.pointerEvents = right.disabled ? 'none' : 'auto';
+    }
+    function scrollTo(idx) {
+      current = Math.max(0, Math.min(idx, cards.length - visible));
+      const offset = (cardWidth + gap) * current;
+      track.style.transform = 'translateX(-' + offset + 'px)';
+      updateChevrons();
+    }
+    const leftBtn = row.querySelector('.carousel-chevron.left');
+    const rightBtn = row.querySelector('.carousel-chevron.right');
+    if (leftBtn) leftBtn.addEventListener('click', function() { scrollTo(current - visible); });
+    if (rightBtn) rightBtn.addEventListener('click', function() { scrollTo(current + visible); });
+    scrollTo(0);
   });
-  </script>`;
+});
+</script>`;
   return carouselsHtml + carouselStyle + carouselScript;
 }
 
@@ -405,6 +456,10 @@ async function generateBrandColorsCSS(records, colMap) {
     'Card Border',
     'Carousel Mini Card Grad 1',
     'Carousel Mini Card Grad 2',
+    'Carousel Mini Card Button Grad 1',
+    'Carousel Mini Card Button Grad 2',
+    'Carousel Mini Card Text Grad 1',
+    'Carousel Mini Card Text Grad 2',
     'CTA Button Grad 1',
     'CTA Button Grad 2',
     'Headline Grad 1',
@@ -430,6 +485,10 @@ async function generateBrandColorsCSS(records, colMap) {
     'Card Border': '--card-border',
     'Carousel Mini Card Grad 1': '--carousel-mini-card-grad-1',
     'Carousel Mini Card Grad 2': '--carousel-mini-card-grad-2',
+    'Carousel Mini Card Button Grad 1': '--carousel-mini-card-btn-grad-1',
+    'Carousel Mini Card Button Grad 2': '--carousel-mini-card-btn-grad-2',
+    'Carousel Mini Card Text Grad 1': '--carousel-mini-card-text-grad-1',
+    'Carousel Mini Card Text Grad 2': '--carousel-mini-card-text-grad-2',
     'CTA Button Grad 1': '--cta-btn-grad-1',
     'CTA Button Grad 2': '--cta-btn-grad-2',
     'Headline Grad 1': '--headline-grad-1',
@@ -531,7 +590,7 @@ async function main() {
   // --- STATIC PAGE GENERATION ---
   // 1. INDEX.HTML
   const indexMainHtml = `
-    <div class="card">
+    <div class="card hero-card">
       <div class="headline">Welcome to Refer 2 Earn</div>
       <div class="subheadline">
         Your hub for the UK's best dual-incentive referral and affiliate offers! Whether you're a content creator, blogger, social media influencer, or just someone with a network of friends, this site is designed to help you turn your audience and connections into real, passive side-income.
@@ -541,9 +600,6 @@ async function main() {
         <li><b>Dual rewards:</b> Both you and your friends or followers get rewarded.</li>
         <li><b>Easy to start:</b> Browse, share, and earn – it's that simple!</li>
       </ul>
-      <div class="hero-cta-row">
-        <a href="#carousels" class="hero-cta-btn hero-gradient-btn">Browse Offers</a>
-      </div>
     </div>
   `;
   const indexHeadExtras = '';
@@ -561,9 +617,9 @@ async function main() {
   // 2. INFORMATION.HTML
   const infoMainHtml = `
         <div class="info-section">
-            <div class="headline">How It Works</div>
-            <div class="policy-card gradient-border">
-                <b>Refer 2 Earn</b> is your guide to starting a profitable side hustle online in the UK. Here's how you can earn extra money with referral and affiliate programs, even as a complete beginner:
+            <div class="card hero-card">
+                <div class="headline">How It Works</div>
+                <div><b>Refer 2 Earn</b> is your guide to starting a profitable side hustle online in the UK. Here's how you can earn extra money with referral and affiliate programs, even as a complete beginner:</div>
                 <ol>
                     <li><b>Explore the Best Side Hustle Offers:</b> Browse our curated list of top UK referral programs, affiliate deals, and cashback offers. We highlight the easiest and most rewarding side hustles for beginners and experienced users alike.</li>
                     <li><b>Sign Up for Free:</b> Choose an offer that fits your interests and sign up for the referral or affiliate program at no cost. All programs listed on Refer 2 Earn are free to join and require no upfront investment.</li>
@@ -574,10 +630,8 @@ async function main() {
                 </ol>
                 <div style="margin-top:12px; color:#555; font-size:0.98rem;">Most referral and affiliate offers are open to everyone in the UK, and you can refer as many people as you like. Start your side hustle today and discover how easy it is to earn extra income online with Refer 2 Earn.</div>
             </div>
-        </div>
-        <div class="info-section">
-            <div class="headline">Frequently Asked Questions (FAQ)</div>
-            <div class="policy-card gradient-border">
+            <div class="card hero-card">
+                <div class="headline">Frequently Asked Questions (FAQ)</div>
                 <ul class="faq-list">
                     <li><b>What are the best side hustle ideas in the UK for 2024?</b><br>Some of the top side hustles in the UK include joining referral programs, affiliate marketing, cashback offers, online surveys, and promoting products or services through social media. Refer 2 Earn helps you discover the best referral and affiliate programs to start earning extra money online quickly and easily.</li>
                     <li><b>How can I make extra money online with referral programs?</b><br>Sign up for free referral and affiliate programs listed on Refer 2 Earn, get your unique referral link, and share it with friends, family, or your social media followers. When someone signs up or makes a purchase using your link, you earn a commission or bonus, making it a great side hustle for beginners.</li>
@@ -590,20 +644,10 @@ async function main() {
                     <li><b>What if I have a problem with a referral offer or my side hustle payout?</b><br>If you have any issues with a specific offer or payout, contact the partner site's support team. For questions about Refer 2 Earn or to suggest new side hustle ideas, feel free to contact us directly.</li>
                 </ul>
             </div>
-        </div>
-        <div class="info-section">
-            <div class="headline">Privacy Policy & Terms</div>
-            <div class="policy-card gradient-border">
-                <b>Privacy:</b> Refer 2 Earn does not collect personal data unless you contact us. We use cookies only for basic site functionality and analytics. Your use of partner sites is subject to their privacy policies.<br><br>
-                <b>Terms:</b> By using this site, you agree to use referral and affiliate links responsibly. We are not responsible for the terms, payouts, or changes made by partner sites. Offers may change or be withdrawn at any time.<br><br>
-                For full details, see our <a href="privacy-policy.html" style="color:#1a237e; text-decoration:underline;">Privacy Policy</a> and <a href="terms-of-use.html" style="color:#1a237e; text-decoration:underline;">Terms of Use</a>.
-            </div>
-        </div>
-        <div class="info-section">
-            <div class="headline">Affiliate & Referral Disclosure</div>
-            <div class="policy-card gradient-border">
-                Some links on Refer 2 Earn are affiliate or referral links. This means we may earn a commission or bonus if you sign up or make a purchase through our links. This helps keep the site free and supports our work. We only list offers we believe provide genuine value.<br><br>
-                <b>Transparency matters:</b> We always aim to clearly mark affiliate/referral links and keep our recommendations unbiased.
+            <div class="card hero-card">
+                <div class="headline">Affiliate & Referral Disclosure</div>
+                <div>Some links on Refer 2 Earn are affiliate or referral links. This means we may earn a commission or bonus if you sign up or make a purchase through our links. This helps keep the site free and supports our work. We only list offers we believe provide genuine value.</div>
+                <div style="margin-top:10px;"><b>Transparency matters:</b> We always aim to clearly mark affiliate/referral links and keep our recommendations unbiased.</div>
             </div>
         </div>`;
   const infoHeadExtras = `<style>
@@ -631,13 +675,13 @@ async function main() {
   // 3. PRIVACY-POLICY.HTML
   const privacyMainHtml = `
         <div class="policy-section">
-            <div class="headline">Privacy Policy</div>
-            <div class="policy-card gradient-border">
-                <b>Refer 2 Earn</b> is committed to protecting your privacy. This policy explains how we handle your information:<br><br>
-                <b>What We Collect:</b> We do not collect personal data unless you contact us. We may collect your email address if you choose to reach out.<br><br>
-                <b>Cookies:</b> We use cookies only for basic site functionality and analytics. No personal data is stored in cookies. You can disable cookies in your browser settings.<br><br>
-                <b>Third-Party Links:</b> Our site contains links to partner and affiliate sites. Your use of those sites is subject to their privacy policies.<br><br>
-                <b>Contact:</b> If you have questions about privacy, please email us at [your-email@example.com].
+            <div class="card hero-card">
+                <div class="headline">Privacy Policy</div>
+                <div><b>Refer 2 Earn</b> is committed to protecting your privacy. This policy explains how we handle your information:</div>
+                <div style="margin-top:10px;"><b>What We Collect:</b> We do not collect personal data unless you contact us. We may collect your email address if you choose to reach out.</div>
+                <div style="margin-top:10px;"><b>Cookies:</b> We use cookies only for basic site functionality and analytics. Your use of partner sites is subject to their privacy policies.</div>
+                <div style="margin-top:10px;"><b>Third-Party Links:</b> Our site contains links to partner and affiliate sites. Your use of those sites is subject to their privacy policies.</div>
+                <div style="margin-top:10px;"><b>Contact:</b> If you have questions about privacy, please email us at [your-email@example.com].</div>
             </div>
         </div>`;
   const privacyHeadExtras = `<style>
@@ -662,15 +706,15 @@ async function main() {
   // 4. TERMS-OF-USE.HTML
   const termsMainHtml = `
         <div class="policy-section">
-            <div class="headline">Terms of Use</div>
-            <div class="policy-card gradient-border">
-                <b>By using Refer 2 Earn, you agree to the following terms:</b><br><br>
-                <b>Use of Links:</b> You agree to use referral and affiliate links responsibly. Do not misuse or spam links.<br><br>
-                <b>Offer Changes:</b> Offers, incentives, and terms may change or be withdrawn at any time by partner sites. We are not responsible for changes or errors on partner sites.<br><br>
-                <b>Payouts:</b> All payouts and rewards are managed by the partner site. Refer 2 Earn does not process or guarantee payments.<br><br>
-                <b>Content:</b> We strive for accuracy but cannot guarantee all information is up to date. Always check the partner site for the latest details.<br><br>
-                <b>Liability:</b> Refer 2 Earn is not liable for losses or issues arising from use of this site or partner offers.<br><br>
-                <b>Contact:</b> For questions about these terms, please email us at [your-email@example.com].
+            <div class="card hero-card">
+                <div class="headline">Terms of Use</div>
+                <div><b>By using Refer 2 Earn, you agree to the following terms:</b></div>
+                <div style="margin-top:10px;"><b>Use of Links:</b> You agree to use referral and affiliate links responsibly. Do not misuse or spam links.</div>
+                <div style="margin-top:10px;"><b>Offer Changes:</b> Offers, incentives, and terms may change or be withdrawn at any time by partner sites. We are not responsible for changes or errors on partner sites.</div>
+                <div style="margin-top:10px;"><b>Payouts:</b> All payouts and rewards are managed by the partner site. Refer 2 Earn does not process or guarantee payments.</div>
+                <div style="margin-top:10px;"><b>Content:</b> We strive for accuracy but cannot guarantee all information is up to date. Always check the partner site for the latest details.</div>
+                <div style="margin-top:10px;"><b>Liability:</b> Refer 2 Earn is not liable for losses or issues arising from use of this site or partner offers.</div>
+                <div style="margin-top:10px;"><b>Contact:</b> For questions about these terms, please email us at [your-email@example.com].</div>
             </div>
         </div>`;
   const termsHeadExtras = `<style>

@@ -14,7 +14,7 @@ html, body {
   padding: 32px 16px 0 16px;
   width: 100%;
   box-sizing: border-box;
-}
+}image.png
 
 .navbar {
   position: static !important;
@@ -51,29 +51,40 @@ html, body {
   padding: 0;
 }
 
+.nav-dropdown {
+  border-radius: 18px !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10) !important;
+  border: 2px solid #111 !important;
+  padding: 8px 0 !important;
+  background: #fff !important;
+}
+
 .nav-dropdown .navbar-link {
-  font-family: Verdana, sans-serif !important;
-  color: #888 !important;
-  font-weight: 700;
-  font-size: 1.08rem;
-  text-decoration: none !important;
-  text-align: left;
-  padding: 10px 24px;
-  border-radius: 12px;
-  margin: 0;
+  border: none !important;
+  background: linear-gradient(90deg, var(--nav-btn-grad-1, #232f3e), var(--nav-btn-grad-2, #7c2ae8));
+  color: #232f3e;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900 !important;
+  text-align: left !important;
+  border-radius: 12px !important;
+  padding: 10px 24px !important;
+  margin: 2px 8px !important;
   display: block;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s, -webkit-text-fill-color 0.2s;
+}
+
+.nav-dropdown .navbar-link:hover, .nav-dropdown .navbar-link:focus {
+  background: linear-gradient(90deg, var(--nav-btn-grad-1, #232f3e), var(--nav-btn-grad-2, #7c2ae8)) !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
 }
 
 .nav-dropdown .navbar-link:visited {
   color: #888 !important;
-  text-decoration: none !important;
-}
-
-.nav-dropdown .navbar-link:hover,
-.nav-dropdown .navbar-link.active {
-  background: #f3f3f3 !important;
-  color: #111 !important;
   text-decoration: none !important;
 }
 
@@ -549,34 +560,218 @@ html, body {
   bottom: -8px;
 }
 
+.carousel-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  max-width: none;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.carousel-window {
+  overflow: hidden;
+  width: 716px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 36px;
+  transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+  will-change: transform;
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+}
+
 .carousel-mini-card {
-  background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #f3f3f3));
-  border: 2.5px solid var(--mini-card-border, #00b4d8);
+  width: 340px !important;
+  min-width: 340px !important;
+  max-width: 340px !important;
+  flex: 0 0 340px !important;
+  margin: 0;
+  box-sizing: border-box;
+  height: 280px !important;
+  min-height: 280px !important;
+  max-height: 280px !important;
+  border: 2.5px solid #111 !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+.carousel-track > .brand-class:last-child .carousel-mini-card {
+  margin-right: 0 !important;
+}
+
+.carousel-chevron {
+  position: static;
+  margin: 0 8px;
+}
+
+.carousel-row.single-card .carousel-chevron,
+.carousel-row.double-card .carousel-chevron {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .carousel-window { width: 96vw !important; min-width: 0 !important; }
+  .carousel-mini-card { height: auto !important; min-height: 180px !important; max-height: none !important; }
+}
+
+/* Remove old carousel-viewport and conflicting styles */
+.carousel-viewport { display: none !important; }
+
+/* --- CATEGORY SECTION WIDTH TO FIT CAROUSEL --- */
+.category-section {
+  max-width: 872px;
+  margin: 0 auto 48px auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border: 2.5px solid #111 !important;
+}
+
+/* --- OFFER HEADER FINE TUNING --- */
+.caro-offer-title {
+  font-size: 1.35rem !important;
+  font-weight: 900 !important;
+  text-decoration: underline !important;
+  margin-bottom: 10px !important;
+  padding-bottom: 2px !important;
+  color: #111 !important;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+/* --- CHEVRONS MATCH HEADER COLOR --- */
+.category-section .carousel-chevron {
+  color: inherit !important;
+}
+
+/* --- HERO CARD FULL WIDTH AND GRADIENT HEADER --- */
+.hero-card {
+  width: 872px;
+  max-width: 100%;
+  margin: 0 auto 32px auto;
+  border: 2.5px solid var(--nav-btn-grad-1, #232f3e);
   border-radius: 18px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-  padding: 24px 16px;
-  margin: 0 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  min-width: 280px;
-  max-width: 280px;
-  box-sizing: border-box;
-  flex: 0 0 48%;
-  height: 100%;
-  color: var(--mini-card-title, #232f3e);
+  padding: 28px 18px;
+  background: #fff;
+}
+.hero-card .headline {
+  background: linear-gradient(90deg, var(--nav-btn-grad-1, #232f3e), var(--nav-btn-grad-2, #7c2ae8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 900;
+  text-decoration: underline;
+}
+.hero-card .browse-offers, .hero-card a[href*="#carousels"] {
+  display: none !important;
 }
 
-.carousel-mini-card .caro-offer-title {
-  color: var(--mini-card-title, #232f3e);
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 8px;
+/* --- POLICY CARDS FULL HERO STYLE MATCH --- */
+.policy-card {
+  width: 872px;
+  max-width: 100%;
+  margin: 0 auto 32px auto;
+  border: 2.5px solid;
+  border-image: linear-gradient(90deg, var(--nav-btn-grad-1, #232f3e), var(--nav-btn-grad-2, #7c2ae8)) 1;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  padding: 28px 18px;
+  background: #fff;
 }
-
-.carousel-mini-card .caro-offer-desc {
-  color: #222;
-  font-size: 1rem;
+.policy-card .headline {
+  background: linear-gradient(90deg, var(--nav-btn-grad-1, #232f3e), var(--nav-btn-grad-2, #7c2ae8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 900;
+  text-decoration: underline;
+  font-size: 1.7rem;
   margin-bottom: 18px;
+  padding-bottom: 2px;
+  text-align: center;
+}
+.info-section > .headline {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  background-clip: initial !important;
+  color: #222 !important;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* --- VIEW OFFER BUTTON BLACK BORDER ON CAROUSEL CARDS --- */
+.carousel-cta-button {
+  border: 2px solid #111 !important;
+}
+
+/* --- CAROUSEL HEADINGS BLACK FOR READABILITY --- */
+.category-title {
+  color: #111 !important;
+  text-shadow: none !important;
+  background: none !important;
+}
+
+/* --- FORCE MINI-CARD TOP ALIGNMENT AND HEADER SPACING --- */
+.carousel-mini-card {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+.caro-offer-title {
+  margin-bottom: 14px !important;
+}
+
+/* --- MINI-CARD TRUE TOP ALIGNMENT AND HEADER SPACING OVERRIDE --- */
+.mini-card,
+.mini-card > *,
+.mini-card .title,
+.mini-card .desc {
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+.mini-card .title {
+  margin-bottom: 0 !important;
+  padding-bottom: 14px !important;
+}
+
+/* --- GLOBAL BUTTON STYLES: BLACK BORDER & FLIP GRADIENT ON HOVER --- */
+.btn, .cta-button, button, a[class*='btn'] {
+  border: 2px solid var(--cta-btn-grad-1, #232f3e) !important;
+  box-sizing: border-box;
+}
+.btn:hover, .cta-button:hover, button:hover, a[class*='btn']:hover {
+  /* Flip gradient direction if using linear-gradient */
+  background-image: linear-gradient(270deg, var(--cta-btn-grad-1, #232f3e), var(--cta-btn-grad-2, #00b4d8)) !important;
+}
+
+/* --- NAV BUTTONS: BLACK BORDER & FLIP GRADIENT ON HOVER --- */
+.brand-nav-btn, .category-nav-btn, .navbar-link, .home-nav-bar .brand-nav-btn {
+  border: 2px solid var(--nav-btn-grad-1, #232f3e) !important;
+  box-sizing: border-box;
+}
+.brand-nav-btn:hover, .category-nav-btn:hover, .navbar-link:hover, .home-nav-bar .brand-nav-btn:hover {
+  background-image: linear-gradient(270deg, var(--nav-btn-grad-1, #232f3e), var(--nav-btn-grad-2, #7c2ae8)) !important;
 }
