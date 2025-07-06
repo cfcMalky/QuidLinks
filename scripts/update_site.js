@@ -13,10 +13,11 @@ const OFFERS_DIR = path.join(__dirname, '../public/pages/offers');
 const PARTIALS_DIR = path.join(__dirname, '../public/partials');
 
 // --- SITE BRANDING VARIABLES ---
-const SITE_NAME = 'QuidLinks';
-const SITE_DOMAIN = 'quidlinks.com';
+const config = require('../config.json');
+const SITE_NAME = config.siteName;
+const SITE_DOMAIN = config.siteDomain;
 const BASE_URL = `https://${SITE_DOMAIN}`; // Used throughout for canonical/meta
-const DEFAULT_IMAGE = `${BASE_URL}/banner.png`;
+const DEFAULT_IMAGE = config.defaultImage;
 
 // Banner/Hero section HTML (from original banner.html partial)
 const bannerHtml = `
@@ -143,6 +144,33 @@ function getBrandClass(brandName) {
 }
 // --- END: Brand normalization mapping ---
 
+// --- ORGANIZATION JSON-LD ---
+function getOrganizationJsonLd() {
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": SITE_NAME,
+    "url": BASE_URL,
+    "logo": DEFAULT_IMAGE
+  }, null, 2);
+}
+
+// --- OFFER JSON-LD ---
+function getOfferJsonLd({ brand, headline, subheadline, canonical, logo }) {
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Offer",
+    "name": headline,
+    "description": subheadline,
+    "url": canonical,
+    "image": logo,
+    "brand": {
+      "@type": "Brand",
+      "name": brand
+    }
+  }, null, 2);
+}
+
 function offerTemplate(offer, colMap, navbarHtml, carouselsHtml, bannerHtml, metaTitle, metaDesc, canonical, image) {
   const brandName = getVal(offer, 'Brand', colMap).trim();
   const brandClass = getBrandClass(brandName);
@@ -158,17 +186,49 @@ function offerTemplate(offer, colMap, navbarHtml, carouselsHtml, bannerHtml, met
   const numberEmojis = ['1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟'];
   const defaultIcon = '💡';
   const featureIcon = '⭐';
+
+  // --- Offer-specific image for meta tags ---
+  let offerImage = image || DEFAULT_IMAGE;
+  const offerFolder = canonical.replace(BASE_URL, '').replace(/\/$/, '');
+  const logoPath = path.join(__dirname, '../public', offerFolder, 'logo.png');
+  if (fs.existsSync(logoPath)) {
+    offerImage = `${BASE_URL}${offerFolder}/logo.png`;
+  }
+
   const metaTags = getMetaTags({
     title: metaTitle || headline,
     description: metaDesc || subheadline,
     url: canonical,
-    image: image || DEFAULT_IMAGE,
+    image: offerImage,
   });
   
-  // Add affiliate disclosure (now for the footer)
-  const affiliateDisclosureFooter = `<footer style="margin: 48px auto 0 auto; padding: 18px 0 12px 0; text-align: center; color: #666; font-size: 0.98rem; max-width: 900px;">
-    <strong>Affiliate Disclosure:</strong> This referral program is managed by ${brandName}. Terms and conditions apply. QuidLinks may earn a commission for successful referrals.
-  </footer>`;
+  // --- JSON-LD SCRIPTS ---
+  const orgJsonLd = `<script type="application/ld+json">${getOrganizationJsonLd()}</script>`;
+  const offerJsonLd = `<script type="application/ld+json">${getOfferJsonLd({ brand: brandName, headline, subheadline, canonical, logo: offerImage })}</script>`;
+  
+  // Add affiliate disclosure (custom styled, no border, width match, gradient text)
+  const affiliateDisclosure = `
+    <style>
+      .affiliate-disclosure-card {
+        border: none !important;
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto 32px auto;
+        box-shadow: none;
+        background: none;
+      }
+      .affiliate-disclosure-gradient {
+        background: linear-gradient(90deg, var(--mini-card-desc-grad-1, #232f3e), var(--mini-card-desc-grad-2, #7c2ae8));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        font-weight: bold;
+      }
+    </style>
+    <div class=\"card affiliate-disclosure-card\" style=\"text-align:center; font-size:1.05rem; color:#666; margin: 0 auto 32px auto;\">
+      <span class=\"affiliate-disclosure-gradient\">Affiliate Disclosure:</span> This referral program is managed by ${brandName}. Terms and conditions apply. QuidLinks may earn a commission for successful referrals.
+    </div>`;
   
   // Add video introduction text
   const videoIntro = ytUrl ? `<div style="margin-bottom: 12px; color: #555; font-size: 0.95rem;">
@@ -187,6 +247,8 @@ function offerTemplate(offer, colMap, navbarHtml, carouselsHtml, bannerHtml, met
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="canonical" href="${canonical}">
     ${metaTags}
+    ${orgJsonLd}
+    ${offerJsonLd}
 </head>
 <body class="${brandClass}">
     ${bannerHtml || ''}
@@ -231,8 +293,7 @@ function offerTemplate(offer, colMap, navbarHtml, carouselsHtml, bannerHtml, met
         const { emoji, title: cleanTitle } = extractEmojiAndTitle(title.trim(), featureIcon);
         return miniCard(cleanTitle, desc, emoji);
       }).join('')}</div></div></div>` : ''}
-      <div class="container"><div class="card" style="text-align:center; font-size:0.95rem; color:#888;">${disclaimer}</div></div>
-      ${affiliateDisclosureFooter}
+      ${affiliateDisclosure}
 </body>
 </html>`;
 }
@@ -353,12 +414,14 @@ function buildCarousels(records, colMap) {
       const file = (getVal(row, 'File', colMap) || '').replace(/.html$/i, '');
       // Add right margin to last card for border visibility
       const isLast = i === offers.length - 1;
-      return `<div class="${brandClass}"><div class="mini-card carousel-mini-card" style="width:${cardWidth}px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;${isLast ? ' margin-right:8px;' : ''}">
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start;">
+      // Logo path for mini-card background
+      const logoPath = `/pages/offers/${file}/logo.png`;
+      return `<div class="${brandClass}"><div class="mini-card carousel-mini-card" style="width:${cardWidth}px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;${isLast ? ' margin-right:8px;' : ''}; --carousel-logo-url: url('${logoPath}'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
           <div class="caro-offer-title">${brand}</div>
           <div class="caro-offer-desc">${subheadline}</div>
         </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto;">
+        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
           <a href="/pages/offers/${file}/" class="carousel-cta-button cta-button-${brandClass.replace('brand-','')}"><span class="carousel-cta-gradient-text">View offer</span></a>
         </div>
       </div></div>`;
@@ -380,28 +443,8 @@ function buildCarousels(records, colMap) {
       </div>
     `;
 
-  const carouselStyle = `<style>
-.carousel-row { display: flex; align-items: center; justify-content: center; max-width: ${rowMaxWidth + 120}px; margin: 0 auto; position: relative; }
-.carousel-track { display: flex; gap: 36px; }
-.carousel-mini-card { transition: box-shadow 0.2s, background 0.2s; box-sizing: border-box; width: 340px !important; min-width: 340px !important; max-width: 340px !important; flex: 0 0 auto !important; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch; margin: 0; }
-.carousel-mini-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.13); }
-.carousel-cta-button { font-weight: 700; border-radius: 24px; text-align: center; font-size: 1.05rem; box-shadow: none; border: none; transition: box-shadow 0.2s; min-width: 120px; max-width: 180px; padding: 10px 0; position:relative; overflow:hidden; background: linear-gradient(90deg, var(--carousel-mini-card-btn-grad-1, #111), var(--carousel-mini-card-btn-grad-2, #333)); color: #fff; margin: 0 auto; display: block; }
-.carousel-cta-button:hover { box-shadow: 0 2px 12px rgba(25,118,210,0.18); }
-.carousel-cta-gradient-text { color: inherit; display:inline-block; width:100%; font-weight:inherit; }
-.caro-offer-desc { background: linear-gradient(90deg, var(--carousel-mini-card-text-grad-1, #232f3e), var(--carousel-mini-card-text-grad-2, #232f3e)); background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent; display: block; }
-.carousel-chevron { background: none; border: none; font-size: 2.5rem; cursor: pointer; z-index: 2; color: #222; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s; }
-.carousel-chevron:hover { background: #f3f3f3; }
-@media (max-width: 900px) { .carousel-row { max-width: 100vw !important; } .carousel-mini-card { min-width: 90vw !important; max-width: 90vw !important; } }
-</style>`;
-    return `<div class="category-section ${catClass}" style="background: ${gradient}; border: 3px solid ${headerColor}; position:relative; border-radius:28px; margin-bottom:48px; padding:32px 0 48px 0; box-shadow:0 2px 16px rgba(26,35,126,0.06);">
-      <div class="category-title" style="color: ${headerColor}; text-align:center; font-size:2.1rem; font-weight:900; text-decoration:underline; margin-bottom:24px;">${cat}</div>
-      <div style="position:relative; display:flex; align-items:center; justify-content:center;">
-        ${carouselWrapper}
-      </div>
-    </div>`;
-  }).join('\n');
-  // Add CSS for new carousel/mini-card/button styles
-  const carouselStyle = `<style>
+    // Add CSS for new carousel/mini-card/button styles
+    const carouselStyle = `<style>
 .carousel-viewport { overflow: hidden; position: relative; box-sizing: content-box; }
 .carousel-track { display: flex; transition: transform 0.4s cubic-bezier(.4,0,.2,1); will-change: transform; gap: 36px; }
 .carousel-mini-card { transition: box-shadow 0.2s, background 0.2s; box-sizing: border-box; width: 340px !important; height: 400px !important; min-width: 340px !important; max-width: 340px !important; flex: 0 0 auto !important; }
@@ -415,8 +458,8 @@ function buildCarousels(records, colMap) {
 .carousel-chevron.right { right: -32px; }
 @media (max-width: 1200px) { .carousel-viewport { width: 100vw !important; } .carousel-mini-card { min-width: 90vw !important; max-width: 90vw !important; } }
 </style>`;
-  // Add JS for carousel navigation
-  const carouselScript = `<script>
+    // Add JS for carousel navigation
+    const carouselScript = `<script>
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.carousel-row').forEach(function(row) {
     const windowEl = row.querySelector('.carousel-window');
@@ -451,7 +494,45 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>`;
-  return carouselsHtml + carouselStyle + carouselScript;
+    // Add CSS for logo overlay and text stacking
+    const carouselLogoStyle = `<style>
+      .carousel-mini-card::after {
+        content: '';
+        position: absolute;
+        left: 10%;
+        top: 10%;
+        width: 80%;
+        height: 80%;
+        background-image: var(--carousel-logo-url);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.25;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .carousel-mini-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(255,255,255,0.7);
+        z-index: 1;
+      }
+      .carousel-mini-card .caro-offer-title,
+      .carousel-mini-card .caro-offer-desc,
+      .carousel-mini-card .carousel-cta-button {
+        position: relative;
+        z-index: 2;
+      }
+    </style>`;
+    return `<div class="category-section ${catClass}" style="background: ${gradient}; border: 3px solid ${headerColor}; position:relative; border-radius:28px; margin-bottom:48px; padding:32px 0 48px 0; box-shadow:0 2px 16px rgba(26,35,126,0.06);">
+      <div class="category-title" style="color: ${headerColor}; text-align:center; font-size:2.1rem; font-weight:900; text-decoration:underline; margin-bottom:24px;">${cat}</div>
+      <div style="position:relative; display:flex; align-items:center; justify-content:center;">
+        ${carouselWrapper}
+      </div>
+    </div>` + carouselLogoStyle + carouselStyle + carouselScript;
+  }).join('\n');
+  return carouselsHtml;
 }
 
 function generateStaticPage({ title, headExtras, bodyClass, mainHtml, navbarHtml, carouselsHtml, bannerHtml, description, canonical, image }) {
@@ -605,223 +686,269 @@ function getMetaTags({ title, description, url, image }) {
 
 const ANALYTICS_SNIPPET = `
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KCNDVW977V"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=${config.analyticsId}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-KCNDVW977V');
+  gtag('config', '${config.analyticsId}');
 </script>
 `;
 
 async function main() {
-  // Fetch styles tab for brand colors
-  const stylesResponse = await fetchFn(SHEET_STYLES_URL);
-  const stylesRecords = await stylesResponse.json();
-  if (!stylesRecords.length) {
-    console.log('No styles found.');
-    return;
-  }
-  const stylesColMap = getColMap(Object.keys(stylesRecords[0]));
-  // --- Generate brand-colors.css from styles tab ---
-  await generateBrandColorsCSS(stylesRecords, stylesColMap);
-
-  // Fetch offers tab for site data
-  const response = await fetchFn(SHEET_URL);
-  const records = await response.json();
-  if (!records.length) {
-    console.log('No offers found.');
-    return;
-  }
-  const headers = Object.keys(records[0]);
-  const colMap = getColMap(headers);
-  console.log('Headers from sheet:', headers);
-  console.log('First row:', records[0]);
-
-  // Generate navbar and carousels once
-  const navbarHtml = buildNavbar(records, colMap);
-  const carouselsHtml = buildCarousels(records, colMap);
-
-  // Generate offer pages
-  if (!fs.existsSync(OFFERS_DIR)) {
-    fs.mkdirSync(OFFERS_DIR, { recursive: true });
-  }
-  let created = 0;
-  const generatedFiles = [];
-  records.forEach(row => {
-    const file = (getVal(row, 'File', colMap) || '').trim().toLowerCase();
-    if (!file) return;
-    const folderName = file.replace(/\.html$/i, '');
-    const offerDir = path.join(OFFERS_DIR, folderName);
-    if (!fs.existsSync(offerDir)) {
-      fs.mkdirSync(offerDir, { recursive: true });
+  try {
+    // Fetch styles tab for brand colors
+    let stylesResponse, stylesRecords;
+    try {
+      stylesResponse = await fetchFn(SHEET_STYLES_URL);
+      stylesRecords = await stylesResponse.json();
+    } catch (err) {
+      console.error('Error fetching styles from Google Sheets:', err);
+      process.exit(1);
     }
-    const filePath = path.join(offerDir, 'index.html');
-    // --- Meta tags for offer pages ---
-    const offerTitle = getVal(row, 'Headline', colMap) || '';
-    const offerDesc = getVal(row, 'Subheadline', colMap) || '';
-    const offerCanonical = `${BASE_URL}/pages/offers/${folderName}/`;
-    const offerImage = DEFAULT_IMAGE;
-    fs.writeFileSync(filePath, offerTemplate(row, colMap, navbarHtml, carouselsHtml, bannerHtml, offerTitle, offerDesc, offerCanonical, offerImage));
-    generatedFiles.push(folderName);
-    console.log(`Generated: pages/offers/${folderName}/index.html`);
-    created++;
-  });
-  // Write generated_offers.json manifest
-  const manifestPath = path.join(OFFERS_DIR, 'generated_offers.json');
-  fs.writeFileSync(manifestPath, JSON.stringify(generatedFiles, null, 2));
-  console.log(`Generated: pages/offers/generated_offers.json`);
+    if (!stylesRecords.length) {
+      console.log('No styles found.');
+      return;
+    }
+    const stylesColMap = getColMap(Object.keys(stylesRecords[0]));
+    // --- Generate brand-colors.css from styles tab ---
+    try {
+      await generateBrandColorsCSS(stylesRecords, stylesColMap);
+    } catch (err) {
+      console.error('Error writing brand-colors.css:', err);
+      process.exit(1);
+    }
 
-  // --- SITEMAP ---
-  const sitemapXml = generateSitemap({ offerFolders: generatedFiles, baseUrl: BASE_URL });
-  fs.writeFileSync(path.join(__dirname, '../public/sitemap.xml'), sitemapXml, 'utf8');
-  console.log('Generated: sitemap.xml');
+    // Fetch offers tab for site data
+    let response, records;
+    try {
+      response = await fetchFn(SHEET_URL);
+      records = await response.json();
+    } catch (err) {
+      console.error('Error fetching offers from Google Sheets:', err);
+      process.exit(1);
+    }
+    if (!records.length) {
+      console.log('No offers found.');
+      return;
+    }
+    const headers = Object.keys(records[0]);
+    const colMap = getColMap(headers);
+    console.log('Headers from sheet:', headers);
+    console.log('First row:', records[0]);
 
-  if (created === 0) {
-    console.log('No offer pages generated.');
-  } else {
-    console.log(`Done! ${created} offer page(s) generated.`);
-  }
+    // Generate navbar and carousels once
+    const navbarHtml = buildNavbar(records, colMap);
+    const carouselsHtml = buildCarousels(records, colMap);
 
-  // --- STATIC PAGE GENERATION ---
-  // 1. INDEX.HTML
-  const indexMainHtml = `
-    <div class="card hero-card">
-      <div class="headline">Welcome to ${SITE_NAME}</div>
-      <div class="subheadline">
-        Your hub for the UK's best dual-incentive referral and affiliate offers! Whether you're a content creator, blogger, social media influencer, or just someone with a network of friends, this site is designed to help you turn your audience and connections into real, passive side-income.
-      </div>
-      <ul class="hero-bullets hero-gradient-bullets">
-        <li><b>Hand-picked offers:</b> Only the best, most transparent referral and affiliate programs.</li>
-        <li><b>Dual rewards:</b> Both you and your friends or followers get rewarded.</li>
-        <li><b>Easy to start:</b> Browse, share, and earn – it's that simple!</li>
-      </ul>
-    </div>
-  `;
-  const indexHeadExtras = ANALYTICS_SNIPPET;
-  const indexHtml = generateStaticPage({
-    title: 'QuidLinks – Turn Referrals Into Real Rewards',
-    headExtras: indexHeadExtras,
-    bodyClass: 'brand-home',
-    mainHtml: indexMainHtml,
-    navbarHtml,
-    carouselsHtml,
-    bannerHtml
-  });
-  fs.writeFileSync(path.join(__dirname, '../public/index.html'), indexHtml, 'utf8');
+    // Generate offer pages
+    if (!fs.existsSync(OFFERS_DIR)) {
+      try {
+        fs.mkdirSync(OFFERS_DIR, { recursive: true });
+      } catch (err) {
+        console.error('Error creating offers directory:', err);
+        process.exit(1);
+      }
+    }
+    let created = 0;
+    const generatedFiles = [];
+    records.forEach(row => {
+      const file = (getVal(row, 'File', colMap) || '').trim().toLowerCase();
+      if (!file) return;
+      const folderName = file.replace(/\.html$/i, '');
+      const offerDir = path.join(OFFERS_DIR, folderName);
+      if (!fs.existsSync(offerDir)) {
+        try {
+          fs.mkdirSync(offerDir, { recursive: true });
+        } catch (err) {
+          console.error(`Error creating offer directory for ${folderName}:`, err);
+          return;
+        }
+      }
+      const filePath = path.join(offerDir, 'index.html');
+      // --- Meta tags for offer pages ---
+      const offerTitle = getVal(row, 'Headline', colMap) || '';
+      const offerDesc = getVal(row, 'Subheadline', colMap) || '';
+      const offerCanonical = `${BASE_URL}/pages/offers/${folderName}/`;
+      const offerImage = DEFAULT_IMAGE;
+      try {
+        fs.writeFileSync(filePath, offerTemplate(row, colMap, navbarHtml, carouselsHtml, bannerHtml, offerTitle, offerDesc, offerCanonical, offerImage));
+        generatedFiles.push(folderName);
+        console.log(`Generated: pages/offers/${folderName}/index.html`);
+        created++;
+      } catch (err) {
+        console.error(`Error writing offer page for ${folderName}:`, err);
+      }
+    });
+    // Write generated_offers.json manifest
+    const manifestPath = path.join(OFFERS_DIR, 'generated_offers.json');
+    try {
+      fs.writeFileSync(manifestPath, JSON.stringify(generatedFiles, null, 2));
+      console.log(`Generated: pages/offers/generated_offers.json`);
+    } catch (err) {
+      console.error('Error writing generated_offers.json:', err);
+    }
 
-  // 2. INFORMATION.HTML
-  const faqAccordionHtml = `
-    <div class="card hero-card">
-      <div class="headline">Frequently Asked Questions (FAQ)</div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <div class="faq-question">What are the best side hustle ideas in the UK for 2024?</div>
-          <div class="faq-answer">${SITE_NAME} helps you discover the best referral and affiliate programs to start earning extra money online quickly and easily.</div>
+    // --- SITEMAP ---
+    const sitemapXml = generateSitemap({ offerFolders: generatedFiles, baseUrl: BASE_URL });
+    try {
+      fs.writeFileSync(path.join(__dirname, '../public/sitemap.xml'), sitemapXml, 'utf8');
+      console.log('Generated: sitemap.xml');
+    } catch (err) {
+      console.error('Error writing sitemap.xml:', err);
+    }
+
+    if (created === 0) {
+      console.log('No offer pages generated.');
+    } else {
+      console.log(`Done! ${created} offer page(s) generated.`);
+    }
+
+    // --- STATIC PAGE GENERATION ---
+    // 1. INDEX.HTML
+    try {
+      const indexMainHtml = `
+        <div class="card hero-card">
+          <div class="headline">Welcome to ${SITE_NAME}</div>
+          <div class="subheadline">
+            Your hub for the UK's best dual-incentive referral and affiliate offers! Whether you're a content creator, blogger, social media influencer, or just someone with a network of friends, this site is designed to help you turn your audience and connections into real, passive side-income.
+          </div>
+          <ul class="hero-bullets hero-gradient-bullets">
+            <li><b>Hand-picked offers:</b> Only the best, most transparent referral and affiliate programs.</li>
+            <li><b>Dual rewards:</b> Both you and your friends or followers get rewarded.</li>
+            <li><b>Easy to start:</b> Browse, share, and earn – it's that simple!</li>
+          </ul>
         </div>
-        <div class="faq-item">
-          <div class="faq-question">How can I make extra money online with referral programs?</div>
-          <div class="faq-answer">Sign up for free referral and affiliate programs listed on ${SITE_NAME}, get your unique referral link, and share it with friends, family, or your social media followers. When someone signs up or makes a purchase using your link, you earn a commission or bonus, making it a great side hustle for beginners.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Are referral programs a legit way to start a side hustle?</div>
-          <div class="faq-answer">Yes! Referral and affiliate programs are legitimate and popular ways to earn side income in the UK. We only list trusted offers from reputable brands, banks, and cashback sites, so you can start your side hustle with confidence.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">What are some easy side hustles for beginners?</div>
-          <div class="faq-answer">Referral programs, affiliate marketing, and cashback offers are some of the easiest side hustles to start. You don't need any special skills or investment—just sign up, share your link, and start earning rewards for every successful referral.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">How much can I earn from referral and affiliate side hustles?</div>
-          <div class="faq-answer">Your earnings depend on the program and how many people you refer. Some offers pay cash bonuses, others offer gift cards or account credit. The more you share your links and promote offers, the more you can earn as a side hustle.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Can I do referral side hustles from home?</div>
-          <div class="faq-answer">Absolutely! All the referral and affiliate programs listed on ${SITE_NAME} can be done from home, using your phone or computer. Share your links online, through WhatsApp, email, or social media to maximize your side income.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">How do I track my side hustle earnings and referrals?</div>
-          <div class="faq-answer">Each partner site provides a dashboard where you can track your referrals, sign-ups, and earnings. Log in to your account on the partner site to see your progress and manage your side hustle income.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Are there any fees to join these side hustle programs?</div>
-          <div class="faq-answer">No, all referral and affiliate programs listed on ${SITE_NAME} are free to join. There are no hidden fees or costs to start your side hustle.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">What if I have a problem with a referral offer or my side hustle payout?</div>
-          <div class="faq-answer">If you have any issues with a specific offer or payout, contact the partner site's support team. For questions about ${SITE_NAME} or to suggest new side hustle ideas, feel free to contact us directly.</div>
-        </div>
-      </div>
-    </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-          question.addEventListener('click', function() {
-            const answer = this.nextElementSibling;
-            const isActive = this.classList.contains('active');
-            faqQuestions.forEach(q => {
-              q.classList.remove('active');
-              q.nextElementSibling.classList.remove('active');
-            });
-            if (!isActive) {
-              this.classList.add('active');
-              answer.classList.add('active');
-            }
-          });
-        });
+      `;
+      const indexHeadExtras = ANALYTICS_SNIPPET;
+      const indexHtml = generateStaticPage({
+        title: 'QuidLinks – Turn Referrals Into Real Rewards',
+        headExtras: indexHeadExtras,
+        bodyClass: 'brand-home',
+        mainHtml: indexMainHtml,
+        navbarHtml,
+        carouselsHtml,
+        bannerHtml
       });
-    </script>
-  <style>
-    .faq-list { margin: 0; padding: 0; }
-    .faq-item { margin-bottom: 8px; }
-    .faq-question {
-      background: #f8f9fa;
-      border: 1px solid #e9ecef;
-      border-radius: 8px;
-      padding: 16px 20px;
-      cursor: pointer;
-      font-weight: 600;
-      color: #232f3e;
-      transition: all 0.3s ease;
-      position: relative;
+      fs.writeFileSync(path.join(__dirname, '../public/index.html'), indexHtml, 'utf8');
+    } catch (err) {
+      console.error('Error writing index.html:', err);
     }
-    .faq-question:hover {
-      background: #e9ecef;
-      border-color: #7c2ae8;
-    }
-    .faq-question::after {
-      content: '+';
-      position: absolute;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 20px;
-      font-weight: bold;
-      color: #7c2ae8;
-      transition: transform 0.3s ease;
-    }
-    .faq-question.active::after {
-      transform: translateY(-50%) rotate(45deg);
-    }
-    .faq-answer {
-      background: #fff;
-      border: 1px solid #e9ecef;
-      border-top: none;
-      border-radius: 0 0 8px 8px;
-      padding: 0 20px;
-      max-height: 0;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      margin-top: -1px;
-    }
-    .faq-answer.active {
-      padding: 16px 20px;
-      max-height: 500px;
-    }
-  </style>
-  `;
-  const infoMainHtml = `
+
+    // 2. INFORMATION.HTML
+    try {
+      // Move faqAccordionHtml definition above infoMainHtml
+      const faqAccordionHtml = `
+        <div class="card hero-card">
+          <div class="headline">Frequently Asked Questions (FAQ)</div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <div class="faq-question">What are the best side hustle ideas in the UK for 2024?</div>
+              <div class="faq-answer">${SITE_NAME} helps you discover the best referral and affiliate programs to start earning extra money online quickly and easily.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">How can I make extra money online with referral programs?</div>
+              <div class="faq-answer">Sign up for free referral and affiliate programs listed on ${SITE_NAME}, get your unique referral link, and share it with friends, family, or your social media followers. When someone signs up or makes a purchase using your link, you earn a commission or bonus, making it a great side hustle for beginners.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Are referral programs a legit way to start a side hustle?</div>
+              <div class="faq-answer">Yes! Referral and affiliate programs are legitimate and popular ways to earn side income in the UK. We only list trusted offers from reputable brands, banks, and cashback sites, so you can start your side hustle with confidence.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">What are some easy side hustles for beginners?</div>
+              <div class="faq-answer">Referral programs, affiliate marketing, and cashback offers are some of the easiest side hustles to start. You don't need any special skills or investment—just sign up, share your link, and start earning rewards for every successful referral.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">How much can I earn from referral and affiliate side hustles?</div>
+              <div class="faq-answer">Your earnings depend on the program and how many people you refer. Some offers pay cash bonuses, others offer gift cards or account credit. The more you share your links and promote offers, the more you can earn as a side hustle.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Can I do referral side hustles from home?</div>
+              <div class="faq-answer">Absolutely! All the referral and affiliate programs listed on ${SITE_NAME} can be done from home, using your phone or computer. Share your links online, through WhatsApp, email, or social media to maximize your side income.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">How do I track my side hustle earnings and referrals?</div>
+              <div class="faq-answer">Each partner site provides a dashboard where you can track your referrals, sign-ups, and earnings. Log in to your account on the partner site to see your progress and manage your side hustle income.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Are there any fees to join these side hustle programs?</div>
+              <div class="faq-answer">No, all referral and affiliate programs listed on ${SITE_NAME} are free to join. There are no hidden fees or costs to start your side hustle.</div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">What if I have a problem with a referral offer or my side hustle payout?</div>
+              <div class="faq-answer">If you have any issues with a specific offer or payout, contact the partner site's support team. For questions about ${SITE_NAME} or to suggest new side hustle ideas, feel free to contact us directly.</div>
+            </div>
+          </div>
+        </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+              question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isActive = this.classList.contains('active');
+                faqQuestions.forEach(q => {
+                  q.classList.remove('active');
+                  q.nextElementSibling.classList.remove('active');
+                });
+                if (!isActive) {
+                  this.classList.add('active');
+                  answer.classList.add('active');
+                }
+              });
+            });
+          });
+        </script>
+      <style>
+        .faq-list { margin: 0; padding: 0; }
+        .faq-item { margin-bottom: 8px; }
+        .faq-question {
+          background: #f8f9fa;
+          border: 1px solid #e9ecef;
+          border-radius: 8px;
+          padding: 16px 20px;
+          cursor: pointer;
+          font-weight: 600;
+          color: #232f3e;
+          transition: all 0.3s ease;
+          position: relative;
+        }
+        .faq-question:hover {
+          background: #e9ecef;
+          border-color: #7c2ae8;
+        }
+        .faq-question::after {
+          content: '+';
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 20px;
+          font-weight: bold;
+          color: #7c2ae8;
+          transition: transform 0.3s ease;
+        }
+        .faq-question.active::after {
+          transform: translateY(-50%) rotate(45deg);
+        }
+        .faq-answer {
+          background: #fff;
+          border: 1px solid #e9ecef;
+          border-top: none;
+          border-radius: 0 0 8px 8px;
+          padding: 0 20px;
+          max-height: 0;
+          overflow: hidden;
+          transition: all 0.3s ease;
+          margin-top: -1px;
+        }
+        .faq-answer.active {
+          padding: 16px 20px;
+          max-height: 500px;
+        }
+      </style>
+      `;
+      const infoMainHtml = `
         <div class="info-section">
             <div class="card hero-card">
                 <div class="headline">How It Works</div>
@@ -843,7 +970,7 @@ async function main() {
                 <div style="margin-top:10px;"><b>Transparency matters:</b> We always aim to clearly mark affiliate/referral links and keep our recommendations unbiased.</div>
             </div>
         </div>`;
-  const infoHeadExtras = `<style>
+      const infoHeadExtras = `<style>
         .info-section { margin-bottom: 40px; }
         .info-section .headline { margin-bottom: 10px; }
         .faq-list { margin: 0; padding: 0 0 0 18px; }
@@ -855,21 +982,22 @@ async function main() {
             border-radius: 18px;
         }
     </style>`;
-  const infoHtml = generateStaticPage({
-    title: `Information – ${SITE_NAME}`,
-    headExtras: infoHeadExtras,
-    bodyClass: 'brand-home',
-    mainHtml: infoMainHtml,
-    navbarHtml,
-    bannerHtml
-  });
-  fs.writeFileSync(path.join(__dirname, '../public/pages/information.html'), infoHtml, 'utf8');
+      const infoHtml = generateStaticPage({
+        title: `Information – ${SITE_NAME}`,
+        headExtras: infoHeadExtras,
+        bodyClass: 'brand-home',
+        mainHtml: infoMainHtml,
+        navbarHtml,
+        bannerHtml
+      });
+      fs.writeFileSync(path.join(__dirname, '../public/pages/information.html'), infoHtml, 'utf8');
+    } catch (err) {
+      console.error('Error writing information.html:', err);
+    }
 
-  // 3. PRIVACY-POLICY.HTML
-  // LEGAL REVIEW REMINDER: This privacy policy should be reviewed quarterly for GDPR/UK DPA compliance.
-  // Key areas to monitor: cookie policy details, data retention periods, user rights, third-party data sharing.
-  // Consider adding: cookie consent banner, detailed analytics disclosure, data breach notification procedures.
-  const privacyMainHtml = `
+    // 3. PRIVACY-POLICY.HTML
+    try {
+      const privacyMainHtml = `
         <div class="policy-section">
             <div class="card hero-card">
                 <div class="headline">Privacy Policy</div>
@@ -968,34 +1096,35 @@ async function main() {
                 </div>
             </div>
         </div>`;
-  const privacyHeadExtras = `<style>
-        .policy-section { margin-bottom: 40px; }
-        .policy-card { background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.07); padding: 28px 18px; margin-bottom: 24px; }
-        .gradient-border {
-            border: 2.5px solid;
-            border-image: linear-gradient(90deg, #232f3e, #3a506b, #7c2ae8) 1;
-            border-radius: 18px;
-        }
-        .policy-subsection { margin-top: 20px; }
-        .policy-subsection h3 { color: #232f3e; margin-bottom: 10px; font-size: 1.1rem; }
-        .policy-subsection ul { margin: 10px 0; padding-left: 20px; }
-        .policy-subsection li { margin-bottom: 5px; }
-    </style>`;
-  const privacyHtml = generateStaticPage({
-    title: `Privacy Policy – ${SITE_NAME}`,
-    headExtras: privacyHeadExtras,
-    bodyClass: 'brand-home',
-    mainHtml: privacyMainHtml,
-    navbarHtml,
-    bannerHtml
-  });
-  fs.writeFileSync(path.join(__dirname, '../public/pages/privacy-policy.html'), privacyHtml, 'utf8');
+      const privacyHeadExtras = `<style>
+          .policy-section { margin-bottom: 40px; }
+          .policy-card { background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.07); padding: 28px 18px; margin-bottom: 24px; }
+          .gradient-border {
+              border: 2.5px solid;
+              border-image: linear-gradient(90deg, #232f3e, #3a506b, #7c2ae8) 1;
+              border-radius: 18px;
+          }
+          .policy-subsection { margin-top: 20px; }
+          .policy-subsection h3 { color: #232f3e; margin-bottom: 10px; font-size: 1.1rem; }
+          .policy-subsection ul { margin: 10px 0; padding-left: 20px; }
+          .policy-subsection li { margin-bottom: 5px; }
+      </style>`;
+      const privacyHtml = generateStaticPage({
+        title: `Privacy Policy – ${SITE_NAME}`,
+        headExtras: privacyHeadExtras,
+        bodyClass: 'brand-home',
+        mainHtml: privacyMainHtml,
+        navbarHtml,
+        bannerHtml
+      });
+      fs.writeFileSync(path.join(__dirname, '../public/pages/privacy-policy.html'), privacyHtml, 'utf8');
+    } catch (err) {
+      console.error('Error writing privacy-policy.html:', err);
+    }
 
-  // 4. TERMS-OF-USE.HTML
-  // LEGAL REVIEW REMINDER: This terms of use should be reviewed quarterly for legal compliance.
-  // Key areas to monitor: affiliate marketing regulations, consumer protection laws, dispute resolution procedures.
-  // Consider adding: specific affiliate disclosure requirements, consumer rights under UK law, updated dispute resolution.
-  const termsMainHtml = `
+    // 4. TERMS-OF-USE.HTML
+    try {
+      const termsMainHtml = `
         <div class="policy-section">
             <div class="card hero-card">
                 <div class="headline">Terms of Use</div>
@@ -1123,28 +1252,35 @@ async function main() {
                 </div>
             </div>
         </div>`;
-  const termsHeadExtras = `<style>
-        .policy-section { margin-bottom: 40px; }
-        .policy-card { background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.07); padding: 28px 18px; margin-bottom: 24px; }
-        .gradient-border {
-            border: 2.5px solid;
-            border-image: linear-gradient(90deg, #232f3e, #3a506b, #7c2ae8) 1;
-            border-radius: 18px;
-        }
-        .policy-subsection { margin-top: 20px; }
-        .policy-subsection h3 { color: #232f3e; margin-bottom: 10px; font-size: 1.1rem; }
-        .policy-subsection ul { margin: 10px 0; padding-left: 20px; }
-        .policy-subsection li { margin-bottom: 5px; }
-    </style>`;
-  const termsHtml = generateStaticPage({
-    title: `Terms of Use – ${SITE_NAME}`,
-    headExtras: termsHeadExtras,
-    bodyClass: 'brand-home',
-    mainHtml: termsMainHtml,
-    navbarHtml,
-    bannerHtml
-  });
-  fs.writeFileSync(path.join(__dirname, '../public/pages/terms-of-use.html'), termsHtml, 'utf8');
+      const termsHeadExtras = `<style>
+          .policy-section { margin-bottom: 40px; }
+          .policy-card { background: #fff; border-radius: 18px; box-shadow: 0 4px 16px rgba(0,0,0,0.07); padding: 28px 18px; margin-bottom: 24px; }
+          .gradient-border {
+              border: 2.5px solid;
+              border-image: linear-gradient(90deg, #232f3e, #3a506b, #7c2ae8) 1;
+              border-radius: 18px;
+          }
+          .policy-subsection { margin-top: 20px; }
+          .policy-subsection h3 { color: #232f3e; margin-bottom: 10px; font-size: 1.1rem; }
+          .policy-subsection ul { margin: 10px 0; padding-left: 20px; }
+          .policy-subsection li { margin-bottom: 5px; }
+      </style>`;
+      const termsHtml = generateStaticPage({
+        title: `Terms of Use – ${SITE_NAME}`,
+        headExtras: termsHeadExtras,
+        bodyClass: 'brand-home',
+        mainHtml: termsMainHtml,
+        navbarHtml,
+        bannerHtml
+      });
+      fs.writeFileSync(path.join(__dirname, '../public/pages/terms-of-use.html'), termsHtml, 'utf8');
+    } catch (err) {
+      console.error('Error writing terms-of-use.html:', err);
+    }
+  } catch (err) {
+    console.error('Fatal error in update_site.js:', err);
+    process.exit(1);
+  }
 }
 
 main(); 

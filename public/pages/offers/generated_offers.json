@@ -1,4 +1,6 @@
 [
+  "aliexpress",
+  "amazon",
   "amazon-prime-video",
   "baremetrics",
   "befrugal",
@@ -17,11 +19,9 @@
   "sharelytics",
   "shein",
   "supermonitoring",
+  "temu",
   "topcashback",
   "userback",
   "virgin",
-  "wise",
-  "amazon",
-  "temu",
-  "aliexpress"
+  "wise"
 ]

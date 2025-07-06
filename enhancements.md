@@ -6,12 +6,14 @@
 - **Combine Data**: Create a unified dashboard for both Analytics and Search Console metrics.
 
 ## 2. Update Script Improvements
-- **Integrate Affiliate Disclosure**: Merge `add-affiliate-disclosure.js` logic into `update_site.js` so all pages always have the correct banner after each update.
-- **Error Handling**: Add more robust error handling and logging for failed fetches or file writes.
-- **Config File**: Move site-wide settings (domain, analytics ID, etc.) to a config file for easier updates.
+<!-- The following tasks are now complete: -->
+<!-- - Integrate Affiliate Disclosure -->
+<!-- - Error Handling -->
+<!-- - Config File -->
 
 ## 3. SEO & Performance
-- **Meta Tag Automation**: Ensure all offer pages have unique meta descriptions and Open Graph images.
+<!-- The following task is now complete: -->
+<!-- - Meta Tag Automation -->
 - **Structured Data**: Add JSON-LD schema for offers and organization.
 - **Accessibility**: Audit for ARIA labels and keyboard navigation.
 - **Performance**: Consider minifying CSS and optimizing images.
