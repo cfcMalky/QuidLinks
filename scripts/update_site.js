@@ -12,6 +12,12 @@ const SHEET_STYLES_URL = 'https://opensheet.vercel.app/12TFRklj6X_k5gfQVmyrpFpRv
 const OFFERS_DIR = path.join(__dirname, '../public/pages/offers');
 const PARTIALS_DIR = path.join(__dirname, '../public/partials');
 
+// --- SITE BRANDING VARIABLES ---
+const SITE_NAME = 'QuidLinks';
+const SITE_DOMAIN = 'quidlinks.com';
+const BASE_URL = `https://${SITE_DOMAIN}`; // Used throughout for canonical/meta
+const DEFAULT_IMAGE = `${BASE_URL}/banner.png`;
+
 // Banner/Hero section HTML (from original banner.html partial)
 const bannerHtml = `
 <header class="site-banner">
@@ -20,7 +26,7 @@ const bannerHtml = `
         <div class="banner-overlay-bg"></div>
     </div>
     <div class="banner-overlay">
-        <div class="banner-title">Refer 2 Earn</div>
+        <div class="banner-title">${SITE_NAME}</div>
         <div class="banner-tagline">Turn Referrals Into Real Rewards</div>
         <nav class="banner-nav-bar-bg">
             <div class="home-nav-bar" style="display: flex; justify-content: center; gap: 18px;">
@@ -58,7 +64,7 @@ function shareButtons(refLink, headline) {
       <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${encodedLink}" target="_blank" rel="noopener" aria-label="Share on Facebook">
         <img src="/icons/facebook.png" alt="Facebook" width="32" height="32" class="share-icon-img" />
       </a>
-      <a class="share-btn" href="https://twitter.com/intent/tweet?url=${encodedLink}" target="_blank" rel="noopener" aria-label="Share on Twitter">
+      <a class="share-btn" href="https://twitter.com/intent/tweet?text=${encodedHeadline}&url=${encodedLink}" target="_blank" rel="noopener" aria-label="Share on Twitter">
         <img src="/icons/twitter.png" alt="Twitter" width="32" height="32" class="share-icon-img" />
       </a>
       <a class="share-btn" href="mailto:?subject=${encodedHeadline}&body=${encodedLink}" target="_blank" rel="noopener" aria-label="Share via Email">
@@ -137,7 +143,7 @@ function getBrandClass(brandName) {
 }
 // --- END: Brand normalization mapping ---
 
-function offerTemplate(offer, colMap, navbarHtml, carouselsHtml, bannerHtml) {
+function offerTemplate(offer, colMap, navbarHtml, carouselsHtml, bannerHtml, metaTitle, metaDesc, canonical, image) {
   const brandName = getVal(offer, 'Brand', colMap).trim();
   const brandClass = getBrandClass(brandName);
   const headline = getVal(offer, 'Headline', colMap) || '';
@@ -152,15 +158,35 @@ function offerTemplate(offer, colMap, navbarHtml, carouselsHtml, bannerHtml) {
   const numberEmojis = ['1️⃣','2️⃣','3️⃣','4️⃣','5️⃣','6️⃣','7️⃣','8️⃣','9️⃣','🔟'];
   const defaultIcon = '💡';
   const featureIcon = '⭐';
+  const metaTags = getMetaTags({
+    title: metaTitle || headline,
+    description: metaDesc || subheadline,
+    url: canonical,
+    image: image || DEFAULT_IMAGE,
+  });
+  
+  // Add affiliate disclosure
+  const affiliateDisclosure = `<div style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 12px; margin: 16px 0; font-size: 0.9rem; color: #666; text-align: center;">
+    <strong>Affiliate Disclosure:</strong> This referral program is managed by ${brandName}. Terms and conditions apply. ${SITE_NAME} may earn a commission for successful referrals.
+  </div>`;
+  
+  // Add video introduction text
+  const videoIntro = ytUrl ? `<div style="margin-bottom: 12px; color: #555; font-size: 0.95rem;">
+    Learn more about ${brandName}'s services and benefits in this quick video:
+  </div>` : '';
+  
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${headline}</title>
-    <meta name="description" content="${subheadline}">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="48x48">
     <link rel="stylesheet" href="/styles/brand-colors.css">
     <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="canonical" href="${canonical}">
+    ${metaTags}
 </head>
 <body class="${brandClass}">
     ${bannerHtml || ''}
@@ -175,6 +201,7 @@ function offerTemplate(offer, colMap, navbarHtml, carouselsHtml, bannerHtml) {
                     ${shareButtons(refLink, headline)}
                 </div>
             </div>
+            ${affiliateDisclosure}
         </div>
         ${howItWorks.length ? `<div class="card"><div class="headline">How It Works</div><div class="card-grid">${howItWorks.map((step, i) => {
           const [title, ...descArr] = step.split(':');
@@ -182,7 +209,11 @@ function offerTemplate(offer, colMap, navbarHtml, carouselsHtml, bannerHtml) {
           const { emoji, title: cleanTitle } = extractEmojiAndTitle(title.trim(), numberEmojis[i] || numberEmojis[numberEmojis.length-1]);
           return miniCard(cleanTitle, desc, emoji);
         }).join('')}</div></div>` : ''}
-        <div class="card offer-video-card"><div class="headline">A Little About ${brandName}</div><div id="offer-video">${ytEmbed}</div></div>
+        <div class="card offer-video-card">
+          <div class="headline">A Little About ${brandName}</div>
+          ${videoIntro}
+          <div id="offer-video">${ytEmbed}</div>
+        </div>
         ${whyChoose.length ? `<div class="card"><div class="headline">Why Choose ${brandName}?</div><div class="card-grid">${whyChoose.map((item) => {
           const [title, ...descArr] = item.split(':');
           const desc = descArr.join(':').trim();
@@ -423,15 +454,25 @@ document.addEventListener('DOMContentLoaded', function() {
   return carouselsHtml + carouselStyle + carouselScript;
 }
 
-function generateStaticPage({ title, headExtras, bodyClass, mainHtml, navbarHtml, carouselsHtml, bannerHtml }) {
+function generateStaticPage({ title, headExtras, bodyClass, mainHtml, navbarHtml, carouselsHtml, bannerHtml, description, canonical, image }) {
+  const metaTags = getMetaTags({
+    title,
+    description: description || "Turn referrals into real rewards with the UK's best referral and affiliate offers. Start earning today with Refer 2 Earn.",
+    url: canonical || BASE_URL,
+    image: image || DEFAULT_IMAGE,
+  });
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title}</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="48x48">
     <link rel="stylesheet" href="/styles/brand-colors.css">
     <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="canonical" href="${canonical || BASE_URL}">
+    ${metaTags}
     ${headExtras || ''}
 </head>
 <body class="${bodyClass}">
@@ -528,6 +569,40 @@ async function generateBrandColorsCSS(records, colMap) {
   console.log('Generated brand-colors.css');
 }
 
+// --- SITEMAP GENERATION ---
+function generateSitemap({ offerFolders, baseUrl }) {
+  const staticPages = [
+    '/',
+    '/pages/information.html',
+    '/pages/privacy-policy.html',
+    '/pages/terms-of-use.html',
+  ];
+  const offerPages = offerFolders.map(folder => `/pages/offers/${folder}/`);
+  const allUrls = staticPages.concat(offerPages);
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${allUrls.map(url => `  <url><loc>${baseUrl}${url.replace(/\\/g, '/')}</loc></url>`).join('\n')}
+</urlset>`;
+  return sitemap;
+}
+
+// --- META TAG HELPERS ---
+function getMetaTags({ title, description, url, image }) {
+  return `
+    <meta name="description" content="${description}">
+    <meta property="og:title" content="${title}">
+    <meta property="og:description" content="${description}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="${url}">
+    <meta property="og:image" content="${image}">
+    <meta property="og:site_name" content="${SITE_NAME}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${title}">
+    <meta name="twitter:description" content="${description}">
+    <meta name="twitter:image" content="${image}">
+  `;
+}
+
 async function main() {
   // Fetch styles tab for brand colors
   const stylesResponse = await fetchFn(SHEET_STYLES_URL);
@@ -571,7 +646,12 @@ async function main() {
       fs.mkdirSync(offerDir, { recursive: true });
     }
     const filePath = path.join(offerDir, 'index.html');
-    fs.writeFileSync(filePath, offerTemplate(row, colMap, navbarHtml, carouselsHtml, bannerHtml));
+    // --- Meta tags for offer pages ---
+    const offerTitle = getVal(row, 'Headline', colMap) || '';
+    const offerDesc = getVal(row, 'Subheadline', colMap) || '';
+    const offerCanonical = `${BASE_URL}/pages/offers/${folderName}/`;
+    const offerImage = DEFAULT_IMAGE;
+    fs.writeFileSync(filePath, offerTemplate(row, colMap, navbarHtml, carouselsHtml, bannerHtml, offerTitle, offerDesc, offerCanonical, offerImage));
     generatedFiles.push(folderName);
     console.log(`Generated: pages/offers/${folderName}/index.html`);
     created++;
@@ -580,6 +660,11 @@ async function main() {
   const manifestPath = path.join(OFFERS_DIR, 'generated_offers.json');
   fs.writeFileSync(manifestPath, JSON.stringify(generatedFiles, null, 2));
   console.log(`Generated: pages/offers/generated_offers.json`);
+
+  // --- SITEMAP ---
+  const sitemapXml = generateSitemap({ offerFolders: generatedFiles, baseUrl: BASE_URL });
+  fs.writeFileSync(path.join(__dirname, '../public/sitemap.xml'), sitemapXml, 'utf8');
+  console.log('Generated: sitemap.xml');
 
   if (created === 0) {
     console.log('No offer pages generated.');
@@ -591,7 +676,7 @@ async function main() {
   // 1. INDEX.HTML
   const indexMainHtml = `
     <div class="card hero-card">
-      <div class="headline">Welcome to Refer 2 Earn</div>
+      <div class="headline">Welcome to ${SITE_NAME}</div>
       <div class="subheadline">
         Your hub for the UK's best dual-incentive referral and affiliate offers! Whether you're a content creator, blogger, social media influencer, or just someone with a network of friends, this site is designed to help you turn your audience and connections into real, passive side-income.
       </div>
@@ -615,38 +700,135 @@ async function main() {
   fs.writeFileSync(path.join(__dirname, '../public/index.html'), indexHtml, 'utf8');
 
   // 2. INFORMATION.HTML
+  const faqAccordionHtml = `
+    <div class="card hero-card">
+      <div class="headline">Frequently Asked Questions (FAQ)</div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">What are the best side hustle ideas in the UK for 2024?</div>
+          <div class="faq-answer">${SITE_NAME} helps you discover the best referral and affiliate programs to start earning extra money online quickly and easily.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How can I make extra money online with referral programs?</div>
+          <div class="faq-answer">Sign up for free referral and affiliate programs listed on ${SITE_NAME}, get your unique referral link, and share it with friends, family, or your social media followers. When someone signs up or makes a purchase using your link, you earn a commission or bonus, making it a great side hustle for beginners.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Are referral programs a legit way to start a side hustle?</div>
+          <div class="faq-answer">Yes! Referral and affiliate programs are legitimate and popular ways to earn side income in the UK. We only list trusted offers from reputable brands, banks, and cashback sites, so you can start your side hustle with confidence.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What are some easy side hustles for beginners?</div>
+          <div class="faq-answer">Referral programs, affiliate marketing, and cashback offers are some of the easiest side hustles to start. You don't need any special skills or investment—just sign up, share your link, and start earning rewards for every successful referral.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How much can I earn from referral and affiliate side hustles?</div>
+          <div class="faq-answer">Your earnings depend on the program and how many people you refer. Some offers pay cash bonuses, others offer gift cards or account credit. The more you share your links and promote offers, the more you can earn as a side hustle.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can I do referral side hustles from home?</div>
+          <div class="faq-answer">Absolutely! All the referral and affiliate programs listed on ${SITE_NAME} can be done from home, using your phone or computer. Share your links online, through WhatsApp, email, or social media to maximize your side income.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How do I track my side hustle earnings and referrals?</div>
+          <div class="faq-answer">Each partner site provides a dashboard where you can track your referrals, sign-ups, and earnings. Log in to your account on the partner site to see your progress and manage your side hustle income.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Are there any fees to join these side hustle programs?</div>
+          <div class="faq-answer">No, all referral and affiliate programs listed on ${SITE_NAME} are free to join. There are no hidden fees or costs to start your side hustle.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What if I have a problem with a referral offer or my side hustle payout?</div>
+          <div class="faq-answer">If you have any issues with a specific offer or payout, contact the partner site's support team. For questions about ${SITE_NAME} or to suggest new side hustle ideas, feel free to contact us directly.</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+          question.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const isActive = this.classList.contains('active');
+            faqQuestions.forEach(q => {
+              q.classList.remove('active');
+              q.nextElementSibling.classList.remove('active');
+            });
+            if (!isActive) {
+              this.classList.add('active');
+              answer.classList.add('active');
+            }
+          });
+        });
+      });
+    </script>
+  <style>
+    .faq-list { margin: 0; padding: 0; }
+    .faq-item { margin-bottom: 8px; }
+    .faq-question {
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 16px 20px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #232f3e;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .faq-question:hover {
+      background: #e9ecef;
+      border-color: #7c2ae8;
+    }
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      font-weight: bold;
+      color: #7c2ae8;
+      transition: transform 0.3s ease;
+    }
+    .faq-question.active::after {
+      transform: translateY(-50%) rotate(45deg);
+    }
+    .faq-answer {
+      background: #fff;
+      border: 1px solid #e9ecef;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      margin-top: -1px;
+    }
+    .faq-answer.active {
+      padding: 16px 20px;
+      max-height: 500px;
+    }
+  </style>
+  `;
   const infoMainHtml = `
         <div class="info-section">
             <div class="card hero-card">
                 <div class="headline">How It Works</div>
-                <div><b>Refer 2 Earn</b> is your guide to starting a profitable side hustle online in the UK. Here's how you can earn extra money with referral and affiliate programs, even as a complete beginner:</div>
+                <div><b>${SITE_NAME}</b> is your guide to starting a profitable side hustle online in the UK. Here's how you can earn extra money with referral and affiliate programs, even as a complete beginner:</div>
                 <ol>
-                    <li><b>Explore the Best Side Hustle Offers:</b> Browse our curated list of top UK referral programs, affiliate deals, and cashback offers. We highlight the easiest and most rewarding side hustles for beginners and experienced users alike.</li>
-                    <li><b>Sign Up for Free:</b> Choose an offer that fits your interests and sign up for the referral or affiliate program at no cost. All programs listed on Refer 2 Earn are free to join and require no upfront investment.</li>
+                    <li><b>Discover the Best Side Hustle Offers:</b> Browse our curated list of top UK referral programs, affiliate deals, and cashback offers. We highlight the easiest and most rewarding side hustles for beginners and experienced users alike.</li>
+                    <li><b>Sign Up for Free:</b> Choose an offer that fits your interests and sign up for the referral or affiliate program at no cost. All programs listed on ${SITE_NAME} are free to join and require no upfront investment.</li>
                     <li><b>Get Your Unique Referral Link:</b> After joining, you'll receive a personal referral or affiliate link. This link tracks your referrals and ensures you get credit for every sign-up or purchase.</li>
                     <li><b>Share & Promote Your Links:</b> Share your referral links with friends, family, or your audience on social media, WhatsApp, email, or your blog. The more you promote, the more you can earn from your side hustle.</li>
                     <li><b>Earn Cash, Bonuses, or Rewards:</b> When someone uses your link to sign up or make a purchase, you'll earn cash rewards, bonuses, or other incentives—making this one of the easiest ways to make extra money online in the UK.</li>
                     <li><b>Track Your Side Hustle Earnings:</b> Log in to the partner site's dashboard to monitor your referrals, track your earnings, and see your progress as your side hustle grows.</li>
                 </ol>
-                <div style="margin-top:12px; color:#555; font-size:0.98rem;">Most referral and affiliate offers are open to everyone in the UK, and you can refer as many people as you like. Start your side hustle today and discover how easy it is to earn extra income online with Refer 2 Earn.</div>
+                <div style="margin-top:12px; color:#555; font-size:0.98rem;">Most referral and affiliate offers are open to everyone in the UK, and you can refer as many people as you like. Start your side hustle today and discover how easy it is to earn extra income online with ${SITE_NAME}.</div>
             </div>
-            <div class="card hero-card">
-                <div class="headline">Frequently Asked Questions (FAQ)</div>
-                <ul class="faq-list">
-                    <li><b>What are the best side hustle ideas in the UK for 2024?</b><br>Some of the top side hustles in the UK include joining referral programs, affiliate marketing, cashback offers, online surveys, and promoting products or services through social media. Refer 2 Earn helps you discover the best referral and affiliate programs to start earning extra money online quickly and easily.</li>
-                    <li><b>How can I make extra money online with referral programs?</b><br>Sign up for free referral and affiliate programs listed on Refer 2 Earn, get your unique referral link, and share it with friends, family, or your social media followers. When someone signs up or makes a purchase using your link, you earn a commission or bonus, making it a great side hustle for beginners.</li>
-                    <li><b>Are referral programs a legit way to start a side hustle?</b><br>Yes! Referral and affiliate programs are legitimate and popular ways to earn side income in the UK. We only list trusted offers from reputable brands, banks, and cashback sites, so you can start your side hustle with confidence.</li>
-                    <li><b>What are some easy side hustles for beginners?</b><br>Referral programs, affiliate marketing, and cashback offers are some of the easiest side hustles to start. You don't need any special skills or investment—just sign up, share your link, and start earning rewards for every successful referral.</li>
-                    <li><b>How much can I earn from referral and affiliate side hustles?</b><br>Your earnings depend on the program and how many people you refer. Some offers pay cash bonuses, others offer gift cards or account credit. The more you share your links and promote offers, the more you can earn as a side hustle.</li>
-                    <li><b>Can I do referral side hustles from home?</b><br>Absolutely! All the referral and affiliate programs listed on Refer 2 Earn can be done from home, using your phone or computer. Share your links online, through WhatsApp, email, or social media to maximize your side income.</li>
-                    <li><b>How do I track my side hustle earnings and referrals?</b><br>Each partner site provides a dashboard where you can track your referrals, sign-ups, and earnings. Log in to your account on the partner site to see your progress and manage your side hustle income.</li>
-                    <li><b>Are there any fees to join these side hustle programs?</b><br>No, all referral and affiliate programs listed on Refer 2 Earn are free to join. There are no hidden fees or costs to start your side hustle.</li>
-                    <li><b>What if I have a problem with a referral offer or my side hustle payout?</b><br>If you have any issues with a specific offer or payout, contact the partner site's support team. For questions about Refer 2 Earn or to suggest new side hustle ideas, feel free to contact us directly.</li>
-                </ul>
-            </div>
+            ${faqAccordionHtml}
             <div class="card hero-card">
                 <div class="headline">Affiliate & Referral Disclosure</div>
-                <div>Some links on Refer 2 Earn are affiliate or referral links. This means we may earn a commission or bonus if you sign up or make a purchase through our links. This helps keep the site free and supports our work. We only list offers we believe provide genuine value.</div>
+                <div>Some links on ${SITE_NAME} are affiliate or referral links. This means we may earn a commission or bonus if you sign up or make a purchase through our links. This helps keep the site free and supports our work. We only list offers we believe provide genuine value.</div>
                 <div style="margin-top:10px;"><b>Transparency matters:</b> We always aim to clearly mark affiliate/referral links and keep our recommendations unbiased.</div>
             </div>
         </div>`;
@@ -663,7 +845,7 @@ async function main() {
         }
     </style>`;
   const infoHtml = generateStaticPage({
-    title: 'Information – Refer 2 Earn',
+    title: `Information – ${SITE_NAME}`,
     headExtras: infoHeadExtras,
     bodyClass: 'brand-home',
     mainHtml: infoMainHtml,
@@ -673,15 +855,106 @@ async function main() {
   fs.writeFileSync(path.join(__dirname, '../public/pages/information.html'), infoHtml, 'utf8');
 
   // 3. PRIVACY-POLICY.HTML
+  // LEGAL REVIEW REMINDER: This privacy policy should be reviewed quarterly for GDPR/UK DPA compliance.
+  // Key areas to monitor: cookie policy details, data retention periods, user rights, third-party data sharing.
+  // Consider adding: cookie consent banner, detailed analytics disclosure, data breach notification procedures.
   const privacyMainHtml = `
         <div class="policy-section">
             <div class="card hero-card">
                 <div class="headline">Privacy Policy</div>
-                <div><b>Refer 2 Earn</b> is committed to protecting your privacy. This policy explains how we handle your information:</div>
-                <div style="margin-top:10px;"><b>What We Collect:</b> We do not collect personal data unless you contact us. We may collect your email address if you choose to reach out.</div>
-                <div style="margin-top:10px;"><b>Cookies:</b> We use cookies only for basic site functionality and analytics. Your use of partner sites is subject to their privacy policies.</div>
-                <div style="margin-top:10px;"><b>Third-Party Links:</b> Our site contains links to partner and affiliate sites. Your use of those sites is subject to their privacy policies.</div>
-                <div style="margin-top:10px;"><b>Contact:</b> If you have questions about privacy, please email us at [your-email@example.com].</div>
+                <div><b>${SITE_NAME}</b> is committed to protecting your privacy and ensuring compliance with the General Data Protection Regulation (GDPR) and the UK Data Protection Act 2018. This policy explains how we handle your information when you visit our website.</div>
+                <div class="policy-subsection">
+                    <h3>Information We Collect</h3>
+                    <div><b>Personal Data:</b> We do not collect personal data unless you voluntarily provide it by contacting us. If you choose to reach out, we may collect:</div>
+                    <ul>
+                        <li>Email address (if you contact us)</li>
+                        <li>Name (if provided in your message)</li>
+                        <li>Any other information you choose to share in your communication</li>
+                    </ul>
+                    <div><b>Automatically Collected Data:</b> When you visit our website, we may collect:</div>
+                    <ul>
+                        <li>IP address and general location data</li>
+                        <li>Browser type and version</li>
+                        <li>Operating system</li>
+                        <li>Pages visited and time spent on site</li>
+                        <li>Referring website (if applicable)</li>
+                    </ul>
+                </div>
+                <div class="policy-subsection">
+                    <h3>How We Use Your Information</h3>
+                    <ul>
+                        <li><b>Website Analytics:</b> To understand how visitors use our site and improve user experience</li>
+                        <li><b>Communication:</b> To respond to your inquiries and provide customer support</li>
+                        <li><b>Site Functionality:</b> To ensure the website operates properly and securely</li>
+                        <li><b>Legal Compliance:</b> To meet our legal obligations and protect our rights</li>
+                    </ul>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Cookies and Tracking</h3>
+                    <div>We use cookies for the following purposes:</div>
+                    <ul>
+                        <li><b>Essential Cookies:</b> Required for basic site functionality and security</li>
+                        <li><b>Analytics Cookies:</b> To understand website usage and improve performance</li>
+                        <li><b>Affiliate Tracking:</b> To track referral links and ensure proper attribution</li>
+                    </ul>
+                    <div style="margin-top: 10px;">You can manage cookie preferences through your browser settings. Please note that disabling certain cookies may affect site functionality.</div>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Third-Party Services</h3>
+                    <div>We may use third-party services that process data on our behalf:</div>
+                    <ul>
+                        <li><b>Analytics Providers:</b> To analyze website traffic and user behavior</li>
+                        <li><b>Web Hosting Services:</b> To host and maintain our website</li>
+                        <li><b>Affiliate Networks:</b> To track and manage referral programs</li>
+                    </ul>
+                    <div style="margin-top: 10px;">These services have their own privacy policies, and we encourage you to review them.</div>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Data Retention</h3>
+                    <ul>
+                        <li><b>Contact Information:</b> We retain email communications for up to 2 years to provide ongoing support</li>
+                        <li><b>Analytics Data:</b> Automatically collected data is retained for up to 26 months</li>
+                        <li><b>Legal Requirements:</b> We may retain data longer if required by law or to protect our rights</li>
+                    </ul>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Your Rights Under GDPR</h3>
+                    <div>As a UK resident, you have the following rights:</div>
+                    <ul>
+                        <li><b>Right to Access:</b> Request a copy of your personal data</li>
+                        <li><b>Right to Rectification:</b> Request correction of inaccurate data</li>
+                        <li><b>Right to Erasure:</b> Request deletion of your personal data</li>
+                        <li><b>Right to Restrict Processing:</b> Request limitation of data processing</li>
+                        <li><b>Right to Data Portability:</b> Request transfer of your data</li>
+                        <li><b>Right to Object:</b> Object to processing of your data</li>
+                        <li><b>Right to Withdraw Consent:</b> Withdraw consent where processing is based on consent</li>
+                    </ul>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Data Security</h3>
+                    <div>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.</div>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Third-Party Links</h3>
+                    <div>Our website contains links to partner and affiliate sites. We are not responsible for the privacy practices of these external sites. We encourage you to review their privacy policies before providing any personal information.</div>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Changes to This Policy</h3>
+                    <div>We may update this privacy policy from time to time. We will notify you of any material changes by posting the updated policy on our website with a new effective date.</div>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Contact Information</h3>
+                    <div>If you have any questions about this privacy policy or wish to exercise your rights, please contact us:</div>
+                    <ul>
+                        <li><b>Email:</b> privacy@${SITE_DOMAIN}</li>
+                        <li><b>Response Time:</b> We aim to respond to all privacy-related inquiries within 30 days</li>
+                    </ul>
+                    <div style="margin-top: 10px;">If you are not satisfied with our response, you have the right to lodge a complaint with the Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank">ico.org.uk</a>.</div>
+                </div>
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #e9ecef; color: #666; font-size: 0.9rem;">
+                    <b>Last Updated:</b> December 2024<br>
+                    <b>Effective Date:</b> December 1, 2024
+                </div>
             </div>
         </div>`;
   const privacyHeadExtras = `<style>
@@ -692,9 +965,13 @@ async function main() {
             border-image: linear-gradient(90deg, #232f3e, #3a506b, #7c2ae8) 1;
             border-radius: 18px;
         }
+        .policy-subsection { margin-top: 20px; }
+        .policy-subsection h3 { color: #232f3e; margin-bottom: 10px; font-size: 1.1rem; }
+        .policy-subsection ul { margin: 10px 0; padding-left: 20px; }
+        .policy-subsection li { margin-bottom: 5px; }
     </style>`;
   const privacyHtml = generateStaticPage({
-    title: 'Privacy Policy – Refer 2 Earn',
+    title: `Privacy Policy – ${SITE_NAME}`,
     headExtras: privacyHeadExtras,
     bodyClass: 'brand-home',
     mainHtml: privacyMainHtml,
@@ -704,17 +981,135 @@ async function main() {
   fs.writeFileSync(path.join(__dirname, '../public/pages/privacy-policy.html'), privacyHtml, 'utf8');
 
   // 4. TERMS-OF-USE.HTML
+  // LEGAL REVIEW REMINDER: This terms of use should be reviewed quarterly for legal compliance.
+  // Key areas to monitor: affiliate marketing regulations, consumer protection laws, dispute resolution procedures.
+  // Consider adding: specific affiliate disclosure requirements, consumer rights under UK law, updated dispute resolution.
   const termsMainHtml = `
         <div class="policy-section">
             <div class="card hero-card">
                 <div class="headline">Terms of Use</div>
-                <div><b>By using Refer 2 Earn, you agree to the following terms:</b></div>
-                <div style="margin-top:10px;"><b>Use of Links:</b> You agree to use referral and affiliate links responsibly. Do not misuse or spam links.</div>
-                <div style="margin-top:10px;"><b>Offer Changes:</b> Offers, incentives, and terms may change or be withdrawn at any time by partner sites. We are not responsible for changes or errors on partner sites.</div>
-                <div style="margin-top:10px;"><b>Payouts:</b> All payouts and rewards are managed by the partner site. Refer 2 Earn does not process or guarantee payments.</div>
-                <div style="margin-top:10px;"><b>Content:</b> We strive for accuracy but cannot guarantee all information is up to date. Always check the partner site for the latest details.</div>
-                <div style="margin-top:10px;"><b>Liability:</b> Refer 2 Earn is not liable for losses or issues arising from use of this site or partner offers.</div>
-                <div style="margin-top:10px;"><b>Contact:</b> For questions about these terms, please email us at [your-email@example.com].</div>
+                <div><b>By accessing and using ${SITE_NAME}, you agree to be bound by these Terms of Use.</b> If you do not agree to these terms, please do not use our website.</div>
+                <div class="policy-subsection">
+                    <h3>Acceptance of Terms</h3>
+                    <div>By using our website, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use. These terms constitute a legally binding agreement between you and ${SITE_NAME}.</div>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Use of Referral and Affiliate Links</h3>
+                    <ul>
+                        <li>You agree to use referral and affiliate links responsibly and in accordance with applicable laws and regulations</li>
+                        <li>Do not misuse, spam, or engage in fraudulent activities with referral links</li>
+                        <li>Respect the terms and conditions of individual partner programs</li>
+                        <li>Do not attempt to manipulate or artificially inflate referral statistics</li>
+                    </ul>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Offer Changes and Availability</h3>
+                    <ul>
+                        <li>Offers, incentives, and terms may change or be withdrawn at any time by partner sites without notice</li>
+                        <li>We are not responsible for changes, errors, or discontinuation of offers on partner sites</li>
+                        <li>We do not guarantee the availability or accuracy of any offers listed on our website</li>
+                        <li>Always verify current terms and conditions directly with the partner site before proceeding</li>
+                    </ul>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Payouts and Rewards</h3>
+                    <ul>
+                        <li>All payouts, rewards, and bonuses are managed exclusively by the partner sites</li>
+                        <li>${SITE_NAME} does not process, guarantee, or have any control over payments</li>
+                        <li>Payment terms, minimum thresholds, and processing times are determined by partner sites</li>
+                        <li>We are not responsible for delays, disputes, or issues with payments from partner programs</li>
+                    </ul>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Content and Information</h3>
+                    <ul>
+                        <li>While we strive for accuracy, we cannot guarantee that all information on our website is current, complete, or error-free</li>
+                        <li>Information about offers, terms, and conditions may become outdated</li>
+                        <li>We strongly recommend checking the partner site directly for the most up-to-date information</li>
+                        <li>We are not responsible for any decisions made based on information provided on our website</li>
+                    </ul>
+                </div>
+                <div class="policy-subsection">
+                    <h3>External Content and Third-Party Sites</h3>
+                    <ul>
+                        <li>Our website contains links to external websites operated by third parties</li>
+                        <li>We do not endorse, control, or have any responsibility for the content, privacy policies, or practices of third-party sites</li>
+                        <li>Your use of third-party sites is subject to their respective terms of service and privacy policies</li>
+                        <li>We are not liable for any damages or losses arising from your use of third-party sites</li>
+                    </ul>
+                </div>
+                <div class="policy-subsection">
+                    <h3>User Conduct</h3>
+                    <ul>
+                        <li>You agree not to use our website for any unlawful purpose or in any way that could damage, disable, or impair the site</li>
+                        <li>Do not attempt to gain unauthorized access to our systems or interfere with site functionality</li>
+                        <li>Respect intellectual property rights and do not copy, reproduce, or distribute our content without permission</li>
+                        <li>Do not engage in any activity that could harm other users or the reputation of our website</li>
+                    </ul>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Limitation of Liability</h3>
+                    <div>To the maximum extent permitted by law, ${SITE_NAME} shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising from:</div>
+                    <ul>
+                        <li>Your use of our website or any information provided</li>
+                        <li>Your participation in referral or affiliate programs</li>
+                        <li>Any issues with partner sites or their services</li>
+                        <li>Loss of data, profits, or business opportunities</li>
+                        <li>Any other damages related to your use of our services</li>
+                    </ul>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Indemnification</h3>
+                    <div>You agree to indemnify and hold harmless ${SITE_NAME} from any claims, damages, losses, or expenses arising from your use of our website or violation of these terms.</div>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Termination</h3>
+                    <ul>
+                        <li>We may terminate or suspend your access to our website at any time, with or without cause</li>
+                        <li>Grounds for termination include violation of these terms, fraudulent activity, or any other conduct we deem inappropriate</li>
+                        <li>Upon termination, your right to use our website ceases immediately</li>
+                        <li>Provisions of these terms that by their nature should survive termination shall remain in effect</li>
+                    </ul>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Changes to Terms</h3>
+                    <ul>
+                        <li>We reserve the right to modify these Terms of Use at any time</li>
+                        <li>Changes will be effective immediately upon posting on our website</li>
+                        <li>We will notify users of material changes by updating the "Last Updated" date</li>
+                        <li>Your continued use of the website after changes constitutes acceptance of the new terms</li>
+                        <li>We encourage you to review these terms periodically</li>
+                    </ul>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Dispute Resolution</h3>
+                    <ul>
+                        <li>Any disputes arising from these terms or your use of our website will be resolved through good faith negotiation</li>
+                        <li>If negotiation fails, disputes will be resolved through binding arbitration in the UK</li>
+                        <li>Arbitration will be conducted by a neutral arbitrator in accordance with UK law</li>
+                        <li>You agree to waive any right to a jury trial or class action lawsuit</li>
+                    </ul>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Governing Law</h3>
+                    <div>These Terms of Use are governed by and construed in accordance with the laws of England and Wales. Any legal proceedings shall be subject to the exclusive jurisdiction of the courts of England and Wales.</div>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Severability</h3>
+                    <div>If any provision of these terms is found to be unenforceable or invalid, the remaining provisions will continue in full force and effect.</div>
+                </div>
+                <div class="policy-subsection">
+                    <h3>Contact Information</h3>
+                    <div>If you have any questions about these Terms of Use, please contact us:</div>
+                    <ul>
+                        <li><b>Email:</b> legal@${SITE_DOMAIN}</li>
+                        <li><b>Response Time:</b> We aim to respond to all legal inquiries within 14 days</li>
+                    </ul>
+                </div>
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #e9ecef; color: #666; font-size: 0.9rem;">
+                    <b>Last Updated:</b> December 2024<br>
+                    <b>Effective Date:</b> December 1, 2024
+                </div>
             </div>
         </div>`;
   const termsHeadExtras = `<style>
@@ -725,9 +1120,13 @@ async function main() {
             border-image: linear-gradient(90deg, #232f3e, #3a506b, #7c2ae8) 1;
             border-radius: 18px;
         }
+        .policy-subsection { margin-top: 20px; }
+        .policy-subsection h3 { color: #232f3e; margin-bottom: 10px; font-size: 1.1rem; }
+        .policy-subsection ul { margin: 10px 0; padding-left: 20px; }
+        .policy-subsection li { margin-bottom: 5px; }
     </style>`;
   const termsHtml = generateStaticPage({
-    title: 'Terms of Use – Refer 2 Earn',
+    title: `Terms of Use – ${SITE_NAME}`,
     headExtras: termsHeadExtras,
     bodyClass: 'brand-home',
     mainHtml: termsMainHtml,
