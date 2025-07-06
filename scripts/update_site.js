@@ -605,12 +605,12 @@ function getMetaTags({ title, description, url, image }) {
 
 const ANALYTICS_SNIPPET = `
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KCMDM97Y7Y"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KCNDVW977V"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-KCMDM97Y7Y');
+  gtag('config', 'G-KCNDVW977V');
 </script>
 `;
 
