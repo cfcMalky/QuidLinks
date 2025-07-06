@@ -1,5 +1,8 @@
 start localhost 3000:
 npx serve public -l 3000
 
-update site:
-node scripts\update_site.js
+update local site:
+node update_local_site.js
+
+publish site to web:
+node publish_site.js

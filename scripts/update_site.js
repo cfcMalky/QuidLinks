@@ -603,6 +603,17 @@ function getMetaTags({ title, description, url, image }) {
   `;
 }
 
+const ANALYTICS_SNIPPET = `
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZX5IPLEW3T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZX5IPLEW3T');
+</script>
+`;
+
 async function main() {
   // Fetch styles tab for brand colors
   const stylesResponse = await fetchFn(SHEET_STYLES_URL);
@@ -687,7 +698,7 @@ async function main() {
       </ul>
     </div>
   `;
-  const indexHeadExtras = '';
+  const indexHeadExtras = ANALYTICS_SNIPPET;
   const indexHtml = generateStaticPage({
     title: 'QuidLinks – Turn Referrals Into Real Rewards',
     headExtras: indexHeadExtras,
