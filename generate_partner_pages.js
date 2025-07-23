@@ -64,13 +64,7 @@ function htmlTemplate(partner) {
   </header>
   <main>
     <div class="hero centered" style="margin-top:32px;">
-      <div style="background:#e9f7fa;padding:18px 24px 18px 24px;border-radius:14px;margin-bottom:28px;box-shadow:0 2px 8px rgba(80,60,120,0.07);">
-        <h2 style="font-size:1.5em;font-weight:700;margin:0 0 8px 0;color:#23243a;">Discover Top Referral & Affiliate Programs</h2>
-        <p style="font-size:1.15em;color:#444;margin:0;line-height:1.6;">
-          Explore a curated directory of the world’s best referral and affiliate programs. Compare commission rates, rewards, and terms at a glance. Find the perfect program for your audience or business, and start earning with trusted brands across every industry.
-        </p>
-      </div>
-      <h3 style="font-size:1.25em;font-weight:700;margin-bottom:8px;">${partner['Affiliate Program']} Affiliate Program</h3>
+      <h2 style="font-size:1.5em;font-weight:700;margin:0 0 8px 0;color:#23243a;">${partner['Affiliate Program']} Affiliate Program</h2>
       <p><b>Category:</b> ${partner['Category']}</p>
       ${videoEmbed}
       <p><b>Commission:</b> ${partner['Commission']} per sale</p>
