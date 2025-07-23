@@ -1,19 +1,7 @@
 {
-  "name": "quidlinks",
-  "version": "1.0.0",
-  "main": "generate_missing_offers.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "QuidLinks - Your referral and earning platform",
   "dependencies": {
     "axios": "^1.10.0",
     "cheerio": "^1.1.0",
-    "csv-parse": "^5.6.0",
-    "csv-stringify": "^6.5.2",
-    "node-fetch": "^3.3.2"
+    "csv-parse": "^6.1.0"
   }
 }

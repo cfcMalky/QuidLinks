@@ -1,0 +1,166 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: system-ui, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7faff; /* pastel blue */
+  color: #23243a;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #f9f6ff; /* pastel lavender */
+  border-bottom: 1px solid #e5e7eb;
+  padding: 32px 32px 0 32px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(80, 60, 120, 0.13); /* dark pastel shadow */
+}
+nav {
+  background: #f9f6ff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 32px;
+  margin: 0;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 16px 0;
+  color: #5a4e7c;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  transition: border 0.2s, color 0.2s;
+}
+nav a.active, nav a:hover {
+  border-bottom: 2px solid #a084e8;
+  color: #a084e8;
+}
+/* Make .hero left-aligned by default */
+.hero {
+  margin: 40px auto 32px auto;
+  padding: 32px;
+  background: #fff7fa; /* pastel pink */
+  border-radius: 16px;
+  box-shadow: 0 6px 32px rgba(120, 80, 120, 0.13); /* dark pastel shadow */
+  text-align: left;
+}
+/* Centered content for main hero section only */
+.hero .centered {
+  text-align: center;
+}
+.hero table {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+main {
+  /* max-width: 900px; */
+  width: 95%;
+  max-width: 1600px;
+  margin: 120px auto 0 auto;
+  padding: 32px 0 64px 0;
+  background: none;
+}
+h1, h2, h3 {
+  font-weight: 700;
+  color: #222;
+  margin-top: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 32px 0;
+  background: #f6faff; /* pastel blue */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(80, 120, 120, 0.10); /* dark pastel shadow */
+}
+thead {
+  background: #e9f7fa; /* lighter pastel blue */
+}
+th, td {
+  padding: 14px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+tr:hover {
+  background: #f3f0fa;
+}
+@media (max-width: 700px) {
+  header, nav, .hero, main {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .hero, main {
+    padding: 16px 4px;
+  }
+  header {
+    padding: 24px 4px 0 4px;
+  }
+  nav {
+    padding: 0 4px;
+  }
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  th, td {
+    padding: 10px 6px;
+  }
+  tr {
+    margin-bottom: 16px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(80,60,120,0.07);
+  }
+  thead {
+    display: none;
+  }
+  td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+  }
+  td:before {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    width: 45%;
+    white-space: nowrap;
+    font-weight: bold;
+    color: #888;
+    content: attr(data-label);
+  }
+}
+footer {
+  text-align: center;
+  color: #888;
+  font-size: 0.95em;
+  padding: 32px 0 16px 0;
+  background: #f9f6ff;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 64px;
+}
+body, html {
+  overflow-x: hidden;
+} 

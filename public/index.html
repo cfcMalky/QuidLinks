@@ -1,922 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuidLinks – Turn Referrals Into Real Rewards</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" href="/favicon.png" sizes="48x48">
-    <link rel="stylesheet" href="/styles/brand-colors.css">
-    <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="canonical" href="https://quidlinks.com">
-    
-    <meta name="description" content="Turn referrals into real rewards with the UK's best referral and affiliate offers. Start earning today with QuidLinks.">
-    <meta property="og:title" content="QuidLinks – Turn Referrals Into Real Rewards">
-    <meta property="og:description" content="Turn referrals into real rewards with the UK's best referral and affiliate offers. Start earning today with QuidLinks.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://quidlinks.com">
-    <meta property="og:image" content="https://quidlinks.com/banner.png">
-    <meta property="og:site_name" content="QuidLinks">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="QuidLinks – Turn Referrals Into Real Rewards">
-    <meta name="twitter:description" content="Turn referrals into real rewards with the UK's best referral and affiliate offers. Start earning today with QuidLinks.">
-    <meta name="twitter:image" content="https://quidlinks.com/banner.png">
-  
-    
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KCNDVW977V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-KCNDVW977V');
-</script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuidLinks</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="brand-home">
-    
-<header class="site-banner">
-    <div class="banner-bg">
-        <img src="/banner.png" alt="QuidLinks banner" class="banner-img">
-        <div class="banner-overlay-bg"></div>
+<body>
+  <header>
+    <h1>QuidLinks</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="hero centered">
+      <h2>Global Affiliate Rewards, Simplified</h2>
+      <p>
+        Welcome to QuidLinks – your worldwide hub for discovering, comparing, and sharing the best affiliate and referral programs across every industry. Whether you’re a creator, entrepreneur, marketer, or simply someone with a network, QuidLinks empowers you to earn more, wherever you are.
+      </p>
+      <ul style="max-width:600px; margin:24px auto 0 auto;">
+        <li><b>All-in-one platform:</b> Browse a curated selection of top affiliate and referral programs from around the globe, with transparent terms and real rewards.</li>
+        <li><b>Multi-currency support:</b> Instantly view payout thresholds in your preferred currency for easy comparison, no matter where you’re based.</li>
+        <li><b>Open to everyone:</b> No restrictions – join, share, and earn from anywhere in the world.</li>
+        <li><b>Continuous improvement:</b> We’re always adding new programs and features to help you maximize your earnings.</li>
+      </ul>
     </div>
-    <div class="banner-overlay">
-        <div class="banner-title">QuidLinks</div>
-        <div class="banner-tagline">Turn Referrals Into Real Rewards</div>
-        <nav class="banner-nav-bar-bg">
-            <div class="home-nav-bar" style="display: flex; justify-content: center; gap: 18px;">
-                <a href="/" class="brand-nav-btn">Home</a>
-                <a href="/pages/information.html" class="brand-nav-btn">Information</a>
-                <a href="/pages/privacy-policy.html" class="brand-nav-btn">Privacy Policy</a>
-                <a href="/pages/terms-of-use.html" class="brand-nav-btn">Terms of Use</a>
-            </div>
-        </nav>
+    <div class="hero">
+      <h2>Programs</h2>
+      <div style="margin-bottom:16px; text-align:right;">
+        <label for="currency-selector" style="font-weight:500;">Currency: </label>
+        <select id="currency-selector" style="padding:4px 8px; border-radius:4px; border:1px solid #e5e7eb;">
+          <option value="USD" selected>USD ($)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="AUD">AUD (A$)</option>
+          <option value="CAD">CAD (C$)</option>
+          <option value="INR">INR (₹)</option>
+        </select>
+      </div>
+      <table id="programs-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Program</th>
+          <th>Commission Rate</th>
+          <th id="avg-commission-header">Avg Commission Per Sale</th>
+          <th id="payout-threshold-header">Payout Threshold</th>
+          <th>Cookie Life</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Accounting</td><td><a href="programs/easy-month-end.html">Easy Month End</a></td><td>30%</td><td class="currency-col">26.70</td><td class="currency-col">50.00</td><td>60 days</td></tr>
+<tr><td>Productivity</td><td><a href="programs/compass.html">Compass</a></td><td>20%</td><td class="currency-col">40.00</td><td class="currency-col">20.00</td><td>110 days</td></tr>
+<tr><td>Sales</td><td><a href="programs/writecream.html">Writecream</a></td><td>35%</td><td class="currency-col">17.50</td><td class="currency-col">15.00</td><td>90 days</td></tr>
+<tr><td>Marketing</td><td><a href="programs/grape-leads.html">Grape Leads</a></td><td>25%</td><td class="currency-col">50.00</td><td class="currency-col">50.00</td><td>60 days</td></tr>
+<tr><td>Marketing</td><td><a href="programs/reditus.html">Reditus</a></td><td>30%</td><td class="currency-col">36.00</td><td class="currency-col">50.00</td><td>30 days</td></tr>
+<tr><td>Sales</td><td><a href="programs/timelinesai.html">TimelinesAI</a></td><td>20%</td><td class="currency-col">19.80</td><td class="currency-col">50.00</td><td>60 days</td></tr>
+<tr><td>Sales</td><td><a href="programs/algomo.html">Algomo</a></td><td>25%</td><td class="currency-col">250.00</td><td class="currency-col">20.00</td><td>60 days</td></tr>
+<tr><td>Productivity</td><td><a href="programs/insightful.html">Insightful</a></td><td>30%</td><td class="currency-col">39.00</td><td class="currency-col">50.00</td><td>60 days</td></tr>
+<tr><td>Sales</td><td><a href="programs/snitcher.html">Snitcher</a></td><td>25%</td><td class="currency-col">60.00</td><td class="currency-col">50.00</td><td>90 days</td></tr>
+<tr><td>Development</td><td><a href="programs/uptimerobot.html">UptimeRobot</a></td><td>20%</td><td class="currency-col">10.00</td><td class="currency-col">100.00</td><td>30 days</td></tr>
+<tr><td>Development</td><td><a href="programs/venly.html">Venly</a></td><td>20%</td><td class="currency-col">99.80</td><td class="currency-col">50.00</td><td>90 days</td></tr>
+<tr><td>Sales</td><td><a href="programs/reactin.html">ReactIn</a></td><td>30%</td><td class="currency-col">18.00</td><td class="currency-col">50.00</td><td>60 days</td></tr>
+<tr><td>Marketing</td><td><a href="programs/webinargeek.html">WebinarGeek</a></td><td>20%</td><td class="currency-col">17.53</td><td class="currency-col">54.35</td><td>30 days</td></tr>
+<tr><td>Sales</td><td><a href="programs/warmupinbox.html">WarmupInbox</a></td><td>20%</td><td class="currency-col">68.00</td><td class="currency-col">100.00</td><td>60 days</td></tr>
+<tr><td>Business</td><td><a href="programs/pricefy.html">Pricefy</a></td><td>30%</td><td class="currency-col">44.70</td><td class="currency-col">50.00</td><td>60 days</td></tr>
+<tr><td>Sales</td><td><a href="programs/emaillistverify.html">EmailListVerify</a></td><td>15%</td><td class="currency-col">45.00</td><td class="currency-col">100.00</td><td>60 days</td></tr>
+<tr><td>Productivity</td><td><a href="programs/focal-ai.html">Focal AI</a></td><td>30%</td><td class="currency-col">6.00</td><td class="currency-col">50.00</td><td>60 days</td></tr>
+<tr><td>Marketing</td><td><a href="programs/geo-targetly.html">Geo Targetly</a></td><td>20%</td><td class="currency-col">16.00</td><td class="currency-col">50.00</td><td>60 days</td></tr>
+<tr><td>Marketing</td><td><a href="programs/growth-x.html">Growth-X</a></td><td>30%</td><td class="currency-col">29.70</td><td class="currency-col">30.00</td><td>60 days</td></tr>
+<tr><td>Marketing</td><td><a href="programs/boomerangme.html">Boomerangme</a></td><td>40%</td><td class="currency-col">103.60</td><td class="currency-col">50.00</td><td>60 days</td></tr>
+<tr><td>Accounting</td><td><a href="programs/joiin.html">Joiin</a></td><td>40%</td><td class="currency-col">32.00</td><td class="currency-col">25.00</td><td>90 days</td></tr>
+<tr><td>Marketing</td><td><a href="programs/factors-ai.html">Factors.ai</a></td><td>15%</td><td class="currency-col">37.50</td><td class="currency-col">100.00</td><td>90 days</td></tr>
+<tr><td>Development</td><td><a href="programs/super-monitoring.html">Super Monitoring</a></td><td>30%</td><td class="currency-col">45.00</td><td class="currency-col">50.00</td><td>60 days</td></tr>
+<tr><td>Business</td><td><a href="programs/pointerpro.html">Pointerpro</a></td><td>25%</td><td class="currency-col">100.00</td><td class="currency-col">50.00</td><td>90 days</td></tr>
+      </tbody>
+    </table>
     </div>
-</header>
-    <nav class="navbar" aria-label="Main navigation">
-
-  <button class="nav-hamburger" aria-label="Open navigation">&#9776;</button>
-  <div class="navbar-links" style="justify-content:center; width:100%; display:flex;">
-<div class="nav-category">
-      <button type="button" class="brand-nav-btn category-nav-btn">Banking</button>
-      <div class="nav-dropdown">
-        <ul>
-<li><a href="/pages/offers/monzo/" class="navbar-link">Monzo</a></li>
-<li><a href="/pages/offers/raisin/" class="navbar-link">Raisin</a></li>
-<li><a href="/pages/offers/wise/" class="navbar-link">Wise</a></li>
-        </ul>
-      </div>
-    </div>
-<div class="nav-category">
-      <button type="button" class="brand-nav-btn category-nav-btn">Business Tools</button>
-      <div class="nav-dropdown">
-        <ul>
-<li><a href="/pages/offers/baremetrics/" class="navbar-link">Baremetrics</a></li>
-<li><a href="/pages/offers/engagebay/" class="navbar-link">EngageBay</a></li>
-<li><a href="/pages/offers/fiverr/" class="navbar-link">Fiverr</a></li>
-<li><a href="/pages/offers/mailblaze/" class="navbar-link">Mail Blaze</a></li>
-<li><a href="/pages/offers/neuraltext/" class="navbar-link">Neuraltext</a></li>
-<li><a href="/pages/offers/outseta/" class="navbar-link">Outseta</a></li>
-<li><a href="/pages/offers/printify/" class="navbar-link">Printify</a></li>
-<li><a href="/pages/offers/sharelytics/" class="navbar-link">Sharelytics</a></li>
-<li><a href="/pages/offers/supermonitoring/" class="navbar-link">Super Monitoring</a></li>
-<li><a href="/pages/offers/userback/" class="navbar-link">Userback</a></li>
-        </ul>
-      </div>
-    </div>
-<div class="nav-category">
-      <button type="button" class="brand-nav-btn category-nav-btn">Cashback</button>
-      <div class="nav-dropdown">
-        <ul>
-<li><a href="/pages/offers/befrugal/" class="navbar-link">BeFrugal</a></li>
-<li><a href="/pages/offers/cashback-co-uk/" class="navbar-link">Cashback.co.uk</a></li>
-<li><a href="/pages/offers/quidco/" class="navbar-link">Quidco</a></li>
-<li><a href="/pages/offers/rakuten/" class="navbar-link">Rakuten</a></li>
-<li><a href="/pages/offers/topcashback/" class="navbar-link">TopCashback</a></li>
-        </ul>
-      </div>
-    </div>
-<div class="nav-category">
-      <button type="button" class="brand-nav-btn category-nav-btn">Media</button>
-      <div class="nav-dropdown">
-        <ul>
-<li><a href="/pages/offers/amazon-prime-video/" class="navbar-link">Amazon Prime Video</a></li>
-        </ul>
-      </div>
-    </div>
-<div class="nav-category">
-      <button type="button" class="brand-nav-btn category-nav-btn">Networks</button>
-      <div class="nav-dropdown">
-        <ul>
-<li><a href="/pages/offers/giffgaff/" class="navbar-link">Giffgaff</a></li>
-<li><a href="/pages/offers/virgin/" class="navbar-link">Virgin</a></li>
-        </ul>
-      </div>
-    </div>
-<div class="nav-category">
-      <button type="button" class="brand-nav-btn category-nav-btn">Shopping</button>
-      <div class="nav-dropdown">
-        <ul>
-<li><a href="/pages/offers/aliexpress/" class="navbar-link">AliExpress</a></li>
-<li><a href="/pages/offers/amazon/" class="navbar-link">Amazon</a></li>
-<li><a href="/pages/offers/shein/" class="navbar-link">Shein</a></li>
-<li><a href="/pages/offers/temu/" class="navbar-link">Temu</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
-    <div class="container">
-      
-        <div class="card hero-card">
-          <div class="headline">Welcome to QuidLinks</div>
-          <div class="subheadline">
-            Your hub for the UK's best dual-incentive referral and affiliate offers! Whether you're a content creator, blogger, social media influencer, or just someone with a network of friends, this site is designed to help you turn your audience and connections into real, passive side-income.
-          </div>
-          <ul class="hero-bullets hero-gradient-bullets">
-            <li><b>Hand-picked offers:</b> Only the best, most transparent referral and affiliate programs.</li>
-            <li><b>Dual rewards:</b> Both you and your friends or followers get rewarded.</li>
-            <li><b>Easy to start:</b> Browse, share, and earn – it's that simple!</li>
-          </ul>
-        </div>
-      
-      <div class="category-section banking" style="background: linear-gradient(135deg, #e3f0ff 0%, #1976d2 100%); border: 3px solid #1a237e; position:relative; border-radius:28px; margin-bottom:48px; padding:32px 0 48px 0; box-shadow:0 2px 16px rgba(26,35,126,0.06);">
-      <div class="category-title" style="color: #1a237e; text-align:center; font-size:2.1rem; font-weight:900; text-decoration:underline; margin-bottom:24px;">Banking</div>
-      <div style="position:relative; display:flex; align-items:center; justify-content:center;">
-        
-      <div class="carousel-row" style="display:flex; align-items:center; justify-content:center; width:auto; max-width:none; margin:0 auto; position:relative;">
-        <button class="carousel-chevron left" data-carousel="offers-row-banking" aria-label="Scroll left in Banking carousel" tabindex="0" role="button">&#8249;</button>
-        <div class="carousel-window" style="overflow:hidden; width:716px;">
-          <div class="carousel-track" style="display:flex; gap:36px; transition: transform 0.4s cubic-bezier(.4,0,.2,1); will-change: transform;">
-            <div class="brand-monzo"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/monzo/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/monzo/logo.png" alt="Monzo logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Monzo</div>
-          <div class="caro-offer-desc">Open a Monzo account with the link below, make a card payment, and get £5 free! Enjoy smart banking, instant notifications, and no monthly fees.</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/monzo/" class="carousel-cta-button cta-button-monzo" aria-label="View offer for Monzo"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-raisin"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/raisin/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/raisin/logo.png" alt="Raisin logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Raisin</div>
-          <div class="caro-offer-desc">Open a savings account via Raisin and get a £50 welcome bonus when you deposit £10,000 or more. Plus, refer friends and earn extra rewards for each successful referral!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/raisin/" class="carousel-cta-button cta-button-raisin" aria-label="View offer for Raisin"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-wise"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch; margin-right:8px;; --carousel-logo-url: url('/pages/offers/wise/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/wise/logo.png" alt="Wise logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Wise</div>
-          <div class="caro-offer-desc">Invite 3 friends to Wise and earn £75 for yourself. Your friends get a free card or a transfer up to £500 with zero fees!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/wise/" class="carousel-cta-button cta-button-wise" aria-label="View offer for Wise"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div>
-          </div>
-        </div>
-        <button class="carousel-chevron right" data-carousel="offers-row-banking" aria-label="Scroll right in Banking carousel" tabindex="0" role="button">&#8250;</button>
-      </div>
-    
-      </div>
-    </div><style>
-      .carousel-mini-card::after {
-        content: '';
-        position: absolute;
-        left: 10%;
-        top: 10%;
-        width: 80%;
-        height: 80%;
-        background-image: var(--carousel-logo-url);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        opacity: 0.25;
-        z-index: 1;
-        pointer-events: none;
-      }
-      .carousel-mini-card::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: rgba(255,255,255,0.7);
-        z-index: 1;
-      }
-      .carousel-mini-card .caro-offer-title,
-      .carousel-mini-card .caro-offer-desc,
-      .carousel-mini-card .carousel-cta-button {
-        position: relative;
-        z-index: 2;
-      }
-    </style><style>
-.carousel-viewport { overflow: hidden; position: relative; box-sizing: content-box; }
-.carousel-track { display: flex; transition: transform 0.4s cubic-bezier(.4,0,.2,1); will-change: transform; gap: 36px; }
-.carousel-mini-card { transition: box-shadow 0.2s, background 0.2s; box-sizing: border-box; width: 340px !important; height: 400px !important; min-width: 340px !important; max-width: 340px !important; flex: 0 0 auto !important; }
-.carousel-mini-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.13); }
-.carousel-cta-button { font-weight: 700; border-radius: 24px; text-align: center; font-size: 1.05rem; box-shadow: none; border: none; transition: box-shadow 0.2s; min-width: 120px; max-width: 180px; padding: 10px 0; position:relative; overflow:hidden; background: linear-gradient(90deg, var(--carousel-mini-card-btn-grad-1, #111), var(--carousel-mini-card-btn-grad-2, #333)); color: #fff; margin: 0 auto; display: block; }
-.carousel-cta-button:hover { box-shadow: 0 2px 12px rgba(25,118,210,0.18); }
-.carousel-cta-gradient-text { color: inherit; display:inline-block; width:100%; font-weight:inherit; }
-.caro-offer-desc { background: linear-gradient(90deg, var(--carousel-mini-card-text-grad-1, #232f3e), var(--carousel-mini-card-text-grad-2, #232f3e)); background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent; display: block; }
-.carousel-chevron { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 2.5rem; cursor: pointer; z-index: 2; }
-.carousel-chevron.left { left: -32px; }
-.carousel-chevron.right { right: -32px; }
-@media (max-width: 1200px) { .carousel-viewport { width: 100vw !important; } .carousel-mini-card { min-width: 90vw !important; max-width: 90vw !important; } }
-</style><script>
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.carousel-row').forEach(function(row) {
-    const windowEl = row.querySelector('.carousel-window');
-    const track = windowEl.querySelector('.carousel-track');
-    const cards = track.querySelectorAll('.mini-card');
-    const cardWidth = 340;
-    const gap = 36;
-    const visible = 2;
-    let current = 0;
-    function updateChevrons() {
-      const left = row.querySelector('.carousel-chevron.left');
-      const right = row.querySelector('.carousel-chevron.right');
-      if (!left || !right) return;
-      left.disabled = current === 0;
-      right.disabled = current >= cards.length - visible;
-      left.style.opacity = left.disabled ? 0.3 : 1;
-      right.style.opacity = right.disabled ? 0.3 : 1;
-      left.style.pointerEvents = left.disabled ? 'none' : 'auto';
-      right.style.pointerEvents = right.disabled ? 'none' : 'auto';
-    }
-    function scrollTo(idx) {
-      current = Math.max(0, Math.min(idx, cards.length - visible));
-      const offset = (cardWidth + gap) * current;
-      track.style.transform = 'translateX(-' + offset + 'px)';
-      updateChevrons();
-    }
-    const leftBtn = row.querySelector('.carousel-chevron.left');
-    const rightBtn = row.querySelector('.carousel-chevron.right');
-    if (leftBtn) leftBtn.addEventListener('click', function() { scrollTo(current - visible); });
-    if (rightBtn) rightBtn.addEventListener('click', function() { scrollTo(current + visible); });
-    scrollTo(0);
+  </main>
+  <footer>
+    &copy; 2024 QuidLinks. All rights reserved.
+  </footer>
+  <script>
+// --- Currency conversion rates (as of June 2024, update as needed) ---
+const rates = {
+  USD: 1,
+  GBP: 0.79,
+  EUR: 0.92,
+  AUD: 1.51,
+  CAD: 1.37,
+  INR: 83.5
+};
+const symbols = {
+  USD: '$',
+  GBP: '£',
+  EUR: '€',
+  AUD: 'A$',
+  CAD: 'C$',
+  INR: '₹'
+};
+function convert(amount, from, to) {
+  return amount / rates[from] * rates[to];
+}
+function updateCurrencyColumns() {
+  const sel = document.getElementById('currency-selector');
+  const to = sel.value;
+  // Update headers
+  document.getElementById('avg-commission-header').textContent = `Avg Commission Per Sale (${symbols[to]})`;
+  document.getElementById('payout-threshold-header').textContent = `Payout Threshold (${symbols[to]})`;
+  // Update table cells
+  const rows = document.querySelectorAll('#programs-table tbody tr');
+  rows.forEach(row => {
+    // Avg Commission = 3rd currency-col, Payout Threshold = 2nd currency-col
+    const avgCommissionCell = row.querySelectorAll('.currency-col')[0];
+    const payoutCell = row.querySelectorAll('.currency-col')[1];
+    // Get base USD values from the cell (strip symbol if present)
+    let avgVal = parseFloat(avgCommissionCell.textContent.replace(/[^0-9.]/g, ''));
+    let payoutVal = parseFloat(payoutCell.textContent.replace(/[^0-9.]/g, ''));
+    if (!isNaN(avgVal)) avgCommissionCell.textContent = symbols[to] + convert(avgVal, 'USD', to).toFixed(2);
+    if (!isNaN(payoutVal)) payoutCell.textContent = symbols[to] + convert(payoutVal, 'USD', to).toFixed(2);
   });
-});
+}
+document.getElementById('currency-selector').addEventListener('change', updateCurrencyColumns);
+// Run on page load to set initial symbols
+updateCurrencyColumns();
 </script>
-<div class="category-section businesstools" style="background: linear-gradient(135deg, #ffe3e3 0%, #d32f2f 100%); border: 3px solid #b71c1c; position:relative; border-radius:28px; margin-bottom:48px; padding:32px 0 48px 0; box-shadow:0 2px 16px rgba(26,35,126,0.06);">
-      <div class="category-title" style="color: #b71c1c; text-align:center; font-size:2.1rem; font-weight:900; text-decoration:underline; margin-bottom:24px;">Business Tools</div>
-      <div style="position:relative; display:flex; align-items:center; justify-content:center;">
-        
-      <div class="carousel-row" style="display:flex; align-items:center; justify-content:center; width:auto; max-width:none; margin:0 auto; position:relative;">
-        <button class="carousel-chevron left" data-carousel="offers-row-businesstools" aria-label="Scroll left in Business Tools carousel" tabindex="0" role="button">&#8249;</button>
-        <div class="carousel-window" style="overflow:hidden; width:716px;">
-          <div class="carousel-track" style="display:flex; gap:36px; transition: transform 0.4s cubic-bezier(.4,0,.2,1); will-change: transform;">
-            <div class="brand-baremetrics"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/baremetrics/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/baremetrics/logo.png" alt="Baremetrics logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Baremetrics</div>
-          <div class="caro-offer-desc">Sign up for Baremetrics and get $50 in account credit. Plus, refer friends and earn recurring commissions for each successful referral!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/baremetrics/" class="carousel-cta-button cta-button-baremetrics" aria-label="View offer for Baremetrics"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-engagebay"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/engagebay/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/engagebay/logo.png" alt="EngageBay logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">EngageBay</div>
-          <div class="caro-offer-desc">Sign up for EngageBay and get 20% off your first purchase. Plus, refer friends and earn recurring commissions for each successful referral!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/engagebay/" class="carousel-cta-button cta-button-engagebay" aria-label="View offer for EngageBay"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-fiverr"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/fiverr/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/fiverr/logo.png" alt="Fiverr logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Fiverr</div>
-          <div class="caro-offer-desc">Sign up for Fiverr and get 10% off your first order. Plus, refer friends and earn up to $100 for each successful referral!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/fiverr/" class="carousel-cta-button cta-button-fiverr" aria-label="View offer for Fiverr"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-mailblaze"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/mailblaze/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/mailblaze/logo.png" alt="Mail Blaze logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Mail Blaze</div>
-          <div class="caro-offer-desc">Sign up for Mail Blaze and get 10% off your first purchase. Plus, refer friends and earn affiliate commissions for each successful referral!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/mailblaze/" class="carousel-cta-button cta-button-mailblaze" aria-label="View offer for Mail Blaze"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-neuraltext"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/neuraltext/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/neuraltext/logo.png" alt="Neuraltext logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Neuraltext</div>
-          <div class="caro-offer-desc">Sign up for NeuralText and get 20% off your first purchase. Plus, refer friends and earn affiliate commissions for each successful referral!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/neuraltext/" class="carousel-cta-button cta-button-neuraltext" aria-label="View offer for Neuraltext"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-outseta"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/outseta/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/outseta/logo.png" alt="Outseta logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Outseta</div>
-          <div class="caro-offer-desc">Sign up for Outseta and get a 7-day free trial of the all-in-one membership platform for SaaS, courses, and communities. No credit card required!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/outseta/" class="carousel-cta-button cta-button-outseta" aria-label="View offer for Outseta"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-printify"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/printify/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/printify/logo.png" alt="Printify logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Printify</div>
-          <div class="caro-offer-desc">Join the Printify Affiliate Program and earn 5% from every sale your referrals make. Free to join, global reach, and 1000+ products to promote!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/printify/" class="carousel-cta-button cta-button-printify" aria-label="View offer for Printify"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-sharelytics"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/sharelytics/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/sharelytics/logo.png" alt="Sharelytics logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Sharelytics</div>
-          <div class="caro-offer-desc">Sign up for the Sharelytics affiliate program and earn 30% recurring commission for every customer you refer! Plus, get $100 cash for top performers.</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/sharelytics/" class="carousel-cta-button cta-button-sharelytics" aria-label="View offer for Sharelytics"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-supermonitoring"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/supermonitoring/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/supermonitoring/logo.png" alt="Super Monitoring logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Super Monitoring</div>
-          <div class="caro-offer-desc">Website uptime and performance monitoring. Get notified instantly about downtime, slow loading, SSL issues, domain expiry, and more. Trusted by major brands.Earn a 30% lifetime commission for every customer you refer!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/supermonitoring/" class="carousel-cta-button cta-button-supermonitoring" aria-label="View offer for Super Monitoring"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-userback"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch; margin-right:8px;; --carousel-logo-url: url('/pages/offers/userback/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/userback/logo.png" alt="Userback logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Userback</div>
-          <div class="caro-offer-desc">Collect and act on user feedback 10x faster with Userback. Visual feedback, bug reporting, surveys, session replay, and moreall in one platform for product teams.Earn a 35% commission for 12 months for every customer you refer!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/userback/" class="carousel-cta-button cta-button-userback" aria-label="View offer for Userback"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div>
-          </div>
-        </div>
-        <button class="carousel-chevron right" data-carousel="offers-row-businesstools" aria-label="Scroll right in Business Tools carousel" tabindex="0" role="button">&#8250;</button>
-      </div>
-    
-      </div>
-    </div><style>
-      .carousel-mini-card::after {
-        content: '';
-        position: absolute;
-        left: 10%;
-        top: 10%;
-        width: 80%;
-        height: 80%;
-        background-image: var(--carousel-logo-url);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        opacity: 0.25;
-        z-index: 1;
-        pointer-events: none;
-      }
-      .carousel-mini-card::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: rgba(255,255,255,0.7);
-        z-index: 1;
-      }
-      .carousel-mini-card .caro-offer-title,
-      .carousel-mini-card .caro-offer-desc,
-      .carousel-mini-card .carousel-cta-button {
-        position: relative;
-        z-index: 2;
-      }
-    </style><style>
-.carousel-viewport { overflow: hidden; position: relative; box-sizing: content-box; }
-.carousel-track { display: flex; transition: transform 0.4s cubic-bezier(.4,0,.2,1); will-change: transform; gap: 36px; }
-.carousel-mini-card { transition: box-shadow 0.2s, background 0.2s; box-sizing: border-box; width: 340px !important; height: 400px !important; min-width: 340px !important; max-width: 340px !important; flex: 0 0 auto !important; }
-.carousel-mini-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.13); }
-.carousel-cta-button { font-weight: 700; border-radius: 24px; text-align: center; font-size: 1.05rem; box-shadow: none; border: none; transition: box-shadow 0.2s; min-width: 120px; max-width: 180px; padding: 10px 0; position:relative; overflow:hidden; background: linear-gradient(90deg, var(--carousel-mini-card-btn-grad-1, #111), var(--carousel-mini-card-btn-grad-2, #333)); color: #fff; margin: 0 auto; display: block; }
-.carousel-cta-button:hover { box-shadow: 0 2px 12px rgba(25,118,210,0.18); }
-.carousel-cta-gradient-text { color: inherit; display:inline-block; width:100%; font-weight:inherit; }
-.caro-offer-desc { background: linear-gradient(90deg, var(--carousel-mini-card-text-grad-1, #232f3e), var(--carousel-mini-card-text-grad-2, #232f3e)); background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent; display: block; }
-.carousel-chevron { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 2.5rem; cursor: pointer; z-index: 2; }
-.carousel-chevron.left { left: -32px; }
-.carousel-chevron.right { right: -32px; }
-@media (max-width: 1200px) { .carousel-viewport { width: 100vw !important; } .carousel-mini-card { min-width: 90vw !important; max-width: 90vw !important; } }
-</style><script>
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.carousel-row').forEach(function(row) {
-    const windowEl = row.querySelector('.carousel-window');
-    const track = windowEl.querySelector('.carousel-track');
-    const cards = track.querySelectorAll('.mini-card');
-    const cardWidth = 340;
-    const gap = 36;
-    const visible = 2;
-    let current = 0;
-    function updateChevrons() {
-      const left = row.querySelector('.carousel-chevron.left');
-      const right = row.querySelector('.carousel-chevron.right');
-      if (!left || !right) return;
-      left.disabled = current === 0;
-      right.disabled = current >= cards.length - visible;
-      left.style.opacity = left.disabled ? 0.3 : 1;
-      right.style.opacity = right.disabled ? 0.3 : 1;
-      left.style.pointerEvents = left.disabled ? 'none' : 'auto';
-      right.style.pointerEvents = right.disabled ? 'none' : 'auto';
-    }
-    function scrollTo(idx) {
-      current = Math.max(0, Math.min(idx, cards.length - visible));
-      const offset = (cardWidth + gap) * current;
-      track.style.transform = 'translateX(-' + offset + 'px)';
-      updateChevrons();
-    }
-    const leftBtn = row.querySelector('.carousel-chevron.left');
-    const rightBtn = row.querySelector('.carousel-chevron.right');
-    if (leftBtn) leftBtn.addEventListener('click', function() { scrollTo(current - visible); });
-    if (rightBtn) rightBtn.addEventListener('click', function() { scrollTo(current + visible); });
-    scrollTo(0);
-  });
-});
-</script>
-<div class="category-section cashback" style="background: linear-gradient(135deg, #e3fff3 0%, #009688 100%); border: 3px solid #00695c; position:relative; border-radius:28px; margin-bottom:48px; padding:32px 0 48px 0; box-shadow:0 2px 16px rgba(26,35,126,0.06);">
-      <div class="category-title" style="color: #00695c; text-align:center; font-size:2.1rem; font-weight:900; text-decoration:underline; margin-bottom:24px;">Cashback</div>
-      <div style="position:relative; display:flex; align-items:center; justify-content:center;">
-        
-      <div class="carousel-row" style="display:flex; align-items:center; justify-content:center; width:auto; max-width:none; margin:0 auto; position:relative;">
-        <button class="carousel-chevron left" data-carousel="offers-row-cashback" aria-label="Scroll left in Cashback carousel" tabindex="0" role="button">&#8249;</button>
-        <div class="carousel-window" style="overflow:hidden; width:716px;">
-          <div class="carousel-track" style="display:flex; gap:36px; transition: transform 0.4s cubic-bezier(.4,0,.2,1); will-change: transform;">
-            <div class="brand-befrugal"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/befrugal/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/befrugal/logo.png" alt="BeFrugal logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">BeFrugal</div>
-          <div class="caro-offer-desc">Invite friends to BeFrugal and you both get a $10 bonus when your friend earns $10 in Cash Back. Shop, save, and earn together!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/befrugal/" class="carousel-cta-button cta-button-befrugal" aria-label="View offer for BeFrugal"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-cashbackcouk"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/cashback-co-uk/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/cashback-co-uk/logo.png" alt="Cashback.co.uk logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Cashback.co.uk</div>
-          <div class="caro-offer-desc">Refer friends to Cashback.co.uk and earn 10% of their earnings for life! Your friends get a £10 welcome bonus (instead of £5) when they join with your link.</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/cashback-co-uk/" class="carousel-cta-button cta-button-cashbackcouk" aria-label="View offer for Cashback.co.uk"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-quidco"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/quidco/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/quidco/logo.png" alt="Quidco logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Quidco</div>
-          <div class="caro-offer-desc">Refer a friend and earn £25 cashback, plus your friend gets a £20 sign-up bonus when they join and earn £5 cashback.</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/quidco/" class="carousel-cta-button cta-button-quidco" aria-label="View offer for Quidco"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-rakuten"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/rakuten/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/rakuten/logo.png" alt="Rakuten logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Rakuten</div>
-          <div class="caro-offer-desc">Sign up for Rakuten UK and earn £25 cashback on your first qualifying purchase. Plus, refer friends and earn even more cashback rewards for each successful referral!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/rakuten/" class="carousel-cta-button cta-button-rakuten" aria-label="View offer for Rakuten"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-topcashback"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch; margin-right:8px;; --carousel-logo-url: url('/pages/offers/topcashback/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/topcashback/logo.png" alt="TopCashback logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">TopCashback</div>
-          <div class="caro-offer-desc">Sign up for TopCashback and earn a £10 bonus on your first qualifying purchase. Plus, refer friends and earn even more cashback rewards for each successful referral!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/topcashback/" class="carousel-cta-button cta-button-topcashback" aria-label="View offer for TopCashback"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div>
-          </div>
-        </div>
-        <button class="carousel-chevron right" data-carousel="offers-row-cashback" aria-label="Scroll right in Cashback carousel" tabindex="0" role="button">&#8250;</button>
-      </div>
-    
-      </div>
-    </div><style>
-      .carousel-mini-card::after {
-        content: '';
-        position: absolute;
-        left: 10%;
-        top: 10%;
-        width: 80%;
-        height: 80%;
-        background-image: var(--carousel-logo-url);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        opacity: 0.25;
-        z-index: 1;
-        pointer-events: none;
-      }
-      .carousel-mini-card::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: rgba(255,255,255,0.7);
-        z-index: 1;
-      }
-      .carousel-mini-card .caro-offer-title,
-      .carousel-mini-card .caro-offer-desc,
-      .carousel-mini-card .carousel-cta-button {
-        position: relative;
-        z-index: 2;
-      }
-    </style><style>
-.carousel-viewport { overflow: hidden; position: relative; box-sizing: content-box; }
-.carousel-track { display: flex; transition: transform 0.4s cubic-bezier(.4,0,.2,1); will-change: transform; gap: 36px; }
-.carousel-mini-card { transition: box-shadow 0.2s, background 0.2s; box-sizing: border-box; width: 340px !important; height: 400px !important; min-width: 340px !important; max-width: 340px !important; flex: 0 0 auto !important; }
-.carousel-mini-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.13); }
-.carousel-cta-button { font-weight: 700; border-radius: 24px; text-align: center; font-size: 1.05rem; box-shadow: none; border: none; transition: box-shadow 0.2s; min-width: 120px; max-width: 180px; padding: 10px 0; position:relative; overflow:hidden; background: linear-gradient(90deg, var(--carousel-mini-card-btn-grad-1, #111), var(--carousel-mini-card-btn-grad-2, #333)); color: #fff; margin: 0 auto; display: block; }
-.carousel-cta-button:hover { box-shadow: 0 2px 12px rgba(25,118,210,0.18); }
-.carousel-cta-gradient-text { color: inherit; display:inline-block; width:100%; font-weight:inherit; }
-.caro-offer-desc { background: linear-gradient(90deg, var(--carousel-mini-card-text-grad-1, #232f3e), var(--carousel-mini-card-text-grad-2, #232f3e)); background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent; display: block; }
-.carousel-chevron { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 2.5rem; cursor: pointer; z-index: 2; }
-.carousel-chevron.left { left: -32px; }
-.carousel-chevron.right { right: -32px; }
-@media (max-width: 1200px) { .carousel-viewport { width: 100vw !important; } .carousel-mini-card { min-width: 90vw !important; max-width: 90vw !important; } }
-</style><script>
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.carousel-row').forEach(function(row) {
-    const windowEl = row.querySelector('.carousel-window');
-    const track = windowEl.querySelector('.carousel-track');
-    const cards = track.querySelectorAll('.mini-card');
-    const cardWidth = 340;
-    const gap = 36;
-    const visible = 2;
-    let current = 0;
-    function updateChevrons() {
-      const left = row.querySelector('.carousel-chevron.left');
-      const right = row.querySelector('.carousel-chevron.right');
-      if (!left || !right) return;
-      left.disabled = current === 0;
-      right.disabled = current >= cards.length - visible;
-      left.style.opacity = left.disabled ? 0.3 : 1;
-      right.style.opacity = right.disabled ? 0.3 : 1;
-      left.style.pointerEvents = left.disabled ? 'none' : 'auto';
-      right.style.pointerEvents = right.disabled ? 'none' : 'auto';
-    }
-    function scrollTo(idx) {
-      current = Math.max(0, Math.min(idx, cards.length - visible));
-      const offset = (cardWidth + gap) * current;
-      track.style.transform = 'translateX(-' + offset + 'px)';
-      updateChevrons();
-    }
-    const leftBtn = row.querySelector('.carousel-chevron.left');
-    const rightBtn = row.querySelector('.carousel-chevron.right');
-    if (leftBtn) leftBtn.addEventListener('click', function() { scrollTo(current - visible); });
-    if (rightBtn) rightBtn.addEventListener('click', function() { scrollTo(current + visible); });
-    scrollTo(0);
-  });
-});
-</script>
-<div class="category-section media" style="background: linear-gradient(135deg, #f3e3ff 0%, #8e24aa 100%); border: 3px solid #7b1fa2; position:relative; border-radius:28px; margin-bottom:48px; padding:32px 0 48px 0; box-shadow:0 2px 16px rgba(26,35,126,0.06);">
-      <div class="category-title" style="color: #7b1fa2; text-align:center; font-size:2.1rem; font-weight:900; text-decoration:underline; margin-bottom:24px;">Media</div>
-      <div style="position:relative; display:flex; align-items:center; justify-content:center;">
-        
-      <div class="carousel-row single-card" style="display:flex; align-items:center; justify-content:center; width:auto; max-width:none; margin:0 auto; position:relative;">
-        
-        <div class="carousel-window" style="overflow:hidden; width:716px;">
-          <div class="carousel-track" style="display:flex; gap:36px; transition: transform 0.4s cubic-bezier(.4,0,.2,1); will-change: transform;">
-            <div class="brand-amazonprimevideo"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch; margin-right:8px;; --carousel-logo-url: url('/pages/offers/amazon-prime-video/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/amazon-prime-video/logo.png" alt="Amazon Prime Video logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Amazon Prime Video</div>
-          <div class="caro-offer-desc">Promote Amazon Prime Video and earn commissions through the Amazon Associates program. Get paid for every new sign-up and enjoy top streaming rewards!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/amazon-prime-video/" class="carousel-cta-button cta-button-amazonprimevideo" aria-label="View offer for Amazon Prime Video"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div>
-          </div>
-        </div>
-        
-      </div>
-    
-      </div>
-    </div><style>
-      .carousel-mini-card::after {
-        content: '';
-        position: absolute;
-        left: 10%;
-        top: 10%;
-        width: 80%;
-        height: 80%;
-        background-image: var(--carousel-logo-url);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        opacity: 0.25;
-        z-index: 1;
-        pointer-events: none;
-      }
-      .carousel-mini-card::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: rgba(255,255,255,0.7);
-        z-index: 1;
-      }
-      .carousel-mini-card .caro-offer-title,
-      .carousel-mini-card .caro-offer-desc,
-      .carousel-mini-card .carousel-cta-button {
-        position: relative;
-        z-index: 2;
-      }
-    </style><style>
-.carousel-viewport { overflow: hidden; position: relative; box-sizing: content-box; }
-.carousel-track { display: flex; transition: transform 0.4s cubic-bezier(.4,0,.2,1); will-change: transform; gap: 36px; }
-.carousel-mini-card { transition: box-shadow 0.2s, background 0.2s; box-sizing: border-box; width: 340px !important; height: 400px !important; min-width: 340px !important; max-width: 340px !important; flex: 0 0 auto !important; }
-.carousel-mini-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.13); }
-.carousel-cta-button { font-weight: 700; border-radius: 24px; text-align: center; font-size: 1.05rem; box-shadow: none; border: none; transition: box-shadow 0.2s; min-width: 120px; max-width: 180px; padding: 10px 0; position:relative; overflow:hidden; background: linear-gradient(90deg, var(--carousel-mini-card-btn-grad-1, #111), var(--carousel-mini-card-btn-grad-2, #333)); color: #fff; margin: 0 auto; display: block; }
-.carousel-cta-button:hover { box-shadow: 0 2px 12px rgba(25,118,210,0.18); }
-.carousel-cta-gradient-text { color: inherit; display:inline-block; width:100%; font-weight:inherit; }
-.caro-offer-desc { background: linear-gradient(90deg, var(--carousel-mini-card-text-grad-1, #232f3e), var(--carousel-mini-card-text-grad-2, #232f3e)); background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent; display: block; }
-.carousel-chevron { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 2.5rem; cursor: pointer; z-index: 2; }
-.carousel-chevron.left { left: -32px; }
-.carousel-chevron.right { right: -32px; }
-@media (max-width: 1200px) { .carousel-viewport { width: 100vw !important; } .carousel-mini-card { min-width: 90vw !important; max-width: 90vw !important; } }
-</style><script>
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.carousel-row').forEach(function(row) {
-    const windowEl = row.querySelector('.carousel-window');
-    const track = windowEl.querySelector('.carousel-track');
-    const cards = track.querySelectorAll('.mini-card');
-    const cardWidth = 340;
-    const gap = 36;
-    const visible = 2;
-    let current = 0;
-    function updateChevrons() {
-      const left = row.querySelector('.carousel-chevron.left');
-      const right = row.querySelector('.carousel-chevron.right');
-      if (!left || !right) return;
-      left.disabled = current === 0;
-      right.disabled = current >= cards.length - visible;
-      left.style.opacity = left.disabled ? 0.3 : 1;
-      right.style.opacity = right.disabled ? 0.3 : 1;
-      left.style.pointerEvents = left.disabled ? 'none' : 'auto';
-      right.style.pointerEvents = right.disabled ? 'none' : 'auto';
-    }
-    function scrollTo(idx) {
-      current = Math.max(0, Math.min(idx, cards.length - visible));
-      const offset = (cardWidth + gap) * current;
-      track.style.transform = 'translateX(-' + offset + 'px)';
-      updateChevrons();
-    }
-    const leftBtn = row.querySelector('.carousel-chevron.left');
-    const rightBtn = row.querySelector('.carousel-chevron.right');
-    if (leftBtn) leftBtn.addEventListener('click', function() { scrollTo(current - visible); });
-    if (rightBtn) rightBtn.addEventListener('click', function() { scrollTo(current + visible); });
-    scrollTo(0);
-  });
-});
-</script>
-<div class="category-section networks" style="background: linear-gradient(135deg, #fffde3 0%, #ffd600 100%); border: 3px solid #bfa600; position:relative; border-radius:28px; margin-bottom:48px; padding:32px 0 48px 0; box-shadow:0 2px 16px rgba(26,35,126,0.06);">
-      <div class="category-title" style="color: #bfa600; text-align:center; font-size:2.1rem; font-weight:900; text-decoration:underline; margin-bottom:24px;">Networks</div>
-      <div style="position:relative; display:flex; align-items:center; justify-content:center;">
-        
-      <div class="carousel-row double-card" style="display:flex; align-items:center; justify-content:center; width:auto; max-width:none; margin:0 auto; position:relative;">
-        
-        <div class="carousel-window" style="overflow:hidden; width:716px;">
-          <div class="carousel-track" style="display:flex; gap:36px; transition: transform 0.4s cubic-bezier(.4,0,.2,1); will-change: transform;">
-            <div class="brand-giffgaff"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/giffgaff/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/giffgaff/logo.png" alt="Giffgaff logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Giffgaff</div>
-          <div class="caro-offer-desc">Order a free SIM and activate with £10 to get £5 extra credit. Flexible, no-contract plans and free EU roaming!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/giffgaff/" class="carousel-cta-button cta-button-giffgaff" aria-label="View offer for Giffgaff"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-virgin"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch; margin-right:8px;; --carousel-logo-url: url('/pages/offers/virgin/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/virgin/logo.png" alt="Virgin logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Virgin</div>
-          <div class="caro-offer-desc">Sign up for Virgin Media broadband and get £50 cash back. Plus, refer friends and earn extra rewards for each successful referral!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/virgin/" class="carousel-cta-button cta-button-virgin" aria-label="View offer for Virgin"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div>
-          </div>
-        </div>
-        
-      </div>
-    
-      </div>
-    </div><style>
-      .carousel-mini-card::after {
-        content: '';
-        position: absolute;
-        left: 10%;
-        top: 10%;
-        width: 80%;
-        height: 80%;
-        background-image: var(--carousel-logo-url);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        opacity: 0.25;
-        z-index: 1;
-        pointer-events: none;
-      }
-      .carousel-mini-card::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: rgba(255,255,255,0.7);
-        z-index: 1;
-      }
-      .carousel-mini-card .caro-offer-title,
-      .carousel-mini-card .caro-offer-desc,
-      .carousel-mini-card .carousel-cta-button {
-        position: relative;
-        z-index: 2;
-      }
-    </style><style>
-.carousel-viewport { overflow: hidden; position: relative; box-sizing: content-box; }
-.carousel-track { display: flex; transition: transform 0.4s cubic-bezier(.4,0,.2,1); will-change: transform; gap: 36px; }
-.carousel-mini-card { transition: box-shadow 0.2s, background 0.2s; box-sizing: border-box; width: 340px !important; height: 400px !important; min-width: 340px !important; max-width: 340px !important; flex: 0 0 auto !important; }
-.carousel-mini-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.13); }
-.carousel-cta-button { font-weight: 700; border-radius: 24px; text-align: center; font-size: 1.05rem; box-shadow: none; border: none; transition: box-shadow 0.2s; min-width: 120px; max-width: 180px; padding: 10px 0; position:relative; overflow:hidden; background: linear-gradient(90deg, var(--carousel-mini-card-btn-grad-1, #111), var(--carousel-mini-card-btn-grad-2, #333)); color: #fff; margin: 0 auto; display: block; }
-.carousel-cta-button:hover { box-shadow: 0 2px 12px rgba(25,118,210,0.18); }
-.carousel-cta-gradient-text { color: inherit; display:inline-block; width:100%; font-weight:inherit; }
-.caro-offer-desc { background: linear-gradient(90deg, var(--carousel-mini-card-text-grad-1, #232f3e), var(--carousel-mini-card-text-grad-2, #232f3e)); background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent; display: block; }
-.carousel-chevron { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 2.5rem; cursor: pointer; z-index: 2; }
-.carousel-chevron.left { left: -32px; }
-.carousel-chevron.right { right: -32px; }
-@media (max-width: 1200px) { .carousel-viewport { width: 100vw !important; } .carousel-mini-card { min-width: 90vw !important; max-width: 90vw !important; } }
-</style><script>
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.carousel-row').forEach(function(row) {
-    const windowEl = row.querySelector('.carousel-window');
-    const track = windowEl.querySelector('.carousel-track');
-    const cards = track.querySelectorAll('.mini-card');
-    const cardWidth = 340;
-    const gap = 36;
-    const visible = 2;
-    let current = 0;
-    function updateChevrons() {
-      const left = row.querySelector('.carousel-chevron.left');
-      const right = row.querySelector('.carousel-chevron.right');
-      if (!left || !right) return;
-      left.disabled = current === 0;
-      right.disabled = current >= cards.length - visible;
-      left.style.opacity = left.disabled ? 0.3 : 1;
-      right.style.opacity = right.disabled ? 0.3 : 1;
-      left.style.pointerEvents = left.disabled ? 'none' : 'auto';
-      right.style.pointerEvents = right.disabled ? 'none' : 'auto';
-    }
-    function scrollTo(idx) {
-      current = Math.max(0, Math.min(idx, cards.length - visible));
-      const offset = (cardWidth + gap) * current;
-      track.style.transform = 'translateX(-' + offset + 'px)';
-      updateChevrons();
-    }
-    const leftBtn = row.querySelector('.carousel-chevron.left');
-    const rightBtn = row.querySelector('.carousel-chevron.right');
-    if (leftBtn) leftBtn.addEventListener('click', function() { scrollTo(current - visible); });
-    if (rightBtn) rightBtn.addEventListener('click', function() { scrollTo(current + visible); });
-    scrollTo(0);
-  });
-});
-</script>
-<div class="category-section shopping" style="background: linear-gradient(135deg, #ffe0b2 0%, #e65100 100%); border: 3px solid #e65100; position:relative; border-radius:28px; margin-bottom:48px; padding:32px 0 48px 0; box-shadow:0 2px 16px rgba(26,35,126,0.06);">
-      <div class="category-title" style="color: #e65100; text-align:center; font-size:2.1rem; font-weight:900; text-decoration:underline; margin-bottom:24px;">Shopping</div>
-      <div style="position:relative; display:flex; align-items:center; justify-content:center;">
-        
-      <div class="carousel-row" style="display:flex; align-items:center; justify-content:center; width:auto; max-width:none; margin:0 auto; position:relative;">
-        <button class="carousel-chevron left" data-carousel="offers-row-shopping" aria-label="Scroll left in Shopping carousel" tabindex="0" role="button">&#8249;</button>
-        <div class="carousel-window" style="overflow:hidden; width:716px;">
-          <div class="carousel-track" style="display:flex; gap:36px; transition: transform 0.4s cubic-bezier(.4,0,.2,1); will-change: transform;">
-            <div class="brand-aliexpress"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/aliexpress/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/aliexpress/logo.png" alt="AliExpress logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">AliExpress</div>
-          <div class="caro-offer-desc">Tap into a vast selection of over 100 million products and reach 150+ million global buyers to maximize your affiliate income.</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/aliexpress/" class="carousel-cta-button cta-button-aliexpress" aria-label="View offer for AliExpress"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-amazon"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/amazon/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/amazon/logo.png" alt="Amazon logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Amazon</div>
-          <div class="caro-offer-desc">Join the Amazon Associates program and earn up to 12% commission by sharing links to millions of products. Get paid for every qualifying purchase!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/amazon/" class="carousel-cta-button cta-button-amazon" aria-label="View offer for Amazon"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-shein"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch;; --carousel-logo-url: url('/pages/offers/shein/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/shein/logo.png" alt="Shein logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Shein</div>
-          <div class="caro-offer-desc">Promote SHEIN and earn commissions through the SHEIN Affiliate Program. Get paid for every sale your referrals make!</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/shein/" class="carousel-cta-button cta-button-shein" aria-label="View offer for Shein"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div><div class="brand-temu"><div class="mini-card carousel-mini-card" style="width:340px; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch; margin-right:8px;; --carousel-logo-url: url('/pages/offers/temu/logo.png'); background: linear-gradient(135deg, var(--carousel-mini-card-grad-1, #fff), var(--carousel-mini-card-grad-2, #eee)); position: relative; overflow: hidden;">
-        <img src="/pages/offers/temu/logo.png" alt="Temu logo" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-hidden="false" />
-        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; position:relative; z-index:2;">
-          <div class="caro-offer-title">Temu</div>
-          <div class="caro-offer-desc">Discover hot campaigns, unlock exclusive bonuses, and earn recurring commissions by sharing Temu.</div>
-        </div>
-        <div style="width:100%; display:flex; justify-content:center; align-items:flex-end; margin-top:auto; position:relative; z-index:2;">
-          <a href="/pages/offers/temu/" class="carousel-cta-button cta-button-temu" aria-label="View offer for Temu"><span class="carousel-cta-gradient-text">View offer</span></a>
-        </div>
-      </div></div>
-          </div>
-        </div>
-        <button class="carousel-chevron right" data-carousel="offers-row-shopping" aria-label="Scroll right in Shopping carousel" tabindex="0" role="button">&#8250;</button>
-      </div>
-    
-      </div>
-    </div><style>
-      .carousel-mini-card::after {
-        content: '';
-        position: absolute;
-        left: 10%;
-        top: 10%;
-        width: 80%;
-        height: 80%;
-        background-image: var(--carousel-logo-url);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        opacity: 0.25;
-        z-index: 1;
-        pointer-events: none;
-      }
-      .carousel-mini-card::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: rgba(255,255,255,0.7);
-        z-index: 1;
-      }
-      .carousel-mini-card .caro-offer-title,
-      .carousel-mini-card .caro-offer-desc,
-      .carousel-mini-card .carousel-cta-button {
-        position: relative;
-        z-index: 2;
-      }
-    </style><style>
-.carousel-viewport { overflow: hidden; position: relative; box-sizing: content-box; }
-.carousel-track { display: flex; transition: transform 0.4s cubic-bezier(.4,0,.2,1); will-change: transform; gap: 36px; }
-.carousel-mini-card { transition: box-shadow 0.2s, background 0.2s; box-sizing: border-box; width: 340px !important; height: 400px !important; min-width: 340px !important; max-width: 340px !important; flex: 0 0 auto !important; }
-.carousel-mini-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.13); }
-.carousel-cta-button { font-weight: 700; border-radius: 24px; text-align: center; font-size: 1.05rem; box-shadow: none; border: none; transition: box-shadow 0.2s; min-width: 120px; max-width: 180px; padding: 10px 0; position:relative; overflow:hidden; background: linear-gradient(90deg, var(--carousel-mini-card-btn-grad-1, #111), var(--carousel-mini-card-btn-grad-2, #333)); color: #fff; margin: 0 auto; display: block; }
-.carousel-cta-button:hover { box-shadow: 0 2px 12px rgba(25,118,210,0.18); }
-.carousel-cta-gradient-text { color: inherit; display:inline-block; width:100%; font-weight:inherit; }
-.caro-offer-desc { background: linear-gradient(90deg, var(--carousel-mini-card-text-grad-1, #232f3e), var(--carousel-mini-card-text-grad-2, #232f3e)); background-clip: text; -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent; display: block; }
-.carousel-chevron { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 2.5rem; cursor: pointer; z-index: 2; }
-.carousel-chevron.left { left: -32px; }
-.carousel-chevron.right { right: -32px; }
-@media (max-width: 1200px) { .carousel-viewport { width: 100vw !important; } .carousel-mini-card { min-width: 90vw !important; max-width: 90vw !important; } }
-</style><script>
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.carousel-row').forEach(function(row) {
-    const windowEl = row.querySelector('.carousel-window');
-    const track = windowEl.querySelector('.carousel-track');
-    const cards = track.querySelectorAll('.mini-card');
-    const cardWidth = 340;
-    const gap = 36;
-    const visible = 2;
-    let current = 0;
-    function updateChevrons() {
-      const left = row.querySelector('.carousel-chevron.left');
-      const right = row.querySelector('.carousel-chevron.right');
-      if (!left || !right) return;
-      left.disabled = current === 0;
-      right.disabled = current >= cards.length - visible;
-      left.style.opacity = left.disabled ? 0.3 : 1;
-      right.style.opacity = right.disabled ? 0.3 : 1;
-      left.style.pointerEvents = left.disabled ? 'none' : 'auto';
-      right.style.pointerEvents = right.disabled ? 'none' : 'auto';
-    }
-    function scrollTo(idx) {
-      current = Math.max(0, Math.min(idx, cards.length - visible));
-      const offset = (cardWidth + gap) * current;
-      track.style.transform = 'translateX(-' + offset + 'px)';
-      updateChevrons();
-    }
-    const leftBtn = row.querySelector('.carousel-chevron.left');
-    const rightBtn = row.querySelector('.carousel-chevron.right');
-    if (leftBtn) leftBtn.addEventListener('click', function() { scrollTo(current - visible); });
-    if (rightBtn) rightBtn.addEventListener('click', function() { scrollTo(current + visible); });
-    scrollTo(0);
-  });
-});
-</script>
-    </div>
 </body>
-</html>
+</html> 
