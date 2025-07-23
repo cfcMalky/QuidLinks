@@ -49,22 +49,28 @@ function htmlTemplate(partner) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${partner['Affiliate Program']} Affiliate Program | QuidLinks</title>
+  <title>${partner['Affiliate Program']} Affiliate Program | Global Referral Directory</title>
   <meta name="description" content="${(partner['Description'] || '').split(/\.|\n/)[0].replace(/"/g, '&quot;')}">
   <link rel="stylesheet" href="${styleHref}">
 </head>
 <body>
-  <header>
-    <h1>QuidLinks</h1>
+  <header style="background:#f7faff;padding:32px 0 16px 0;text-align:center;box-shadow:0 2px 8px rgba(80,60,120,0.06);border-bottom:1px solid #e5e7eb;">
+    <h1 style="font-size:2.1em;font-weight:800;letter-spacing:-1px;margin:0 0 8px 0;color:#5a4e7c;">Global Referral & Affiliate Program Directory</h1>
     <nav>
-      <ul>
-        <li><a href="../index.html">Home</a></li>
+      <ul style="list-style:none;padding:0;margin:0;display:inline-flex;gap:2em;justify-content:center;">
+        <li><a href="../index.html" style="color:#7d2ae8;font-weight:600;text-decoration:none;font-size:1.1em;">Home</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <div class="hero centered">
-      <h2>${partner['Affiliate Program']} Affiliate Program</h2>
+    <div class="hero centered" style="margin-top:32px;">
+      <div style="background:#e9f7fa;padding:18px 24px 18px 24px;border-radius:14px;margin-bottom:28px;box-shadow:0 2px 8px rgba(80,60,120,0.07);">
+        <h2 style="font-size:1.5em;font-weight:700;margin:0 0 8px 0;color:#23243a;">Discover Top Referral & Affiliate Programs</h2>
+        <p style="font-size:1.15em;color:#444;margin:0;line-height:1.6;">
+          Explore a curated directory of the world’s best referral and affiliate programs. Compare commission rates, rewards, and terms at a glance. Find the perfect program for your audience or business, and start earning with trusted brands across every industry.
+        </p>
+      </div>
+      <h3 style="font-size:1.25em;font-weight:700;margin-bottom:8px;">${partner['Affiliate Program']} Affiliate Program</h3>
       <p><b>Category:</b> ${partner['Category']}</p>
       ${videoEmbed}
       <p><b>Commission:</b> ${partner['Commission']} per sale</p>
@@ -81,7 +87,7 @@ function htmlTemplate(partner) {
     </div>
   </main>
   <footer>
-    &copy; 2024 QuidLinks. All rights reserved.
+    &copy; 2024 Global Referral Directory. All rights reserved.
   </footer>
 </body>
 </html>`;
