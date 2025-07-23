@@ -40,12 +40,12 @@
       <table id="programs-table">
       <thead>
         <tr>
-          <th>Category</th>
-          <th>Program</th>
-          <th>Commission Rate</th>
-          <th id="avg-commission-header">Avg Commission Per Sale</th>
-          <th id="payout-threshold-header">Payout Threshold</th>
-          <th>Cookie Life</th>
+          <th style="cursor:pointer;">Category</th>
+          <th style="cursor:pointer;">Program</th>
+          <th style="cursor:pointer;">Commission Rate</th>
+          <th id="avg-commission-header" style="cursor:pointer;">Avg Commission Per Sale</th>
+          <th id="payout-threshold-header" style="cursor:pointer;">Payout Threshold</th>
+          <th style="cursor:pointer;">Cookie Life</th>
         </tr>
       </thead>
       <tbody>
@@ -123,6 +123,36 @@ function updateCurrencyColumns() {
 document.getElementById('currency-selector').addEventListener('change', updateCurrencyColumns);
 // Run on page load to set initial symbols
 updateCurrencyColumns();
+
+// --- Table sorting ---
+(function() {
+  const table = document.getElementById('programs-table');
+  if (!table) return;
+  const ths = table.querySelectorAll('thead th');
+  let sortCol = -1;
+  let sortAsc = true;
+  ths.forEach((th, idx) => {
+    th.addEventListener('click', function() {
+      sortAsc = (sortCol === idx) ? !sortAsc : true;
+      sortCol = idx;
+      const tbody = table.querySelector('tbody');
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      rows.sort((a, b) => {
+        let ta = a.children[idx].textContent.trim();
+        let tb = b.children[idx].textContent.trim();
+        // Try to parse as number if possible
+        let na = parseFloat(ta.replace(/[^0-9.\-]/g, ''));
+        let nb = parseFloat(tb.replace(/[^0-9.\-]/g, ''));
+        if (!isNaN(na) && !isNaN(nb)) {
+          return sortAsc ? na - nb : nb - na;
+        }
+        // Otherwise, string compare
+        return sortAsc ? ta.localeCompare(tb) : tb.localeCompare(ta);
+      });
+      rows.forEach(row => tbody.appendChild(row));
+    });
+  });
+})();
 </script>
 </body>
 </html> 
